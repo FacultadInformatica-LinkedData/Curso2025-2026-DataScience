@@ -9,7 +9,7 @@ Original file is located at
 **Task 07: Querying RDF(s)**
 """
 
-!pip install rdflib
+#!pip install rdflib
 import urllib.request
 url = 'https://raw.githubusercontent.com/FacultadInformatica-LinkedData/Curso2025-2026/refs/heads/master/Assignment4/course_materials/python/validation.py'
 urllib.request.urlretrieve(url, 'validation.py')
@@ -30,10 +30,11 @@ report = Report()
 """**TASK 7.1a: For all classes, list each classURI. If the class belogs to another class, then list its superclass.**
 **Do the exercise in RDFLib returning a list of Tuples: (class, superclass) called "result". If a class does not have a super class, then return None as the superclass**
 """
-
-# TO DO
 # Visualize the results
 result = [] #list of tuples
+for s, p, o in g.triples((None, RDF.type, RDFS.Class)):
+    superclass = g.value(s, RDFS.subClassOf, None)
+    result.append((s, superclass if superclass is not None else None))
 for r in result:
   print(r)
 
@@ -42,7 +43,13 @@ report.validate_07_1a(result)
 
 """**TASK 7.1b: Repeat the same exercise in SPARQL, returning the variables ?c (class) and ?sc (superclass)**"""
 
-query =  "Select "
+query =  """
+SELECT ?c ?sc
+WHERE {
+  ?c rdf:type rdfs:Class.
+  OPTIONAL{?c rdfs:subClassOf ?sc.}
+} 
+"""
 
 for r in g.query(query):
   print(r.c, r.sc)
@@ -58,6 +65,18 @@ ns = Namespace("http://oeg.fi.upm.es/def/people#")
 
 # variable to return
 individuals = []
+clases = [ns.Person]
+for c,p,o in g.triples((None,RDFS.subClassOf, ns.Person)):
+    clases.append(c)
+    for sub,p,o in g.triples((None, RDFS.subClassOf, c)):
+        clases.append(sub)
+        for subsub,p,o in g.triples((None, RDFS.subClassOf, sub)):
+          clases.append(subsub)
+
+for clase in clases:
+  for s,p,o in g.triples((None, RDF.type, clase)):
+    individuals.append(s)
+
 # visualize results
 for i in individuals:
   print(i)
@@ -67,7 +86,17 @@ report.validate_07_02a(individuals)
 
 """**TASK 7.2b: Repeat the same exercise in SPARQL, returning the individual URIs in a variable ?ind**"""
 
-query =  "Select "
+query =  """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ns: <http://oeg.fi.upm.es/def/people#>
+
+SELECT DISTINCT ?ind
+WHERE {
+  ?ind rdf:type ?class .
+  ?class rdfs:subClassOf* ns:Person .
+}
+"""
 
 for r in g.query(query):
   print(r.ind)
@@ -78,9 +107,18 @@ report.validate_07_02b(g, query)
 
 """**TASK 7.3:  List the name and type of those who know Rocky (in SPARQL only). Use name and type as variables in the query**"""
 
-query =  """select
-  }"""
-# TO DO
+query =  """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ns: <http://oeg.fi.upm.es/def/people#>
+
+SELECT ?name ?type
+WHERE {
+  ?x ns:knows ns:Rocky .
+  ?x rdf:type ?type .
+  ?x rdfs:label ?name
+}
+"""
 # Visualize the results
 for r in g.query(query):
   print(r.name, r.type)
@@ -90,13 +128,32 @@ report.validate_07_03(g, query)
 
 """**Task 7.4: List the name of those entities who have a colleague with a dog, or that have a collegue who has a colleague who has a dog (in SPARQL). Return the results in a variable called name**"""
 
-query =  """select
+query =  """
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ns:     <http://oeg.fi.upm.es/def/people#>
+
+SELECT DISTINCT ?name
+WHERE {
+  {
+    ?x ns:hasColleague ?c .
+    ?c ns:ownsPet ?p .
+    ?p rdf:type ns:Animal .
+  }
+  UNION
+  {
+    ?x ns:hasColleague ?c1 .
+    ?c1 ns:hasColleague ?c2 .
+    ?c2 ns:ownsPet ?p .
+    ?p rdf:type ns:Animal .
+  }
+  ?x rdfs:label ?name .
+}
 """
 
 for r in g.query(query):
   print(r.name)
 
-# TO DO
 # Visualize the results
 
 ## Validation: Do not remove
