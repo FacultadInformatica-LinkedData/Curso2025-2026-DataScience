@@ -33,8 +33,8 @@ for s, p, o in g:
 
 """**Task 6.0: Create new prefixes for "ontology" and "person" as shown in slide 14 of the Slidedeck 01a.RDF(s)-SPARQL shown in class.**"""
 
-ontology = Namespace("http://www.oeg-upm.net/Ontology#")
-person = Namespace("http://www.oeg-upm.net/Person#")
+ontology = Namespace("http://oeg.fi.upm.es/def/ontology#")
+person = Namespace("http://oeg.fi.upm.es/def/people#")
 g.bind("ontology", ontology)
 g.bind("person", person)
 
@@ -43,30 +43,29 @@ g.bind("person", person)
 """
 
 # TO DO
-g.remove((None, None, None))
 
 
 
-g.add((ns.Person, RDF.type, RDFS.Class))
-g.add((ns.Person, RDFS.label, Literal("Person", datatype=XSD.string)))
+g.add((person.Person, RDF.type, RDFS.Class))
+g.add((person.Person, RDFS.label, Literal("Person", datatype=XSD.string)))
 
-g.add((ns.Professor, RDF.type, RDFS.Class))
-g.add((ns.Professor, RDFS.label, Literal("Professor", datatype=XSD.string)))
-g.add((ns.Professor, RDFS.subClassOf, ns.Person))
-
-
-g.add((ns.FullProfessor, RDF.type, RDFS.Class))
-g.add((ns.FullProfessor, RDFS.label, Literal("FullProfessor", datatype=XSD.string)))
-g.add((ns.FullProfessor, RDFS.subClassOf, ns.Professor))
-
-g.add((ns.InterimAssociateProfessor, RDF.type, RDFS.Class))
-g.add((ns.InterimAssociateProfessor, RDFS.label, Literal("InterimAssociateProfessor", datatype=XSD.string)))
-g.add((ns.InterimAssociateProfessor, RDFS.subClassOf, ns.AssociateProfessor))
+g.add((person.Professor, RDF.type, RDFS.Class))
+g.add((person.Professor, RDFS.label, Literal("Professor", datatype=XSD.string)))
+g.add((person.Professor, RDFS.subClassOf, person.Person))
 
 
-g.add((ns.AssociateProfessor, RDF.type, RDFS.Class))
-g.add((ns.AssociateProfessor, RDFS.label, Literal("AssociateProfessor", datatype=XSD.string)))
-g.add((ns.AssociateProfessor, RDFS.subClassOf, ns.Professor))
+g.add((person.FullProfessor, RDF.type, RDFS.Class))
+g.add((person.FullProfessor, RDFS.label, Literal("FullProfessor", datatype=XSD.string)))
+g.add((person.FullProfessor, RDFS.subClassOf, person.Professor))
+
+g.add((person.InterimAssociateProfessor, RDF.type, RDFS.Class))
+g.add((person.InterimAssociateProfessor, RDFS.label, Literal("InterimAssociateProfessor", datatype=XSD.string)))
+g.add((person.InterimAssociateProfessor, RDFS.subClassOf, person.AssociateProfessor))
+
+
+g.add((person.AssociateProfessor, RDF.type, RDFS.Class))
+g.add((person.AssociateProfessor, RDFS.label, Literal("AssociateProfessor", datatype=XSD.string)))
+g.add((person.AssociateProfessor, RDFS.subClassOf, person.Professor))
 
 
 
@@ -82,22 +81,22 @@ r.validate_task_06_01(g)
 # TO DO
 
 #hasColleague#
-g.add((ns.hasColleague, RDF.type, RDF.Property))
-g.add((ns.hasColleague, RDFS.label, Literal("hasColleague", datatype=XSD.string)))
-g.add((ns.hasColleague, RDFS.domain, ns.Person))
-g.add((ns.hasColleague, RDFS.range, ns.Person))
+g.add((person.hasColleague, RDF.type, RDF.Property))
+g.add((person.hasColleague, RDFS.label, Literal("hasColleague", datatype=XSD.string)))
+g.add((person.hasColleague, RDFS.domain, person.Person))
+g.add((person.hasColleague, RDFS.range, person.Person))
 
 #hasName#
-g.add((ns.hasName, RDF.type, RDF.Property))
-g.add((ns.hasName, RDFS.label, Literal("hasName", datatype=XSD.string)))
-g.add((ns.hasName, RDFS.domain, ns.Person))
-g.add((ns.hasName, RDFS.range, RDFS.Literal))
+g.add((person.hasName, RDF.type, RDF.Property))
+g.add((person.hasName, RDFS.label, Literal("hasName", datatype=XSD.string)))
+g.add((person.hasName, RDFS.domain, person.Person))
+g.add((person.hasName, RDFS.range, RDFS.Literal))
 
 #hasHomePage#
-g.add((ns.hasHomePage, RDF.type, RDF.Property))
-g.add((ns.hasHomePage, RDFS.label, Literal("hasHomePage", datatype=XSD.string)))
-g.add((ns.hasHomePage, RDFS.domain, ns.FullProfessor))
-g.add((ns.hasHomePage, RDFS.range, RDFS.Literal))
+g.add((person.hasHomePage, RDF.type, RDF.Property))
+g.add((person.hasHomePage, RDFS.label, Literal("hasHomePage", datatype=XSD.string)))
+g.add((person.hasHomePage, RDFS.domain, person.FullProfessor))
+g.add((person.hasHomePage, RDFS.range, RDFS.Literal))
 
 
 
@@ -116,20 +115,20 @@ r.validate_task_06_02(g)
 DATA = Namespace("http://oeg.fi.upm.es/resource/person/")
 
 #Oscar#
-g.add((DATA.Oscar, RDF.type, ns.AssociateProfessor))
+g.add((DATA.Oscar, RDF.type, person.AssociateProfessor))
 g.add((DATA.Oscar, RDFS.label, Literal("Oscar", datatype=XSD.string)))
-g.add((DATA.Oscar, ns.hasColleague, DATA.Asun))
-g.add((DATA.Oscar, ns.hasName, Literal("Oscar Corcho García", datatype=XSD.string)))
+g.add((DATA.Oscar, person.hasColleague, DATA.Asun))
+g.add((DATA.Oscar, person.hasName, Literal("Oscar Corcho García", datatype=XSD.string)))
 
 
 #Asun#
-g.add((DATA.Asun, RDF.type, ns.FullProfessor))
+g.add((DATA.Asun, RDF.type, person.FullProfessor))
 g.add((DATA.Asun, RDFS.label, Literal("Asun", datatype=XSD.string)))
-g.add((DATA.Asun, ns.hasColleague, DATA.Raul))
-g.add((DATA.Asun, ns.hasHomePage, Literal("http://www.oeg-upm.net/", datatype=XSD.string)))
+g.add((DATA.Asun, person.hasColleague, DATA.Raul))
+g.add((DATA.Asun, person.hasHomePage, Literal("http://www.oeg-upm.net/", datatype=XSD.string)))
 
 #Raul#
-g.add((DATA.Raul, RDF.type, ns.InterimAssociateProfessor))
+g.add((DATA.Raul, RDF.type, person.InterimAssociateProfessor))
 g.add((DATA.Raul, RDFS.label, Literal("Raul", datatype=XSD.string)))
 
 
@@ -153,9 +152,9 @@ FOAF = Namespace("http://xmlns.com/foaf/0.1/")
 
 
 
-g.add((resource.Oscar, VCARD.Given, Literal("Oscar", datatype=XSD.string)))
-g.add((resource.Oscar, VCARD.Family, Literal("Corcho", datatype=XSD.string)))
-g.add((resource.Oscar, FOAF.email, Literal("oscarcorcho@upm.es", datatype=XSD.string)))
+g.add((DATA.Oscar, VCARD.Given, Literal("Oscar", datatype=XSD.string)))
+g.add((DATA.Oscar, VCARD.Family, Literal("Corcho", datatype=XSD.string)))
+g.add((DATA.Oscar, FOAF.email, Literal("oscarcorcho@upm.es", datatype=XSD.string)))
 
 
 
