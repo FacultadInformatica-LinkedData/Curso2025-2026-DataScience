@@ -77,9 +77,9 @@ def agregar_propiedad(nombre, dominio=None, rango=None):
         g.add((prop, RDFS.range, rango))
     return prop
 
-agregar_propiedad("hasColleague", dominio=person.Person,        rango=person.Person)
-agregar_propiedad("hasName",      dominio=person.Person,        rango=RDFS.Literal)
-agregar_propiedad("hasHomePage",  dominio=person.FullProfessor, rango=RDFS.Literal)
+agregar_propiedad("hasColleague", dominio=person.Person, rango=person.Person)
+agregar_propiedad("hasName", dominio=person.Person, rango=RDFS.Literal)
+agregar_propiedad("hasHomePage", dominio=person.FullProfessor, rango=RDFS.Literal)
 
 # Visualize the results
 for s, p, o in g:
@@ -128,11 +128,9 @@ r.validate_task_06_03(g)
 VCARD = Namespace("http://www.w3.org/2001/vcard-rdf/3.0/")
 FOAF  = Namespace("http://xmlns.com/foaf/0.1/")
 
-# el namespace de individuos que usaste en 6.3
 data  = Namespace("http://oeg.fi.upm.es/resource/person/")
 oscar = data.Oscar
 
-# Añadir tres propiedades a Oscar (todas como xsd:string)
 g.add((oscar, VCARD.Given,  Literal("Oscar",  datatype=XSD.string)))
 g.add((oscar, VCARD.Family, Literal("Corcho", datatype=XSD.string)))
 g.add((oscar, FOAF.email,   Literal("oscar@oeg-upm.net", datatype=XSD.string)))
