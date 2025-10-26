@@ -38,7 +38,7 @@ for sb in g.subjects(RDF.type, RDFS.Class):
   sc=None
   for Sc in g.objects(sb,RDFS.subClassOf):
     sc=Sc
-  result.append((sb,Sc))
+  result.append((sb,sc))
 for cl, sc in result:
    short_c = g.namespace_manager.normalizeUri(cl)
    short_sc = g.namespace_manager.normalizeUri(sc) if sc else None
