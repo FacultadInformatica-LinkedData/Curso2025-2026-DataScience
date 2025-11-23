@@ -1,0 +1,73 @@
+@prefix : <https://group10.linkeddata.es/ontology/> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Ontology header
+
+<https://group10.linkeddata.es/ontology/>
+  a owl:Ontology .
+
+# Classes
+
+:UrbanFacility a owl:Class ;
+  rdfs:label "Recurso urbano"@es .
+
+:PermanentStation a owl:Class ;
+  rdfs:subClassOf :UrbanFacility ;
+  rdfs:label "Estación permanente"@es .
+
+:TrafficObservation a owl:Class ;
+  rdfs:label "Observación de tráfico"@es .
+
+:ChargingPoint a owl:Class ;
+  rdfs:subClassOf :UrbanFacility ;
+  rdfs:label "Punto de recarga"@es .
+
+:District a owl:Class ;
+  rdfs:label "Distrito"@es .
+
+# Object properties
+
+:observedAtStation a owl:ObjectProperty ;
+  rdfs:label "observada en estación"@es ;
+  rdfs:domain :TrafficObservation ;
+  rdfs:range  :PermanentStation .
+
+:inDistrict a owl:ObjectProperty ;
+  rdfs:label "en distrito"@es ;
+  rdfs:domain :UrbanFacility ;
+  rdfs:range  :District .
+
+# Datatype properties
+
+:vehicleCount a owl:DatatypeProperty ;
+  rdfs:label "recuento de vehículos"@es ;
+  rdfs:domain :TrafficObservation ;
+  rdfs:range  xsd:integer .
+
+:observationDate a owl:DatatypeProperty ;
+  rdfs:label "fecha de observación"@es ;
+  rdfs:domain :TrafficObservation ;
+  rdfs:range  xsd:date .
+
+:hasStationId a owl:DatatypeProperty ;
+  rdfs:label "identificador de estación"@es ;
+  rdfs:domain :PermanentStation ;
+  rdfs:range  xsd:string .
+
+:hasPointId a owl:DatatypeProperty ;
+  rdfs:label "identificador de punto"@es ;
+  rdfs:domain :ChargingPoint ;
+  rdfs:range  xsd:string .
+
+:address a owl:DatatypeProperty ;
+  rdfs:label "dirección"@es ;
+  rdfs:domain :ChargingPoint ;
+  rdfs:range  xsd:string .
+
+# Geo (WGS84)
+wgs84_pos:lat  rdfs:domain :UrbanFacility ; rdfs:range xsd:decimal .
+wgs84_pos:long rdfs:domain :UrbanFacility ; rdfs:range xsd:decimal .

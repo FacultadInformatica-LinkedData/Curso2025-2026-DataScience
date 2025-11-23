@@ -1,0 +1,141 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix bib:   <https://group15.linkeddata.es/ontology/bibliotecas#> .
+@prefix schema: <https://schema.org/> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+
+# Ontología
+
+<https://group15.linkeddata.es/ontology/bibliotecas>
+  a owl:Ontology ;
+  rdfs:label "Ontología de Bibliotecas y Bibliobuses de Madrid (Group15)"@es ;
+  rdfs:comment "Ontología ligera para describir bibliotecas, localización administrativa, dirección, servicios y coordenadas WGS84."@es .
+
+
+# Clases
+
+bib:Biblioteca a owl:Class ;
+  rdfs:label "Biblioteca"@es ;
+  rdfs:comment "Equipamiento de tipo biblioteca o bibliobús del Ayuntamiento de Madrid."@es ;
+  rdfs:subClassOf schema:Library .
+
+bib:Distrito a owl:Class ;
+  rdfs:label "Distrito"@es ;
+  rdfs:comment "Unidad administrativa de la ciudad de Madrid (distrito)."@es ;
+  rdfs:subClassOf schema:AdministrativeArea .
+
+bib:Barrio a owl:Class ;
+  rdfs:label "Barrio"@es ;
+  rdfs:comment "Unidad administrativa de la ciudad de Madrid (barrio)."@es ;
+  rdfs:subClassOf schema:AdministrativeArea .
+
+bib:Direccion a owl:Class ;
+  rdfs:label "Dirección"@es ;
+  rdfs:comment "Dirección postal del equipamiento."@es ;
+  rdfs:subClassOf schema:PostalAddress .
+
+bib:Servicio a owl:Class ;
+  rdfs:label "Servicio"@es ;
+  rdfs:comment "Servicio o recurso ofrecido por la biblioteca (p. ej., Wi-Fi, salas de estudio)."@es .
+
+
+# Propiedades de objeto
+
+bib:estaEnDistrito a owl:ObjectProperty ;
+  rdfs:label "está en distrito"@es ;
+  rdfs:comment "Relación entre una biblioteca y el distrito al que pertenece."@es ;
+  rdfs:domain bib:Biblioteca ;
+  rdfs:range  bib:Distrito .
+
+bib:estaEnBarrio a owl:ObjectProperty ;
+  rdfs:label "está en barrio"@es ;
+  rdfs:comment "Relación entre una biblioteca y el barrio al que pertenece."@es ;
+  rdfs:domain bib:Biblioteca ;
+  rdfs:range  bib:Barrio .
+
+bib:tieneDireccion a owl:ObjectProperty ;
+  rdfs:label "tiene dirección"@es ;
+  rdfs:comment "Relación entre una biblioteca y su dirección postal."@es ;
+  rdfs:domain bib:Biblioteca ;
+  rdfs:range  bib:Direccion .
+
+bib:ofreceServicio a owl:ObjectProperty ;
+  rdfs:label "ofrece servicio"@es ;
+  rdfs:comment "Relación entre una biblioteca y un servicio ofrecido."@es ;
+  rdfs:domain bib:Biblioteca ;
+  rdfs:range  bib:Servicio .
+
+
+# Propiedades de datos
+
+
+bib:tieneWifi a owl:DatatypeProperty ;
+  rdfs:label "tiene Wi-Fi"@es ;
+  rdfs:comment "Indica si el equipamiento dispone de red Wi-Fi para usuarios."@es ;
+  rdfs:domain bib:Biblioteca ;
+  rdfs:range  xsd:boolean .
+
+bib:telefono a owl:DatatypeProperty ;
+  rdfs:label "teléfono"@es ;
+  rdfs:comment "Número de teléfono de contacto del equipamiento."@es ;
+  rdfs:domain bib:Biblioteca ;
+  rdfs:range  xsd:string .
+
+bib:email a owl:DatatypeProperty ;
+  rdfs:label "correo electrónico"@es ;
+  rdfs:comment "Dirección de correo electrónico de contacto del equipamiento."@es ;
+  rdfs:domain bib:Biblioteca ;
+  rdfs:range  xsd:string .
+
+bib:contentUrl a owl:DatatypeProperty ;
+  rdfs:label "URL de contenido"@es ;
+  rdfs:comment "URL de la página del equipamiento en el portal municipal u otra fuente oficial."@es ;
+  rdfs:domain bib:Biblioteca ;
+  rdfs:range  xsd:anyURI .
+
+# Coordenadas WGS84 (reutilizamos vocabulario estándar)
+# Alternativa: declarar bib:lat/bib:long si se prefiere.
+wgs84:lat a owl:DatatypeProperty ;
+  rdfs:label "latitud"@es ;
+  rdfs:comment "Latitud WGS84 (decimal)."@es ;
+  rdfs:domain bib:Biblioteca ;
+  rdfs:range  xsd:decimal .
+
+wgs84:long a owl:DatatypeProperty ;
+  rdfs:label "longitud"@es ;
+  rdfs:comment "Longitud WGS84 (decimal)."@es ;
+  rdfs:domain bib:Biblioteca ;
+  rdfs:range  xsd:decimal .
+
+
+# Propiedades de datos para Dirección (schema:PostalAddress)
+
+schema:streetAddress a owl:DatatypeProperty ;
+  rdfs:label "calle"@es ;
+  rdfs:comment "Calle y número de la dirección postal."@es ;
+  rdfs:domain bib:Direccion ;
+  rdfs:range  xsd:string .
+
+schema:postalCode a owl:DatatypeProperty ;
+  rdfs:label "código postal"@es ;
+  rdfs:comment "Código postal."@es ;
+  rdfs:domain bib:Direccion ;
+  rdfs:range  xsd:string .
+
+schema:addressLocality a owl:DatatypeProperty ;
+  rdfs:label "localidad"@es ;
+  rdfs:comment "Localidad o municipio."@es ;
+  rdfs:domain bib:Direccion ;
+  rdfs:range  xsd:string .
+
+schema:addressRegion a owl:DatatypeProperty ;
+  rdfs:label "región/provincia"@es ;
+  rdfs:comment "Región o provincia."@es ;
+  rdfs:domain bib:Direccion ;
+  rdfs:range  xsd:string .
+
+

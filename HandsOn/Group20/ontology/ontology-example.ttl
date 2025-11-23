@@ -1,0 +1,55 @@
+@prefix : <http://example.org/group20/ontology/> .
+@prefix res: <http://example.org/group20/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+########################################################
+# INSTANCIAS DE EJEMPLO BASADAS EN LA ONTOLOGÍA
+########################################################
+
+# Ciudad
+res:madrid rdf:type :Ciudad ;
+    rdfs:label "Madrid"@es .
+
+# Distritos
+res:centro rdf:type :Distrito ;
+    rdfs:label "Centro"@es ;
+    :ubicadoEnCiudad res:madrid .
+
+res:arganzuela rdf:type :Distrito ;
+    rdfs:label "Arganzuela"@es ;
+    :ubicadoEnCiudad res:madrid .
+
+# Registros de población
+res:registroCentro2024 rdf:type :RegistroPoblacion ;
+    rdfs:label "Registro de población del distrito Centro (2024)"@es ;
+    :tieneAño "2024"^^xsd:gYear ;
+    :tienePoblacion "129000"^^xsd:integer ;
+    :tieneGenero "Total" ;
+    :perteneceADistrito res:centro .
+
+res:registroArganzuela2024 rdf:type :RegistroPoblacion ;
+    rdfs:label "Registro de población del distrito Arganzuela (2024)"@es ;
+    :tieneAño "2024"^^xsd:gYear ;
+    :tienePoblacion "156000"^^xsd:integer ;
+    :tieneGenero "Total" ;
+    :perteneceADistrito res:arganzuela .
+
+########################################################
+# EJEMPLO DE POBLACIÓN DESAGREGADA POR GÉNERO
+########################################################
+
+res:registroCentroHombres2024 rdf:type :RegistroPoblacion ;
+    rdfs:label "Población masculina en Centro (2024)"@es ;
+    :tieneAño "2024"^^xsd:gYear ;
+    :tienePoblacion "61000"^^xsd:integer ;
+    :tieneGenero "Hombre" ;
+    :perteneceADistrito res:centro .
+
+res:registroCentroMujeres2024 rdf:type :RegistroPoblacion ;
+    rdfs:label "Población femenina en Centro (2024)"@es ;
+    :tieneAño "2024"^^xsd:gYear ;
+    :tienePoblacion "68000"^^xsd:integer ;
+    :tieneGenero "Mujer" ;
+    :perteneceADistrito res:centro .

@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Análisis de datos, licencia y estrategia de URIs — Group03</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 960px; margin: 2rem auto; line-height: 1.6; }
+    h1, h2, h3 { margin-top: 1.2rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: .6rem; text-align: left; }
+    th { background: #f6f6f6; }
+    code { background: #f4f4f4; padding: 0 .2rem; }
+  </style>
+</head>
+<body>
+  <h1>Group03 — Análisis del dataset de centros educativos (Comunidad de Madrid)</h1>
+
+  <h2>1. Fuente y contexto</h2>
+  <p><strong>Fuente:</strong> 
+    <a href="https://datos.comunidad.madrid/catalogos/#/dataset/centros_educativos/?view=info">Catálogo — Centros educativos (Comunidad de Madrid)</a>.
+  </p>
+  <p><strong>Licencia del dataset fuente:</strong> 
+    <a href="https://creativecommons.org/licenses/by/4.0/legalcode.es">Creative Commons Atribución 4.0 (CC BY 4.0)</a>. Se requiere atribución a la Comunidad de Madrid y referencia a la licencia al reutilizar y publicar datos derivados.
+  </p>
+
+  <h2>2. Análisis del conjunto de datos</h2>
+
+  <h3>2.1 Esquema (CSV base)</h3>
+  <p>Separador: punto y coma ( ; ). Codificación esperada: ISO 8859-1. Verificar presencia de tildes y caracteres especiales.</p>
+  <h3>Tabla de análisis con datos del colegio “EL ÁLAMO” (código 28000042)</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Valor de ejemplo (del CSV)</th>
+      <th>Notas / Validación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>centro_codigo</strong></td>
+      <td>string/int</td>
+      <td>28000042</td>
+      <td>Identificador único y estable. Base para la URI del recurso.</td>
+    </tr>
+    <tr>
+      <td><strong>centro_nombre</strong></td>
+      <td>string</td>
+      <td>EL ALAMO</td>
+      <td>Nombre oficial del centro. Normalizar mayúsculas/minúsculas.</td>
+    </tr>
+    <tr>
+      <td><strong>centro_tipo_codigo</strong></td>
+      <td>string/int</td>
+      <td>014</td>
+      <td>Código del tipo de centro.</td>
+    </tr>
+    <tr>
+      <td><strong>centro_tipo_desc_abrev</strong></td>
+      <td>string</td>
+      <td>CP INF-PRI</td>
+      <td>Abreviatura: Colegio de Infantil y Primaria.</td>
+    </tr>
+    <tr>
+      <td><strong>centro_tipo_descripcion</strong></td>
+      <td>string</td>
+      <td>COLEGIO DE EDUCACIÓN INFANTIL Y PRIMARIA</td>
+      <td>Descripción completa del tipo.</td>
+    </tr>
+    <tr>
+      <td><strong>centro_titularidad</strong></td>
+      <td>string(enum)</td>
+      <td>PÚBLICO</td>
+      <td>Valores controlados: PÚBLICO / PRIVADO / CONCERTADO.</td>
+    </tr>
+    <tr>
+      <td><strong>centro_titular</strong></td>
+      <td>string</td>
+      <td>COMUNIDAD DE MADRID</td>
+      <td>Entidad titular.</td>
+    </tr>
+    <tr>
+      <td><strong>nif_titular</strong></td>
+      <td>string</td>
+      <td>****0001*</td>
+      <td>NIF enmascarado en el CSV. Mantener como literal.</td>
+    </tr>
+    <tr>
+      <td><strong>nif_centro</strong></td>
+      <td>string</td>
+      <td>****8547*</td>
+      <td>Igual que anterior.</td>
+    </tr>
+    <tr>
+      <td><strong>dat_codigo</strong></td>
+      <td>string/int</td>
+      <td>2</td>
+      <td>Código de la Dirección de Área Territorial.</td>
+    </tr>
+    <tr>
+      <td><strong>dat_nombre</strong></td>
+      <td>string</td>
+      <td>Madrid-Sur</td>
+      <td>Nombre de la DAT.</td>
+    </tr>
+    <tr>
+      <td><strong>direccion_via_tipo</strong></td>
+      <td>string</td>
+      <td>CALLE</td>
+      <td>Tipo de vía.</td>
+    </tr>
+    <tr>
+      <td><strong>direccion_via_nombre</strong></td>
+      <td>string</td>
+      <td>del Río Alagón</td>
+      <td>Nombre de la calle.</td>
+    </tr>
+    <tr>
+      <td><strong>direccion_numero</strong></td>
+      <td>string</td>
+      <td>1</td>
+      <td>Número de portal.</td>
+    </tr>
+    <tr>
+      <td><strong>direccion_codigo_postal</strong></td>
+      <td>string</td>
+      <td>28607</td>
+      <td>Código postal válido.</td>
+    </tr>
+    <tr>
+      <td><strong>municipio_codigo</strong></td>
+      <td>string/int</td>
+      <td>004</td>
+      <td>Código de municipio.</td>
+    </tr>
+    <tr>
+      <td><strong>municipio_nombre</strong></td>
+      <td>string</td>
+      <td>Álamo, El</td>
+      <td>Normalizar a “El Álamo” para URIs.</td>
+    </tr>
+    <tr>
+      <td><strong>distrito_codigo</strong></td>
+      <td>string/int</td>
+      <td>(vacío)</td>
+      <td>Solo aplica a Madrid capital.</td>
+    </tr>
+    <tr>
+      <td><strong>distrito_nombre</strong></td>
+      <td>string</td>
+      <td>(vacío)</td>
+      <td>Solo aplica a Madrid capital.</td>
+    </tr>
+    <tr>
+      <td><strong>contacto_telefono1</strong></td>
+      <td>string</td>
+      <td>918120652</td>
+      <td>Teléfono válido.</td>
+    </tr>
+    <tr>
+      <td><strong>contacto_telefono2</strong></td>
+      <td>string</td>
+      <td>(vacío)</td>
+      <td>No disponible.</td>
+    </tr>
+    <tr>
+      <td><strong>contacto_telefono3</strong></td>
+      <td>string</td>
+      <td>(vacío)</td>
+      <td>No disponible.</td>
+    </tr>
+    <tr>
+      <td><strong>contacto_telefono4</strong></td>
+      <td>string</td>
+      <td>(vacío)</td>
+      <td>No disponible.</td>
+    </tr>
+    <tr>
+      <td><strong>contacto_fax</strong></td>
+      <td>string</td>
+      <td>918122834</td>
+      <td>Fax válido.</td>
+    </tr>
+    <tr>
+      <td><strong>contacto_web</strong></td>
+      <td>URL</td>
+      <td>http://www.educa.madrid.org/cp.elalamo.elalamo</td>
+      <td>Página oficial.</td>
+    </tr>
+    <tr>
+      <td><strong>contacto_email1</strong></td>
+      <td>string(email)</td>
+      <td>cp.elalamo.elalamo@educa.madrid.org</td>
+      <td>Email válido.</td>
+    </tr>
+    <tr>
+      <td><strong>contacto_email2</strong></td>
+      <td>string(email)</td>
+      <td>(vacío)</td>
+      <td>No disponible.</td>
+    </tr>
+    <tr>
+      <td><strong>direccion_coor_x</strong></td>
+      <td>float</td>
+      <td>415961</td>
+      <td>Coordenada X (probablemente UTM/ETRS89).</td>
+    </tr>
+    <tr>
+      <td><strong>direccion_coor_y</strong></td>
+      <td>float</td>
+      <td>4453703</td>
+      <td>Coordenada Y. Convertir a WGS84 para RDF.</td>
+    </tr>
+    <tr>
+      <td><strong>situación</strong></td>
+      <td>string(enum)</td>
+      <td>ALTA</td>
+      <td>Estado del centro.</td>
+    </tr>
+    <tr>
+      <td><strong>fecha_constitución</strong></td>
+      <td>date</td>
+      <td>1900-01-01</td>
+      <td>Fecha de constitución. Formato ISO.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2.2 Calidad y limpieza</h3>
+<ul>
+    <li>Normalización de municipio/distrito:</strong> Resolver variantes (“Acebeda, La” → “La Acebeda”).</li>
+    <li>Teléfonos: Convertir “0” a nulo; validar longitud y prefijo (+34/9xx/6xx).</li>
+    <li>Coordenadas: Confirmar CRS de <code>direccion_coor_x/y</code> (ETRS89/UTM zona 30) y transformar a WGS84 si se van a usar como lat/long.</li>
+    <li>Situación: Filtrar “BAJA” si la aplicación solo muestra activos.</li>
+</ul>
+
+<h2>3. Análisis de licencia y derechos</h2>
+  <ul>
+    <li><strong>Publisher:</strong> Comunidad de Madrid (portal de datos abiertos).</li>
+    <li><strong>Titular de derechos (Rightsholder):</strong> Comunidad de Madrid (salvo indicación específica en la ficha del conjunto).</li>
+    <li><strong>Licencia del dataset fuente:</strong> CC BY 4.0 — requiere atribución y referencia a la licencia.</li>
+    <li><strong>Licencia propuesta para el dataset generado (RDF):</strong> CC BY 4.0, manteniendo la atribución a la Comunidad de Madrid y señalando que se trata de una transformación.</li>
+    <li><strong>Metadatos de licencia:</strong> Incluir <code>dcterms:license</code> (URL CC BY), <code>dcterms:rights</code> (“© Comunidad de Madrid”), y <code>dcterms:source</code> (URL del catálogo) en el RDF y en la página del dataset.</li>
+  </ul>
+
+<h2>4. Estrategia de URIs</h2>
+<ul>
+  <li><strong>Dominio:</strong> http://smartcity.es/group03</li>
+  <li><strong>Ontología:</strong> /ontology#</li>
+  <li><strong>Identificadores:</strong> 
+  <br/>Centros educativos → /id/centroEducativo/{codigoCentro} 
+  <br/>Municipios → /id/Municipio/{slug} 
+  <br/>Distritos → /id/Distrito/{slug} (Sólo en Madrid capital)
+  </li>
+  <li><strong>Slugs:</strong> minúsculas, sin tildes ni comas (ej. la-acebeda)</li>
+  <li><strong>Estabilidad:</strong> usar <code>centro_codigo</code> como base</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,81 @@
+@prefix ns:   <https://datos.grupo08-2025-cdia.org/ontology/bicimad#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+
+<https://datos.grupo08-2025-cdia.org/ontology/bicimad> a owl:Ontology ;
+    rdfs:label "BiciMAD lightweight ontology"@en ;
+    rdfs:comment "Ontología sencilla para estaciones de BiciMAD."@es .
+
+
+ns:Station  a owl:Class ;
+    rdfs:label "Station"@en ;
+    rdfs:comment "Estación de BiciMAD."@es .
+
+ns:Location a owl:Class ;
+    rdfs:label "Location"@en ;
+    rdfs:comment "Coordenadas geográficas de una estación."@es .
+
+
+ns:hasLocation a owl:ObjectProperty ;
+    rdfs:label "ubicación"@es ;
+    rdfs:domain ns:Station ;
+    rdfs:range  ns:Location .
+
+# propiedades (Station)
+
+ns:hasIdStation a owl:DatatypeProperty ;
+    rdfs:label "id de la estación"@es ;
+    rdfs:domain ns:Station ;
+    rdfs:range  xsd:string .
+
+ns:hasName a owl:DatatypeProperty ;
+    rdfs:label "nombre"@es ;
+    rdfs:domain ns:Station ;
+    rdfs:range  xsd:string .
+
+ns:hasAddress a owl:DatatypeProperty ;
+    rdfs:label "dirección"@es ;
+    rdfs:domain ns:Station ;
+    rdfs:range  xsd:string .
+
+ns:hasDockBikes a owl:DatatypeProperty ;
+    rdfs:label "bicicletas enganchadas"@es ;
+    rdfs:domain ns:Station ;
+    rdfs:range  xsd:integer .
+
+ns:hasFreeBases a owl:DatatypeProperty ;
+    rdfs:label "bases libres"@es ;
+    rdfs:domain ns:Station ;
+    rdfs:range  xsd:integer .
+
+ns:hasTotalBases a owl:DatatypeProperty ;
+    rdfs:label "bases totales"@es ;
+    rdfs:domain ns:Station ;
+    rdfs:range  xsd:integer .
+
+ns:hasEstado a owl:DatatypeProperty ;
+    rdfs:label "estado"@es ;
+    rdfs:domain ns:Station ;
+    rdfs:range  xsd:string .
+
+ns:hasNoAvailable a owl:DatatypeProperty ;
+    rdfs:label "estaciones no disponibles"@es ;
+    rdfs:domain ns:Station ;
+    rdfs:range  xsd:string .
+
+
+
+# propiedades (Location)
+
+ns:hasLatitude a owl:DatatypeProperty ;
+    rdfs:label "latitud"@es ;
+    rdfs:domain ns:Location ;
+    rdfs:range  xsd:float .
+
+ns:hasLongitude a owl:DatatypeProperty ;
+    rdfs:label "longitud"@es ;
+    rdfs:domain ns:Location ;
+    rdfs:range  xsd:float .

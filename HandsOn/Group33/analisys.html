@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Análisis del Dataset y Estrategia RDF - Visualizador de Tráfico de Madrid</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; color: #222; line-height: 1.6; }
+    h1, h2, h3 { color: #003366; }
+    ul { margin-left: 20px; }
+    section { background: #fff; padding: 20px; margin-bottom: 20px; border-left: 5px solid #003366; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    pre, code { background: #f0f0f0; padding: 3px 6px; border-radius: 4px; display: block; overflow-x: auto; }
+    a { color: #003366; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer { font-size: 0.9em; color: #555; margin-top: 30px; text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>Análisis del Dataset y Estrategia de Nomenclatura RDF</h1>
+
+  <section>
+    <h2>1. Fuente de datos analizada</h2>
+    <p>El conjunto de datos utilizado procede del portal oficial de <a href="https://datos.madrid.es/portal/site/egob" target="_blank"><strong>Datos Abiertos del Ayuntamiento de Madrid</strong></a>. 
+    Se trata del dataset <strong>“Aforos de tráfico en la ciudad de Madrid (estaciones permanentes)”</strong>, correspondiente al mes de marzo de 2025.</p>
+
+    <ul>
+      <li><strong>Archivo base:</strong> <em>DATOS_ESTACIONES_MARZO_2025.csv</em></li>
+      <li><strong>Formato:</strong> CSV (valores separados por comas)</li>
+      <li><strong>Frecuencia de actualización:</strong> mensual</li>
+      <li><strong>Campos principales:</strong> código de estación, nombre, coordenadas (latitud, longitud), intensidad, ocupación, velocidad media, fecha y hora.</li>
+      <li><strong>Dominio Smart City:</strong> movilidad y transporte urbano.</li>
+    </ul>
+
+    <p>El dataset cumple los requisitos esenciales para su transformación a RDF: formato estructurado, licencia abierta y datos vinculables mediante coordenadas geográficas. 
+    Su calidad y consistencia permiten analizar la evolución del tráfico en distintos puntos de Madrid.</p>
+  </section>
+
+  <section>
+    <h2>2. Licencia de uso y condiciones de reutilización</h2>
+    <p>Los datos están publicados bajo una <strong>licencia abierta</strong> de reutilización de la información del sector público, conforme a la Ordenanza de Transparencia y Reutilización de Datos del Ayuntamiento de Madrid.</p>
+    <ul>
+      <li>✔ <strong>Permite:</strong> copiar, distribuir, modificar y reutilizar los datos libremente, tanto para fines comerciales como no comerciales.</li>
+      <li>⚠ <strong>Requiere:</strong> citar la fuente como “Ayuntamiento de Madrid. Datos Abiertos”.</li>
+      <li>✖ <strong>No permite:</strong> dar a entender respaldo institucional ni usar logotipos oficiales sin autorización.</li>
+    </ul>
+    <p>Más información: <a href="https://datos.madrid.es/egob/catalogo/aviso-legal" target="_blank">Aviso legal del portal datos.madrid.es</a></p>
+  </section>
+
+  <section>
+    <h2>3. Estrategia de nomenclatura de recursos RDF</h2>
+    <p>Para garantizar la identificación unívoca, la interoperabilidad y la persistencia de los recursos, se ha definido una estrategia de nomenclatura basada en URIs dereferenciables. 
+    Esta sigue las buenas prácticas de Linked Data recomendadas por W3C.</p>
+
+    <h3>3.1 Espacios de nombres utilizados</h3>
+    <pre>
+@prefix ex: &lt;https://groupxx.github.io/trafico-madrid/&gt; .
+@prefix schema: &lt;http://schema.org/&gt; .
+@prefix geo: &lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+    </pre>
+
+    <h3>3.2 Patrones de URIs</h3>
+    <ul>
+      <li><strong>Estaciones:</strong> <code>https://groupxx.github.io/trafico-madrid/estacion/{codigo}</code></li>
+      <li><strong>Mediciones:</strong> <code>https://groupxx.github.io/trafico-madrid/medicion/{codigoEstacion}/{fecha}</code></li>
+      <li><strong>Propiedades y conceptos:</strong> definidos bajo el mismo namespace <code>ex:</code></li>
+    </ul>
+
+    <h3>3.3 Ejemplo RDF (Turtle)</h3>
+    <pre>
+ex:estacion_0153 a schema:Place ;
+    schema:name "Estación 0153 - Castellana Norte" ;
+    geo:lat "40.4761"^^xsd:float ;
+    geo:long "-3.6892"^^xsd:float ;
+    dcterms:identifier "0153" ;
+    schema:address "Av. Castellana Norte" .
+
+ex:medicion_0153_2025-03-15T08:00 a ex:Medicion ;
+    ex:enEstacion ex:estacion_0153 ;
+    ex:intensidad 820 ;
+    ex:velocidadMedia 34 ;
+    ex:ocupacion 52 ;
+    dcterms:date "2025-03-15T08:00:00"^^xsd:dateTime .
+    </pre>
+
+    <p>Este modelo RDF permite consultas semánticas sobre las estaciones y sus mediciones mediante un endpoint SPARQL, 
+    y facilita la vinculación con recursos externos como <em>Wikidata</em> o <em>Geonames</em>.</p>
+  </section>
+
+  <section>
+    <h2>4. Conclusión</h2>
+    <p>El dataset seleccionado presenta las condiciones ideales para su publicación como datos enlazados: 
+    origen institucional fiable, licencia abierta y estructura coherente. 
+    La estrategia de nomenclatura definida asegura la interoperabilidad y el acceso semántico a las mediciones de tráfico en Madrid.</p>
+  </section>
+
+  <div class="footer">
+    <p><em>Documento elaborado por GroupXX – Hands-on 1 – Análisis del dataset y nomenclatura RDF</em></p>
+  </div>
+</body>
+</html>

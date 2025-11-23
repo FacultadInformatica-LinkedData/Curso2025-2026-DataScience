@@ -1,0 +1,126 @@
+@prefix : <http://groupXX.linkeddata.es/accidentes/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://groupXX.linkeddata.es/accidentes/ontology/> .
+
+<http://groupXX.linkeddata.es/accidentes/ontology> rdf:type owl:Ontology ;
+    rdfs:label "Ontología de Accidentes de Tráfico en Madrid 2025"@es .
+
+#Tipos de datos
+xsd:date rdf:type rdfs:Datatype .
+
+#Propiedades
+:involucraPersona rdf:type owl:ObjectProperty ;
+    rdfs:domain :Accidente ;
+    rdfs:range :Persona ;
+    rdfs:label "involucra a persona"@es .
+
+:involucraVehiculo rdf:type owl:ObjectProperty ;
+    rdfs:domain :Accidente ;
+    rdfs:range :Vehiculo ;
+    rdfs:label "involucra a vehículo"@es .
+
+:ocurreEn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Accidente ;
+    rdfs:range :Distrito ;
+    rdfs:label "ocurre en distrito"@es .
+
+:tieneCondicionMeteorologica rdf:type owl:ObjectProperty ;
+    rdfs:domain :Accidente ;
+    rdfs:range :Clima ;
+    rdfs:label "presenta condición meteorológica"@es .
+
+:tieneLesion rdf:type owl:ObjectProperty ;
+    rdfs:domain :Persona ;
+    rdfs:range :Lesion ;
+    rdfs:label "presenta lesión"@es .
+
+:tieneRangoEdad rdf:type owl:ObjectProperty ;
+    rdfs:domain :Persona ;
+    rdfs:range :RangoEdad ;
+    rdfs:label "rango de edad"@es .
+
+:tieneCoordenadaX rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Accidente ;
+    rdfs:range xsd:float ;
+    rdfs:label "coordenada X"@es .
+
+:tieneCoordenadaY rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Accidente ;
+    rdfs:range xsd:float ;
+    rdfs:label "coordenada Y"@es .
+
+:tieneFecha rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Accidente ;
+    rdfs:range xsd:date ;
+    rdfs:label "fecha del accidente"@es .
+
+:tieneHora rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Accidente ;
+    rdfs:range xsd:string ;
+    rdfs:label "hora del accidente"@es .
+
+:tienePositivoAlcohol rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Persona ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "positivo en alcohol"@es .
+
+:tienePositivoDroga rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Persona ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "positivo en drogas"@es .
+
+:tieneSexo rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Persona ;
+    rdfs:range xsd:string ;
+    rdfs:label "sexo"@es .
+
+#Principal
+:Accidente rdf:type owl:Class ;
+    rdfs:label "Accidente de tráfico"@es ;
+    rdfs:subClassOf 
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :involucraPersona ;
+          owl:someValuesFrom :Persona
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :involucraVehiculo ;
+          owl:someValuesFrom :Vehiculo
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :ocurreEn ;
+          owl:someValuesFrom :Distrito
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :tieneCondicionMeteorologica ;
+          owl:someValuesFrom :Clima
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :tieneFecha ;
+          owl:someValuesFrom xsd:date
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :tieneHora ;
+          owl:someValuesFrom xsd:string
+        ] .
+
+:Persona rdf:type owl:Class ;
+    rdfs:label "Persona implicada"@es .
+
+:Vehiculo rdf:type owl:Class ;
+    rdfs:label "Tipo de vehículo"@es .
+
+:Distrito rdf:type owl:Class ;
+    rdfs:label "Distrito municipal"@es .
+
+:Clima rdf:type owl:Class ;
+    rdfs:label "Condición atmosférica"@es .
+
+:Lesion rdf:type owl:Class ;
+    rdfs:label "Tipo de lesión"@es .
+
+:RangoEdad rdf:type owl:Class ;
+    rdfs:label "Franja de edad"@es .

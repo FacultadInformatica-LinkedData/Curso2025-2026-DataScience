@@ -1,0 +1,679 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Hands-on 2 — analysis.html (Group10)</title>
+  <style>
+    body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; max-width: 880px; margin: 32px auto; padding: 0 12px; line-height: 1.55; }
+    h1,h2,h3 { line-height: 1.25; }
+    code, pre { background:#f6f8fa; padding:2px 6px; border-radius:6px; }
+    table { border-collapse: collapse; width: 100%; margin: 8px 0 18px; font-size: 14px; }
+    th, td { border: 1px solid #e5e7eb; padding: 6px 8px; text-align: left; }
+    .note { background:#f9fafb; border-left:4px solid #3b82f6; padding:10px 12px; border-radius:6px; }
+  </style>
+</head>
+<body>
+<h1>Hands-on 2 — Análisis, Licencias y Resource Naming Strategy</h1>
+<p><strong>Grupo:</strong> Group10 — Mohamed Khachani, Kleart Laci, David García Ropero</p>
+
+<h2>1. Resumen rápido</h2>
+<p>Trabajamos con dos datasets del Ayuntamiento de Madrid: aforos de tráfico (estaciones permanentes, marzo 2025) y puntos públicos de recarga EV. El objetivo es entender bien las columnas y valores, dejar clara la parte de licencias y fijar una <em>naming strategy</em> simple para nuestras URIs.</p>
+
+<h2>2. Análisis del Dataset 1 — Aforos de tráfico</h2>
+<p><strong>Filas:</strong> 24370 · <strong>Columnas:</strong> 16</p>
+<h3>2.1 Columnas</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columnas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>﻿FDIA</td>
+    </tr>
+    <tr>
+      <td>FEST</td>
+    </tr>
+    <tr>
+      <td>FSEN</td>
+    </tr>
+    <tr>
+      <td>HOR1</td>
+    </tr>
+    <tr>
+      <td>HOR2</td>
+    </tr>
+    <tr>
+      <td>HOR3</td>
+    </tr>
+    <tr>
+      <td>HOR4</td>
+    </tr>
+    <tr>
+      <td>HOR5</td>
+    </tr>
+    <tr>
+      <td>HOR6</td>
+    </tr>
+    <tr>
+      <td>HOR7</td>
+    </tr>
+    <tr>
+      <td>HOR8</td>
+    </tr>
+    <tr>
+      <td>HOR9</td>
+    </tr>
+    <tr>
+      <td>HOR10</td>
+    </tr>
+    <tr>
+      <td>HOR11</td>
+    </tr>
+    <tr>
+      <td>HOR12</td>
+    </tr>
+    <tr>
+      <td>Unnamed: 15</td>
+    </tr>
+  </tbody>
+</table>
+<h3>2.2 Vista previa</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>﻿FDIA</th>
+      <th>FEST</th>
+      <th>FSEN</th>
+      <th>HOR1</th>
+      <th>HOR2</th>
+      <th>HOR3</th>
+      <th>HOR4</th>
+      <th>HOR5</th>
+      <th>HOR6</th>
+      <th>HOR7</th>
+      <th>HOR8</th>
+      <th>HOR9</th>
+      <th>HOR10</th>
+      <th>HOR11</th>
+      <th>HOR12</th>
+      <th>Unnamed: 15</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01/03/2025</td>
+      <td>ES01</td>
+      <td>1-</td>
+      <td>729.0</td>
+      <td>588.0</td>
+      <td>421.0</td>
+      <td>423.0</td>
+      <td>414.0</td>
+      <td>356.0</td>
+      <td>254.0</td>
+      <td>315.0</td>
+      <td>544.0</td>
+      <td>709.0</td>
+      <td>895.0</td>
+      <td>1126.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>01/03/2025</td>
+      <td>ES01</td>
+      <td>1=</td>
+      <td>1297.0</td>
+      <td>1417.0</td>
+      <td>843.0</td>
+      <td>920.0</td>
+      <td>1062.0</td>
+      <td>1086.0</td>
+      <td>1155.0</td>
+      <td>1276.0</td>
+      <td>1158.0</td>
+      <td>877.0</td>
+      <td>893.0</td>
+      <td>939.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>01/03/2025</td>
+      <td>ES01</td>
+      <td>2-</td>
+      <td>638.0</td>
+      <td>496.0</td>
+      <td>345.0</td>
+      <td>309.0</td>
+      <td>300.0</td>
+      <td>358.0</td>
+      <td>302.0</td>
+      <td>377.0</td>
+      <td>589.0</td>
+      <td>853.0</td>
+      <td>1107.0</td>
+      <td>1221.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>01/03/2025</td>
+      <td>ES01</td>
+      <td>2=</td>
+      <td>1309.0</td>
+      <td>1181.0</td>
+      <td>895.0</td>
+      <td>973.0</td>
+      <td>1076.0</td>
+      <td>1065.0</td>
+      <td>1049.0</td>
+      <td>1042.0</td>
+      <td>878.0</td>
+      <td>830.0</td>
+      <td>745.0</td>
+      <td>799.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>01/03/2025</td>
+      <td>ES02</td>
+      <td>1-</td>
+      <td>412.0</td>
+      <td>405.0</td>
+      <td>351.0</td>
+      <td>275.0</td>
+      <td>275.0</td>
+      <td>278.0</td>
+      <td>276.0</td>
+      <td>198.0</td>
+      <td>236.0</td>
+      <td>278.0</td>
+      <td>336.0</td>
+      <td>429.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>01/03/2025</td>
+      <td>ES02</td>
+      <td>1=</td>
+      <td>520.0</td>
+      <td>541.0</td>
+      <td>534.0</td>
+      <td>477.0</td>
+      <td>522.0</td>
+      <td>451.0</td>
+      <td>505.0</td>
+      <td>542.0</td>
+      <td>573.0</td>
+      <td>435.0</td>
+      <td>424.0</td>
+      <td>349.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<h3>2.3 Notas rápidas</h3>
+<ul>
+  <li>Varias columnas horarias (tipo <code>HOR1..</code>) y campos de día/estación (prefijo <code>F</code>).</li>
+  <li>Modelamos observaciones con una clase genérica <code>TrafficObservation</code> con fecha y recuento.</li>
+</ul>
+<h3>2.4 Estadísticos (numéricas)</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>HOR1</th>
+      <td>7316.0</td>
+      <td>666.244533</td>
+      <td>1007.259893</td>
+      <td>0.0</td>
+      <td>134.0</td>
+      <td>366.0</td>
+      <td>821.00</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>HOR2</th>
+      <td>7316.0</td>
+      <td>637.669765</td>
+      <td>1031.298861</td>
+      <td>0.0</td>
+      <td>89.0</td>
+      <td>323.0</td>
+      <td>800.00</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>HOR3</th>
+      <td>7316.0</td>
+      <td>597.674959</td>
+      <td>1078.200949</td>
+      <td>0.0</td>
+      <td>67.0</td>
+      <td>281.0</td>
+      <td>733.00</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>HOR4</th>
+      <td>7316.0</td>
+      <td>578.648852</td>
+      <td>1087.761345</td>
+      <td>0.0</td>
+      <td>61.0</td>
+      <td>258.0</td>
+      <td>700.00</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>HOR5</th>
+      <td>7316.0</td>
+      <td>574.058639</td>
+      <td>1018.205915</td>
+      <td>0.0</td>
+      <td>68.0</td>
+      <td>264.0</td>
+      <td>714.25</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>HOR6</th>
+      <td>7316.0</td>
+      <td>633.029798</td>
+      <td>1005.642068</td>
+      <td>0.0</td>
+      <td>119.0</td>
+      <td>351.0</td>
+      <td>779.00</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>HOR7</th>
+      <td>7316.0</td>
+      <td>756.352652</td>
+      <td>1059.760747</td>
+      <td>0.0</td>
+      <td>179.0</td>
+      <td>481.5</td>
+      <td>997.25</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>HOR8</th>
+      <td>7316.0</td>
+      <td>887.083242</td>
+      <td>1211.847900</td>
+      <td>0.0</td>
+      <td>247.0</td>
+      <td>575.0</td>
+      <td>1137.00</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>HOR9</th>
+      <td>7316.0</td>
+      <td>879.728130</td>
+      <td>1219.330250</td>
+      <td>0.0</td>
+      <td>269.0</td>
+      <td>557.0</td>
+      <td>1050.00</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>HOR10</th>
+      <td>7316.0</td>
+      <td>807.490432</td>
+      <td>1205.056512</td>
+      <td>0.0</td>
+      <td>247.0</td>
+      <td>491.0</td>
+      <td>908.25</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>HOR11</th>
+      <td>7316.0</td>
+      <td>741.515992</td>
+      <td>1088.426990</td>
+      <td>0.0</td>
+      <td>212.0</td>
+      <td>439.0</td>
+      <td>860.00</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>HOR12</th>
+      <td>7316.0</td>
+      <td>690.099098</td>
+      <td>997.172224</td>
+      <td>0.0</td>
+      <td>181.0</td>
+      <td>407.0</td>
+      <td>827.00</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>Unnamed: 15</th>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<h3>2.5 Rango de fechas (si se detecta)</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>columna</th>
+      <th>min</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>﻿FDIA</td>
+      <td>2025-03-01</td>
+      <td>2025-03-31</td>
+    </tr>
+  </tbody>
+</table>
+<h2>3. Análisis del Dataset 2 — Puntos de recarga EV</h2>
+<p><strong>Filas:</strong> 113 · <strong>Columnas:</strong> 14</p>
+<h3>3.1 Columnas</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columnas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>﻿COD_DIS</td>
+    </tr>
+    <tr>
+      <td>DISTRITO</td>
+    </tr>
+    <tr>
+      <td>COD_BAR</td>
+    </tr>
+    <tr>
+      <td>BARRIO</td>
+    </tr>
+    <tr>
+      <td>UBICACIÓN</td>
+    </tr>
+    <tr>
+      <td>EMPLAZAMIE</td>
+    </tr>
+    <tr>
+      <td>INFO_ADICI</td>
+    </tr>
+    <tr>
+      <td>Nº_EQUIPO</td>
+    </tr>
+    <tr>
+      <td>CARACTERÍ</td>
+    </tr>
+    <tr>
+      <td>OPERADOR</td>
+    </tr>
+    <tr>
+      <td>HORARIO</td>
+    </tr>
+    <tr>
+      <td>GESTIÓN</td>
+    </tr>
+    <tr>
+      <td>POINT_X</td>
+    </tr>
+    <tr>
+      <td>POINT_Y</td>
+    </tr>
+  </tbody>
+</table>
+<h3>3.2 Vista previa</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>﻿COD_DIS</th>
+      <th>DISTRITO</th>
+      <th>COD_BAR</th>
+      <th>BARRIO</th>
+      <th>UBICACIÓN</th>
+      <th>EMPLAZAMIE</th>
+      <th>INFO_ADICI</th>
+      <th>Nº_EQUIPO</th>
+      <th>CARACTERÍ</th>
+      <th>OPERADOR</th>
+      <th>HORARIO</th>
+      <th>GESTIÓN</th>
+      <th>POINT_X</th>
+      <th>POINT_Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Arganzuela</td>
+      <td>1</td>
+      <td>Imperial</td>
+      <td>Calle Chulapos s/n</td>
+      <td>Vía pública</td>
+      <td>-</td>
+      <td>1</td>
+      <td>50 kW 2 conectores CC (CCS/Chademo) y 1 conector AC modo 2 Mennekes</td>
+      <td>REPSOL</td>
+      <td>24</td>
+      <td>Convenio vía pública</td>
+      <td>438893,729999999981374</td>
+      <td>4473226,259999999776483</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Arganzuela</td>
+      <td>6</td>
+      <td>Palos de Moguer</td>
+      <td>Ronda de Valencia 1</td>
+      <td>Vía pública</td>
+      <td>-</td>
+      <td>1</td>
+      <td>50 kW 2 conectores CC (CCS/Chademo) y 1 conector AC modo 2 Mennekes</td>
+      <td>GIC</td>
+      <td>24</td>
+      <td>Convenio vía pública</td>
+      <td>440624,229999999981374</td>
+      <td>4473016,219999999739230</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Retiro</td>
+      <td>2</td>
+      <td>Adelfas</td>
+      <td>Calle Cerro de la Plata 4</td>
+      <td>Vía pública</td>
+      <td>-</td>
+      <td>1</td>
+      <td>50 kW 2 conectores CC (CCS/Chademo) y 1 conector AC modo 2 Mennekes</td>
+      <td>GIC</td>
+      <td>24</td>
+      <td>Convenio vía pública</td>
+      <td>442701,580000000016298</td>
+      <td>4472363,009999999776483</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Retiro</td>
+      <td>5</td>
+      <td>Jerónimos</td>
+      <td>Calle Alfonso XII, 2</td>
+      <td>Vía pública</td>
+      <td>-</td>
+      <td>1</td>
+      <td>50 kW 2 conectores CC (CCS/Chademo) y 1 conector AC modo 2 Mennekes</td>
+      <td>REPSOL</td>
+      <td>24</td>
+      <td>Convenio vía pública</td>
+      <td>441553,760000000009313</td>
+      <td>4474522,809999999590218</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Salamanca</td>
+      <td>1</td>
+      <td>Recoletos</td>
+      <td>Calle Goya 36</td>
+      <td>Vía pública</td>
+      <td>-</td>
+      <td>1</td>
+      <td>50 kW 2 conectores CC (CCS/Chademo) y 1 conector AC modo 2 Mennekes</td>
+      <td>GIC</td>
+      <td>24</td>
+      <td>Convenio vía pública</td>
+      <td>442227,270000000018626</td>
+      <td>4475141,530000000260770</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Salamanca</td>
+      <td>2</td>
+      <td>Goya</td>
+      <td>Calle Goya 123</td>
+      <td>Vía pública</td>
+      <td>-</td>
+      <td>1</td>
+      <td>50 kW 2 conectores CC (CCS/Chademo) y 1 conector AC modo 2 Mennekes</td>
+      <td>REPSOL</td>
+      <td>24</td>
+      <td>Convenio vía pública</td>
+      <td>443066,590000000025611</td>
+      <td>4475108,889999999664724</td>
+    </tr>
+  </tbody>
+</table>
+<h3>3.3 Notas rápidas</h3>
+<ul>
+  <li>Tiene <em>Distrito</em>/<em>Barrio</em>, ubicación, operador. Para coordenadas, usaremos <code>wgs84_pos:lat</code>/<code>wgs84_pos:long</code>.</li>
+  <li>El identificador del punto se usará para construir URIs estables.</li>
+</ul>
+
+<h2>4. Licencias</h2>
+
+<p>Distinguimos tres elementos con régimen distinto: (1) el dataset original del Ayuntamiento de Madrid, (2) nuestro dataset resultante en RDF (la conversión a Linked Data) y (3) la ontología que hemos definido.</p>
+
+<h3>4.1 Fuentes y obligación de atribución</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Componente</th>
+      <th>URL fuente</th>
+      <th>Condición de licencia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Dataset 1 — Aforos de tráfico (marzo 2025)</td>
+      <td><a href="https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default&vgnextoid=fabbf3e1de124610VgnVCM2000001f4a900aRCRD">URL Del Dataset</a></td>
+      <td>Reutilización permitida con obligación de citar la fuente oficial</td>
+
+    </tr>
+    <tr>
+      <td>Dataset 2 — Puntos públicos de recarga EV</td>
+      <td><a href="https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=4a29c987781b8410VgnVCM1000000b205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD">URL Del Dataset</a></td>
+      <td>Reutilización permitida con obligación de citar la fuente oficial</td>
+
+    </tr>
+  </tbody>
+</table>
+
+<h3>4.2 Licencias que aplicamos</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Componente</th>
+      <th>Licencia propuesta</th>
+      <th>Motivo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nuestro dataset RDF (resultado)</td>
+      <td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+      <td>Garantiza reutilización amplia y exige atribución (alineado con la política de reutilización del portal).</td>
+    </tr>
+    <tr>
+      <td>Ontología (vocabulario que definimos)</td>
+      <td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td>
+      <td>Facilita la adopción del vocabulario sin fricciones (práctica habitual en ontologías docentes).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>4.3 Compatibilidad y límites</h3>
+<ul>
+  <li><strong>Compatibilidad:</strong> Publicar la conversión RDF bajo <em>CC BY 4.0</em> es coherente con la reutilización con atribución exigida por la fuente.</li>
+  <li><strong>Sin endoso:</strong> La atribución no implica que el Ayuntamiento avale este trabajo.</li>
+  <li><strong>Sin garantías:</strong> Proyecto académico; puede contener errores. Si hay discrepancias, prevalece la publicación oficial.</li>
+</ul>
+
+
+<h2>5. Resource Naming Strategy</h2>
+<p>Dominio de grupo con rutas simples y consistentes.</p>
+<pre>
+Base: https://group10.linkeddata.es/
+
+Ontología:   https://group10.linkeddata.es/ontology/
+Instancias:  https://group10.linkeddata.es/resource/station/{stationId}
+             https://group10.linkeddata.es/resource/observation/{stationId}/{yyyy-mm}
+             https://group10.linkeddata.es/resource/charging-point/{id}
+</pre>
+<ul>
+  <li>IDs tomados del dataset original.</li>
+  <li>Minúsculas, guiones, sin tildes.</li>
+  <li>Dereferenciación por ahora estática (HTML/Turtle).</li>
+</ul>
+<h2>6. Ontología (ligera)</h2>
+
+<p>Archivo de la ontología: <code>ontology.ttl</code></p>
+
+<p>Hemos definido solo lo mínimo que necesitamos para representar estos dos datasets.</p>
+
+<p><strong>Clases principales:</strong></p>
+<ul>
+  <li><code>PermanentStation</code> → estación permanente de conteo de tráfico</li>
+  <li><code>TrafficObservation</code> → observación (ej. recuento en una fecha)</li>
+  <li><code>ChargingPoint</code> → punto público de recarga EV</li>
+  <li><code>District</code> → distrito municipal</li>
+</ul>
+
+<p><strong>Propiedades básicas:</strong></p>
+<ul>
+  <li><code>observedAtStation</code> (Observation → Station)</li>
+  <li><code>inDistrict</code> (Station → District)</li>
+  <li><code>vehicleCount</code>, <code>observationDate</code></li>
+  <li><code>hasStationId</code>, <code>hasPointId</code></li>
+</ul>
+
+<p><strong>Coordenadas:</strong> usamos las propiedades estándar de WGS84 (<code>wgs84_pos:lat</code>, <code>wgs84_pos:long</code>) en lugar de inventar nuevas.</p>
+
+
+</body>
+</html>

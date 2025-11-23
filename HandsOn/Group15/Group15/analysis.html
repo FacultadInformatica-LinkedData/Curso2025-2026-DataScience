@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>analysis.html – Hands-On 2 (Group15)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --ink:#0f172a; --muted:#475569; --line:#e5e7eb; --ok:#0b7; --warn:#c80; }
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:960px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:var(--ink)}
+    h1,h2{line-height:1.25}
+    h1{margin-bottom:.25rem}
+    h2{margin-top:2rem}
+    .grid{display:grid;gap:1rem}
+    .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card{border:1px solid var(--line);border-radius:14px;padding:1rem}
+    .mini{font-size:.95rem;color:var(--muted)}
+    table{width:100%;border-collapse:collapse;font-size:.95rem}
+    th,td{border:1px solid var(--line);padding:.5rem .6rem;vertical-align:top}
+    th{background:#fafafa;text-align:left}
+    code,kbd{background:#f6f7f9;border:1px solid var(--line);border-radius:6px;padding:.1rem .35rem}
+    .ok{color:var(--ok)} .warn{color:var(--warn)}
+    ul{margin:.25rem 0 .75rem 1.25rem}
+    .mono{font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace}
+    details{border:1px dashed var(--line);border-radius:10px;padding:.6rem 1rem;margin:.5rem 0}
+    summary{cursor:pointer;font-weight:600}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Hands-On 2 – Análisis & Estrategia</h1>
+  <p class="mini">Grupo 15 · Dataset: Bibliotecas y Bibliobuses de Madrid · Formato original: CSV</p>
+</header>
+
+<section class="card">
+  <h2>1. Análisis del conjunto de datos</h2>
+
+  <h3>1.1. Resumen</h3>
+  <ul>
+    <li><strong>Nº de registros:</strong> 50</li>
+    <li><strong>Nº de columnas:</strong> 32</li>
+    <li><strong>Ámbito:</strong> Ciudad de Madrid </li>
+    <li><strong>Coordenadas:</strong> latitud entre <code>40.3495</code> y <code>40.4904</code>; longitud entre <code>-3.7694</code> y <code>-3.5937</code></li>
+    <li><strong>Ubicabilidad:</strong> <em>0</em> latitud/longitud</li>
+    <li><strong>Wi-Fi :</strong> 48 de 50 mencionan Wi-Fi</li>
+  </ul>
+
+  <h3>1.2. Esquema (principales columnas)</h3>
+  <table>
+    <thead>
+      <tr><th>Columna</th><th>Tipo</th><th>Descripción / Uso RDF</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>PK</code></td><td>entero</td><td>Id numerico.</td></tr>
+      <tr><td><code>NOMBRE</code></td><td>texto</td><td>Nombre.</td></tr>
+      <tr><td><code>DESCRIPCION-ENTIDAD</code>, <code>DESCRIPCION</code></td><td>texto</td><td>Descripción libre.</td></tr>
+      <tr><td><code>HORARIO</code></td><td>texto</td><td>Franja horaria.</td></tr>
+      <tr><td><code>EQUIPAMIENTO</code></td><td>texto</td><td>Servicios disponibles (Wi-Fi, salas, etc.).</td></tr>
+      <tr><td><code>TRANSPORTE</code></td><td>texto</td><td>Acceso en transporte público.</td></tr>
+      <tr><td><code>ACCESIBILIDAD</code></td><td>texto</td><td>Códigos “1,6”, “1”, “1,5,6”, etc.</td></tr>
+      <tr><td><code>CONTENT-URL</code></td><td>URL</td><td>Página del recurso en <code>madrid.es</code>.</td></tr>
+      <tr><td><code>CLASE-VIAL</code>, <code>NOMBRE-VIA</code>, <code>TIPO-NUM</code>, <code>NUM</code>, <code>PLANTA</code>, etc.</td><td>mixto</td><td>Dirección postal.</td></tr>
+      <tr><td><code>LOCALIDAD</code>, <code>PROVINCIA</code>, <code>CODIGO-POSTAL</code></td><td>texto/entero</td><td>Ubicación administrativa/postal (CP entre 28002 y 28053).</td></tr>
+      <tr><td><code>COD-DISTRITO</code>, <code>DISTRITO</code>, <code>COD-BARRIO</code>, <code>BARRIO</code></td><td>mixto</td><td>Código del distrito y barrio.</td></tr>
+      <tr><td><code>COORDENADA-X</code>, <code>COORDENADA-Y</code></td><td>entero</td><td>Coordenadas .</td></tr>
+      <tr><td><code>LATITUD</code>, <code>LONGITUD</code></td><td>decimal</td><td>Coordenadas latitud longitud.</td></tr>
+      <tr><td><code>TELEFONO</code>, <code>FAX</code>, <code>EMAIL</code></td><td>texto</td><td>Contacto.</td></tr>
+      <tr><td><code>TIPO</code></td><td>texto</td><td>Publica.</td></tr>
+    </tbody>
+  </table>
+
+  <details>
+    <summary>Lista de distritos detectados</summary>
+    <div class="mono">ARGANZUELA · BARAJAS · CARABANCHEL · CENTRO · CHAMARTIN · CHAMBERI · CIUDAD LINEAL ·
+    FUENCARRAL-EL PARDO · HORTALEZA · LATINA · MONCLOA-ARAVACA · MORATALAZ · PUENTE DE VALLECAS ·
+    RETIRO · SALAMANCA · SAN BLAS-CANILLEJAS · TETUAN · USERA · VICALVARO · VILLA DE VALLECAS · VILLAVERDE</div>
+  </details>
+
+  <h3>1.3. Calidad de datos (rápida)</h3>
+  <ul>
+    <li><strong>Geometría:</strong> filas con latitud/longitud.</li>
+    <li><strong>Accesibilidad:</strong> valores tipo lista .</li>
+    <li><strong>Wi-Fi:</strong> buscar patrón en <code>EQUIPAMIENTO</code> "WIFI", "WI-FI".</li>
+    <li><strong>Direcciones:</strong> campos separados <em>vCard</em> o <em>schema:PostalAddress</em>.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>2. Análisis de licencia de la fuente</h2>
+  <p>El dataset procede del <strong>Ayuntamiento de Madrid</strong> (vía datos.gob.es y recurso en <code>madrid.es</code>). 
+  Suele regirse por la reutilización del sector público .</p>
+
+  <h3>2.1. Reutilización por nuestro grupo</h3>
+  <ul>
+    <li><strong>Atribución:</strong> citar “Ayuntamiento de Madrid – Portal de Datos Abiertos”.</li>
+    <li><strong>Integridad:</strong> naturalizar la información.</li>
+    <li><strong>Actualizaciones:</strong> indicar fecha de extracción y versión.</li>
+  </ul>
+
+  <h3>2.2. Licencia propuesta para los datos generados</h3>
+  <p>Para los datos RDF que generamos a partir del CSV original, usaremos la licencia Creative Commons Attribution 4.0 International (CC BY 4.0).</p>
+</section>
+
+<section class="card">
+  <h2>3. Estrategia de nombrado de recursos (URIs)</h2>
+
+  <h3>3.1. Dominio y rutas</h3>
+  <ul>
+    <li><strong>Dominio:</strong> <code>https://group15.linkeddata.es/</code>.</li>
+    <li><strong>Espacios:</strong> 
+      <code>/ontology/</code> para clases y propiedades y 
+      <code>/resource/</code> para instancias.</li>
+    </ul>
+
+  <h3>3.2. Patrones</h3>
+  <table>
+    <thead><tr><th>Recurso</th><th>Patrón de URI</th><th>Ejemplo</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Ontología (clase)</td>
+        <td><code>https://group15.linkeddata.es/ontology/bibliotecas#Biblioteca</code></td>
+        <td><code>...#Biblioteca</code>, <code>...#Distrito</code>, <code>...#Barrio</code>, <code>...#Direccion</code></td>
+      </tr>
+      <tr>
+        <td>Ontología (propiedad)</td>
+        <td><code>https://group15.linkeddata.es/ontology/bibliotecas#tieneWifi</code></td>
+        <td><code>...#estaEnDistrito</code>, <code>...#estaEnBarrio</code>, <code>...#tieneAccesibilidad</code></td>
+      </tr>
+      <tr>
+        <td>Instancia biblioteca</td>
+        <td><code>https://group15.linkeddata.es/resource/biblioteca/{PK}</code></td>
+        <td><code>.../resource/biblioteca/12345</code></td>
+      </tr>
+      <tr>
+        <td>Instancia distrito</td>
+        <td><code>https://group15.linkeddata.es/resource/distrito/{slug-distrito}</code></td>
+        <td><code>.../resource/distrito/puente-de-vallecas</code></td>
+      </tr>
+      <tr>
+        <td>Instancia barrio</td>
+        <td><code>https://group15.linkeddata.es/resource/barrio/{slug-barrio}</code></td>
+        <td><code>.../resource/barrio/pavones</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="mini">Notas: <em>{PK}</em> toma el id numérico del CSV; los <em>slug</em> se generan en minúsculas, sin acentos y con guiones.</p>
+
+  <h3>3.3. Negociación de contenido</h3>
+  <p>Si el servidor lo permite, servir HTML por defecto y RDF (Turtle/JSON-LD) por content negotiation.</p>
+</section>
+
+<section class="card">
+  <h2>4. Ontología (bosquejo para Hands-On 2)</h2>
+  <p>Nuestra ontología (ligera) está escrita en OWL usando el formato Turtle, y utilizamos el prefijo <code>bib:</code> que apunta al dominio <code>https://group15.linkeddata.es/ontology/bibliotecas#</code>.</p>
+  <div class="grid cols-2">
+    <div>
+      <h3>Clases</h3>
+      <ul>
+        <li><code>bib:Biblioteca</code></li>
+        <li><code>bib:Distrito</code>, <code>bib:Barrio</code></li>
+        <li><code>bib:Direccion</code></li>
+        <li><code>bib:Servicio</code></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Propiedades (ejemplos)</h3>
+      <ul>
+        <li><code>bib:estaEnDistrito</code> (dom: <code>Biblioteca</code>, ran: <code>Distrito</code>)</li>
+        <li><code>bib:estaEnBarrio</code> (dom: <code>Biblioteca</code>, ran: <code>Barrio</code>)</li>
+        <li><code>bib:tieneWifi</code> (dom: <code>Biblioteca</code>, ran: <code>xsd:boolean</code>)</li>
+        <li><code>bib:lat</code>, <code>bib:long</code> (ran: <code>xsd:decimal</code>) o usar <code>wgs84_pos</code></li>
+        <li><code>bib:telefono</code>, <code>bib:email</code></li>
+        <li><code>bib:tieneDireccion</code> → <code>Direccion</code> (calle, número, CP...)</li>
+      </ul>
+    </div>
+  </div>
+  <p>Para hacer que nuestra ontología sea interoperable con otras, vamos a reutilizar vocabularios estándar en lugar de inventar todos los términos nuevos.</p>
+</section>
+
+<section class="card">
+  <h2>5. Trazabilidad</h2>
+  <ul>
+    <li><strong>Fuente original:</strong> CSV “201747-0-bibliobuses-bibliotecas.csv”.</li>
+    <li><strong>Extracción/Análisis:</strong> limpieza básica (detección de Wi-Fi por texto en <code>EQUIPAMIENTO</code>), recuentos de distritos/barrios y rangos de coordenadas.</li>
+    <li><strong>Limitaciones:</strong> <code>ACCESIBILIDAD</code> codigos; <code>HORARIO</code>.</li>
+  </ul>
+</section>
+
+<footer class="mini" style="margin-top:2rem">
+  <p>Hands-On 2 · Group15 · Universidad Politécnica de Madrid</p>
+</footer>
+
+</body>
+</html>
+

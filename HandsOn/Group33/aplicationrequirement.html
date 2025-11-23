@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Requisitos de la aplicación - Visualizador de Tráfico de Madrid</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; color: #222; line-height: 1.6; }
+    h1, h2, h3 { color: #003366; }
+    ul { margin-left: 20px; }
+    section { background: #fff; padding: 20px; margin-bottom: 20px; border-left: 5px solid #003366; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    img { border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); margin-top: 10px; }
+    .footer { font-size: 0.9em; color: #555; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <h1>Requisitos de la aplicación: Visualizador de Tráfico de Madrid</h1>
+  <section>
+    <h2>1. Descripción general</h2>
+    <p>La aplicación propuesta, llamada <strong>“Visualizador de Tráfico de Madrid”</strong>, permitirá explorar y analizar la intensidad del tráfico en diferentes puntos de la ciudad mediante un <strong>mapa interactivo</strong> y gráficos temporales.
+    Se basa en los datos del archivo <em>DATOS_ESTACIONES_MARZO_2025.csv</em>, transformados a RDF y publicados como datos enlazados (Linked Data).</p>
+  </section>
+  <section>
+    <h2>2. Objetivos de la aplicación</h2>
+    <ul>
+      <li>Visualizar la intensidad del tráfico en tiempo real o histórico en Madrid.</li>
+      <li>Permitir comparaciones entre diferentes estaciones de medición.</li>
+      <li>Detectar zonas con mayor congestión o variaciones de tráfico.</li>
+      <li>Ofrecer consultas semánticas mediante un endpoint SPARQL.</li>
+      <li>Publicar los datos de manera abierta y reutilizable en formato RDF.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>3. Usuarios objetivo</h2>
+    <ul>
+      <li>Ciudadanos interesados en conocer el estado del tráfico.</li>
+      <li>Investigadores y estudiantes que analicen movilidad urbana.</li>
+      <li>Autoridades municipales para mejorar la planificación del transporte.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>4. Requisitos funcionales</h2>
+    <ul>
+      <li>Visualizar las estaciones de tráfico en un mapa de Madrid con indicadores de intensidad (color o tamaño del marcador).</li>
+      <li>Permitir filtrar por fecha, hora o zona de la ciudad.</li>
+      <li>Mostrar gráficos temporales de intensidad, velocidad y ocupación por estación.</li>
+      <li>Ofrecer búsqueda de estaciones por nombre, código o ubicación.</li>
+      <li>Consultar los datos mediante un endpoint SPARQL.</li>
+      <li>Permitir la descarga de datos en RDF o CSV.</li>
+      <li>Mostrar información detallada al hacer clic sobre una estación (coordenadas, valores recientes, sentido, etc.).</li>
+    </ul>
+  </section>
+  <section>
+    <h2>5. Requisitos no funcionales</h2>
+    <ul>
+      <li>Interfaz <strong>web responsive</strong> compatible con dispositivos móviles.</li>
+      <li>Tiempo de respuesta inferior a 3 segundos por consulta.</li>
+      <li>Datos actualizados semanalmente o mensualmente.</li>
+      <li>Interfaz accesible, multilingüe (español e inglés) y usable.</li>
+      <li>Código abierto y publicado en GitHub.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>6. Arquitectura propuesta</h2>
+    <ul>
+      <li><strong>Front-end:</strong> HTML5, CSS3, JavaScript, Leaflet.js (para mapas interactivos).</li>
+      <li><strong>Back-end:</strong> Servidor RDF (Apache Jena Fuseki o GraphDB) para consultas SPARQL.</li>
+      <li><strong>Datos:</strong> Dataset transformado de CSV → RDF con enlaces a Wikidata / Geonames.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>7. Mock-ups de la interfaz</h2>
+    <h3>Pantalla principal – Mapa de estaciones</h3>
+    <p>El usuario puede visualizar las estaciones sobre el mapa, con colores según la intensidad del tráfico.</p>
+    <img src="mockup_mapa.png" alt="Mapa con estaciones de tráfico" width="600">
+    <h3>Pantalla de detalle – Gráficos de intensidad</h3>
+    <p>Al seleccionar una estación, se muestran gráficos de intensidad, velocidad y ocupación a lo largo del tiempo.</p>
+    <img src="mockup_grafico.png" alt="Gráfico de intensidad de tráfico" width="600">
+    <h3>Pantalla de consulta avanzada – SPARQL</h3>
+    <p>Interfaz para ejecutar consultas SPARQL sobre el grafo RDF y visualizar los resultados en tabla o mapa.</p>
+    <img src="mockup_consulta.png" alt="Interfaz de consultas SPARQL" width="600">
+  </section>
+  <section>
+    <h2>8. Ejemplo de consultas SPARQL esperadas</h2>
+    <pre>
+# Estaciones con mayor intensidad media en marzo 2025
+SELECT ?estacion ?intensidadPromedio
+WHERE {
+  ?s a :Estacion ;
+     :nombre ?estacion ;
+     :intensidad ?valor .
+}
+GROUP BY ?estacion
+ORDER BY DESC(AVG(?valor))
+LIMIT 10
+    </pre>
+  </section>
+  <section>
+    <h2>9. Beneficios esperados</h2>
+    <ul>
+      <li>Transparencia y reutilización de datos públicos.</li>
+      <li>Apoyo a la movilidad sostenible en la ciudad.</li>
+      <li>Fomento de la cultura de datos abiertos y Linked Data.</li>
+    </ul>
+  </section>
+  <div class="footer">
+    <p><em>Documento elaborado por GroupXX – Hands-on 1 – Aplicación basada en datos RDF de tráfico en Madrid.</em></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+@prefix : <http://groupXX.linkeddata.es/resource/traffic/> .
+@prefix ont: <http://groupXX.linkeddata.es/ontology/traffic#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Ejemplo de una estación de tráfico y sus mediciones
+:estacion_001 rdf:type ont:Estacion ;
+    ont:codigoEstacion "001" ;
+    ont:nombreEstacion "Avenida de América - Estación 1" ;
+    ont:tieneUbicacion :ubicacion_001 ;
+    ont:tieneMedicion :medicion_001, :medicion_002 .
+
+:ubicacion_001 rdf:type ont:Ubicacion ;
+    ont:latitud 40.4392 ;
+    ont:longitud -3.6765 ;
+    ont:sentido "Entrada ciudad" .
+
+:medicion_001 rdf:type ont:Medicion ;
+    ont:intensidad 850 ;
+    ont:ocupacion 0.45 ;
+    ont:velocidad 38.5 ;
+    ont:fechaHora "2025-03-15T08:00:00"^^xsd:dateTime .
+
+:medicion_002 rdf:type ont:Medicion ;
+    ont:intensidad 1200 ;
+    ont:ocupacion 0.62 ;
+    ont:velocidad 28.7 ;
+    ont:fechaHora "2025-03-15T18:00:00"^^xsd:dateTime .

@@ -1,0 +1,697 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis del Dataset y Licenciamiento</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 20px;
+        }
+        /* Estilos generales de tabla y texto */
+        table {
+            border-collapse: collapse; /* Combina los bordes */
+            width: 100%;
+            border: 1px solid #ccc; /* Borde exterior */
+            margin-bottom: 40px; /* Espacio después de la tabla */
+        }
+        th, td {
+            border: 1px solid #ccc; /* Bordes para todas las celdas */
+            padding: 10px;
+            /* CAMBIO AQUÍ: Centrado del texto */
+            text-align: center; 
+            vertical-align: top; 
+        }
+        /* Estilo para la fila del encabezado */
+        thead th {
+            background-color: #e9e9e9;
+        }
+        /* Estilo para la primera columna */
+        tbody tr td:first-child {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        /* Para que las celdas vacías muestren el borde */
+        td:empty::after {
+            content: "\00a0"; /* Espacio sin ruptura */
+        }
+
+        /* Estilos específicos para la sección de Licencias */
+        #license-analysis {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 2px solid #333;
+        }
+        #license-analysis h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        #license-analysis h3 {
+            color: #555;
+            margin-top: 25px;
+        }
+        #license-analysis ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        #license-analysis em {
+            display: block;
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+            border-left: 3px solid #ccc;
+            padding-left: 10px;
+        }
+        
+        /* ------------------------------------------------------------------ */
+        /* --- ESTILOS DE LA SECCIÓN 3: ESTRATEGIA DE NOMBRADO (URI) --- */
+        /* ------------------------------------------------------------------ */
+
+        /* Estilos para la sección de Naming Strategy (añadidos o modificados) */
+        #naming-strategy {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 2px solid #333;
+        }
+        #naming-strategy h1, #naming-strategy h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        #naming-strategy h2 {
+            margin-top: 25px;
+            font-size: 1.3em;
+        }
+
+        /* Estilos específicos para el diagrama de URI */
+        .uri-diagram {
+            display: flex;
+            flex-wrap: wrap; 
+            align-items: center;
+            margin-top: 20px;
+            justify-content: center; 
+        }
+        .uri-box {
+            background-color: #f0f8ff; 
+            border: 1px solid #c0d8f0;
+            padding: 10px 15px;
+            margin: 4px; 
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.08);
+            font-size: 0.85em;
+            min-width: 100px; 
+            box-sizing: border-box;
+        }
+        /* Clases de color para diferenciar los bloques */
+        .uri-box.domain { background-color: #e0f2f7; }
+        .uri-box.path-segment { background-color: #d0edf5; }
+        .uri-box.ontology-model { background-color: #c0e6f0; }
+        .uri-box.class-name { background-color: #b0e0eb; }
+        
+        .uri-box strong {
+            display: block;
+            font-size: 1em;
+            margin-bottom: 3px;
+            color: #333;
+        }
+        .uri-box span.label {
+            font-size: 0.75em;
+            color: #666;
+        }
+        .plus-sign {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #555;
+            margin: 0 5px;
+        }
+
+        /* Ajustes para las tablas de la Estrategia URI */
+        #naming-strategy table {
+            margin-top: 20px;
+            width: 100%;
+        }
+        #naming-strategy table th, #naming-strategy table td {
+            text-align: left; /* Alineamos a la izquierda el contenido de estas tablas para mejor lectura */
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h1>Análisis del Conjunto de Datos</h1>
+
+    <h2>Análisis de Columnas de Datos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Columna</th>
+                <th>Tipo</th>
+                <th>Rango</th>
+                <th>Problemas</th>
+                <th>Comentarios</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Año</td><td>integer</td><td>2012-2020</td><td>-</td><td>-</td></tr>
+            <tr><td>Trimestre</td><td>integer</td><td>1-4</td><td>-</td><td>-</td></tr>
+            <tr><td>Barrio</td><td>string</td><td>-</td><td>No único, valores repetidos cada trimestre</td><td>No estan todos los barrios en todos los años</td></tr>
+            <tr><td>Nº Viviendas</td><td>integer</td><td>1-338</td><td>Minimo de 1 vivienda: hay barrios con muy pocas observaciones.</td><td>Hay algunos barrios con pocas viviendas en alquiler, lo que puede implicar que no se hayan estudiado todos los pisos</td></tr>
+            <tr><td>m2</td><td>integer</td><td>37-280</td><td>-</td><td>-</td></tr>
+            <tr><td>Dormitorios</td><td>float</td><td>1-5</td><td>-</td><td>-</td></tr>
+            <tr><td>Baños</td><td>float</td><td>1-4</td><td>Algunas filas vacías</td><td>-</td></tr>
+            <tr><td>Renta_min</td><td>integer</td><td>150-900</td><td>-</td><td>El valor mínimo de 150€ se puede explicar por el contexto económico en años iniciales o viviendas muy pequeñas/humildes.</td></tr>
+            <tr><td>Renta_med</td><td>integer</td><td>180-1050</td><td>-</td><td>-</td></tr>
+            <tr><td>Renta_max</td><td>integer</td><td>180-1600</td><td>-</td><td>El máximo de 1600€ refleja la existencia de viviendas premium en el dataset, aumentando la dispersión</td></tr>
+            <tr><td>Euros/m2</td><td>float</td><td>0-325</td><td>Hay valores sin sentido con valores de 0€/m2 o 300€/m2</td><td>Contiene comas (,) como separador decimal, lo que impide su uso directo como xsd:float.</td></tr>
+            <tr><td>Desv_Tip</td><td>float</td><td>0-460</td><td>Algunas filas vacías y desviaciones muy altas</td><td>Hay valores muy altos los cuales no tienen sentido</td></tr>
+        </tbody>
+    </table>
+
+    <section id="license-analysis">
+        <h1>Análisis de la Licencia del Conjunto de Datos</h1>
+
+        <h2>1. Publicador y titular de derechos</h2>
+        <p>
+            El conjunto de datos original ha sido publicado por una organización del <strong>Ayuntamiento de Alicante</strong>, 
+            por lo que se puede considerar que su titular de derechos es el propio organismo público responsable de su publicación.
+        </p>
+        
+        <h2>2. Licencia del conjunto de datos original</h2>
+        <p>
+            La licencia del dataset original permite:
+        </p>
+        <ul>
+            <li><strong>Compartir</strong> — copiar y redistribuir el material en cualquier medio o formato, incluso con fines comerciales.</li>
+            <li><strong>Adaptar</strong> — remezclar, transformar y construir a partir del material para cualquier propósito, incluso comercial.</li>
+        </ul>
+        <p>
+            Bajo las siguientes condiciones:
+        </p>
+        <ul>
+            <li><strong>Atribución</strong> — se debe dar crédito adecuado, proporcionar un enlace a la licencia e indicar si se realizaron cambios.</li>
+            <li>No aplicar restricciones adicionales que impidan legalmente a otros utilizar el material según la licencia.</li>
+        </ul>
+        <p>
+            <em>Explicación:</em> La licencia permite un uso amplio de los datos originales, incluso con fines comerciales o educativos, siempre que se cite correctamente la fuente y no se impongan restricciones adicionales.
+        </p>
+
+        <h2>3. Licencia propuesta para el conjunto de datos generado</h2>
+        <p>
+            Los datos procesados y generados por nuestro grupo se publicarán bajo la licencia 
+            <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong>, 
+            lo que permitirá que otros los utilicen, compartan y modifiquen, siempre reconociendo la autoría del grupo.
+        </p>
+        <p>
+            <em>Explicación:</em> Dado que nuestro dataset contiene valores incompletos o inconsistentes, es importante permitir modificaciones. Esta licencia asegura que los datos puedan ser reutilizados y corregidos por terceros, fomentando su aprovechamiento ético y responsable.
+        </p>
+    </section>
+
+    <section id="naming-strategy">
+        <h1>3. Estrategia de Nombrado de Recursos (URI)</h1>
+
+        <p>La estrategia de nombramiento se define siguiendo las directrices de la clase (Separación de Modelo e Instancias, Persistencia, Unicidad) y se basa exclusivamente en el <strong>modelo ontológico</strong> (prefijo <code>ns</code>) definido en el archivo <code>ontology.ttl</code>. La autoridad para las instancias no se define en esta etapa.</p>
+
+        <h2>3.1. Estructura y Componentes de los URIs Base</h2>
+        <p>El sistema solo define la autoridad para el Modelo, ya que las instancias de datos se generarán y se alojarán posteriormente. Se utiliza el formato <strong>Hash URI</strong> para el Modelo (`#`).</p>
+
+        <h3>URIs para Clases y Propiedades (Modelo/Ontología)</h3>
+        <p>La estructura se basa en el prefijo <strong><code>ns</code></strong> de la ontología (Ej: <code>http://smartcity.es/alquiler#Barrio</code>).</p>
+        <div class="uri-diagram">
+            <div class="uri-box domain">
+                <span class="label">Dominio</span>
+                <strong>http://smartcity.es/</strong>
+            </div>
+            <span class="plus-sign">+</span>
+            <div class="uri-box path-segment">
+                <span class="label">Ruta del Modelo</span>
+                <strong>alquiler</strong>
+            </div>
+            <span class="plus-sign">+</span>
+            <div class="uri-box ontology-model">
+                <span class="label">Hash URI</span>
+                <strong>#</strong>
+            </div>
+            <span class="plus-sign">+</span>
+            <div class="uri-box class-name">
+                <span class="label">Clase o Propiedad</span>
+                <strong>[ns:Nombre]</strong>
+            </div>
+        </div>
+
+        <p style="margin-top: 30px;">Los prefijos del modelo utilizados son:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Elemento</th>
+                    <th>URI Base (Namespace)</th>
+                    <th>Prefijo</th>
+                    <th>Uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Ontología (Modelo)</strong></td>
+                    <td><code>http://smartcity.es/alquiler#</code></td>
+                    <td><code>ns:</code></td>
+                    <td>Identifica Clases y Propiedades (ej: <code>ns:Barrio</code>) tal como se define en <code>ontology.ttl</code>.</td>
+                </tr>
+                <tr>
+                    <td>Vocabulario de Modularidad</td>
+                    <td><code>https://w3id.org/mod#</code></td>
+                    <td><code>mod:</code></td>
+                    <td>Usado para metadatos de creación del modelo.</td>
+                </tr>
+                <tr>
+                    <td>Marco de descripción de recursos</td>
+                    <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns</code></td>
+                    <td><code>rdf:</code></td>
+                    <td>Usado para describir nuestra Ontología</td>
+                </tr>
+                <tr>
+                    <td>Definición de esquema XML</td>
+                    <td><code>http://www.w3.org/2001/XMLSchema</code></td>
+                    <td><code>xsd:</code></td>
+                    <td>Usado para definir el tipo de cada elemento (xsd:string)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3.2. Patrones de Nombrado (Modelo Ontológico)</h2>
+        <p>Se eligen patrones <strong>significativos y persistentes</strong> que identifican unívocamente a cada elemento dentro del modelo.</p>
+
+        <h3>3.2.1. Clases y Propiedades (Ontología - Prefijo <code>ns</code>)</h3>
+        <ul>
+            <li><strong>Clases (Ej: <code>ns:Barrio</code>, <code>ns:Renta</code>):</strong> Se utiliza mayúscula inicial, singular y separación de palabras con "_" para los nombres de clases.</li>
+            <li><strong>Propiedades (Ej: <code>ns:tieneRentaMedia</code>, <code>ns:año_de_estudio</code>):</strong> Se utiliza minúsculas y separación de palabras con "_" para propiedades de Objeto y de Dato.</li>
+        </ul>
+        <p><strong>Justificación:</strong> El uso del <strong>Hash URI</strong> garantiza que la ontología completa sea accesible bajo un único recurso (<code>http://smartcity.es/alquiler</code>).</p>
+        <h3>3.2.2. Creación de Instancias (Patrón a Futuro)</h3>
+        <p>Aunque la ontología no contiene instancias, se define el patrón que se utilizará en la fase de transformación de datos para asegurar la unicidad y la persistencia de los recursos creados. Se utilizará un <strong>resource path</strong> diferenciado.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Entidad a Modelar</th>
+                    <th>Patrón de URI Propuesto</th>
+                    <th>Ejemplo de URI (a futuro)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Barrio</strong></td>
+                    <td><code>http://data.smartcity.es/alquiler/barrio/[nombre_normalizado]</code></td>
+                    <td><code>http://data.smartcity.es/alquiler/barrio/alipark</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Métrica Trimestral</strong></td>
+                    <td><code>http://data.smartcity.es/alquiler/metrica/[barrio]/[año]/[trimestre]</code></td>
+                    <td><code>http://data.smartcity.es/alquiler/metrica/alipark/2020/4</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3.3. Estrategia de Desreferenciación</h2>
+
+        <p>La desreferenciación es lo que hace que nuestros URIs (como <code>http://smartcity.es/alquiler#Barrio</code>) no sean solo un nombre, sino una dirección real en Internet a la que puedes "preguntar". Tienes que poder consultarlos para saber qué significan.</p>
+
+        <p>Como el que pregunta puede ser tanto una persona como una máquina, usamos la <strong>Negociación de Contenido</strong> para darles a cada uno lo que quiere.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Solicitud</th>
+                    <th>InPut</th>
+                    <th>OutPut</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>HTML</strong> (<code>text/html</code>)</td>
+                    <td><strong>Una persona</strong> (navegador)</td>
+                    <td>Una página web legible para el usuario (Documentación de la Ontología)</td>
+                </tr>
+                <tr>
+                    <td><strong>RDF/Turtle</strong> (<code>text/turtle</code>)</td>
+                    <td><strong>Un programa</strong> (software Linked Data)</td>
+                    <td>Se devuelve el <strong>Grafo RDF</strong> con la definición de la ontología (el código <code>.ttl</code>)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Esta estrategia aplica al <strong>Modelo (ns:)</strong> para asegurar que cualquiera que use el vocabulario obtenga la definición que necesita para la interoperabilidad.</p>
+    </section>
+</body>
+</html>
+
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis del Dataset y Licenciamiento</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 20px;
+        }
+        /* Estilos generales de tabla y texto */
+        table {
+            border-collapse: collapse; /* Combina los bordes */
+            width: 100%;
+            border: 1px solid #ccc; /* Borde exterior */
+            margin-bottom: 40px; /* Espacio después de la tabla */
+        }
+        th, td {
+            border: 1px solid #ccc; /* Bordes para todas las celdas */
+            padding: 10px;
+            /* CAMBIO AQUÍ: Centrado del texto */
+            text-align: center; 
+            vertical-align: top; 
+        }
+        /* Estilo para la fila del encabezado */
+        thead th {
+            background-color: #e9e9e9;
+        }
+        /* Estilo para la primera columna */
+        tbody tr td:first-child {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        /* Para que las celdas vacías muestren el borde */
+        td:empty::after {
+            content: "\00a0"; /* Espacio sin ruptura */
+        }
+
+        /* Estilos específicos para la sección de Licencias */
+        #license-analysis {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 2px solid #333;
+        }
+        #license-analysis h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        #license-analysis h3 {
+            color: #555;
+            margin-top: 25px;
+        }
+        #license-analysis ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        #license-analysis em {
+            display: block;
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+            border-left: 3px solid #ccc;
+            padding-left: 10px;
+        }
+        
+        /* ------------------------------------------------------------------ */
+        /* --- ESTILOS DE LA SECCIÓN 3: ESTRATEGIA DE NOMBRADO (URI) --- */
+        /* ------------------------------------------------------------------ */
+
+        /* Estilos para la sección de Naming Strategy (añadidos o modificados) */
+        #naming-strategy {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 2px solid #333;
+        }
+        #naming-strategy h1, #naming-strategy h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        #naming-strategy h2 {
+            margin-top: 25px;
+            font-size: 1.3em;
+        }
+
+        /* Estilos específicos para el diagrama de URI */
+        .uri-diagram {
+            display: flex;
+            flex-wrap: wrap; 
+            align-items: center;
+            margin-top: 20px;
+            justify-content: center; 
+        }
+        .uri-box {
+            background-color: #f0f8ff; 
+            border: 1px solid #c0d8f0;
+            padding: 10px 15px;
+            margin: 4px; 
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.08);
+            font-size: 0.85em;
+            min-width: 100px; 
+            box-sizing: border-box;
+        }
+        /* Clases de color para diferenciar los bloques */
+        .uri-box.domain { background-color: #e0f2f7; }
+        .uri-box.path-segment { background-color: #d0edf5; }
+        .uri-box.ontology-model { background-color: #c0e6f0; }
+        .uri-box.class-name { background-color: #b0e0eb; }
+        
+        .uri-box strong {
+            display: block;
+            font-size: 1em;
+            margin-bottom: 3px;
+            color: #333;
+        }
+        .uri-box span.label {
+            font-size: 0.75em;
+            color: #666;
+        }
+        .plus-sign {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #555;
+            margin: 0 5px;
+        }
+
+        /* Ajustes para las tablas de la Estrategia URI */
+        #naming-strategy table {
+            margin-top: 20px;
+            width: 100%;
+        }
+        #naming-strategy table th, #naming-strategy table td {
+            text-align: left; /* Alineamos a la izquierda el contenido de estas tablas para mejor lectura */
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h1>Análisis del Conjunto de Datos</h1>
+
+    <h2>Análisis de Columnas de Datos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Columna</th>
+                <th>Tipo</th>
+                <th>Rango</th>
+                <th>Problemas</th>
+                <th>Comentarios</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Año</td><td>integer</td><td>2012-2020</td><td>-</td><td>-</td></tr>
+            <tr><td>Trimestre</td><td>integer</td><td>1-4</td><td>-</td><td>-</td></tr>
+            <tr><td>Barrio</td><td>string</td><td>-</td><td>No único, valores repetidos cada trimestre</td><td>No estan todos los barrios en todos los años</td></tr>
+            <tr><td>Nº Viviendas</td><td>integer</td><td>1-338</td><td>Minimo de 1 vivienda: hay barrios con muy pocas observaciones.</td><td>Hay algunos barrios con pocas viviendas en alquiler, lo que puede implicar que no se hayan estudiado todos los pisos</td></tr>
+            <tr><td>m2</td><td>integer</td><td>37-280</td><td>-</td><td>-</td></tr>
+            <tr><td>Dormitorios</td><td>float</td><td>1-5</td><td>-</td><td>-</td></tr>
+            <tr><td>Baños</td><td>float</td><td>1-4</td><td>Algunas filas vacías</td><td>-</td></tr>
+            <tr><td>Renta_min</td><td>integer</td><td>150-900</td><td>-</td><td>El valor mínimo de 150€ se puede explicar por el contexto económico en años iniciales o viviendas muy pequeñas/humildes.</td></tr>
+            <tr><td>Renta_med</td><td>integer</td><td>180-1050</td><td>-</td><td>-</td></tr>
+            <tr><td>Renta_max</td><td>integer</td><td>180-1600</td><td>-</td><td>El máximo de 1600€ refleja la existencia de viviendas premium en el dataset, aumentando la dispersión</td></tr>
+            <tr><td>Euros/m2</td><td>float</td><td>0-325</td><td>Hay valores sin sentido con valores de 0€/m2 o 300€/m2</td><td>Contiene comas (,) como separador decimal, lo que impide su uso directo como xsd:float.</td></tr>
+            <tr><td>Desv_Tip</td><td>float</td><td>0-460</td><td>Algunas filas vacías y desviaciones muy altas</td><td>Hay valores muy altos los cuales no tienen sentido</td></tr>
+        </tbody>
+    </table>
+
+    <section id="license-analysis">
+        <h1>Análisis de la Licencia del Conjunto de Datos</h1>
+
+        <h2>1. Publicador y titular de derechos</h2>
+        <p>
+            El conjunto de datos original ha sido publicado por una organización del <strong>Ayuntamiento de Alicante</strong>, 
+            por lo que se puede considerar que su titular de derechos es el propio organismo público responsable de su publicación.
+        </p>
+        
+        <h2>2. Licencia del conjunto de datos original</h2>
+        <p>
+            La licencia del dataset original permite:
+        </p>
+        <ul>
+            <li><strong>Compartir</strong> — copiar y redistribuir el material en cualquier medio o formato, incluso con fines comerciales.</li>
+            <li><strong>Adaptar</strong> — remezclar, transformar y construir a partir del material para cualquier propósito, incluso comercial.</li>
+        </ul>
+        <p>
+            Bajo las siguientes condiciones:
+        </p>
+        <ul>
+            <li><strong>Atribución</strong> — se debe dar crédito adecuado, proporcionar un enlace a la licencia e indicar si se realizaron cambios.</li>
+            <li>No aplicar restricciones adicionales que impidan legalmente a otros utilizar el material según la licencia.</li>
+        </ul>
+        <p>
+            <em>Explicación:</em> La licencia permite un uso amplio de los datos originales, incluso con fines comerciales o educativos, siempre que se cite correctamente la fuente y no se impongan restricciones adicionales.
+        </p>
+
+        <h2>3. Licencia propuesta para el conjunto de datos generado</h2>
+        <p>
+            Los datos procesados y generados por nuestro grupo se publicarán bajo la licencia 
+            <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong>, 
+            lo que permitirá que otros los utilicen, compartan y modifiquen, siempre reconociendo la autoría del grupo.
+        </p>
+        <p>
+            <em>Explicación:</em> Dado que nuestro dataset contiene valores incompletos o inconsistentes, es importante permitir modificaciones. Esta licencia asegura que los datos puedan ser reutilizados y corregidos por terceros, fomentando su aprovechamiento ético y responsable.
+        </p>
+    </section>
+
+    <section id="naming-strategy">
+        <h1>3. Estrategia de Nombrado de Recursos (URI)</h1>
+
+        <p>La estrategia de nombramiento se define siguiendo las directrices de la clase (Separación de Modelo e Instancias, Persistencia, Unicidad) y se basa exclusivamente en el <strong>modelo ontológico</strong> (prefijo <code>ns</code>) definido en el archivo <code>ontology.ttl</code>. La autoridad para las instancias no se define en esta etapa.</p>
+
+        <h2>3.1. Estructura y Componentes de los URIs Base</h2>
+        <p>El sistema solo define la autoridad para el Modelo, ya que las instancias de datos se generarán y se alojarán posteriormente. Se utiliza el formato <strong>Hash URI</strong> para el Modelo (`#`).</p>
+
+        <h3>URIs para Clases y Propiedades (Modelo/Ontología)</h3>
+        <p>La estructura se basa en el prefijo <strong><code>ns</code></strong> de la ontología (Ej: <code>http://smartcity.es/alquiler#Barrio</code>).</p>
+        <div class="uri-diagram">
+            <div class="uri-box domain">
+                <span class="label">Dominio</span>
+                <strong>http://smartcity.es/</strong>
+            </div>
+            <span class="plus-sign">+</span>
+            <div class="uri-box path-segment">
+                <span class="label">Ruta del Modelo</span>
+                <strong>alquiler</strong>
+            </div>
+            <span class="plus-sign">+</span>
+            <div class="uri-box ontology-model">
+                <span class="label">Hash URI</span>
+                <strong>#</strong>
+            </div>
+            <span class="plus-sign">+</span>
+            <div class="uri-box class-name">
+                <span class="label">Clase o Propiedad</span>
+                <strong>[ns:Nombre]</strong>
+            </div>
+        </div>
+
+        <p style="margin-top: 30px;">Los prefijos del modelo utilizados son:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Elemento</th>
+                    <th>URI Base (Namespace)</th>
+                    <th>Prefijo</th>
+                    <th>Uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Ontología (Modelo)</strong></td>
+                    <td><code>http://smartcity.es/alquiler#</code></td>
+                    <td><code>ns:</code></td>
+                    <td>Identifica Clases y Propiedades (ej: <code>ns:Barrio</code>) tal como se define en <code>ontology.ttl</code>.</td>
+                </tr>
+                <tr>
+                    <td>Vocabulario de Modularidad</td>
+                    <td><code>https://w3id.org/mod#</code></td>
+                    <td><code>mod:</code></td>
+                    <td>Usado para metadatos de creación del modelo.</td>
+                </tr>
+                <tr>
+                    <td>Marco de descripción de recursos</td>
+                    <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns</code></td>
+                    <td><code>rdf:</code></td>
+                    <td>Usado para describir nuestra Ontología</td>
+                </tr>
+                <tr>
+                    <td>Definición de esquema XML</td>
+                    <td><code>http://www.w3.org/2001/XMLSchema</code></td>
+                    <td><code>xsd:</code></td>
+                    <td>Usado para definir el tipo de cada elemento (xsd:string)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3.2. Patrones de Nombrado (Modelo Ontológico)</h2>
+        <p>Se eligen patrones <strong>significativos y persistentes</strong> que identifican unívocamente a cada elemento dentro del modelo.</p>
+
+        <h3>3.2.1. Clases y Propiedades (Ontología - Prefijo <code>ns</code>)</h3>
+        <ul>
+            <li><strong>Clases (Ej: <code>ns:Barrio</code>, <code>ns:Renta</code>):</strong> Se utiliza mayúscula inicial, singular y separación de palabras con "_" para los nombres de clases.</li>
+            <li><strong>Propiedades (Ej: <code>ns:tieneRentaMedia</code>, <code>ns:año_de_estudio</code>):</strong> Se utiliza minúsculas y separación de palabras con "_" para propiedades de Objeto y de Dato.</li>
+        </ul>
+        <p><strong>Justificación:</strong> El uso del <strong>Hash URI</strong> garantiza que la ontología completa sea accesible bajo un único recurso (<code>http://smartcity.es/alquiler</code>).</p>
+        <h3>3.2.2. Creación de Instancias (Patrón a Futuro)</h3>
+        <p>Aunque la ontología no contiene instancias, se define el patrón que se utilizará en la fase de transformación de datos para asegurar la unicidad y la persistencia de los recursos creados. Se utilizará un <strong>resource path</strong> diferenciado.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Entidad a Modelar</th>
+                    <th>Patrón de URI Propuesto</th>
+                    <th>Ejemplo de URI (a futuro)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Barrio</strong></td>
+                    <td><code>http://data.smartcity.es/alquiler/barrio/[nombre_normalizado]</code></td>
+                    <td><code>http://data.smartcity.es/alquiler/barrio/alipark</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Métrica Trimestral</strong></td>
+                    <td><code>http://data.smartcity.es/alquiler/metrica/[barrio]/[año]/[trimestre]</code></td>
+                    <td><code>http://data.smartcity.es/alquiler/metrica/alipark/2020/4</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3.3. Estrategia de Desreferenciación</h2>
+
+        <p>La desreferenciación es lo que hace que nuestros URIs (como <code>http://smartcity.es/alquiler#Barrio</code>) no sean solo un nombre, sino una dirección real en Internet a la que puedes "preguntar". Tienes que poder consultarlos para saber qué significan.</p>
+
+        <p>Como el que pregunta puede ser tanto una persona como una máquina, usamos la <strong>Negociación de Contenido</strong> para darles a cada uno lo que quiere.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Solicitud</th>
+                    <th>InPut</th>
+                    <th>OutPut</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>HTML</strong> (<code>text/html</code>)</td>
+                    <td><strong>Una persona</strong> (navegador)</td>
+                    <td>Una página web legible para el usuario (Documentación de la Ontología)</td>
+                </tr>
+                <tr>
+                    <td><strong>RDF/Turtle</strong> (<code>text/turtle</code>)</td>
+                    <td><strong>Un programa</strong> (software Linked Data)</td>
+                    <td>Se devuelve el <strong>Grafo RDF</strong> con la definición de la ontología (el código <code>.ttl</code>)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Esta estrategia aplica al <strong>Modelo (ns:)</strong> para asegurar que cualquiera que use el vocabulario obtenga la definición que necesita para la interoperabilidad.</p>
+    </section>
+</body>
+</html>
+
+>>>>>>> ee2d8f37e97607626d85d24960be63dad22fcae3

@@ -1,0 +1,186 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix metro: <https://grupo09.github.io/HandsOn/ontology#> .
+@prefix data:  <https://grupo09.github.io/HandsOn/data/> .
+
+
+
+<https://grupo09.github.io/HandsOn/ontology>
+    a owl:Ontology ;
+    rdfs:label "Ontología de Metro de Mexico y Afluencia "@es ;
+    rdfs:comment "Ontología basada en ficheros de afluencia diaria y líneas/estaciones del Metro de Mexico."@es ;
+    owl:versionInfo "0.1.0" .
+
+
+
+metro:SistemaTransporte a owl:Class ;
+    rdfs:label "Sistema de transporte"@es ;
+    rdfs:comment "Sistema operador (p.ej., STC Metro)."@es .
+
+metro:Linea a owl:Class ;
+    rdfs:label "Línea"@es ;
+    rdfs:comment "Línea de la red de metro."@es .
+
+metro:Estacion a owl:Class ;
+    rdfs:label "Estación"@es ;
+    rdfs:comment "Estación de la red de metro."@es .
+
+metro:Alcaldia a owl:Class ;
+    rdfs:label "Alcaldía"@es ;
+    rdfs:comment "Demarcación administrativa donde se ubica la estación."@es .
+
+metro:TipoEstacion a owl:Class ;
+    rdfs:label "Tipo de estación"@es ;
+    rdfs:comment "Clasificación de estación (terminal, transbordo, intermedia, etc.)."@es .
+
+metro:MedicionAfluencia a owl:Class ;
+    rdfs:label "Medición de afluencia"@es ;
+    rdfs:comment "Registro de afluencia diaria por estación y línea."@es .
+
+
+
+
+metro:perteneceASistema a owl:ObjectProperty ;
+    rdfs:label "pertenece a sistema"@es ;
+    rdfs:domain metro:Linea ;
+    rdfs:range  metro:SistemaTransporte ;
+    rdfs:comment "La línea pertenece a un sistema de transporte."@es .
+
+metro:tieneEstacion a owl:ObjectProperty ;
+    rdfs:label "tiene estación"@es ;
+    rdfs:domain metro:Linea ;
+    rdfs:range  metro:Estacion ;
+    rdfs:comment "Una línea contiene estaciones."@es .
+
+metro:estaEnAlcaldia a owl:ObjectProperty ;
+    rdfs:label "está en alcaldía"@es ;
+    rdfs:domain metro:Estacion ;
+    rdfs:range  metro:Alcaldia ;
+    rdfs:comment "Ubicación administrativa de la estación."@es .
+
+metro:tieneTipo a owl:ObjectProperty ;
+    rdfs:label "tiene tipo"@es ;
+    rdfs:domain metro:Estacion ;
+    rdfs:range  metro:TipoEstacion ;
+    rdfs:comment "Tipo de estación (terminal, transbordo, intermedia...). "@es .
+
+
+metro:deLinea a owl:ObjectProperty ;
+    rdfs:label "de línea"@es ;
+    rdfs:domain metro:MedicionAfluencia ;
+    rdfs:range  metro:Linea ;
+    rdfs:comment "La medición se refiere a una línea."@es .
+
+metro:deEstacion a owl:ObjectProperty ;
+    rdfs:label "de estación"@es ;
+    rdfs:domain metro:MedicionAfluencia ;
+    rdfs:range  metro:Estacion ;
+    rdfs:comment "La medición se refiere a una estación."@es .
+
+
+
+
+metro:nombreSistema a owl:DatatypeProperty ;
+    rdfs:label "nombre del sistema"@es ;
+    rdfs:domain metro:SistemaTransporte ;
+    rdfs:range  xsd:string ;
+    rdfs:comment "Nombre del sistema (p.ej., \"STC Metro\")."@es .
+
+
+metro:codigoLinea a owl:DatatypeProperty ;
+    rdfs:label "código de línea"@es ;
+    rdfs:domain metro:Linea ;
+    rdfs:range  xsd:string ;
+    rdfs:comment "Identificador/código corto de la línea (p.ej., \"01\")."@es .
+
+
+metro:nombreEstacion a owl:DatatypeProperty ;
+    rdfs:label "nombre de estación"@es ;
+    rdfs:domain metro:Estacion ;
+    rdfs:range  xsd:string ;
+    rdfs:comment "Nombre oficial de la estación."@es .
+
+
+metro:numeroEnLinea a owl:DatatypeProperty ;
+    rdfs:label "número en la línea"@es ;
+    rdfs:domain metro:Estacion ;
+    rdfs:range  xsd:integer ;
+    rdfs:comment "Orden de la estación dentro de la línea."@es .
+
+
+metro:claveEstacion a owl:DatatypeProperty ;
+    rdfs:label "clave de estación"@es ;
+    rdfs:domain metro:Estacion ;
+    rdfs:range  xsd:string ;
+    rdfs:comment "Clave alfanumérica de la estación (p.ej., \"STC0101\")."@es .
+
+
+metro:codigoEOD a owl:DatatypeProperty ;
+    rdfs:label "código EOD"@es ;
+    rdfs:domain metro:Estacion ;
+    rdfs:range  xsd:integer ;
+    rdfs:comment "Código EOD (encuesta origen-destino)."@es .
+
+
+metro:nombreAlcaldia a owl:DatatypeProperty ;
+    rdfs:label "nombre de la alcaldía"@es ;
+    rdfs:domain metro:Alcaldia ;
+    rdfs:range  xsd:string ;
+    rdfs:comment "Nombre de la alcaldía."@es .
+
+
+metro:anioInauguracion a owl:DatatypeProperty ;
+    rdfs:label "año de inauguración"@es ;
+    rdfs:domain metro:Estacion ;
+    rdfs:range  xsd:gYear ;
+    rdfs:comment "Año de apertura de la estación."@es .
+
+
+metro:fechaMedicion a owl:DatatypeProperty ;
+    rdfs:label "fecha de medición"@es ;
+    rdfs:domain metro:MedicionAfluencia ;
+    rdfs:range  xsd:date ;
+    rdfs:comment "Fecha de la afluencia medida (AAAA-MM-DD)."@es .
+
+
+metro:anio a owl:DatatypeProperty ;
+    rdfs:label "año"@es ;
+    rdfs:domain metro:MedicionAfluencia ;
+    rdfs:range  xsd:gYear ;
+    rdfs:comment "Año de la medición."@es .
+
+
+metro:mesNombre a owl:DatatypeProperty ;
+    rdfs:label "mes (nombre)"@es ;
+    rdfs:domain metro:MedicionAfluencia ;
+    rdfs:range  xsd:string ;
+    rdfs:comment "Nombre del mes de la medición."@es .
+
+
+metro:diaMes a owl:DatatypeProperty ;
+    rdfs:label "día del mes"@es ;
+    rdfs:domain metro:MedicionAfluencia ;
+    rdfs:range  xsd:integer ;
+    rdfs:comment "Día del mes de la medición (si existe en el dataset)."@es .
+	
+metro:afluencia a owl:DatatypeProperty ;
+    rdfs:label "afluencia"@es ;
+    rdfs:domain metro:MedicionAfluencia ;
+    rdfs:range  xsd:integer ;
+    rdfs:comment "Conteo de personas para la fecha, línea y estación."@es .
+
+
+metro:lineaTexto a owl:DatatypeProperty ;
+    rdfs:label "línea (texto original)"@es ;
+    rdfs:domain metro:MedicionAfluencia ;
+    rdfs:range  xsd:string ;
+    rdfs:comment "Valor textual de la columna 'linea' en el CSV original (útil durante el mapeo a recursos)."@es .
+
+metro:estacionTexto a owl:DatatypeProperty ;
+    rdfs:label "estación (texto original)"@es ;
+    rdfs:domain metro:MedicionAfluencia ;
+    rdfs:range  xsd:string ;
+    rdfs:comment "Valor textual de la columna 'estacion' en el CSV original (útil durante el mapeo a recursos)."@es .

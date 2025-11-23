@@ -1,0 +1,196 @@
+﻿[
+    {
+        "op": "core/mass-edit",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "columnName": "TIPO",
+        "expression": "value",
+        "edits": [
+            {
+                "from": [
+                    "Transbordo"
+                ],
+                "fromBlank": false,
+                "fromError": false,
+                "to": "Intermedia / Transbordo"
+            }
+        ],
+        "description": "Editar celdas en masa en columna TIPO"
+    },
+    {
+        "op": "core/text-transform",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "columnName": "NOMBRE",
+        "expression": "value.trim()",
+        "onError": "keep-original",
+        "repeat": false,
+        "repeatCount": 10,
+        "description": "Transforma el texto de las celdas en la columna NOMBRE usando la expresión value.trim()"
+    },
+    {
+        "op": "core/text-transform",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "columnName": "LINEA",
+        "expression": "value.trim()",
+        "onError": "keep-original",
+        "repeat": false,
+        "repeatCount": 10,
+        "description": "Transforma el texto de las celdas en la columna LINEA usando la expresión value.trim()"
+    },
+    {
+        "op": "core/text-transform",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "columnName": "EST",
+        "expression": "value.trim()",
+        "onError": "keep-original",
+        "repeat": false,
+        "repeatCount": 10,
+        "description": "Transforma el texto de las celdas en la columna EST usando la expresión value.trim()"
+    },
+    {
+        "op": "core/text-transform",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "columnName": "CVE_EST",
+        "expression": "value.trim()",
+        "onError": "keep-original",
+        "repeat": false,
+        "repeatCount": 10,
+        "description": "Transforma el texto de las celdas en la columna CVE_EST usando la expresión value.trim()"
+    },
+    {
+        "op": "core/text-transform",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "columnName": "CVE_EOD17",
+        "expression": "value.trim()",
+        "onError": "keep-original",
+        "repeat": false,
+        "repeatCount": 10,
+        "description": "Transforma el texto de las celdas en la columna CVE_EOD17 usando la expresión value.trim()"
+    },
+    {
+        "op": "core/text-transform",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "columnName": "TIPO",
+        "expression": "value.trim()",
+        "onError": "keep-original",
+        "repeat": false,
+        "repeatCount": 10,
+        "description": "Transforma el texto de las celdas en la columna TIPO usando la expresión value.trim()"
+    },
+    {
+        "op": "core/text-transform",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "columnName": "ALCALDIAS",
+        "expression": "value.trim()",
+        "onError": "keep-original",
+        "repeat": false,
+        "repeatCount": 10,
+        "description": "Transforma el texto de las celdas en la columna ALCALDIAS usando la expresión value.trim()"
+    },
+    {
+        "op": "core/text-transform",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "columnName": "AÑO",
+        "expression": "value.trim()",
+        "onError": "keep-original",
+        "repeat": false,
+        "repeatCount": 10,
+        "description": "Transforma el texto de las celdas en la columna AÑO usando la expresión value.trim()"
+    },
+    {
+        "op": "core/text-transform",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "columnName": "SISTEMA",
+        "expression": "value.trim()",
+        "onError": "keep-original",
+        "repeat": false,
+        "repeatCount": 10,
+        "description": "Transforma el texto de las celdas en la columna SISTEMA usando la expresión value.trim()"
+    },
+    {
+        "op": "core/column-removal",
+        "columnName": "CVE_EOD17",
+        "description": "Eliminar columna CVE_EOD17"
+    },
+    {
+        "op": "core/column-addition",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "baseColumnName": "NOMBRE",
+        "expression": "grel:value.replace(\"á\",\"a\")\n     .replace(\"é\",\"e\")\n     .replace(\"í\",\"i\")\n     .replace(\"ó\",\"o\")\n     .replace(\"ú\",\"u\")\n     .replace(\"Á\",\"A\")\n     .replace(\"É\",\"E\")\n     .replace(\"Í\",\"I\")\n     .replace(\"Ó\",\"O\")\n     .replace(\"Ú\",\"U\")\n     .replace(/\\s+/,\"\")\n     .toLowercase()",
+        "onError": "set-to-blank",
+        "newColumnName": "NombreURL",
+        "columnInsertIndex": 2,
+        "description": "Crear la columna NombreURL en el índice 2 basada en la columna NOMBRE usando la expresión grel:value.replace(\"á\",\"a\")\n     .replace(\"é\",\"e\")\n     .replace(\"í\",\"i\")\n     .replace(\"ó\",\"o\")\n     .replace(\"ú\",\"u\")\n     .replace(\"Á\",\"A\")\n     .replace(\"É\",\"E\")\n     .replace(\"Í\",\"I\")\n     .replace(\"Ó\",\"O\")\n     .replace(\"Ú\",\"U\")\n     .replace(/\\s+/,\"\")\n     .toLowercase()"
+    },
+    {
+        "op": "core/column-addition",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "baseColumnName": "ALCALDIAS",
+        "expression": "grel:value.replace(\"á\",\"a\")\n     .replace(\"é\",\"e\")\n     .replace(\"í\",\"i\")\n     .replace(\"ó\",\"o\")\n     .replace(\"ú\",\"u\")\n     .replace(\"Á\",\"A\")\n     .replace(\"É\",\"E\")\n     .replace(\"Í\",\"I\")\n     .replace(\"Ó\",\"O\")\n     .replace(\"Ú\",\"U\")\n     .replace(/\\s+/,\"\")\n     .replace(\"/\",\"_\")\n     .replace(\"-\",\"_\")",
+        "onError": "set-to-blank",
+        "newColumnName": "AlcaldiasURL",
+        "columnInsertIndex": 8,
+        "description": "Crear la columna AlcaldiasURL en el índice 8 basada en la columna ALCALDIAS usando la expresión grel:value.replace(\"á\",\"a\")\n     .replace(\"é\",\"e\")\n     .replace(\"í\",\"i\")\n     .replace(\"ó\",\"o\")\n     .replace(\"ú\",\"u\")\n     .replace(\"Á\",\"A\")\n     .replace(\"É\",\"E\")\n     .replace(\"Í\",\"I\")\n     .replace(\"Ó\",\"O\")\n     .replace(\"Ú\",\"U\")\n     .replace(/\\s+/,\"\")\n     .replace(\"/\",\"_\")\n     .replace(\"-\",\"_\")"
+    },
+    {
+        "op": "core/text-transform",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "columnName": "AlcaldiasURL",
+        "expression": "grel:value.toLowercase()",
+        "onError": "keep-original",
+        "repeat": false,
+        "repeatCount": 10,
+        "description": "Transforma el texto de las celdas en la columna AlcaldiasURL usando la expresión grel:value.toLowercase()"
+    },
+    {
+        "op": "core/column-addition",
+        "engineConfig": {
+            "facets": [],
+            "mode": "row-based"
+        },
+        "baseColumnName": "TIPO",
+        "expression": "grel:value.replace(\" \", \"\").replace(\"/\", \"_\").toLowercase()",
+        "onError": "set-to-blank",
+        "newColumnName": "TipoURL",
+        "columnInsertIndex": 7,
+        "description": "Crear la columna TipoURL en el índice 7 basada en la columna TIPO usando la expresión grel:value.replace(\" \", \"\").replace(\"/\", \"_\").toLowercase()"
+    }
+]

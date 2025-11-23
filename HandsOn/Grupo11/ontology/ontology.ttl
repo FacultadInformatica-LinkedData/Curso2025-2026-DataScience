@@ -1,0 +1,59 @@
+@prefix mod: <https://w3id.org/mod#> .
+@prefix st: <http://group11.linkeddata.es/ontology/station#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+st: a owl:Ontology ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
+
+#################################
+#    Object Properties
+#################################
+
+st:locatedIn a owl:ObjectProperty ;
+    rdfs:label "located in"@en ;
+    rdfs:domain st:Station ;
+    rdfs:range st:Municipality .
+
+st:hasGeographicCoordinates a owl:ObjectProperty ;
+    rdfs:label "has geographic coordinates"@en ;
+    rdfs:domain st:Station ;
+    rdfs:range st:GeographicCoordinates .
+
+#################################
+#    Datatype Properties
+#################################
+
+st:hasID a owl:DatatypeProperty ;
+    rdfs:label "has id"@en ;
+    rdfs:domain st:Station ;
+    rdfs:range xsd:integer .
+
+st:hasName a owl:DatatypeProperty ;
+    rdfs:label "has name"@en ;
+    rdfs:domain st:Station ;
+    rdfs:range xsd:string .
+
+st:hasAddress a owl:DatatypeProperty ;
+    rdfs:label "has address"@en ;
+    rdfs:domain st:Station ;
+    rdfs:range xsd:string .
+
+st:hasCP a owl:DatatypeProperty ;
+    rdfs:label "has cp"@en ;
+    rdfs:domain st:Station ;
+    rdfs:range xsd:string .
+
+#################################
+#    Classes
+#################################
+
+st:Station a owl:Class ;
+    rdfs:label "Station"@en .
+
+st:GeographicCoordinates a owl:Class ;
+    rdfs:label "Geographic Coordinates"@en .
+
+st:Municipality a owl:Class ;
+    rdfs:label "Municipality"@en .

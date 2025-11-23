@@ -1,0 +1,362 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "POINT_X",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna POINT_X usando la expresión value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "POINT_Y",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna POINT_Y usando la expresión value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Address",
+    "expression": "grel:value.replace(\" nº\", \",\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna Address usando la expresión grel:value.replace(\" nº\", \",\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Address",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna Address usando la expresión value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Address",
+    "expression": "grel:value.replace(/,+$/, \" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna Address usando la expresión grel:value.replace(/,+$/, \" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DockBikes",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna DockBikes usando la expresión value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FreeBases",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna FreeBases usando la expresión value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PosicionST",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna PosicionST usando la expresión value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Address",
+    "expression": "grel:value.replace(/^\\s*\\d+\\s*-\\s*/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna Address usando la expresión grel:value.replace(/^\\s*\\d+\\s*-\\s*/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Address",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna Address usando la expresión value.trim()"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "PosicionST",
+    "description": "Eliminar columna PosicionST"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "POINT_X",
+    "newColumnName": "Longitud",
+    "description": "Renombra la columna POINT_X a Longitud"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "POINT_Y",
+    "newColumnName": "Latitud",
+    "description": "Renombra la columna POINT_Y a Latitud"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "FID",
+    "description": "Eliminar columna FID"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Ligth",
+    "expression": "grel:value.replace('0', 'Fuera de servicio')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna Ligth usando la expresión grel:value.replace('0', 'Fuera de servicio')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Ligth",
+    "expression": "grel:value.replace('1', 'Disponible, normal')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna Ligth usando la expresión grel:value.replace('1', 'Disponible, normal')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Ligth",
+    "expression": "grel:value.replace('2', 'Disponible, poca disponibilidad')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna Ligth usando la expresión grel:value.replace('2', 'Disponible, poca disponibilidad')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Ligth",
+    "expression": "grel:value.replace('3', 'Estado desconocido/mantenimiento')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna Ligth usando la expresión grel:value.replace('3', 'Estado desconocido/mantenimiento')"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Ligth",
+    "newColumnName": "Estado",
+    "description": "Renombra la columna Ligth a Estado"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Estado",
+    "expression": "grel:value.replace('Disponible, poca disponibilidad', 'Poca disponibilidad')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna Estado usando la expresión grel:value.replace('Disponible, poca disponibilidad', 'Poca disponibilidad')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Estado",
+    "expression": "grel:value.replace('Disponible, normal', 'Disponible')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna Estado usando la expresión grel:value.replace('Disponible, normal', 'Disponible')"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "number",
+    "description": "Eliminar columna number"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Name",
+          "columnName": "Name",
+          "query": "old",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/row-duplicate-removal",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "criteria": [
+      "Shape",
+      "IdStation",
+      "Activate",
+      "Address",
+      "DockBikes",
+      "FreeBases",
+      "Estado",
+      "Name",
+      "NoAvailabl",
+      "TotalBases",
+      "Longitud",
+      "Latitud"
+    ],
+    "description": "Remove duplicate rows"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "Activate",
+    "description": "Eliminar columna Activate"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NoAvailabl",
+    "expression": "grel:value.replace('0', 'Disponible')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna NoAvailabl usando la expresión grel:value.replace('0', 'Disponible')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NoAvailabl",
+    "expression": "grel:value.replace('1', 'No disponible')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna NoAvailabl usando la expresión grel:value.replace('1', 'No disponible')"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "Shape",
+    "description": "Eliminar columna Shape"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "TotalBases",
+    "index": 6,
+    "description": "Mueve la columna TotalBases a la posición 6"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "TotalBases",
+    "index": 5,
+    "description": "Mueve la columna TotalBases a la posición 5"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "TotalBases",
+    "index": 4,
+    "description": "Mueve la columna TotalBases a la posición 4"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "Name",
+    "index": 0,
+    "description": "Mueve la columna Name a la posición 0"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "Name",
+    "index": 1,
+    "description": "Mueve la columna Name a la posición 1"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TotalBases",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna TotalBases usando la expresión value.toNumber()"
+  }
+]

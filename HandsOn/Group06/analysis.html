@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Bonita</title>
+    <style>
+        /* Estilos generales para el cuerpo del documento */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Estilo para el título principal */
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        /* Contenedor de la tabla para darle sombra y bordes redondeados */
+        .table-container {
+            width: 80%;
+            max-width: 1000px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Para que los bordes redondeados afecten a la tabla */
+        }
+
+        /* Estilos para la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Elimina el espacio entre celdas */
+        }
+
+        /* Estilos para las celdas de encabezado (th) y celdas de datos (td) */
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* Estilos específicos para el encabezado de la tabla */
+        thead {
+            background-color: #007bff; /* Un azul moderno */
+            color: #ffffff;
+            font-size: 1.1em;
+        }
+
+        /* Estilo para las filas pares (efecto cebra para mejor legibilidad) */
+        tbody tr:nth-of-type(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Efecto hover sobre las filas para interactividad */
+        tbody tr:hover {
+            background-color: #e9ecef;
+            cursor: pointer;
+        }
+
+        /* Quitar el borde inferior de la última fila */
+        tbody tr:last-of-type {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Análisis del dataset</h1>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Columna</th>
+                    <th>Tipo</th>
+                    <th>Comentarios/Rango</th>
+                    <th>Problemas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Geo point 2D</td>
+                    <td>String</td>
+                    <td>Valores Únicos</td>
+                    <td>Ninguno</td>
+                </tr>
+                <tr>
+                    <td>Geo Shape</td>
+                    <td>String</td>
+                    <td>Valores Únicos</td>
+                    <td>Ninguno</td>
+                </tr>
+                <tr>
+                    <td>Nombre</td>
+                    <td>String</td>
+                    <td>Valores Únicos</td>
+                    <td>Ninguno</td>
+                </tr>
+                <tr>
+                    <td>Financiación</td>
+                    <td>String</td>
+                    <td>Concertado(1), Privado(5), Público(56)</td>
+                    <td>Ninguno</td>
+                </tr>
+                <tr>
+                    <td>Tipo</td>
+                    <td>String</td>
+                    <td>Centro de Salud(31), Consultorio(17), Hospital(14)</td>
+                    <td>Ninguno</td>
+                </tr>
+                <tr>
+                    <td>Camas</td>
+                    <td>Integer</td>
+                    <td>0-1010</td>
+                    <td>48 campos vacíos</td>
+                </tr>
+                <tr>
+                    <td>Direccion</td>
+                    <td>String</td>
+                    <td>Valores no únicos</td>
+                    <td>Ninguno</td>
+                </tr>
+                <tr>
+                    <td>Fecha</td>
+                    <td>String</td>
+                    <td>2021-06-30</td>
+                    <td>Todos los campos con la misma fecha</td>
+                </tr>
+                <tr>
+                    <td>Barrio</td>
+                    <td>String</td>
+                    <td>Valores no únicos</td>
+                    <td>Ninguno</td>
+                </tr>
+                <tr>
+                    <td>Cod barrio</td>
+                    <td>Integer</td>
+                    <td>1-7</td>
+                    <td>Ninguno</td>
+                </tr>
+                <tr>
+                    <td>Codistbar</td>
+                    <td>Integer</td>
+                    <td>10-200</td>
+                    <td>Ninguno</td>
+                </tr>
+                <tr>
+                    <td>Codistrit</td>
+                    <td>Integer</td>
+                    <td>1-20</td>
+                    <td>Ninguno</td>
+                </tr>
+                <tr>
+                    <td>X</td>
+                    <td>Integer</td>
+                    <td>Valores únicos, 721,000 — 734,000</td>
+                    <td>Ninguno</td>
+                </tr>
+                <tr>
+                    <td>Y</td>
+                    <td>Integer</td>
+                    <td>Valores únicos, 4,354,000 — 4,380,000</td>
+                    <td>Ninguno</td>
+                </tr>
+            </tbody>
+        </table>
+
+   
+  
+  </div>
+ <h1>Analisis de la licencia</h1>
+        <h2>Publicador y titular de los derechos</h2>
+            <p>Nuestro conjunto de datos (Hospitales y otros centros sanitarios) esta publicado por el <strong>Ajuntament de València</strong> en su portal de datos, que es abierto:</p>
+                <a href="https://valencia.opendatasoft.com/explore/dataset/hospitales/information/">https://valencia.opendatasoft.com/explore/dataset/hospitales/information/</a>
+            <p>El ayuntamiento de valencia también actúa como titular de los derechos, ya que es quien recopila, mantiene y difunde los datos de manera oficial.</p>
+        <h2>Licencia</h2>
+            <p>Como ya comentado en la entrega anterior, según la información disponible en la página del dataset y en la sección de exportación del portal los datos se publican bajo la licencia <strong>Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</strong> cuyo link e informacion de la licencia esta adjuntado en la propia página (link anterior) y es:</p>
+                 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>
+            <strong>Lo que implica dicha licencia (CC BY 4.0)</strong>
+        <ul>
+          <li>Permite copiar, distribuir y comunicar públicamente los datos</li>
+          <li>Permite crear obras derivadas (es decir que no hoy problema para nuestro RDF)</li>
+          <li>Permite uso con fines comerciales y no comerciales.</li>
+          <li>Y obliga a citar y dar crédito la fuente original es decir, dar crédito al Ajuntament de València y enlazar a la licencia</li>
+        </ul>
+
+          <h2>Fuente</h2>
+  <p>Como ya he dicho antes, la información sobre la licencia y la política de reutilización del portal puede verse en las páginas del propio catlogo y en los términos y condiciones del portal que informa que salvo indicación en contrario, los datasets se publican bajo la Licencia Creative Commons Atribución 4.0</p>
+
+  <h2>Implicaciones para nuestro trabajo </h2>
+  
+    <p>Como el dataset original está bajo <strong>CC BY 4.0</strong> como ya dicho podemos transformar los datos o enzalarlo y despues publicar los resultados sin tener que pedir ningun tipo de permiso, solo nos hace falta cirtar al ayundamiento de valéncia lo que nos da una facilidad de manejo uso y pubulicacon de datos bastante buena </p>
+
+    
+    </div>
+
+</body>
+</html>

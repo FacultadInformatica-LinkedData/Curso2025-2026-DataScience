@@ -1,0 +1,50 @@
+@prefix aq: <https://carloscumbrado.github.io/HandsOn/group07/ontology/airquality#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+##########################################################
+# Example instance of an Air Quality Observation
+##########################################################
+
+aq:Observation_2024_05_03_04
+    rdf:type aq:AirQualityObservation ;
+    aq:hasStation aq:Station_04 ;
+    aq:measuresPollutant aq:NO2 ;
+    aq:hasValue "45.7"^^xsd:float ;
+    aq:hasDate "2024-05-03"^^xsd:date ;
+    aq:hasUnit "µg/m³" ;
+    rdfs:label "NO₂ observation on 2024-05-03 at Station 04"@en .
+
+##########################################################
+# Example station and pollutant
+##########################################################
+
+aq:Station_04
+    rdf:type aq:Station ;
+    rdfs:label "Estación Plaza del Carmen (Madrid)"@es .
+
+aq:NO2
+    rdf:type aq:Pollutant ;
+    rdfs:label "Dióxido de nitrógeno (NO₂)"@es .
+
+##########################################################
+# Second example observation
+##########################################################
+
+aq:Observation_2024_05_03_05
+    rdf:type aq:AirQualityObservation ;
+    aq:hasStation aq:Station_05 ;
+    aq:measuresPollutant aq:PM10 ;
+    aq:hasValue "23.4"^^xsd:float ;
+    aq:hasDate "2024-05-03"^^xsd:date ;
+    aq:hasUnit "µg/m³" ;
+    rdfs:label "PM10 observation on 2024-05-03 at Station 05"@en .
+
+aq:Station_05
+    rdf:type aq:Station ;
+    rdfs:label "Estación de Vallecas (Madrid)"@es .
+
+aq:PM10
+    rdf:type aq:Pollutant ;
+    rdfs:label "Partículas en suspensión (PM10)"@es .
