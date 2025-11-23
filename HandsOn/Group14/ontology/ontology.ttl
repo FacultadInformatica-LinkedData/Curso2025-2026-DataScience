@@ -1,0 +1,209 @@
+@prefix mod: <https://w3id.org/mod#> .
+@prefix ns: <http://movimientosostenible.org/group14#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns: a owl:Ontology ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
+
+<http://movimientosostenible.org/group14#isa> a owl:ObjectProperty ;
+    rdfs:label "isa" ;
+    rdfs:domain ns:Bicicleta,
+        ns:BicicletaEPAC ;
+    rdfs:range ns:TipoVehiculo .
+
+ns:2200PeatonBici a owl:Class ;
+    rdfs:label "2200 Peaton Bici" ;
+    rdfs:subClassOf ns:TipoSemaforo .
+
+ns:2_200Bici a owl:Class ;
+    rdfs:label "2_200 Bici" ;
+    rdfs:subClassOf ns:TipoSemaforo .
+
+ns:3100Bici a owl:Class ;
+    rdfs:label "3100 Bici" ;
+    rdfs:subClassOf ns:TipoSemaforo .
+
+ns:3200Bici a owl:Class ;
+    rdfs:label "3200 Bici" ;
+    rdfs:subClassOf ns:TipoSemaforo .
+
+ns:alcohol a owl:DatatypeProperty ;
+    rdfs:label "alcohol" ;
+    rdfs:domain ns:TestSustancias ;
+    rdfs:range xsd:Boolean .
+
+ns:distrito a owl:DatatypeProperty ;
+    rdfs:label "distrito" ;
+    rdfs:domain ns:Accidente ;
+    rdfs:range xsd:String .
+
+ns:droga a owl:DatatypeProperty ;
+    rdfs:label "droga" ;
+    rdfs:domain ns:TestSustancias ;
+    rdfs:range xsd:Boolean .
+
+ns:edad a owl:DatatypeProperty ;
+    rdfs:label "edad" ;
+    rdfs:domain ns:PersonaImplicadaAccidente ;
+    rdfs:range xsd:String .
+
+ns:estaEn a owl:ObjectProperty ;
+    rdfs:label "esta en" ;
+    rdfs:domain ns:CruceSemaforoBici ;
+    rdfs:range ns:Id .
+
+ns:gender a owl:DatatypeProperty ;
+    rdfs:label "gender" ;
+    rdfs:domain ns:PersonaImplicadaAccidente ;
+    rdfs:range xsd:String .
+
+ns:hasCode a owl:DatatypeProperty ;
+    rdfs:label "has code" ;
+    rdfs:domain ns:Lesividad ;
+    rdfs:range xsd:Integer .
+
+ns:hasDate a owl:ObjectProperty ;
+    rdfs:label "has date" ;
+    rdfs:domain ns:Accidente ;
+    rdfs:range ns:Fecha .
+
+ns:hasDistritoid a owl:ObjectProperty ;
+    rdfs:label "has distritoid" ;
+    rdfs:domain ns:Accidente ;
+    rdfs:range ns:Id .
+
+ns:hasLesi a owl:ObjectProperty ;
+    rdfs:label "has lesi" ;
+    rdfs:domain ns:Accidente ;
+    rdfs:range ns:Lesividad .
+
+ns:hasNumber a owl:DatatypeProperty ;
+    rdfs:label "has number" ;
+    rdfs:domain ns:Localizacion ;
+    rdfs:range xsd:Integer .
+
+ns:hasTime a owl:DatatypeProperty ;
+    rdfs:label "has time" ;
+    rdfs:domain ns:Accidente ;
+    rdfs:range xsd:String .
+
+ns:hasType a owl:ObjectProperty ;
+    rdfs:label "has type" ;
+    rdfs:domain ns:Accidente,
+        ns:Lesividad ;
+    rdfs:range ns:TipoVehiculo .
+
+ns:implicada a owl:ObjectProperty ;
+    rdfs:label "implicada" ;
+    rdfs:domain ns:Accidente ;
+    rdfs:range ns:PersonaImplicadaAccidente .
+
+ns:latitud a owl:DatatypeProperty ;
+    rdfs:label "latitud" ;
+    rdfs:domain ns:Coordenadas ;
+    rdfs:range xsd:Float .
+
+ns:longitud a owl:DatatypeProperty ;
+    rdfs:label "longitud" ;
+    rdfs:domain ns:Coordenadas ;
+    rdfs:range xsd:Float .
+
+ns:meteo a owl:DatatypeProperty ;
+    rdfs:label "meteo" ;
+    rdfs:domain ns:Accidente ;
+    rdfs:range xsd:String .
+
+ns:numeroExpediente a owl:DatatypeProperty ;
+    rdfs:label "numero expediente" ;
+    rdfs:domain ns:Accidente ;
+    rdfs:range xsd:String .
+
+ns:ocurreEn a owl:ObjectProperty ;
+    rdfs:label "ocurre en" ;
+    rdfs:domain ns:Accidente ;
+    rdfs:range ns:Localizacion .
+
+ns:requiredTest a owl:ObjectProperty ;
+    rdfs:label "required test" ;
+    rdfs:domain ns:Accidente ;
+    rdfs:range ns:TestSustancias .
+
+ns:tieneCoordenadas a owl:ObjectProperty ;
+    rdfs:label "tiene coordenadas" ;
+    rdfs:domain ns:CruceSemaforoBici , ns:Localizacion ;
+    rdfs:range ns:Coordenadas .
+
+ns:tieneCruceId a owl:DatatypeProperty ;
+    rdfs:label "tiene cruce id" ;
+    rdfs:domain ns:CruceSemaforoBici ;
+    rdfs:range xsd:Integer .
+
+ns:tieneFechaInstalacion a owl:ObjectProperty ;
+    rdfs:label "tiene fecha instalacion" ;
+    rdfs:domain ns:CruceSemaforoBici ;
+    rdfs:range ns:Fecha .
+
+ns:tieneSemaforoId a owl:DatatypeProperty ;
+    rdfs:label "tiene semaforo id" ;
+    rdfs:domain ns:CruceSemaforoBici ;
+    rdfs:range xsd:Integer .
+
+ns:tieneTipoSemaforo a owl:ObjectProperty ;
+    rdfs:label "tiene tipo semaforo" ;
+    rdfs:domain ns:CruceSemaforoBici ;
+    rdfs:range ns:TipoSemaforo .
+
+ns:tipoAccidente a owl:DatatypeProperty ;
+    rdfs:label "tipo accidente" ;
+    rdfs:domain ns:Accidente ;
+    rdfs:range xsd:String .
+
+ns:Bicicleta a owl:Class ;
+    rdfs:label "Bicicleta" .
+
+ns:BicicletaEPAC a owl:Class ;
+    rdfs:label "Bicicleta E P A C" .
+
+ns:Persona a owl:Class ;
+    rdfs:label "Persona" .
+
+ns:Test a owl:Class ;
+    rdfs:label "Test" .
+
+ns:Fecha a owl:Class ;
+    rdfs:label "Fecha" .
+
+ns:Id a owl:Class ;
+    rdfs:label "Id" .
+
+ns:TipoVehiculo a owl:Class ;
+    rdfs:label "Tipo Vehiculo" .
+
+ns:Coordenadas a owl:Class ;
+    rdfs:label "Coordenadas" ;
+    rdfs:subClassOf ns:Localizacion .
+
+ns:Lesividad a owl:Class ;
+    rdfs:label "Lesividad" .
+
+ns:Localizacion a owl:Class ;
+    rdfs:label "Localización" .
+
+ns:PersonaImplicadaAccidente a owl:Class ;
+    rdfs:label "Persona Implicada Accidente" ;
+    rdfs:subClassOf ns:Persona .
+
+ns:TestSustancias a owl:Class ;
+    rdfs:label "Test Sustancias" ;
+    rdfs:subClassOf ns:Test .
+
+ns:TipoSemaforo a owl:Class ;
+    rdfs:label "Tipo Semaforo" .
+
+ns:CruceSemaforoBici a owl:Class ;
+    rdfs:label "Cruce Semáforo Bici" .
+
+ns:Accidente a owl:Class ;
+    rdfs:label "Accidente" .

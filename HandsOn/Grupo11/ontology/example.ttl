@@ -1,0 +1,17 @@
+@prefix st: <http://group11.linkeddata.es/ontology/station#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+st:Madrid a st:Municipality .
+   rdfs:label "MADRID" .
+
+st:gc1 a st:GeographicCoordinates ;
+    rdfs:label "(40,421389; -3,718968)" .
+
+st:Station1 a st:Station ;
+    st:hasID 10000  ;
+    st:hasName "MADRID-PRINCIPE PIO" ;
+    st:hasAddress "PASEO DE LA FLORIDA, 2" ;
+    st:hasCP "28008" ;
+    st:locatedIn st:Madrid ;
+    st:hasGeographicCoordinates st:gc1 .

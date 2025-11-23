@@ -1,0 +1,108 @@
+@prefix ns: <http://smartcity.es/group03/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns: a owl:Ontology ;
+    rdfs:label "Ontología de centros educativos de la Comunidad de Madrid (Group03)"
+
+### Object Properties
+
+ns:ubicadoEnMunicipio a owl:ObjectProperty ;
+    rdfs:label "ubicado en municipio"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range ns:Municipio .
+
+ns:ubicadoEnDistrito a owl:ObjectProperty ;
+    rdfs:label "ubicado en distrito"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range ns:Distrito .
+
+ns:tieneTitularidad a owl:ObjectProperty ;
+    rdfs:label "tiene titularidad"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range ns:Titularidad .
+
+ns:tieneTipoCentro a owl:ObjectProperty ;
+    rdfs:label "tiene tipo de centro"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range ns:TipoCentro .
+
+### Datatype Properties
+
+ns:codigoCentro a owl:DatatypeProperty ;
+    rdfs:label "código de centro"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:string .
+
+ns:nombreCentro a owl:DatatypeProperty ;
+    rdfs:label "nombre del centro"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:string .
+
+ns:direccion a owl:DatatypeProperty ;
+    rdfs:label "dirección"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:string .
+
+ns:codigoPostal a owl:DatatypeProperty ;
+    rdfs:label "código postal"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:string .
+
+ns:telefono a owl:DatatypeProperty ;
+    rdfs:label "teléfono"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:string .
+
+ns:fax a owl:DatatypeProperty ;
+    rdfs:label "fax"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:string .
+
+ns:email a owl:DatatypeProperty ;
+    rdfs:label "email"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:string .
+
+ns:web a owl:DatatypeProperty ;
+    rdfs:label "web"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:anyURI .
+
+ns:latitud a owl:DatatypeProperty ;
+    rdfs:label "latitud"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:decimal .
+
+ns:longitud a owl:DatatypeProperty ;
+    rdfs:label "longitud"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:decimal .
+
+ns:situacion a owl:DatatypeProperty ;
+    rdfs:label "situación"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:string .
+
+ns:fechaConstitucion a owl:DatatypeProperty ;
+    rdfs:label "fecha de constitución"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:date .
+
+### Classes
+
+ns:CentroEducativo a owl:Class ;
+    rdfs:label "Centro educativo"@es .
+
+ns:Municipio a owl:Class ;
+    rdfs:label "Municipio"@es .
+
+ns:Distrito a owl:Class ;
+    rdfs:label "Distrito"@es .
+
+ns:Titularidad a owl:Class ;
+    rdfs:label "Titularidad"@es .
+
+ns:TipoCentro a owl:Class ;
+    rdfs:label "Tipo de centro"@es .

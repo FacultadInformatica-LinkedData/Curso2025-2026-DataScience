@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Data and Ontology Analysis – Air Quality in Madrid (2024)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; background: #f9f9f9; color: #333; }
+    h1, h2 { color: #003366; }
+    ul { padding-left: 20px; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    th { background: #003366; color: #fff; }
+    .footer { margin-top: 40px; font-size: 0.9em; color: #555; }
+    .box { background: #fff; padding: 15px; border-left: 5px solid #003366; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 20px 0; }
+  </style>
+</head>
+<body>
+
+  <h1>Data and Ontology Analysis</h1>
+  <h2>Dataset: Air Quality in Madrid (2024)</h2>
+
+  <p>
+    This document shows the analysis of the chosen dataset.
+    It includes the data structure investigation, licensing evaluation, and the naming strategy that
+    will be applied to the ontology and RDF data. The dataset's from the
+    <a href="https://datos.madrid.es/">Madrid City Council Open Data Portal</a> and contains daily gathered data of air quality indicators
+    such as NO₂, PM₁₀, O₃, SO₂, and CO collected across different monitoring stations in Madrid during 2024.
+  </p>
+
+  <h2>1. Dataset Structure Analysis</h2>
+
+  <div class="box">
+    <p>
+      The dataset is provided in CSV format and contains the following key columns:
+    </p>
+
+    <table>
+      <tr>
+        <th>Column</th>
+        <th>Description</th>
+        <th>Example Value</th>
+        <th>Data Type</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td><code>ESTACION</code></td>
+        <td>Code identifying the air quality monitoring station.</td>
+        <td>4</td>
+        <td>Integer</td>
+        <td>Links to real-world stations; can be connected to Wikidata or OSM.</td>
+      </tr>
+      <tr>
+        <td><code>PUNTO_MUESTREO</code></td>
+        <td>Station code including the district and instrument details.</td>
+        <td>28079004</td>
+        <td>String</td>
+        <td>Acts as a unique identifier for a specific measurement point.</td>
+      </tr>
+      <tr>
+        <td><code>MAGNITUD</code></td>
+        <td>Pollutant identifier (e.g., 8 = NO₂, 9 = O₃).</td>
+        <td>8</td>
+        <td>Integer</td>
+        <td>Defines the type of pollutant measured.</td>
+      </tr>
+      <tr>
+        <td><code>FECHA</code></td>
+        <td>Date of the measurement.</td>
+        <td>2024-05-03</td>
+        <td>Date</td>
+        <td>Used to track measurements over time.</td>
+      </tr>
+      <tr>
+        <td><code>VALOR</code></td>
+        <td>Average daily value of the pollutant in µg/m³.</td>
+        <td>45</td>
+        <td>Float</td>
+        <td>Primary measurement value.</td>
+      </tr>
+      <tr>
+        <td><code>UNIDAD</code></td>
+        <td>Unit of measurement (typically µg/m³).</td>
+        <td>µg/m³</td>
+        <td>String</td>
+        <td>Could be linked to an ontology of measurement units (e.g., OM).</td>
+      </tr>
+    </table>
+
+    <p>
+      The dataset is clean and mostly structured, with very few missing values.
+    </p>
+  </div>
+
+  <h2>2. Licensing Analysis</h2>
+
+  <div class="box">
+    <p>
+      The dataset is published under the <strong>Madrid City Council Open Data License</strong>, which allows reuse for both commercial
+      and non-commercial purposes as long as you provide attribution.
+      It's compatible with the <strong>Creative Commons Attribution 4.0 (CC BY 4.0)</strong> license.
+    </p>
+    <ul>
+      <li><strong>Rightsholder:</strong> Ayuntamiento de Madrid (Madrid City Council)</li>
+      <li><strong>License name:</strong> Licencia de uso de los conjuntos de datos del Ayuntamiento de Madrid</li>
+      <li><strong>License URL:</strong> <a href="https://datos.madrid.es/egob/catalogo/aviso-legal" target="_blank">https://datos.madrid.es/egob/catalogo/aviso-legal</a></li>
+      <li><strong>Authorized uses:</strong> Copying, distribution, modification, adaptation, and combination of the data.</li>
+      <li><strong>Obligations:</strong> Must cite the source as <em>“Origen de los datos: Ayuntamiento de Madrid”</em>;
+      must not distort or misrepresent the meaning of the data;
+      and may not imply that the City Council supports the reuse.</li>
+      <li><strong>Exclusion of responsibility:</strong> The City Council is not liable for damages or losses resulting from data reuse.</li>
+    </ul>
+    <p>
+      The generated Linked Data will include the <strong>required metadata</strong>, maintaining license compatibility with other open datasets.
+    </p>
+  </div>
+
+  <h2>3. Resource Naming Strategy</h2>
+
+  <div class="box">
+    <p>
+      The URIs for the ontology and dataset will follow the recommendations provided in the <em>Methodological Guidelines for the Generation of Linked Data</em>.
+      The naming strategy uses both <strong>hash</strong> and <strong>slash</strong> URIs depending on the resource type.
+      The domain used below (<code>http://example.org/group07/</code>) is an example placeholder.
+    </p>
+
+    <ul>
+      <li><strong>Base domain:</strong> <code>https://carloscumbrado.github.io/HandsOn/group07/</code></li>
+      <li><strong>Ontology path:</strong> <code>ontology/airquality#</code> (for classes and properties)</li>
+      <li><strong>Resources path:</strong> <code>resource/</code> (for individuals)</li>
+      <li><strong>Example ontology term:</strong> <code>https://carloscumbrado.github.io/HandsOn/group07/ontology/airquality#AirQualityObservation</code></li>
+      <li><strong>Example individual:</strong> <code>https://carloscumbrado.github.io/HandsOn/group07/resource/observation/2024-05-03-04</code></li>
+    </ul>
+  </div>
+
+  <h3>Visual Overview of URI Structure</h3>
+
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin: 25px 0;">
+    <div style="background-color: #e0f2f7; border: 1px solid #b3d7e6; padding: 10px 15px; margin: 4px; border-radius: 8px; text-align: center;">
+      <strong>https://carloscumbrado.github.io/HandsOn/</strong><br>
+      <span style="font-size: 0.85em; color: #555;">Base domain</span>
+    </div>
+    <span style="font-size: 1.5em; font-weight: bold; color: #003366;">+</span>
+    <div style="background-color: #d0edf5; border: 1px solid #b3d7e6; padding: 10px 15px; margin: 4px; border-radius: 8px; text-align: center;">
+      <strong>group07/ontology/airquality#</strong><br>
+      <span style="font-size: 0.85em; color: #555;">Ontology namespace</span>
+    </div>
+    <span style="font-size: 1.5em; font-weight: bold; color: #003366;">+</span>
+    <div style="background-color: #b0e0eb; border: 1px solid #b3d7e6; padding: 10px 15px; margin: 4px; border-radius: 8px; text-align: center;">
+      <strong>AirQualityObservation</strong><br>
+      <span style="font-size: 0.85em; color: #555;">Class / property name</span>
+    </div>
+  </div>
+
+  <p style="text-align: center; font-size: 0.95em; color: #555;">
+    <em>Example full URI: 
+      <code>https://carloscumbrado.github.io/HandsOn/group07/ontology/airquality#AirQualityObservation</code>
+    </em>
+  </p>
+
+
+  
+  <h2>4. Conclusions</h2>
+  <p>
+    The <strong>Air Quality in Madrid (2024)</strong> dataset meets all requirements for Linked Data generation.
+    It will be transformed into RDF using the defined ontology, modeling air quality observations, pollutants, and stations.
+    The resource naming strategy guarantees URI persistence with other smart city datasets.
+  </p>
+
+  <div class="footer">
+    <p><em>Prepared by Group 07 — Hands-On 2, Data Science (2025–2026)</em></p>
+  </div>
+
+</body>
+</html>
+
+
+

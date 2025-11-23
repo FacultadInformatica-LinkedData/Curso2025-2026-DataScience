@@ -1,0 +1,558 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FDIA",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FDIA using expression value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FDIA",
+    "expression": "value.replace(/\\s+/, \" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FDIA using expression value.replace(/\\s+/, \" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FEST",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FEST using expression value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FEST",
+    "expression": "value.replace(/\\s+/, \" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FEST using expression value.replace(/\\s+/, \" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FSEN",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FSEN using expression value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FSEN",
+    "expression": "value.replace(/\\s+/, \" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FSEN using expression value.replace(/\\s+/, \" \")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "FEST",
+    "expression": "md5([toString(cells[\"FDIA\"].value), toString(cells[\"FEST\"].value), toString(cells[\"FSEN\"].value)].join(\"|\"))",
+    "onError": "set-to-blank",
+    "newColumnName": "id",
+    "columnInsertIndex": 0,
+    "description": "Create column id at index 0 based on column FEST using expression md5([toString(cells[\"FDIA\"].value), toString(cells[\"FEST\"].value), toString(cells[\"FSEN\"].value)].join(\"|\"))"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "id",
+    "index": 0,
+    "description": "Move column id to position 0"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FDIA",
+    "expression": "value.toDate(\"dd/MM/yyyy\").toString(\"yyyy-MM-dd\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FDIA using expression value.toDate(\"dd/MM/yyyy\").toString(\"yyyy-MM-dd\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR1",
+    "expression": "if(isBlank(value.trim()), null, value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR1 using expression if(isBlank(value.trim()), null, value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR1",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR1 using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR2",
+    "expression": "if(isBlank(value.trim()), null, value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR2 using expression if(isBlank(value.trim()), null, value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR2",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR2 using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR3",
+    "expression": "if(isBlank(value.trim()), null, value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR3 using expression if(isBlank(value.trim()), null, value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR3",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR3 using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR4",
+    "expression": "if(isBlank(value.trim()), null, value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR4 using expression if(isBlank(value.trim()), null, value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR4",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR4 using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR5",
+    "expression": "if(isBlank(value.trim()), null, value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR5 using expression if(isBlank(value.trim()), null, value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR5",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR5 using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR6",
+    "expression": "if(isBlank(value.trim()), null, value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR6 using expression if(isBlank(value.trim()), null, value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR6",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR6 using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR7",
+    "expression": "if(isBlank(value.trim()), null, value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR7 using expression if(isBlank(value.trim()), null, value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR7",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR7 using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR8",
+    "expression": "if(isBlank(value.trim()), null, value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR8 using expression if(isBlank(value.trim()), null, value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR8",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR8 using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR9",
+    "expression": "if(isBlank(value.trim()), null, value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR9 using expression if(isBlank(value.trim()), null, value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR9",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR9 using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR10",
+    "expression": "if(isBlank(value.trim()), null, value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR10 using expression if(isBlank(value.trim()), null, value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR10",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR10 using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR11",
+    "expression": "if(isBlank(value.trim()), null, value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR11 using expression if(isBlank(value.trim()), null, value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR11",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR11 using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR12",
+    "expression": "if(isBlank(value.trim()), null, value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR12 using expression if(isBlank(value.trim()), null, value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HOR12",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column HOR12 using expression value.toNumber()"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "FSEN",
+    "expression": "forNonBlank(cells[\"FSEN\"].value, v, toNumber(toString(v).replace(/[^0-9]/, \"\")), null)",
+    "onError": "set-to-blank",
+    "newColumnName": "direction",
+    "columnInsertIndex": 3,
+    "description": "Create column direction at index 3 based on column FSEN using expression forNonBlank(cells[\"FSEN\"].value, v, toNumber(toString(v).replace(/[^0-9]/, \"\")), null)"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "FSEN",
+    "expression": "forNonBlank(cells[\"FSEN\"].value, v, if(toString(v).contains(\"=\"), true, false), null)",
+    "onError": "set-to-blank",
+    "newColumnName": "nightTime",
+    "columnInsertIndex": 4,
+    "description": "Create column nightTime at index 4 based on column FSEN using expression forNonBlank(cells[\"FSEN\"].value, v, if(toString(v).contains(\"=\"), true, false), null)"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "FDIA",
+    "newColumnName": "date",
+    "description": "Rename column FDIA to date"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "FEST",
+    "newColumnName": "stationId",
+    "description": "Rename column FEST to stationId"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "FSEN",
+    "newColumnName": "directionRaw",
+    "description": "Rename column FSEN to directionRaw"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "HOR1",
+    "newColumnName": "hour1",
+    "description": "Rename column HOR1 to hour1"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "HOR2",
+    "newColumnName": "hour2",
+    "description": "Rename column HOR2 to hour2"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "HOR3",
+    "newColumnName": "hour3",
+    "description": "Rename column HOR3 to hour3"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "HOR4",
+    "newColumnName": "hour4",
+    "description": "Rename column HOR4 to hour4"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "HOR5",
+    "newColumnName": "hour5",
+    "description": "Rename column HOR5 to hour5"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "HOR6",
+    "newColumnName": "hour6",
+    "description": "Rename column HOR6 to hour6"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "HOR7",
+    "newColumnName": "hour7",
+    "description": "Rename column HOR7 to hour7"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "HOR8",
+    "newColumnName": "hour8",
+    "description": "Rename column HOR8 to hour8"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "HOR9",
+    "newColumnName": "hour9",
+    "description": "Rename column HOR9 to hour9"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "HOR10",
+    "newColumnName": "hour10",
+    "description": "Rename column HOR10 to hour10"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "HOR11",
+    "newColumnName": "hour11",
+    "description": "Rename column HOR11 to hour11"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "HOR12",
+    "newColumnName": "hour12",
+    "description": "Rename column HOR12 to hour12"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "stationId",
+    "expression": "\"TrafficObservation\"",
+    "onError": "set-to-blank",
+    "newColumnName": "rdf_type",
+    "columnInsertIndex": 1,
+    "description": "Create column rdf_type at index 1 based on column stationId using expression \"TrafficObservation\""
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "directionRaw",
+    "description": "Remove column directionRaw"
+  }
+]

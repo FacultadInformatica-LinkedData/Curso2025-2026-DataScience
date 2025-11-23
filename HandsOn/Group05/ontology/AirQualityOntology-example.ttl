@@ -1,0 +1,52 @@
+@prefix aq:      <http://linkeddata.grup05.es/CalidadAireMadrid/ontology/AirQualityOntology#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+
+@base <http://linkeddata.grup05.es/CalidadAireMadrid/resource/> .
+
+###############################################################################
+# Ubicaciones
+###############################################################################
+
+<Ubicacion/28079004> a aq:Ubicacion ;
+  rdfs:label "Estación Plaza del Carmen"@es ;
+  schema:latitude  "40.4181"^^xsd:float ;
+  schema:longitude "-3.7038"^^xsd:float .
+
+<Ubicacion/28079008> a aq:Ubicacion ;
+  rdfs:label "Estación Ensanche de Vallecas"@es ;
+  schema:latitude  "40.3649"^^xsd:float ;
+  schema:longitude "-3.6010"^^xsd:float .
+
+###############################################################################
+# Contaminantes
+###############################################################################
+
+<Contaminante/NO2> a aq:Contaminante ;
+  rdfs:label "Dióxido de nitrógeno (NO₂)"@es .
+
+<Contaminante/PM10> a aq:Contaminante ;
+  rdfs:label "Partículas PM10"@es .
+
+###############################################################################
+# Mediciones
+###############################################################################
+
+<Medicion/obs-2025-11-03T10-00-00Z-no2-28079004> a aq:Medicion ;
+  aq:id               "28079004_2025-11-03T10:00:00Z_no2" ;
+  aq:tieneZonaHoraria "Europe/Madrid" ;
+  aq:valor            "43.2"^^xsd:decimal ;
+  aq:unidad           "µg/m³" ;
+  aq:fechaHora        "2025-11-03T10:00:00Z"^^xsd:dateTime ;
+  aq:mideParametro    <Contaminante/NO2> ;
+  aq:enUbicacion      <Ubicacion/28079004> .
+
+<Medicion/obs-2025-11-03T10-00-00Z-pm10-28079008> a aq:Medicion ;
+  aq:id               "28079008_2025-11-03T10:00:00Z_pm10" ;
+  aq:tieneZonaHoraria "Europe/Madrid" ;
+  aq:valor            "27.0"^^xsd:decimal ;
+  aq:unidad           "µg/m³" ;
+  aq:fechaHora        "2025-11-03T10:00:00Z"^^xsd:dateTime ;
+  aq:mideParametro    <Contaminante/PM10> ;
+  aq:enUbicacion      <Ubicacion/28079008> .

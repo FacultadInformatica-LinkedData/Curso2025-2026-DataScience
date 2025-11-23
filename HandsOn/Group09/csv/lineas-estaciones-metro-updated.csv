@@ -1,0 +1,196 @@
+SISTEMA,NOMBRE,NOMBRE_URI,LINEA,EST,CVE_EST,TIPO,TIPO_URI,ALCALDIAS,ALCALDIAS_URI,AÑO
+STC Metro,Pantitlán,pantitlan,01,01,STC0101,Terminal / Transbordo,terminal_transbordo,Venustiano Carranza,venustiano_carranza,1984
+STC Metro,Zaragoza,zaragoza,01,02,STC0102,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1969
+STC Metro,Gomez Farías,gomez_farias,01,03,STC0103,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1969
+STC Metro,Boulevard Puerto Aéreo,boulevard_puerto_aereo,01,04,STC0104,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1969
+STC Metro,Balbuena,balbuena,01,05,STC0105,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1969
+STC Metro,Moctezuma,moctezuma,01,06,STC0106,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1969
+STC Metro,San Lázaro,san_lazaro,01,07,STC0107,Intermedia / Transbordo,intermedia_transbordo,Venustiano Carranza,venustiano_carranza,1969
+STC Metro,Candelaria,candelaria,01,08,STC0108,Intermedia / Transbordo,intermedia_transbordo,Venustiano Carranza,venustiano_carranza,1969
+STC Metro,Merced,merced,01,09,STC0109,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1969
+STC Metro,Pino Suárez,pino_suarez,01,10,STC0110,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1969
+STC Metro,Isabel La Católica,isabel_la_catolica,01,11,STC0111,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1969
+STC Metro,Salto del Agua,salto_del_agua,01,12,STC0112,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1969
+STC Metro,Balderas,balderas,01,13,STC0113,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1969
+STC Metro,Cuauhtémoc,cuauhtemoc,01,14,STC0114,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1969
+STC Metro,Insurgentes,insurgentes,01,15,STC0115,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1969
+STC Metro,Sevilla,sevilla,01,16,STC0116,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1969
+STC Metro,Chapultepec,chapultepec,01,17,STC0117,Intermedia,intermedia,Cuauhtémoc / Miguel Hidalgo,cuauhtemoc;miguel_hidalgo,1969
+STC Metro,Juanacatlán,juanacatlan,01,18,STC0118,Intermedia,intermedia,Miguel Hidalgo,miguel_hidalgo,1970
+STC Metro,Tacubaya,tacubaya,01,19,STC0119,Intermedia / Transbordo,intermedia_transbordo,Miguel Hidalgo,miguel_hidalgo,1970
+STC Metro,Observatorio,observatorio,01,20,STC0120,Terminal,terminal,Álvaro Obregón,alvaro_obregon,1972
+STC Metro,Cuatro Caminos,cuatro_caminos,02,01,STC0201,Terminal,terminal,Estado de México - Naucalpan de Juárez,estado_de_mexico_naucalpan_de_juarez,1984
+STC Metro,Panteones,panteones,02,02,STC0202,Intermedia,intermedia,Miguel Hidalgo,miguel_hidalgo,1984
+STC Metro,Tacuba,tacuba,02,03,STC0203,Intermedia / Transbordo,intermedia_transbordo,Miguel Hidalgo,miguel_hidalgo,1970
+STC Metro,Cuitláhuac,cuitlahuac,02,04,STC0204,Intermedia,intermedia,Miguel Hidalgo,miguel_hidalgo,1970
+STC Metro,Popotla,popotla,02,05,STC0205,Intermedia,intermedia,Miguel Hidalgo,miguel_hidalgo,1970
+STC Metro,Colegio Militar,colegio_militar,02,06,STC0206,Intermedia,intermedia,Miguel Hidalgo,miguel_hidalgo,1970
+STC Metro,Normal,normal,02,07,STC0207,Intermedia,intermedia,Miguel Hidalgo,miguel_hidalgo,1970
+STC Metro,San Cosme,san_cosme,02,08,STC0208,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Revolución,revolucion,02,09,STC0209,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Hidalgo,hidalgo,02,10,STC0210,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Bellas Artes,bellas_artes,02,11,STC0211,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Allende,allende,02,12,STC0212,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Zócalo,zocalo,02,13,STC0213,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Pino Suárez,pino_suarez,02,14,STC0214,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,San Antonio Abad,san_antonio_abad,02,15,STC0215,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Chabacano,chabacano,02,16,STC0216,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Viaducto,viaducto,02,17,STC0217,Intermedia,intermedia,Benito Juárez / Iztacalco,benito_juarez;iztacalco,1970
+STC Metro,Xola,xola,02,18,STC0218,Intermedia,intermedia,Benito Juárez,benito_juarez,1970
+STC Metro,Villa de Cortés,villa_de_cortes,02,19,STC0219,Intermedia,intermedia,Benito Juárez,benito_juarez,1970
+STC Metro,Nativitas,nativitas,02,20,STC0220,Intermedia,intermedia,Benito Juárez,benito_juarez,1970
+STC Metro,Portales,portales,02,21,STC0221,Intermedia,intermedia,Benito Juárez,benito_juarez,1970
+STC Metro,Ermita,ermita,02,22,STC0222,Intermedia / Transbordo,intermedia_transbordo,Benito Juárez,benito_juarez,1970
+STC Metro,General Anaya,general_anaya,02,23,STC0223,Intermedia,intermedia,Coyoacán,coyoacan,1970
+STC Metro,Tasqueña,tasquena,02,24,STC0224,Terminal,terminal,Coyoacán,coyoacan,1970
+STC Metro,Indios Verdes,indios_verdes,03,01,STC0301,Terminal,terminal,Gustavo A. Madero,gustavo_a._madero,1979
+STC Metro,Deportivo 18 de Marzo,deportivo_18_de_marzo,03,02,STC0302,Intermedia / Transbordo,intermedia_transbordo,Gustavo A. Madero,gustavo_a._madero,1979
+STC Metro,Potrero,potrero,03,03,STC0303,Intermedia,intermedia,Gustavo A. Madero,gustavo_a._madero,1979
+STC Metro,La Raza,la_raza,03,04,STC0304,Intermedia / Transbordo,intermedia_transbordo,Gustavo A. Madero,gustavo_a._madero,1978
+STC Metro,Tlatelolco,tlatelolco,03,05,STC0305,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Guerrero,guerrero,03,06,STC0306,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Hidalgo,hidalgo,03,07,STC0307,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Juárez,juarez,03,08,STC0308,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Balderas,balderas,03,09,STC0309,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Niños Héroes,ninos_heroes,03,10,STC0310,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Hospital General,hospital_general,03,11,STC0311,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1970
+STC Metro,Centro Médico,centro_medico,03,12,STC0312,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1980
+STC Metro,Etiopía,etiopia,03,13,STC0313,Intermedia,intermedia,Benito Juárez,benito_juarez,1980
+STC Metro,Eugenia,eugenia,03,14,STC0314,Intermedia,intermedia,Benito Juárez,benito_juarez,1980
+STC Metro,División del Norte,division_del_norte,03,15,STC0315,Intermedia,intermedia,Benito Juárez,benito_juarez,1980
+STC Metro,Zapata,zapata,03,16,STC0316,Intermedia / Transbordo,intermedia_transbordo,Benito Juárez,benito_juarez,1980
+STC Metro,Coyoacán,coyoacan,03,17,STC0317,Intermedia,intermedia,Benito Juárez,benito_juarez,1983
+STC Metro,Viveros Derechos Humanos,viveros_derechos_humanos,03,18,STC0318,Intermedia,intermedia,Álvaro Obregón / Coyoacán,alvaro_obregon;coyoacan,1983
+STC Metro,Miguel Ángel de Quevedo,miguel_angel_de_quevedo,03,19,STC0319,Intermedia,intermedia,Coyoacán,coyoacan,1983
+STC Metro,Copilco,copilco,03,20,STC0320,Intermedia,intermedia,Coyoacán,coyoacan,1983
+STC Metro,Universidad,universidad,03,21,STC0321,Terminal,terminal,Coyoacán,coyoacan,1983
+STC Metro,Santa Anita,santa_anita,04,01,STC0401,Terminal / Transbordo,terminal_transbordo,Iztacalco,iztacalco,1982
+STC Metro,Jamaica,jamaica,04,02,STC0402,Intermedia / Transbordo,intermedia_transbordo,Venustiano Carranza,venustiano_carranza,1982
+STC Metro,Fray Servando,fray_servando,04,03,STC0403,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1982
+STC Metro,Candelaria,candelaria,04,04,STC0404,Intermedia / Transbordo,intermedia_transbordo,Venustiano Carranza,venustiano_carranza,1981
+STC Metro,Morelos,morelos,04,05,STC0405,Intermedia / Transbordo,intermedia_transbordo,Venustiano Carranza,venustiano_carranza,1981
+STC Metro,Canal del Norte,canal_del_norte,04,06,STC0406,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1981
+STC Metro,Consulado,consulado,04,07,STC0407,Intermedia / Transbordo,intermedia_transbordo,Gustavo A. Madero,gustavo_a._madero,1981
+STC Metro,Bondojito,bondojito,04,08,STC0408,Intermedia,intermedia,Gustavo A. Madero,gustavo_a._madero,1981
+STC Metro,Talismán,talisman,04,09,STC0409,Intermedia,intermedia,Gustavo A. Madero,gustavo_a._madero,1981
+STC Metro,Martín Carrera,martin_carrera,04,10,STC0410,Terminal / Transbordo,terminal_transbordo,Gustavo A. Madero,gustavo_a._madero,1981
+STC Metro,Politécnico,politecnico,05,01,STC0501,Terminal,terminal,Gustavo A. Madero,gustavo_a._madero,1982
+STC Metro,Instituto del Petróleo,instituto_del_petroleo,05,02,STC0502,Intermedia / Transbordo,intermedia_transbordo,Gustavo A. Madero,gustavo_a._madero,1982
+STC Metro,Autobuses del Norte,autobuses_del_norte,05,03,STC0503,Intermedia,intermedia,Gustavo A. Madero,gustavo_a._madero,1982
+STC Metro,La Raza,la_raza,05,04,STC0504,Intermedia / Transbordo,intermedia_transbordo,Gustavo A. Madero,gustavo_a._madero,1982
+STC Metro,Misterios,misterios,05,05,STC0505,Intermedia,intermedia,Gustavo A. Madero / Cuauhtémoc,gustavo_a._madero;cuauhtemoc,1982
+STC Metro,Valle Gómez,valle_gomez,05,06,STC0506,Intermedia,intermedia,Gustavo A. Madero / Venustiano Carranza,gustavo_a._madero;venustiano_carranza,1982
+STC Metro,Consulado,consulado,05,07,STC0507,Intermedia / Transbordo,intermedia_transbordo,Gustavo A. Madero / Venustiano Carranza,gustavo_a._madero;venustiano_carranza,1981
+STC Metro,Eduardo Molina,eduardo_molina,05,08,STC0508,Intermedia,intermedia,Gustavo A. Madero / Venustiano Carranza,gustavo_a._madero;venustiano_carranza,1981
+STC Metro,Aragón,aragon,05,09,STC0509,Intermedia,intermedia,Gustavo A. Madero / Venustiano Carranza,gustavo_a._madero;venustiano_carranza,1981
+STC Metro,Oceanía,oceania,05,10,STC0510,Intermedia / Transbordo,intermedia_transbordo,Venustiano Carranza,venustiano_carranza,1981
+STC Metro,Terminal Aérea,terminal_aerea,05,11,STC0511,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1981
+STC Metro,Hangares,hangares,05,12,STC0512,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1981
+STC Metro,Pantitlán,pantitlan,05,13,STC0513,Terminal / Transbordo,terminal_transbordo,Venustiano Carranza,venustiano_carranza,1981
+STC Metro,El Rosario,el_rosario,06,01,STC0601,Terminal / Transbordo,terminal_transbordo,Azcapotzalco,azcapotzalco,1983
+STC Metro,Tezozómoc,tezozomoc,06,02,STC0602,Intermedia,intermedia,Azcapotzalco,azcapotzalco,1983
+STC Metro,UAM Azcapotzalco,uam_azcapotzalco,06,03,STC0603,Intermedia,intermedia,Azcapotzalco,azcapotzalco,1983
+STC Metro,Ferrería,ferreria,06,04,STC0604,Intermedia,intermedia,Azcapotzalco,azcapotzalco,1983
+STC Metro,Norte 45,norte_45,06,05,STC0605,Intermedia,intermedia,Azcapotzalco,azcapotzalco,1983
+STC Metro,Vallejo,vallejo,06,06,STC0606,Intermedia,intermedia,Azcapotzalco,azcapotzalco,1983
+STC Metro,Instituto del Petróleo,instituto_del_petroleo,06,07,STC0607,Intermedia / Transbordo,intermedia_transbordo,Gustavo A. Madero,gustavo_a._madero,1983
+STC Metro,Lindavista,lindavista,06,08,STC0608,Intermedia,intermedia,Gustavo A. Madero,gustavo_a._madero,1986
+STC Metro,Deportivo 18 de Marzo,deportivo_18_de_marzo,06,09,STC0609,Intermedia / Transbordo,intermedia_transbordo,Gustavo A. Madero,gustavo_a._madero,1986
+STC Metro,La Villa-Basílica,la_villa-basilica,06,10,STC0610,Intermedia,intermedia,Gustavo A. Madero,gustavo_a._madero,1986
+STC Metro,Martín Carrera,martin_carrera,06,11,STC0611,Terminal / Transbordo,terminal_transbordo,Gustavo A. Madero,gustavo_a._madero,1986
+STC Metro,El Rosario,el_rosario,07,01,STC0701,Terminal / Transbordo,terminal_transbordo,Azcapotzalco,azcapotzalco,1988
+STC Metro,Aquiles Serdán,aquiles_serdan,07,02,STC0702,Intermedia,intermedia,Azcapotzalco,azcapotzalco,1988
+STC Metro,Camarones,camarones,07,03,STC0703,Intermedia,intermedia,Azcapotzalco,azcapotzalco,1988
+STC Metro,Refinería,refineria,07,04,STC0704,Intermedia,intermedia,Azcapotzalco,azcapotzalco,1988
+STC Metro,Tacuba,tacuba,07,05,STC0705,Intermedia / Transbordo,intermedia_transbordo,Miguel Hidalgo,miguel_hidalgo,1984
+STC Metro,San Joaquín,san_joaquin,07,06,STC0706,Intermedia,intermedia,Miguel Hidalgo,miguel_hidalgo,1984
+STC Metro,Polanco,polanco,07,07,STC0707,Intermedia,intermedia,Miguel Hidalgo,miguel_hidalgo,1984
+STC Metro,Auditorio,auditorio,07,08,STC0708,Intermedia,intermedia,Miguel Hidalgo,miguel_hidalgo,1984
+STC Metro,Constituyentes,constituyentes,07,09,STC0709,Intermedia,intermedia,Miguel Hidalgo,miguel_hidalgo,1985
+STC Metro,Tacubaya,tacubaya,07,10,STC0710,Intermedia / Transbordo,intermedia_transbordo,Miguel Hidalgo,miguel_hidalgo,1985
+STC Metro,San Pedro de Los Pinos,san_pedro_de_los_pinos,07,11,STC0711,Intermedia,intermedia,Benito Juárez,benito_juarez,1985
+STC Metro,San Antonio,san_antonio,07,12,STC0712,Intermedia,intermedia,Benito Juárez,benito_juarez,1985
+STC Metro,Mixcoac,mixcoac,07,13,STC0713,Intermedia / Transbordo,intermedia_transbordo,Benito Juárez,benito_juarez,1985
+STC Metro,Barranca del Muerto,barranca_del_muerto,07,14,STC0714,Terminal,terminal,Álvaro Obregón,alvaro_obregon,1985
+STC Metro,Garibaldi-Lagunilla,garibaldi-lagunilla,08,01,STC0801,Terminal / Transbordo,terminal_transbordo,Cuauhtémoc,cuauhtemoc,1994
+STC Metro,Bellas Artes,bellas_artes,08,02,STC0802,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1994
+STC Metro,San Juan de Letrán,san_juan_de_letran,08,03,STC0803,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1994
+STC Metro,Salto del Agua,salto_del_agua,08,04,STC0804,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1994
+STC Metro,Doctores,doctores,08,05,STC0805,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1994
+STC Metro,Obrera,obrera,08,06,STC0806,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1994
+STC Metro,Chabacano,chabacano,08,07,STC0807,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1994
+STC Metro,La Viga,la_viga,08,08,STC0808,Intermedia,intermedia,Cuauhtémoc / Venustiano Carranza,cuauhtemoc;venustiano_carranza,1994
+STC Metro,Santa Anita,santa_anita,08,09,STC0809,Intermedia / Transbordo,intermedia_transbordo,Iztacalco,iztacalco,1994
+STC Metro,Coyuya,coyuya,08,10,STC0810,Intermedia,intermedia,Iztacalco,iztacalco,1994
+STC Metro,Iztacalco,iztacalco,08,11,STC0811,Intermedia,intermedia,Iztacalco,iztacalco,1994
+STC Metro,Apatlaco,apatlaco,08,12,STC0812,Intermedia,intermedia,Iztapalapa,iztapalapa,1994
+STC Metro,Aculco,aculco,08,13,STC0813,Intermedia,intermedia,Iztapalapa,iztapalapa,1994
+STC Metro,Escuadrón 201,escuadron_201,08,14,STC0814,Intermedia,intermedia,Iztapalapa,iztapalapa,1994
+STC Metro,Atlalilco,atlalilco,08,15,STC0815,Intermedia / Transbordo,intermedia_transbordo,Iztapalapa,iztapalapa,1994
+STC Metro,Iztapalapa,iztapalapa,08,16,STC0816,Intermedia,intermedia,Iztapalapa,iztapalapa,1994
+STC Metro,Cerro de la Estrella,cerro_de_la_estrella,08,17,STC0817,Intermedia,intermedia,Iztapalapa,iztapalapa,1994
+STC Metro,UAM-I,uam-i,08,18,STC0818,Intermedia,intermedia,Iztapalapa,iztapalapa,1994
+STC Metro,Constitución de 1917,constitucion_de_1917,08,19,STC0819,Terminal,terminal,Iztapalapa,iztapalapa,1994
+STC Metro,Pantitlán,pantitlan,09,01,STC0901,Terminal / Transbordo,terminal_transbordo,Venustiano Carranza / Iztacalco,venustiano_carranza;iztacalco,1987
+STC Metro,Puebla,puebla,09,02,STC0902,Intermedia,intermedia,Venustiano Carranza / Iztacalco,venustiano_carranza;iztacalco,1987
+STC Metro,Ciudad Deportiva,ciudad_deportiva,09,03,STC0903,Intermedia,intermedia,Venustiano Carranza / Iztacalco,venustiano_carranza;iztacalco,1987
+STC Metro,Velódromo,velodromo,09,04,STC0904,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1987
+STC Metro,Mixhiuca,mixhiuca,09,05,STC0905,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1987
+STC Metro,Jamaica,jamaica,09,06,STC0906,Intermedia / Transbordo,intermedia_transbordo,Venustiano Carranza,venustiano_carranza,1987
+STC Metro,Chabacano,chabacano,09,07,STC0907,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1987
+STC Metro,Lázaro Cárdenas,lazaro_cardenas,09,08,STC0908,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1987
+STC Metro,Centro Médico,centro_medico,09,09,STC0909,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1987
+STC Metro,Chilpancingo,chilpancingo,09,10,STC0910,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1988
+STC Metro,Patriotismo,patriotismo,09,11,STC0911,Intermedia,intermedia,Cuauhtémoc / Miguel Hidalgo,cuauhtemoc;miguel_hidalgo,1988
+STC Metro,Tacubaya,tacubaya,09,12,STC0912,Terminal / Transbordo,terminal_transbordo,Miguel Hidalgo,miguel_hidalgo,1988
+STC Metro,Tláhuac,tlahuac,12,01,STC1201,Terminal,terminal,Tláhuac,tlahuac,2012
+STC Metro,Tlaltenco,tlaltenco,12,02,STC1202,Intermedia,intermedia,Tláhuac,tlahuac,2012
+STC Metro,Zapotitlán,zapotitlan,12,03,STC1203,Intermedia,intermedia,Tláhuac,tlahuac,2012
+STC Metro,Nopalera,nopalera,12,04,STC1204,Intermedia,intermedia,Tláhuac,tlahuac,2012
+STC Metro,Olivos,olivos,12,05,STC1205,Intermedia,intermedia,Tláhuac,tlahuac,2012
+STC Metro,Tezonco,tezonco,12,06,STC1206,Intermedia,intermedia,Iztapalapa,iztapalapa,2012
+STC Metro,Periferico Oriente,periferico_oriente,12,07,STC1207,Intermedia,intermedia,Iztapalapa,iztapalapa,2012
+STC Metro,Calle 11,calle_11,12,08,STC1208,Intermedia,intermedia,Iztapalapa,iztapalapa,2012
+STC Metro,Lomas Estrella,lomas_estrella,12,09,STC1209,Intermedia,intermedia,Iztapalapa,iztapalapa,2012
+STC Metro,San Andres Tomatlán,san_andres_tomatlan,12,10,STC1210,Intermedia,intermedia,Iztapalapa,iztapalapa,2012
+STC Metro,Culhuacán,culhuacan,12,11,STC1211,Intermedia,intermedia,Iztapalapa,iztapalapa,2012
+STC Metro,Atlalilco,atlalilco,12,12,STC1212,Intermedia / Transbordo,intermedia_transbordo,Iztapalapa,iztapalapa,2012
+STC Metro,Mexicaltzingo,mexicaltzingo,12,13,STC1213,Intermedia,intermedia,Iztapalapa / Coyoacán,iztapalapa;coyoacan,2012
+STC Metro,Ermita,ermita,12,14,STC1214,Intermedia / Transbordo,intermedia_transbordo,Benito Juárez,benito_juarez,2012
+STC Metro,Eje Central,eje_central,12,15,STC1215,Intermedia,intermedia,Benito Juárez,benito_juarez,2012
+STC Metro,Parque de los Venados,parque_de_los_venados,12,16,STC1216,Intermedia,intermedia,Benito Juárez,benito_juarez,2012
+STC Metro,Zapata,zapata,12,17,STC1217,Intermedia / Transbordo,intermedia_transbordo,Benito Juárez,benito_juarez,2012
+STC Metro,Hospital 20 de Noviembre,hospital_20_de_noviembre,12,18,STC1218,Intermedia,intermedia,Benito Juárez,benito_juarez,2012
+STC Metro,Insurgentes Sur,insurgentes_sur,12,19,STC1219,Intermedia,intermedia,Benito Juárez,benito_juarez,2012
+STC Metro,Mixcoac,mixcoac,12,20,STC1220,Terminal / Transbordo,terminal_transbordo,Benito Juárez,benito_juarez,2012
+STC Metro,Pantitlán,pantitlan,A,01,STCLA01,Terminal / Transbordo,terminal_transbordo,Iztacalco,iztacalco,1991
+STC Metro,Agrícola Oriental,agricola_oriental,A,02,STCLA02,Intermedia,intermedia,Iztacalco,iztacalco,1991
+STC Metro,Canal de San Juan,canal_de_san_juan,A,03,STCLA03,Intermedia,intermedia,Iztacalco,iztacalco,1991
+STC Metro,Tepalcates,tepalcates,A,04,STCLA04,Intermedia,intermedia,Iztapalapa,iztapalapa,1991
+STC Metro,Guelatao,guelatao,A,05,STCLA05,Intermedia,intermedia,Iztapalapa,iztapalapa,1991
+STC Metro,Peñón Viejo,penon_viejo,A,06,STCLA06,Intermedia,intermedia,Iztapalapa,iztapalapa,1991
+STC Metro,Acatitla,acatitla,A,07,STCLA07,Intermedia,intermedia,Iztapalapa,iztapalapa,1991
+STC Metro,Santa Marta,santa_marta,A,08,STCLA08,Intermedia,intermedia,Iztapalapa,iztapalapa,1991
+STC Metro,Los Reyes,los_reyes,A,09,STCLA09,Intermedia,intermedia,Estado de México - La Paz,estado_de_mexico_la_paz,1991
+STC Metro,La Paz,la_paz,A,10,STCLA10,Terminal,terminal,Estado de México - La Paz,estado_de_mexico_la_paz,1991
+STC Metro,Buenavista,buenavista,B,01,STCLB01,Terminal,terminal,Cuauhtémoc,cuauhtemoc,1999
+STC Metro,Guerrero,guerrero,B,02,STCLB02,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1999
+STC Metro,Garibaldi-Lagunilla,garibaldi-lagunilla,B,03,STCLB03,Intermedia / Transbordo,intermedia_transbordo,Cuauhtémoc,cuauhtemoc,1999
+STC Metro,Lagunilla,lagunilla,B,04,STCLB04,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1999
+STC Metro,Tepito,tepito,B,05,STCLB05,Intermedia,intermedia,Cuauhtémoc,cuauhtemoc,1999
+STC Metro,Morelos,morelos,B,06,STCLB06,Intermedia / Transbordo,intermedia_transbordo,Venustiano Carranza,venustiano_carranza,1999
+STC Metro,San Lázaro,san_lazaro,B,07,STCLB07,Intermedia / Transbordo,intermedia_transbordo,Venustiano Carranza,venustiano_carranza,1999
+STC Metro,Ricardo Flores Magón,ricardo_flores_magon,B,08,STCLB08,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1999
+STC Metro,Romero Rubio,romero_rubio,B,09,STCLB09,Intermedia,intermedia,Venustiano Carranza,venustiano_carranza,1999
+STC Metro,Oceanía,oceania,B,10,STCLB10,Intermedia / Transbordo,intermedia_transbordo,Gustavo A. Madero / Venustiano Carranza,gustavo_a._madero;venustiano_carranza,1999
+STC Metro,Deportivo Oceanía,deportivo_oceania,B,11,STCLB11,Intermedia,intermedia,Gustavo A. Madero,gustavo_a._madero,1999
+STC Metro,Bosque de Aragón,bosque_de_aragon,B,12,STCLB12,Intermedia,intermedia,Gustavo A. Madero,gustavo_a._madero,1999
+STC Metro,Villa de Aragón,villa_de_aragon,B,13,STCLB13,Intermedia,intermedia,Gustavo A. Madero,gustavo_a._madero,1999
+STC Metro,Nezahualcóyotl,nezahualcoyotl,B,14,STCLB14,Intermedia,intermedia,Estado de México - Nezahualcóyotl,estado_de_mexico_nezahualcoyotl,2000
+STC Metro,Impulsora,impulsora,B,15,STCLB15,Intermedia,intermedia,Estado de México - Nezahualcóyotl,estado_de_mexico_nezahualcoyotl,2000
+STC Metro,Río de los Remedios,rio_de_los_remedios,B,16,STCLB16,Intermedia,intermedia,Estado de México - Nezahualcóyotl,estado_de_mexico_nezahualcoyotl,2000
+STC Metro,Múzquiz,muzquiz,B,17,STCLB17,Intermedia,intermedia,Estado de México - Ecatepec,estado_de_mexico_ecatepec,2000
+STC Metro,Ecatepec,ecatepec,B,18,STCLB18,Intermedia,intermedia,Estado de México - Ecatepec,estado_de_mexico_ecatepec,2000
+STC Metro,Olímpica,olimpica,B,19,STCLB19,Intermedia,intermedia,Estado de México - Ecatepec,estado_de_mexico_ecatepec,2000
+STC Metro,Plaza Aragón,plaza_aragon,B,20,STCLB20,Intermedia,intermedia,Estado de México - Ecatepec,estado_de_mexico_ecatepec,2000
+STC Metro,Ciudad Azteca,ciudad_azteca,B,21,STCLB21,Terminal,terminal,Estado de México - Ecatepec,estado_de_mexico_ecatepec,2000

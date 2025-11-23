@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Application Requirements</title>
+</head>
+<body>
+  <h1>Application Requirements</h1>
+
+  <h2>1. Nombre de la aplicación</h2>
+  <p><strong>Biblio MAD</strong></p>
+
+  <h2>2. Descripción general</h2>
+  <p>
+    La aplicación ofrecerá un mapa interactivo con los distintos bibliobuses y bibliotecas de la ciudad de Madrid,
+    permitiendo al usuario aplicar filtros para encontrar la biblioteca más cercana y adecuada a sus necesidades.
+    Además, mostrará información útil sobre accesibilidad, horarios y disponibilidad de servicios como Wi-Fi.
+  </p>
+
+  <h2>3. Requisitos funcionales</h2>
+  <ul>
+    <li>Mostrar en un mapa la ubicación de todas las bibliotecas y bibliobuses municipales.</li>
+    <li>Permitir filtrar por tipo de servicio (Biblioteca / Bibliobús).</li>
+    <li>Permitir filtrar por distrito o barrio.</li>
+    <li>Permitir filtrar por horario.</li>
+    <li>Permitir filtrar por disponibilidad de Wi-Fi.</li>
+    <li>Permitir filtrar por accesibilidad.</li>
+    <li>Mostrar detalles al hacer clic en un punto (nombre, dirección, teléfono, horario, accesibilidad, Wi-Fi, etc.).</li>
+    <li>Incluir un buscador por nombre de biblioteca, dirección o código postal.</li>
+  </ul>
+
+  <h2>4. Requisitos no funcionales</h2>
+  <ul>
+    <li>Interfaz visual e intuitiva basada en mapas (OpenStreetMap o Leaflet).</li>
+    <li>Diseño responsive para ordenadores y dispositivos móviles.</li>
+    <li>Uso de estándares abiertos (CSV, RDF, HTML5, SPARQL).</li>
+    <li>Posibilidad de integración con datos de transporte público o accesibilidad.</li>
+  </ul>
+
+  <h2>5. Mock-up de la interfaz</h2>
+
+  <h3>Vista principal</h3>
+  <pre>
+  +-------------------------------------------------------------+
+  |                        Biblio MAD                           |
+  |-------------------------------------------------------------|
+  | [Filtro: Tipo] [Filtro: Distrito] [Filtro: Wi-Fi] [Buscador 🔍]  |
+  |                                                             |
+  |   [ Mapa con puntos de Bibliotecas y Bibliobuses ]          |
+  |                                                             |
+  |   [Panel lateral con detalles del punto seleccionado]       |
+  +-------------------------------------------------------------+
+  </pre>
+
+  <h3>Vista de detalles</h3>
+  <pre>
+  +------------------------------------------+
+  |  Biblioteca Pública Municipal Vallecas   |
+  |------------------------------------------|
+  | Dirección: Calle del Monte Igueldo, 73   |
+  | Distrito: Puente de Vallecas             |
+  | Teléfono: 91 588 68 47                   |
+  | Accesible: Sí                            |
+  | Wi-Fi: Disponible                        |
+  | Horario: L–V 9:00–21:00                  |
+  +------------------------------------------+
+  </pre>
+</body>
+</html>
+
+  <h2>4. Requisitos no funcionales</h2>
+  <ul>
+    <li>Interfaz visual e intuitiva basada en mapas (OpenStreetMap o Leaflet).</li>
+    <li>Diseño responsive para ordenadores y móviles.</li>
+    <li>Uso de estándares abiertos (CSV, RDF, HTML5, SPARQL).</li>
+    <li>Integración posible con datos de transporte público o accesibilidad.</li>
+  </ul>
+
+  <h2>5. Mock-up de la interfaz</h2>
+  <h3>Vista principal</h3>
+  <pre>
+  +-------------------------------------------------------------+
+  |        Madrid Smart Library Map                             |
+  |-------------------------------------------------------------|
+  | [Filtro: Tipo] [Filtro: Distrito] [Buscador 🔍]             |
+  |                                                             |
+  |   [ Mapa con puntos de Bibliotecas y Bibliobuses ]          |
+  |                                                             |
+  |   [Panel lateral con detalles del punto seleccionado]       |
+  +-------------------------------------------------------------+
+  </pre>
+
+  <h3>Vista de detalles</h3>
+  <pre>
+  +------------------------------------------+
+  |  Biblioteca Pública Municipal Vallecas   |
+  |------------------------------------------|
+  | Dirección: Calle del Monte Igueldo, 73   |
+  | Distrito: Puente de Vallecas             |
+  | Teléfono: 91 588 68 47                   |
+  | Accesible: Sí                            |
+  | Horario: L-V 9:00–21:00                  |
+  +------------------------------------------+
+  </pre>
+</body>
+</html>

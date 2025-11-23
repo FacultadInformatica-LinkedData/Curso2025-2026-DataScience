@@ -127,7 +127,6 @@ g.add((foaf.eamil, RDFS.range, XSD.string))
 g.add((data.Oscar, vcard.Family, Literal("Corcho García")))
 g.add((data.Oscar, vcard.Given, Literal("Oscar")))
 g.add((data.Oscar, foaf.email, Literal("ocorcho@fi.upm.es")))
-
 # Visualize the results
 for s, p, o in g:
   print(s,p,o)

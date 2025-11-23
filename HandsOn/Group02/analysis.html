@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>App BiciMAD — Análisis (Group02)</title>
+<style>
+  :root{--line:#e5e7eb;--muted:#6b7280}
+  body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:920px;margin:40px auto;padding:0 16px;line-height:1.6}
+  h1,h2{line-height:1.25;margin:0 0 8px}
+  .card{border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0;background:#fff}
+  .small{color:var(--muted);font-size:.95rem}
+  table{border-collapse:collapse;width:100%}
+  th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+  th{background:#f7f7f7}
+  code{background:#f3f4f6;border:1px solid var(--line);padding:.1rem .35rem;border-radius:6px}
+  .pill{display:inline-block;border:1px solid var(--line);padding:.2rem .6rem;border-radius:999px;background:#fafafa;margin-right:6px}
+</style>
+</head>
+<body>
+
+<header class="card">
+  <h1>App BiciMAD — Análisis inicial</h1>
+  <p class="small">Grupo: <strong>Group02</strong> · Curso: Linked Data · Documento: <code>analysis.html</code></p>
+  <p><strong>Dataset:</strong> BiciMAD — Disponibilidad de bicicletas por estación (histórico)</p>
+  <p><strong>Fuente:</strong> Portal de Datos Abiertos del Ayuntamiento de Madrid (<a href="https://datos.madrid.es/" target="_blank" rel="noopener">datos.madrid.es</a>)</p>
+  <p class="small">Nota: según la ficha del portal, los datos históricos llegan aprox. hasta enero de 2022. Para la práctica los usamos como histórico, no como tiempo real.</p>
+</header>
+
+<section class="card">
+  <h2>1) Análisis del conjunto de datos</h2>
+  <p>Hemos revisado la ficha del dataset y ejemplos de CSV. A nivel práctico, esperamos columnas como estas (puede variar un poco según la versión del archivo):</p>
+
+  <table>
+    <thead><tr><th>Columna (esperada)</th><th>Tipo</th><th>Qué significa</th></tr></thead>
+    <tbody>
+      <tr><td><code>station_id</code></td><td>entero/string</td><td>Identificador de la estación BiciMAD.</td></tr>
+      <tr><td><code>date</code></td><td>fecha <code>YYYY-MM-DD</code></td><td>Fecha de la medición.</td></tr>
+      <tr><td><code>time</code></td><td>hora <code>HH:MM</code></td><td>Hora de la medición.</td></tr>
+      <tr><td><code>available_bikes</code></td><td>entero</td><td>Bicis disponibles en ese momento.</td></tr>
+      <tr><td><code>available_docks</code></td><td>entero</td><td>Anclajes libres en ese momento.</td></tr>
+      <tr><td><code>station_name</code></td><td>string</td><td>Nombre de la estación (si viene en el CSV).</td></tr>
+      <tr><td><code>lat</code>, <code>lon</code></td><td>decimal</td><td>Coordenadas WGS84 de la estación.</td></tr>
+    </tbody>
+  </table>
+
+  <p>Ideas básicas para limpiar/validar antes de transformar:</p>
+  <ul>
+    <li><span class="pill">IDs</span> <code>station_id</code> no vacío y sin duplicados raros.</li>
+    <li><span class="pill">Tiempo</span> unir <code>date</code> + <code>time</code> a un <em>timestamp</em> ISO-8601.</li>
+    <li><span class="pill">Rangos</span> <code>available_bikes</code> y <code>available_docks</code> ≥ 0.</li>
+    <li><span class="pill">Coordenadas</span> lat/lon dentro del área de Madrid; si no, revisamos.</li>
+  </ul>
+
+  <p class="small"><strong>Nota:</strong> No metemos estadísticas exactas porque dependen del CSV concreto que subamos. Nuestra idea es confirmar estos rangos con una exploración rápida (pandas/Excel) y documentar cualquier rareza.</p>
+</section>
+
+<section class="card">
+  <h2>2) Análisis de la licencia de la fuente</h2>
+  <ul>
+    <li><strong>Publicador:</strong> Ayuntamiento de Madrid (Datos Abiertos).</li>
+    <li><strong>Titular de derechos:</strong> Ayuntamiento de Madrid.</li>
+    <li><strong>Licencia:</strong> Condiciones generales de reutilización del portal (uso comercial y no comercial, citando la fuente). Enlace: <a href="https://datos.madrid.es/egob/catalogo/aviso-legal" target="_blank" rel="noopener">aviso legal</a>.</li>
+    <li><strong>Nuestra decisión:</strong> Publicaremos los datos generados indicando esa licencia con un enlace en los metadatos (atribución obligatoria).</li>
+  </ul>
+  <p class="small">En conclusión, podemos usar y publicar derivados si ponemos “Fuente: Ayuntamiento de Madrid – Datos Abiertos” y enlazamos al aviso legal.</p>
+</section>
+
+<section class="card">
+  <h2>3) Estrategia de nombrado de recursos (URIs)</h2>
+  <p>Como estamos empezando, buscamos URIs simples y estables. La idea es que sean fáciles de leer y de construir a partir del CSV.</p>
+
+  <table>
+    <thead><tr><th>Base</th><th>Patrón</th><th>Ejemplo</th><th>Qué representa</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>https://example.org/group02/bicimad/</code></td>
+        <td><code>/station/{id}</code></td>
+        <td><code>https://example.org/group02/bicimad/station/123</code></td>
+        <td>Una estación concreta.</td>
+      </tr>
+      <tr>
+        <td><code>https://example.org/group02/bicimad/</code></td>
+        <td><code>/observation/{id}-{yyyyMMddTHHmm}</code></td>
+        <td><code>https://example.org/group02/bicimad/observation/123-20210115T0830</code></td>
+        <td>Una medición (disponibilidad) en un instante.</td>
+      </tr>
+      <tr>
+        <td><code>https://example.org/group02/bicimad/</code></td>
+        <td><code>/place/{type}/{slug}</code></td>
+        <td><code>https://example.org/group02/bicimad/place/district/centro</code></td>
+        <td>Un lugar administrativo (barrio/distrito).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul>
+    <li><strong>Identificadores:</strong> para observaciones, unimos <code>station_id</code> con la marca temporal (UTC) sin espacios.</li>
+    <li><strong>Serialización:</strong> nuestra web puede servir HTML para humanos y archivos RDF estáticos en paralelo (por ejemplo <code>station/123.ttl</code>) si no montamos negociación de contenido.</li>
+    <li><strong>Estabilidad:</strong> no reutilizaremos URIs; si cambia algo “fuerte”, se crea un recurso nuevo.</li>
+  </ul>
+
+</section>
+
+<footer class="small" style="text-align:center;margin:24px 0 6px">
+  Group02 — BiciMAD — analysis.html · Versión para entrega (solo 3 puntos)
+</footer>
+
+</body>
+</html>

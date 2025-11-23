@@ -1,0 +1,212 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna NOMBRE usando la expresión value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna NOMBRE usando la expresión value.toTitlecase()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "EQUIPAMIENTO",
+    "expression": "grel:value.toLowercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna EQUIPAMIENTO usando la expresión grel:value.toLowercase()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "EQUIPAMIENTO",
+    "expression": "grel:value.toLowercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna EQUIPAMIENTO usando la expresión grel:value.toLowercase()"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "EQUIPAMIENTO",
+    "expression": "grel:if(isBlank(value), \"false\", if(value.toLowercase().contains(\"wifi\"),\"true\",\"false\"))",
+    "onError": "set-to-blank",
+    "newColumnName": "tieneWifi",
+    "columnInsertIndex": 5,
+    "description": "Crear la columna tieneWifi en el índice 5 basada en la columna EQUIPAMIENTO usando la expresión grel:if(isBlank(value), \"false\", if(value.toLowercase().contains(\"wifi\"),\"true\",\"false\"))"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "EQUIPAMIENTO",
+    "expression": "grel:if(\n  isBlank(value),\n  \"false\",\n  if(value.toLowercase().contains(\"acceso público a internet\"),\"true\",\"false\")\n)",
+    "onError": "set-to-blank",
+    "newColumnName": "tieneInternetPublico",
+    "columnInsertIndex": 5,
+    "description": "Crear la columna tieneInternetPublico en el índice 5 basada en la columna EQUIPAMIENTO usando la expresión grel:if(\n  isBlank(value),\n  \"false\",\n  if(value.toLowercase().contains(\"acceso público a internet\"),\"true\",\"false\")\n)"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ACCESIBILIDAD",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Dividir columna ACCESIBILIDAD por separador"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "CLASE-VIAL",
+    "expression": "grel:cells[\"CLASE-VIAL\"].value + \" \" +\ncells[\"NOMBRE-VIA\"].value + \" \" +\ncells[\"NUM\"].value",
+    "onError": "set-to-blank",
+    "newColumnName": "direccion_completa",
+    "columnInsertIndex": 15,
+    "description": "Crear la columna direccion_completa en el índice 15 basada en la columna CLASE-VIAL usando la expresión grel:cells[\"CLASE-VIAL\"].value + \" \" +\ncells[\"NOMBRE-VIA\"].value + \" \" +\ncells[\"NUM\"].value"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DISTRITO",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna DISTRITO usando la expresión value.toTitlecase()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DISTRITO",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna DISTRITO usando la expresión value.trim()"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DISTRITO",
+    "expression": "grel:value.toLowercase()\n  .replace(\" \", \"-\")\n  .replace(\"á\",\"a\")\n  .replace(\"é\",\"e\")\n  .replace(\"í\",\"i\")\n  .replace(\"ó\",\"o\")\n  .replace(\"ú\",\"u\")\n  .replace(\"ñ\",\"n\")",
+    "onError": "set-to-blank",
+    "newColumnName": "distrito_slug",
+    "columnInsertIndex": 29,
+    "description": "Crear la columna distrito_slug en el índice 29 basada en la columna DISTRITO usando la expresión grel:value.toLowercase()\n  .replace(\" \", \"-\")\n  .replace(\"á\",\"a\")\n  .replace(\"é\",\"e\")\n  .replace(\"í\",\"i\")\n  .replace(\"ó\",\"o\")\n  .replace(\"ú\",\"u\")\n  .replace(\"ñ\",\"n\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "BARRIO",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna BARRIO usando la expresión value.toTitlecase()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "BARRIO",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna BARRIO usando la expresión value.trim()"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "BARRIO",
+    "expression": "grel:value.toLowercase()\n  .replace(\" \", \"-\")\n  .replace(\"á\",\"a\")\n  .replace(\"é\",\"e\")\n  .replace(\"í\",\"i\")\n  .replace(\"ó\",\"o\")\n  .replace(\"ú\",\"u\")\n  .replace(\"ñ\",\"n\")",
+    "onError": "set-to-blank",
+    "newColumnName": "barrio_slug",
+    "columnInsertIndex": 27,
+    "description": "Crear la columna barrio_slug en el índice 27 basada en la columna BARRIO usando la expresión grel:value.toLowercase()\n  .replace(\" \", \"-\")\n  .replace(\"á\",\"a\")\n  .replace(\"é\",\"e\")\n  .replace(\"í\",\"i\")\n  .replace(\"ó\",\"o\")\n  .replace(\"ú\",\"u\")\n  .replace(\"ñ\",\"n\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LATITUD",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna LATITUD usando la expresión value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LONGITUD",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna LONGITUD usando la expresión value.toNumber()"
+  }
+]

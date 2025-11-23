@@ -1,0 +1,65 @@
+@prefix aq: <https://carloscumbrado.github.io/HandsOn/group07/ontology/airquality#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mod: <https://w3id.org/mod#> .
+
+<https://carloscumbrado.github.io/HandsOn/group07/ontology/airquality#>
+    rdf:type owl:Ontology ;
+    rdfs:label "Ontología de Calidad del Aire – Madrid 2024 (Group07)"@es ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
+
+#################################
+#    Object Properties
+#################################
+
+aq:hasStation rdf:type owl:ObjectProperty ;
+    rdfs:domain aq:AirQualityObservation ;
+    rdfs:range aq:Station ;
+    rdfs:label "has station"@en ;
+    rdfs:comment "Links an air quality observation to the station where it was recorded."@en .
+
+aq:measuresPollutant rdf:type owl:ObjectProperty ;
+    rdfs:domain aq:AirQualityObservation ;
+    rdfs:range aq:Pollutant ;
+    rdfs:label "measures pollutant"@en ;
+    rdfs:comment "Indicates which pollutant is measured in a specific observation."@en .
+
+#################################
+#    Datatype Properties
+#################################
+
+aq:hasValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain aq:AirQualityObservation ;
+    rdfs:range xsd:float ;
+    rdfs:label "has value"@en ;
+    rdfs:comment "Numeric pollutant value measured (µg/m³)."@en .
+
+aq:hasDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain aq:AirQualityObservation ;
+    rdfs:range xsd:date ;
+    rdfs:label "has date"@en ;
+    rdfs:comment "Date of measurement."@en .
+
+aq:hasUnit rdf:type owl:DatatypeProperty ;
+    rdfs:domain aq:AirQualityObservation ;
+    rdfs:range xsd:string ;
+    rdfs:label "has unit"@en ;
+    rdfs:comment "Unit of measurement used for the observation (e.g., µg/m³)."@en .
+
+#################################
+#    Classes
+#################################
+
+aq:AirQualityObservation rdf:type owl:Class ;
+    rdfs:label "Air Quality Observation"@en ;
+    rdfs:comment "A record of an air quality measurement taken at a station for a specific pollutant."@en .
+
+aq:Station rdf:type owl:Class ;
+    rdfs:label "Station"@en ;
+    rdfs:comment "An air quality monitoring station."@en .
+
+aq:Pollutant rdf:type owl:Class ;
+    rdfs:label "Pollutant"@en ;
+    rdfs:comment "A chemical substance measured in air quality observations (e.g., NO2, O3, PM10)."@en .

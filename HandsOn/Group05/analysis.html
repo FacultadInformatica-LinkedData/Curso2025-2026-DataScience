@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grupo05 — Análisis y Estrategia de Linked Data (Calidad del Aire - Madrid)</title>
+  <style>
+    body{font-family:system-ui,Roboto,Arial;line-height:1.6;margin:2em;color:#111}
+    h1,h2,h3{color:#004b87}
+    code{background:#f4f4f4;padding:2px 4px;border-radius:4px}
+    table{border-collapse:collapse;width:100%;margin:1em 0}
+    th,td{border:1px solid #ccc;padding:6px 10px;text-align:left}
+  </style>
+</head>
+<body>
+<h1>Grupo05 — Generación de Linked Data: Análisis y Estrategia</h1>
+<p><strong>Dataset:</strong> Mediciones de calidad del aire en Madrid (archivo <code>openaq_location_4320_measurments.csv</code>).</p>
+
+
+<section id="analisis-conjunto-datos">
+  
+<style>
+  #analisis-conjunto-datos h2 { margin-top: 0.5rem; }
+  .nice-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin: 0.75rem 0 1.25rem 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14.5px;
+  }
+  .nice-table tbody tr th {
+    width: 260px;
+    color: #111827;
+    background: #f8fafc;
+    font-weight: 600;
+    padding: 10px 12px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+  }
+  .nice-table tbody tr td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .nice-table tbody tr:last-child td, .nice-table tbody tr:last-child th {
+    border-bottom: none;
+  }
+  ul { 
+    margin-top: 0.5rem; 
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    list-style-type: disc;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14.5px;
+  }
+  li { margin-left: 20px; line-height: 1.5; }
+</style>
+
+  <h2>1. Análisis del conjunto de datos</h2>
+  
+<table class="nice-table">
+  <tbody>
+    <tr><th>Archivo</th><td>calidad_aire_4318_y_otros.csv</td></tr>
+    <tr><th>Registros</th><td>4,599</td></tr>
+    <tr><th>Columnas</th><td>15</td></tr>
+    <tr><th>Rango temporal</th><td>datetimeUtc: 2025-10-01 01:00:00+00:00 → 2025-10-27 10:00:00+00:00 · datetimeLocal: 2025-01-10 03:00:00+02:00 → 2025-12-10 23:00:00+02:00</td></tr>
+    <tr><th>Estaciones / Códigos</th><td>3223, 4285, 4318, 4320</td></tr>
+    <tr><th>Campos de contaminantes</th><td>parameter, country_iso</td></tr>
+    <tr><th>Geo</th><td>lat: latitude · lon: longitude</td></tr>
+  </tbody>
+</table>
+
+  <h3>Columnas del dataset</h3>
+  <ul><li>location_id</li><li>location_name</li><li>parameter</li><li>value</li><li>unit</li><li>datetimeUtc</li><li>datetimeLocal</li><li>timezone</li><li>latitude</li><li>longitude</li><li>country_iso</li><li>isMobile</li><li>isMonitor</li><li>owner_name</li><li>provider</li></ul>
+</section>
+<h2>2. Análisis de licencia</h2>
+<p>El origen del dataset es OpenAQ, que recopila datos de la <strong>European Environment Agency (EEA)</strong>. La EEA publica sus datos generalmente bajo <strong>licencia Creative Commons Attribution 4.0 (CC BY 4.0)</strong>. Por tanto, se propone aplicar la misma licencia a los datos RDF generados, citando siempre a la EEA y a OpenAQ como fuentes originales.</p>
+
+<h2>3. Estrategia de nombrado de recursos (URIs)</h2>
+<p>Dado que el dataset es pequeño, se opta por usar <strong>hash URIs</strong>.</p>
+
+<ul>
+  <li><strong>Dominio base:</strong> <code>http://linkeddata.grup05.es/</code> — bajo control del grupo.</li>
+  <li><strong>Subcarpeta del proyecto:</strong> <code>CalidadAireMadrid</code> para indicar el contexto de los datos.</li>
+</ul>
+
+<h3>3.1 Ontología</h3>
+<p>Las clases y propiedades de la ontología tendrán la forma:</p>
+<ul>
+  <li>Clases: <code>http://linkeddata.grup05.es/CalidadAireMadrid/ontology/&lt;ontologyName&gt;#&lt;className&gt;</code></li>
+  <li>Propiedades: <code>http://linkeddata.grup05.es/CalidadAireMadrid/ontology/&lt;ontologyName&gt;#&lt;propertyName&gt;</code></li>
+</ul>
+<p><strong>Ejemplos:</strong></p>
+<ul>
+  <li>Clase de medición: <code>http://linkeddata.grup05.es/CalidadAireMadrid/ontology/AirQualityOntology#Medicion</code></li>
+  <li>Propiedad “valor”: <code>http://linkeddata.grup05.es/CalidadAireMadrid/ontology/AirQualityOntology#valor</code></li>
+</ul>
+
+<h3>3.2 Instancias</h3>
+<p>Las instancias de los datos seguirán el patrón:</p>
+<ul>
+  <li><code>http://linkeddata.grup05.es/CalidadAireMadrid/resource/&lt;className&gt;/&lt;identifier&gt;</code></li>
+</ul>
+<p><strong>Ejemplo:</strong> una medición de NO₂ tomada el 2025-10-27T01:00:00Z en la estación 4320 podría representarse como:</p>
+<p><code>http://linkeddata.grup05.es/CalidadAireMadrid/resource/Medicion/4320_2025-10-27T01:00:00Z_no2</code></p>
+
+<h2>4. Ontología ligera</h2>
+<p>Se propone una ontología simple que cubre los elementos del dataset:</p>
+<table>
+  <tr><th>Clase</th><th>Descripción</th></tr>
+  <tr><td><code>Medicion</code></td><td>Observación puntual de un contaminante</td></tr>
+  <tr><td><code>Ubicacion</code></td><td>Estación o punto de medida</td></tr>
+  <tr><td><code>Contaminante</code></td><td>Tipo de sustancia medida</td></tr>
+</table>
+
+<table>
+  <tr><th>Propiedad</th><th>Dominio</th><th>Rango</th></tr>
+  <tr><td><code>valor</code></td><td>Medicion</td><td>xsd:decimal</td></tr>
+  <tr><td><code>unidad</code></td><td>Medicion</td><td>xsd:string</td></tr>
+  <tr><td><code>fechaHora</code></td><td>Medicion</td><td>xsd:dateTime</td></tr>
+  <tr><td><code>tieneId</code></td><td>Medicion</td><td>xsd:string</td></tr>
+  <tr><td><code>tieneZonaHoraria</code></td><td>Medicion</td><td>xsd:string</td></tr>
+  <tr><td><code>enUbicacion</code></td><td>Medicion</td><td>Ubicacion</td></tr>
+  <tr><td><code>mideParametro</code></td><td>Medicion</td><td>Contaminante</td></tr>
+</table>
+
+<h2>6. Conclusión</h2>
+<p>El análisis y la estrategia de nombrado propuestos siguen las buenas prácticas de Linked Data. Se define una ontología ligera y un esquema de URIs consistente con el ejemplo BECA, asegurando claridad, reutilización y atribución correcta según la licencia CC BY 4.0.</p>
+
+</body>
+</html>

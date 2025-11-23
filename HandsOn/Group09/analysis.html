@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Análisis del dataset | Metro CDMX</title>
+  <link rel="stylesheet" href="requirements/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">Análisis y Estrategia de Nombrado</h1>
+      <p class="subtitle">HandsOn 2</p>
+      <nav>
+        <a href="requirements/datasetRequirements.html">Datasets</a>
+        <span class="small">·</span>
+        <a href="requirements/applicationRequirements.html">Aplicación</a>
+        <span class="small">·</span>
+        <a href="analysis.html">Análisis</a>
+      </nav>
+    </header>
+
+    <section class="section">
+      <h2>Análisis de los datasets utilizados</h2>
+      <p>
+        Los datasets seleccionados pertenecen al Portal de Datos Abiertos de
+        la Ciudad de México.<br />El primer dataset detalla la estructura e
+        información acerca de la ubicación e inauguración de cada estación
+        (línea, alcaldía, tipo, año de inauguración...). El segundo dataset
+        contiene registros diarios de afluencia por estación y línea.<br />
+        Ambos se utilizarán como base para construir la ontología.
+      </p>
+
+      <h3>Estructura del Dataset "Líneas y Estaciones"</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Columna</th>
+              <th>Etiqueta</th>
+              <th>Descripción</th>
+              <th>Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SISTEMA</td>
+              <td>Sistema</td>
+              <td>Nombre del sistema de Transporte Público</td>
+              <td>Texto</td>
+            </tr>
+            <tr>
+              <td>NOMBRE</td>
+              <td>Nombre</td>
+              <td>Nombre de la estación</td>
+              <td>Texto</td>
+            </tr>
+            <tr>
+              <td>LINEA</td>
+              <td>Línea</td>
+              <td>Número de la línea</td>
+              <td>Número entero</td>
+            </tr>
+            <tr>
+              <td>EST</td>
+              <td>Código de estación</td>
+              <td>Número de la estación</td>
+              <td>Número entero</td>
+            </tr>
+            <tr>
+              <td>CVE_EST</td>
+              <td>Clave estación</td>
+              <td>Clave alfanumérica de la estación</td>
+              <td>Alfanumérico</td>
+            </tr>
+            <tr>
+              <td>CVE_EOD17</td>
+              <td>Clave EOD17</td>
+              <td>Clave de la encuesta</td>
+              <td>Alfanumérico</td>
+            </tr>
+            <tr>
+              <td>TIPO</td>
+              <td>Tipo</td>
+              <td>Tipo de estación (Intermedia, Transbordo, Terminal)</td>
+              <td>Texto</td>
+            </tr>
+            <tr>
+              <td>ALCALDIAS</td>
+              <td>Alcaldía</td>
+              <td>Nombre de la Alcaldía</td>
+              <td>Texto</td>
+            </tr>
+            <tr>
+              <td>AÑO</td>
+              <td>Año</td>
+              <td>Año de apertura</td>
+              <td>Número entero</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+      <h3>Estructura del Dataset "Afluencia Diaria"</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Columna</th>
+              <th>Etiqueta</th>
+              <th>Descripción</th>
+              <th>Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>fecha</td>
+              <td>fecha</td>
+              <td>Fecha de la medición de afluencia</td>
+              <td>Fecha</td>
+            </tr>
+            <tr>
+              <td>anio</td>
+              <td>año</td>
+              <td>Año de la medición</td>
+              <td>Número entero</td>
+            </tr>
+            <tr>
+              <td>mes</td>
+              <td>mes</td>
+              <td>Mes de la medición</td>
+              <td>Texto</td>
+            </tr>
+            <tr>
+              <td>linea</td>
+              <td>línea</td>
+              <td>Línea del STC - Metro de la medición</td>
+              <td>Alfanumérico</td>
+            </tr>
+            <tr>
+              <td>estacion</td>
+              <td>estación</td>
+              <td>Estación del STC - Metro de la medición</td>
+              <td>Alfanumérico</td>
+            </tr>
+            <tr>
+              <td>afluencia</td>
+              <td>afluencia</td>
+              <td>Afluencia en número de personas</td>
+              <td>Número entero</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Licencia y atribución</h2>
+      <p>
+        Los datos empleados provienen del
+        <a href="https://datos.cdmx.gob.mx/" target="_blank" rel="noopener">Portal de Datos Abiertos de la Ciudad de
+          México</a>
+        y se distribuyen bajo la licencia Creative Commons Attribution 4.0.
+        Esta licencia permite copiar, redistribuir, transformar y construir a
+        partir del material para cualquier propósito, incluso comercial,
+        siempre que se reconozca la autoría original.
+      </p>
+
+      <h3>Detalles de la licencia</h3>
+      <ul class="list">
+        <li>
+          <strong>Nombre:</strong> Creative Commons Attribution 4.0 (CC BY
+          4.0)
+        </li>
+        <li>
+          <strong>URL oficial:</strong>
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+            rel="noopener">https://creativecommons.org/licenses/by/4.0/</a>
+        </li>
+        <li>
+          <strong>Requisito principal:</strong> Reconocimiento de la autoría
+          original
+        </li>
+      </ul>
+
+      <h3>Atribución requerida</h3>
+
+      <blockquote class="attribution-quote">
+        Fuente: Portal de Datos Abiertos de la CDMX — © Gobierno de la Ciudad
+        de México, bajo licencia CC BY 4.0.
+      </blockquote>
+
+      <p style="font-style: italic">
+        Los recursos generados en este proyecto mantendrán la misma licencia
+        (CC BY 4.0).
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Estrategia de Nombres</h2>
+
+      <p>
+        Se han definido dos espacios de nombres que aseguran URIs estables,
+        legibles y diferenciadas entre el nivel de ontología (clases y
+        propiedades) y el nivel de datos (instancias).
+      </p>
+
+      <h3>Namespaces definidos</h3>
+      <ul class="list">
+        <li>
+          <strong>Ontología:</strong>
+          <code>@prefix metro:
+              &lt;https://grupo09.github.io/HandsOn/ontology#&gt;</code>
+        </li>
+        <li>
+          <strong>Datos:</strong>
+          <code>@prefix data:
+              &lt;https://grupo09.github.io/HandsOn/data/&gt;</code>
+        </li>
+      </ul>
+      <h3>Convenciones de nombrado</h3>
+      <ul class="list">
+        <li>
+          <strong>Clases:</strong> empiezan en mayúscula y luego siguen el
+          estilo "CamelCase". <br />Ejemplo: <code>metro:Estacion</code>,
+          <code>metro:Linea</code>, <code>metro:MedicionAfluencia</code>.
+        </li>
+        <li>
+          <strong>Propiedades:</strong> empiezan en minúscula y luego siguen
+          el estilo "CamelCase". <br />Ejemplo:
+          <code>metro:tieneEstacion</code>, <code>metro:estaEnAlcaldia</code>,
+          <code>metro:afluencia</code>.
+        </li>
+      </ul>
+
+      <h3>Estructura general de URIs</h3>
+      <pre><code>Clase →       https://grupo09.github.io/HandsOn/ontology#Estacion
+Propiedad →   https://grupo09.github.io/HandsOn/ontology#tieneEstacion
+Individuo →   https://grupo09.github.io/HandsOn/data/estacion/STC0101</code></pre>
+    </section>
+
+    <footer>
+      <div>
+        Hands-on 2 · Web Semántica, Linked Data y Grafos de Conocimientos
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

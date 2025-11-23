@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis de Dataset y Naming Strategy</title>
+</head>
+<body>
+    <h1>Analysis of the Dataset and Licensing of Data Sources</h1>
+
+    <h2>AccidentesBicicletas_2024</h2>
+    <p>El documento CSV “AccidentesBicicletas_2024” nos proporciona información sobre los accidentes ocurridos en la Comunidad de Madrid con bicicletas involucradas.</p>
+
+    <h3>VARIABLES DEL DATASET</h3>
+    <ul>
+        <li><strong>num_expediente:</strong> identificador único del expediente administrativo del accidente. Tipo: string. Valores: 2024Sxxxxx (972 únicos en 1.076 registros).</li>
+        <li><strong>fecha:</strong> día en que ocurrió el accidente. Tipo: string / date. Valores: fechas distribuidas a lo largo de 2024.</li>
+        <li><strong>hora:</strong> hora exacta del accidente. Tipo: string. Valores: 00:00–23:59.</li>
+        <li><strong>localización:</strong> lugar del accidente. Tipo: string.</li>
+        <li><strong>número:</strong> número de portal o referencia numérica. Tipo: integer.</li>
+        <li><strong>cod_distrito:</strong> código del distrito municipal (1-21). Tipo: integer.</li>
+        <li><strong>distrito:</strong> nombre del distrito. Tipo: string.</li>
+        <li><strong>tipo_accidente:</strong> naturaleza del suceso. Tipo: string. Valores: 12 categorías (caída, colisión, atropello...).</li>
+        <li><strong>estado_meteorológico:</strong> condiciones climáticas. Tipo: string. Valores: Despejado, Nublado, Lluvia débil, Lluvia intensa, Se desconoce.</li>
+        <li><strong>tipo_vehiculo:</strong> tipo de bicicleta. Tipo: string. Valores: Bicicleta, Bicicleta EPAC.</li>
+        <li><strong>tipo_persona:</strong> rol de la persona implicada. Tipo: string. Valores: Conductor, Peatón, Pasajero.</li>
+        <li><strong>rango_edad:</strong> intervalo de edad. Tipo: string. Valores: 0-4, 5-9, …, >74.</li>
+        <li><strong>sexo:</strong> sexo de la persona. Tipo: string. Valores: Hombre, Mujer, Desconocido.</li>
+        <li><strong>cod_lesividad:</strong> código de gravedad o lesión. Tipo: string. Valores: 1-14 (910 válidos, 166 nulos).</li>
+        <li><strong>lesividad:</strong> descripción de lesiones. Tipo: string.</li>
+        <li><strong>coordenada_x_utm:</strong> coordenada X UTM. Tipo: float. Valores: 431,142 - 454,660.</li>
+        <li><strong>coordenada_y_utm:</strong> coordenada Y UTM. Tipo: float. Valores: 4,464,444 - 4,491,676.</li>
+        <li><strong>positiva_alcohol:</strong> test de alcoholemia. Tipo: string. Valores: N (no), S (sí).</li>
+        <li><strong>positiva_droga:</strong> test de drogas. Tipo: integer. Valores: 1 (positivo).</li>
+    </ul>
+
+    <h2>cabezas_semaforo_bici.csv</h2>
+    <p>El dataset recoge información sobre semáforos con indicaciones para bicicletas.</p>
+    <h3>VARIABLES DEL DATASET</h3>
+    <ul>
+        <li><strong>tipo_elem:</strong> tipo de semáforo (string). Valores: SEMAFORO 2/200 BICI, SEMAFORO 2/200 PEATON-BICI, SEMAFORO 3/100 BICI, SEMAFORO 3/200 BICI.</li>
+        <li><strong>distrito:</strong> número de distrito (int).</li>
+        <li><strong>id:</strong> identificador único del semáforo (int).</li>
+        <li><strong>id_cruce:</strong> identificador del cruce (int).</li>
+        <li><strong>fecha_inst:</strong> fecha de instalación (datetime). Valores: 1960-2025.</li>
+        <li><strong>utm_x y utm_y:</strong> coordenadas UTM (string, necesitan limpieza).</li>
+        <li><strong>longitud y latitud:</strong> coordenadas geográficas (string, necesitan limpieza).</li>
+    </ul>
+    <p>El dataset combina información administrativa con información geográfica, permitiendo análisis estadístico y espacial.</p>
+
+    <h2>Análisis de la Licencia</h2>
+    <p>Licencia: <a href="https://datos.madrid.es/portal/site/egob/menuitem.3efdb29b813ad8241e830cc2a8a409a0/?vgnextoid=108804d4aab90410VgnVCM100000171f5a0aRCRD&vgnextchannel=b4c412b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default">Portal de Datos Abiertos Madrid</a></p>
+    <p>Publicador y titular de derechos: Ayuntamiento de Madrid y órganos adscritos.</p>
+    <p>Licencia permite reutilización comercial y no comercial, incluyendo copia, difusión, modificación, adaptación y combinación de datos.</p>
+
+    <h2>Naming Strategy</h2>
+    <ul>
+        <li><strong>Dominio Principal:</strong> http://movimientosostenible.org</li>
+        <li><strong>Base URI para la ontología:</strong> http://movimientosostenible.org/group14#</li>
+        <li><strong>Base URI para los datos instanciados:</strong> http://movimientosostenible.org/group14/data/</li>
+        <li><strong>Clases y propiedades (ontología):</strong>
+            <ul>
+                <li>http://movimientosostenible.org/group14#Bicicleta → ejemplo de clase</li>
+                <li>http://movimientosostenible.org/group14#alcohol → ejemplo de propiedad</li>
+            </ul>
+        </li>
+        <li><strong>Patrón para instancias:</strong> http://movimientosostenible.org/group14/data/&lt;tipo&gt;/&lt;id&gt;</li>
+        <li><strong>Buenas Prácticas:</strong> evitar caracteres castellanos, caracteres especiales, espacios o acentos en URIs.</li>
+    </ul>
+</body>
+</html>

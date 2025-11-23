@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dataset Requirements – Bibliotecas y Bibliobuses (Madrid)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem;line-height:1.55}
+    h1,h2{line-height:1.25}
+    .ok{color:#0b7}
+    .partial{color:#c80}
+    .card{border:1px solid #e5e7eb;border-radius:12px;padding:1rem;margin:1rem 0}
+    a{word-break:break-all}
+    small{color:#555}
+  </style>
+</head>
+<body>
+  <h1>Dataset Requirements</h1>
+
+  <p><strong>Catálogo de referencia:</strong>
+    <a href="https://datos.gob.es/es/catalogo/l01280796-bibliotecas-y-bibliobuses-en-la-ciudad-de-madrid">
+      datos.gob.es – “Bibliotecas de Madrid”
+    </a>. Publicador: Ayuntamiento de Madrid. Licencia: enlace al Aviso legal de datos abiertos de Madrid. :contentReference[oaicite:1]{index=1}
+  </p>
+
+  <p><strong>Distribución (CSV):</strong>
+    <a href="https://datos.madrid.es/egob/catalogo/201747-0-bibliobuses-bibliotecas.csv">
+      https://datos.madrid.es/egob/catalogo/201747-0-bibliobuses-bibliotecas.csv
+    </a>. (Enlazada desde la ficha de datos.gob.es en “Distribuciones → CSV”). :contentReference[oaicite:2]{index=2}
+  </p>
+
+  <div class="card">
+    <h2>R1. Dominio Smart City</h2>
+    <p class="ok">✅ <strong>Cumple.</strong> Cultura/ocio dentro de <em>Smart Living / Smart Culture</em>: red municipal de bibliotecas y bibliobuses con información de servicios urbanos. :contentReference[oaicite:3]{index=3}</p>
+  </div>
+
+  <div class="card">
+    <h2>R2. Disponibilidad en CSV</h2>
+    <p class="ok">✅ <strong>Cumple.</strong> La ficha de datos.gob.es incluye una distribución en <strong>CSV</strong> que apunta al recurso del Ayuntamiento de Madrid. :contentReference[oaicite:4]{index=4}</p>
+  </div>
+
+  <div class="card">
+    <h2>R3. Licencia abierta</h2>
+    <p class="ok">✅ <strong>Cumple.</strong> La licencia enlazada en datos.gob.es es el <strong>Aviso legal / Condiciones de reutilización</strong> del portal de datos de Madrid (atribución de la fuente, no desnaturalizar, etc.). :contentReference[oaicite:5]{index=5}</p>
+  </div>
+
+  <div class="card">
+    <h2>R4. Enlazabilidad con entidades reales</h2>
+    <p class="ok">✅ <strong>Cumple.</strong> El CSV expone campos de <strong>dirección</strong>, <strong>distrito/barrio</strong>, <strong>código postal</strong> y <strong>coordenadas WGS84</strong>, que facilitan el enlazado (Linked Data) con vocabularios externos (GeoNames, Wikidata, DBpedia). Para la familia de datasets procedentes de <code>madrid.es</code> existe un documento de <em>estructura de campos</em> genérico que describe estas columnas. :contentReference[oaicite:6]{index=6}</p>
+  </div>
+
+  <div class="card">
+    <h2>R5. Documentación (opcional)</h2>
+    <p class="ok">✅ <strong>Cumple.</strong> La ficha de datos.gob.es aporta metadatos (publicador, formato, licencia, distribuciones) y referencia a la página del Ayuntamiento; además, el PDF de estructura de campos ayuda a interpretar el CSV. :contentReference[oaicite:7]{index=7}</p>
+  </div>
+
+  <div class="card">
+    <h2>R6. Múltiples fuentes (opcional)</h2>
+    <p class="partial">➖ <strong>Parcial.</strong> El conjunto procede de un único publicador (Ayuntamiento de Madrid), pero puede integrarse con datos externos (límites administrativos, transporte, accesibilidad) para enriquecer vínculos.</p>
+  </div>
+
+  <div class="card">
+    <h2>Campos del CSV útiles para RDF y enlaces</h2>
+    <ul>
+      <li><strong>Identificación:</strong> nombre, URL/ID del recurso.</li>
+      <li><strong>Ubicación postal:</strong> <em>CLASE-VIAL</em>, <em>NOMBRE-VIA</em>, <em>NUM</em>, <em>CÓDIGO-POSTAL</em>, <em>DISTRITO</em>/<em>CÓD-DISTRITO</em>, <em>BARRIO</em>/<em>CÓD-BARRIO</em>.</li>
+      <li><strong>Georreferenciación:</strong> <em>COORDENADA-LATITUD</em>, <em>COORDENADA-LONGITUD</em> (WGS84).</li>
+      <li><strong>Servicios:</strong> <em>HORARIO</em>, <em>ACCESIBILIDAD</em>, teléfono, email, tipo (biblioteca/bibliobús), observaciones.</li>
+    </ul>
+    <p><small>Los nombres exactos de campos pueden consultarse en el CSV y en la guía de estructura genérica para recursos de madrid.es. :contentReference[oaicite:8]{index=8}</small></p>
+  </div>
+
+  <div class="card">
+    <h2>Conclusión</h2>
+    <p><strong>Apto para Hands-On 1:</strong> Cumple R1–R4 y aporta suficiente documentación (R5). Para R6, se sugiere enlazar con límites administrativos (Wikidata/GeoNames) y redes de transporte de Madrid para enriquecer la aplicación.</p>
+  </div>
+</body>
+</html>

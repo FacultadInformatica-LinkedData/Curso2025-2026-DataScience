@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis de Dataset y Naming Strategy</title>
+</head>
+<body>
+    <h1>Analysis of the Dataset and Licensing of Data Sources</h1>
+
+    <h2>poblacion_1_enero.csv</h2>
+    <p>El CSV “poblacion_1_enero.csv” proporciona información sobre la población a 1 de enero en el municipio de Madrid, desagregada por distrito y barrio.</p>
+    <p>El dataset cuenta con un total de <strong>1071</strong> registros y <strong>10</strong> atributos.</p>
+
+    <h3>VARIABLES DEL DATASET</h3>
+    <ul>
+        <li><strong>fecha:</strong> Tipo: string. Ejemplos: 1 de enero de 2024, 1 de enero de 2023, 1 de enero de 2022</li>
+        <li><strong>cod_municipio:</strong> Tipo: integer. Ejemplos: 28079</li>
+        <li><strong>municipio:</strong> Tipo: string. Ejemplos: Madrid</li>
+        <li><strong>cod_distrito:</strong> Tipo: float. Ejemplos: 1, 2, 3</li>
+        <li><strong>distrito:</strong> Tipo: string. Ejemplos:  Centro,  Arganzuela,  Retiro</li>
+        <li><strong>cod_barrio:</strong> Tipo: float. Ejemplos: 1, 2, 3</li>
+        <li><strong>barrio:</strong> Tipo: string. Ejemplos:  Centro,  Arganzuela,  Retiro</li>
+        <li><strong>num_personas:</strong> Tipo: float. Ejemplos: 145.411, 156.559, 119.757</li>
+        <li><strong>num_personas_hombres:</strong> Tipo: float. Ejemplos: 73.734, 73.311, 54.339</li>
+        <li><strong>num_personas_mujeres:</strong> Tipo: float. Ejemplos: 71.677, 83.248, 65.418</li>
+    </ul>
+
+    <h2>Análisis de la Licencia</h2>
+    <p>Fuente: <a href="https://datos.madrid.es/">Portal de Datos Abiertos del Ayuntamiento de Madrid</a></p>
+    <p>Publicador y titular de derechos: Ayuntamiento de Madrid.</p>
+    <p>Licencia recomendada para el dataset generado (RDF): <strong>CC BY 4.0</strong> (atribución requerida). Permite reutilización, copia, difusión, modificación y combinación de datos.</p>
+
+    <h2>Naming Strategy</h2>
+    <ul>
+        <li><strong>Dominio Principal:</strong> http://example.org/group20/</li>
+        <li><strong>Base URI para la ontología:</strong> http://example.org/group20/ontology/</li>
+        <li><strong>Base URI para los datos instanciados:</strong> http://example.org/group20/resource/</li>
+        <li><strong>Clases y propiedades (ontología):</strong>
+            <ul>
+                <li>http://example.org/group20/ontology/Ciudad</li>
+                <li>http://example.org/group20/ontology/Distrito</li>
+                <li>http://example.org/group20/ontology/RegistroPoblacion</li>
+                <li>http://example.org/group20/ontology/tienePoblacion</li>
+            </ul>
+        </li>
+        <li><strong>Patrón para instancias:</strong> http://example.org/group20/resource/&lt;tipo&gt;/&lt;id&gt;</li>
+        <li><strong>Buenas Prácticas:</strong> evitar espacios, acentos y caracteres especiales en URIs; usar minúsculas en paths; mantener rutas distintas para ontología y recursos.</li>
+    </ul>
+</body>
+</html>

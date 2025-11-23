@@ -1,0 +1,229 @@
+[
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "positiva_alcohol",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "N"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Negativo"
+      }
+    ],
+    "description": "Editar celdas en masa en columna positiva_alcohol"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "positiva_alcohol",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "S"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Positivo"
+      }
+    ],
+    "description": "Editar celdas en masa en columna positiva_alcohol"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "positiva_alcohol",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "Test no realizado"
+      }
+    ],
+    "description": "Editar celdas en masa en columna positiva_alcohol"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "estado_meteorológico",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "Se desconoce"
+      }
+    ],
+    "description": "Editar celdas en masa en columna estado_meteorológico"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_vehiculo",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "Sin especificar"
+      }
+    ],
+    "description": "Editar celdas en masa en columna tipo_vehiculo"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo_persona",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Peatón (atropello sc)"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Peatón"
+      }
+    ],
+    "description": "Editar celdas en masa en columna tipo_persona"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "cod_lesividad",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "Desconocido"
+      }
+    ],
+    "description": "Editar celdas en masa en columna cod_lesividad"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "lesividad",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "Desconocido"
+      }
+    ],
+    "description": "Editar celdas en masa en columna lesividad"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "positiva_droga",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "1"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Positivo"
+      }
+    ],
+    "description": "Editar celdas en masa en columna positiva_droga"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "positiva_droga",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "Negativo"
+      }
+    ],
+    "description": "Editar celdas en masa en columna positiva_droga"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "num_expediente",
+    "expression": "grel:\"http://groupXX.linkeddata.es/accidentes/resource/Accidente/\" + value",
+    "onError": "set-to-blank",
+    "newColumnName": "uri_accidente",
+    "columnInsertIndex": 1,
+    "description": "Crear la columna uri_accidente en el índice 1 basada en la columna num_expediente usando la expresión grel:\"http://groupXX.linkeddata.es/accidentes/resource/Accidente/\" + value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "tipo_persona",
+    "expression": "grel:\"http://groupXX.linkeddata.es/accidentes/resource/Persona/\" + cells[\"num_expediente\"].value + \"_\" + value.replace(\" \", \"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "uri_persona",
+    "columnInsertIndex": 12,
+    "description": "Crear la columna uri_persona en el índice 12 basada en la columna tipo_persona usando la expresión grel:\"http://groupXX.linkeddata.es/accidentes/resource/Persona/\" + cells[\"num_expediente\"].value + \"_\" + value.replace(\" \", \"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "distrito",
+    "expression": "grel:\"http://groupXX.linkeddata.es/accidentes/resource/Distrito/\" + value.replace(\" \", \"\").toTitlecase()",
+    "onError": "set-to-blank",
+    "newColumnName": "uri_distrito",
+    "columnInsertIndex": 8,
+    "description": "Crear la columna uri_distrito en el índice 8 basada en la columna distrito usando la expresión grel:\"http://groupXX.linkeddata.es/accidentes/resource/Distrito/\" + value.replace(\" \", \"\").toTitlecase()"
+  }
+]

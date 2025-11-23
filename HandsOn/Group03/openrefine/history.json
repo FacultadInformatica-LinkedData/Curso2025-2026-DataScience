@@ -1,0 +1,568 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "centro_nombre",
+          "expression": "value",
+          "columnName": "centro_nombre",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "ANTONIO MACHADO",
+                "l": "ANTONIO MACHADO"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "centro_nombre",
+    "expression": "value.toUppercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna centro_nombre usando la expresión value.toUppercase()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "centro_nombre",
+          "expression": "value",
+          "columnName": "centro_nombre",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "ANTONIO MACHADO",
+                "l": "ANTONIO MACHADO"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "direccion_via_nombre",
+    "expression": "value.toUppercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna direccion_via_nombre usando la expresión value.toUppercase()"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "centro_tipo_descripcion",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "EQUIPO DE ORIENTACIÓN EDUCATIVA Y PSICOPEDAGÓGICA. GENERAL.",
+          "EQUIPO DE ORIENTACIÓN EDUCATIVA Y PSICOPEDAGÓGICA. ATENCIÓN TEMPRANA",
+          "EQUIPO DE ORIENTACIÓN EDUCATIVA Y PSICOPEDAGÓGICA. ESPECÍFICO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "EQUIPO DE ORIENTACIÓN EDUCATIVA Y PSICOPEDAGÓGICA"
+      },
+      {
+        "from": [
+          "ESCUELA INFANTIL PRIVADA",
+          "ESCUELA INFANTIL",
+          "ESCUELA  INFANTIL-CASA DE NIÑOS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ESCUELA INFANTIL"
+      },
+      {
+        "from": [
+          "CENTRO INTEGRADO DE ENSEÑANZAS ARTÍSTICAS ELEMENTALES Y PROFESIONALES DE MÚSICA, EDUCACIÓN PRIMARIA Y SECUNDARIA",
+          "CENTRO INTEGRADO DE ENSEÑANZAS ARTÍSTICAS  PROFESIONALES DE MÚSICA Y EDUCACIÓN SECUNDARIA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CENTRO INTEGRADO DE ENSEÑANZAS ARTÍSTICAS ELEMENTALES Y PROFESIONALES"
+      }
+    ],
+    "description": "Editar celdas en masa en columna centro_tipo_descripcion"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "centro_tipo_descripcion",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "AULA HOSPITALARIA",
+          "AULA HOSPITALARIA PRIVADA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "AULA HOSPITALARIA"
+      }
+    ],
+    "description": "Editar celdas en masa en columna centro_tipo_descripcion"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "centro_titular",
+    "expression": "value.toUppercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna centro_titular usando la expresión value.toUppercase()"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "direccion_codigo_postal",
+          "expression": "value",
+          "columnName": "direccion_codigo_postal",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "00000",
+                "l": "00000"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "direccion_codigo_postal",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "00000"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Editar celdas en masa en columna direccion_codigo_postal"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "direccion_numero",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna direccion_numero usando la expresión value.trim()"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "direccion_numero",
+          "expression": "value",
+          "columnName": "direccion_numero",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "S/N",
+                "l": "S/N"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "direccion_numero",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "S/N"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Editar celdas en masa en columna direccion_numero"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "direccion_numero",
+          "expression": "value",
+          "columnName": "direccion_numero",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "s/N",
+                "l": "s/N"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "direccion_numero",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "s/N"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Editar celdas en masa en columna direccion_numero"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "direccion_numero",
+          "expression": "value",
+          "columnName": "direccion_numero",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "s/n",
+                "l": "s/n"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "direccion_numero",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "s/n"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Editar celdas en masa en columna direccion_numero"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "direccion_numero",
+          "expression": "value",
+          "columnName": "direccion_numero",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "sin",
+                "l": "sin"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "direccion_numero",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "sin"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Editar celdas en masa en columna direccion_numero"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "direccion_via_nombre",
+    "expression": "value.toUppercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna direccion_via_nombre usando la expresión value.toUppercase()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "municipio_nombre",
+    "expression": "value.toUppercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna municipio_nombre usando la expresión value.toUppercase()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "distrito_nombre",
+    "expression": "value.toUppercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna distrito_nombre usando la expresión value.toUppercase()"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "direccion_via_nombre",
+    "expression": "grel:if(cells[\"direccion_via_tipo\"] != null, if(cells[\"direccion_numero\"] != null, cells[\"direccion_via_tipo\"].value+\" \"+value+\" \"+cells[\"direccion_numero\"].value, cells[\"direccion_via_tipo\"].value+\" \"+value), if(cells[\"direccion_numero\"] != null, value+\" \"+cells[\"direccion_numero\"].value,value))",
+    "onError": "keep-original",
+    "newColumnName": "direccion",
+    "columnInsertIndex": 13,
+    "description": "Crear la columna direccion en el índice 13 basada en la columna direccion_via_nombre usando la expresión grel:if(cells[\"direccion_via_tipo\"] != null, if(cells[\"direccion_numero\"] != null, cells[\"direccion_via_tipo\"].value+\" \"+value+\" \"+cells[\"direccion_numero\"].value, cells[\"direccion_via_tipo\"].value+\" \"+value), if(cells[\"direccion_numero\"] != null, value+\" \"+cells[\"direccion_numero\"].value,value))"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "direccion",
+          "expression": "value",
+          "columnName": "direccion",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "---",
+                "l": "---"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "direccion",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "---"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Editar celdas en masa en columna direccion"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "contacto_telefono1",
+          "expression": "value",
+          "columnName": "contacto_telefono1",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "0",
+                "l": "0"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "contacto_telefono1",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "0"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Editar celdas en masa en columna contacto_telefono1"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "contacto_fax",
+          "expression": "value",
+          "columnName": "contacto_fax",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "-",
+                "l": "-"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "contacto_fax",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "-"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Editar celdas en masa en columna contacto_fax"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "contacto_fax",
+          "expression": "value",
+          "columnName": "contacto_fax",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "0",
+                "l": "0"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "contacto_fax",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "0"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Editar celdas en masa en columna contacto_fax"
+  }
+]

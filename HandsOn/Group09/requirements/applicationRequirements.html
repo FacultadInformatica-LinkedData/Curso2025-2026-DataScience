@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Requisitos de la aplicación | Metro CDMX</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">Requisitos de la aplicación</h1>
+      <p class="subtitle">Especificación funcional y propuesta de diseño</p>
+      <nav>
+        <a href="datasetRequirements.html">Datasets</a>
+        <span class="small">·</span>
+        <a href="applicationRequirements.html">Aplicación</a>
+      </nav>
+    </header>
+
+    <section class="section">
+      <h2>Descripción de la aplicación</h2>
+      <p>Nuestra aplicación tiene como objetivo representar la estructura del Sistema de Transporte Colectivo Metro de la Ciudad de México utilizando datos abiertos y técnicas de Linked Data. A partir de la información de líneas, estaciones, afluencia diaria y metadatos geográficos, construiremos un modelo semántico que permitirá:</p>
+      <ul class="list">
+        <li>Visualizar la red de metro</li>
+        <li>Consultar información enriquecida sobre cada estación (fecha de inauguración, alcaldía, municipio)</li>
+        <li>Analizar patrones de movilidad y afluencia</li>
+      </ul>
+      <p class="small" style="font-style: italic;">Posteriormente, esta base de conocimiento se utilizará como fuente de datos para nuestro proyecto de la asignatura "Inteligencia Artificial", donde aplicaremos heurísticas de búsqueda para hallar caminos mínimos sobre la red utilizando tiempos reales obtenidos mediante la API abierta de transporte de la CDMX.</p>
+    </section>
+
+    <section class="section">
+      <h2>Funcionalidades principales</h2>
+      <ul class="list">
+        <li>Visualización interactiva de la red de metro</li>
+        <li>Análisis de la afluencia por línea y estación, con filtros por fecha.</li>
+        <li>Consultas semánticas mediante SPARQL</li>
+        <li>Integración de Linked Data</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Uso y manipulación de los datasets</h2>
+      <p>Se procesarán y transformarán los datasets "Líneas y Estaciones" y "Afluencia Diaria" para que sirvan como base del proyecto. No obstante, planeamos añadir información complementaria para enriquecer los datos.</p>
+      <h3>Estructura del Dataset "Líneas y Estaciones"</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Columna</th>
+              <th>Etiqueta</th>
+              <th>Descripción</th>
+              <th>Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>SISTEMA</td><td>Sistema</td><td>Nombre del sistema de Transporte Público</td><td>Texto</td></tr>
+            <tr><td>NOMBRE</td><td>Nombre</td><td>Nombre de la estación</td><td>Texto</td></tr>
+            <tr><td>LINEA</td><td>Línea</td><td>Número de la línea</td><td>Número entero</td></tr>
+            <tr><td>EST</td><td>Código de estación</td><td>Número de la estación</td><td>Número entero</td></tr>
+            <tr><td>CVE_EST</td><td>Clave estación</td><td>Clave alfanumérica de la estación</td><td>Alfanumérico</td></tr>
+            <tr><td>CVE_EOD17</td><td>Clave EOD17</td><td>Clave de la encuesta</td><td>Alfanumérico</td></tr>
+            <tr><td>TIPO</td><td>Tipo</td><td>Tipo de estación (Intermedia, Transbordo, Terminal)</td><td>Texto</td></tr>
+            <tr><td>ALCALDIAS</td><td>Alcaldía</td><td>Nombre de la Alcaldía</td><td>Texto</td></tr>
+            <tr><td>AÑO</td><td>Año</td><td>Año de apertura</td><td>Número entero</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <h3>Estructura del Dataset "Afluencia Diaria"</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Columna</th>
+              <th>Etiqueta</th>
+              <th>Descripción</th>
+              <th>Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>fecha</td><td>fecha</td><td>Fecha de la medición de afluencia</td><td>Fecha</td></tr>
+            <tr><td>anio</td><td>año</td><td>Año de la medición</td><td>Número entero</td></tr>
+            <tr><td>mes</td><td>mes</td><td>Mes de la medición</td><td>Texto</td></tr>
+            <tr><td>linea</td><td>línea</td><td>Línea del STC - Metro de la medición</td><td>Alfanumérico</td></tr>
+            <tr><td>estacion</td><td>estación</td><td>Estación del STC - Metro de la medición</td><td>Alfanumérico</td></tr>
+            <tr><td>afluencia</td><td>afluencia</td><td>Afluencia en número de personas</td><td>Número entero</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Mockups / Diseños previstos</h2>
+      <div class="wireframes mt-16">
+        <div class="wire">
+          <h3>Pantalla principal</h3>
+          <p class="small">Representación de la red de Metro</p>
+        </div>
+          <div class="wire">
+          <h3>Pantalla Estación</h3>
+          <p class="small">Nombre, línea, ubicación, inauguración, afluencia promedio.</p>
+        </div>
+        <div class="wire">
+          <h3>Pantalla Afluencia</h3>
+          <p class="small">Gráficos de tendencias, afluencia ordenada por estaciones...</p>
+        </div>
+        <div class="wire">
+          <h3>Panel de filtros</h3>
+          <p class="small">Fecha, línea, estación, rango temporal</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>Hands-on 1 · Web Semántica, Linked Data y Grafos de Conocimientos</div>
+    </footer>
+  </div>
+</body>
+</html>

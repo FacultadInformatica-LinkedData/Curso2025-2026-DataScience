@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>analysis.html – BiciMAD</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif; margin: 2rem; line-height: 1.6; }
+  h1, h2, h3 { margin-top: 1.4em; }
+  .table { border-collapse: collapse; width: 100%; }
+  .table th, .table td { border-bottom: 1px solid #eee; padding: .4rem .6rem; text-align: left; }
+  code { background:#f6f8fa; padding:.1rem .3rem; border-radius:4px; }
+  .small { color:#555; }
+</style>
+</head>
+<body>
+  <h1>analysis.html</h1>
+
+  <h2>Analyse Data Set</h2>
+  <p class="small">Análisis del schema y rangos/estadísticos del CSV limpio; incluye el historial de pasos aplicado (history.json).</p>
+
+  <h3>Schema</h3>
+  <table class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Column</th>
+      <th>Inferred type</th>
+      <th>Example value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IdStation</td>
+      <td>object</td>
+      <td>2224</td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>object</td>
+      <td>Calle Miguel Moya, 1</td>
+    </tr>
+    <tr>
+      <td>DockBikes</td>
+      <td>int64</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>FreeBases</td>
+      <td>int64</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>Estado</td>
+      <td>object</td>
+      <td>Poca disponibilidad</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>object</td>
+      <td>2 - Metro Callao</td>
+    </tr>
+    <tr>
+      <td>NoAvailable</td>
+      <td>object</td>
+      <td>Disponible</td>
+    </tr>
+    <tr>
+      <td>TotalBases</td>
+      <td>int64</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td>Longitud</td>
+      <td>object</td>
+      <td>-3,70569</td>
+    </tr>
+    <tr>
+      <td>Latitud</td>
+      <td>object</td>
+      <td>40,4204</td>
+    </tr>
+  </tbody>
+</table>
+
+  <h3>Quantities & Value Ranges</h3>
+  <table class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Column</th>
+      <th>Count</th>
+      <th>Min</th>
+      <th>Max</th>
+      <th>Mean</th>
+      <th>Median</th>
+      <th>Std</th>
+      <th>Nulls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DockBikes</td>
+      <td>609</td>
+      <td>0.0</td>
+      <td>27.0</td>
+      <td>11.114943</td>
+      <td>11.0</td>
+      <td>6.862124</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>FreeBases</td>
+      <td>609</td>
+      <td>0.0</td>
+      <td>31.0</td>
+      <td>12.637110</td>
+      <td>13.0</td>
+      <td>6.966886</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>TotalBases</td>
+      <td>609</td>
+      <td>0.0</td>
+      <td>43.0</td>
+      <td>23.758621</td>
+      <td>24.0</td>
+      <td>2.740869</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+  <h3>Processing History (OpenRefine JSON)</h3>
+  <ul><li>Transform: column <code>POINT_X</code> ← <code>value.toNumber()</code></li><li>Transform: column <code>POINT_Y</code> ← <code>value.toNumber()</code></li><li>Transform: column <code>Address</code> ← <code>grel:value.replace(" nº", ",")</code></li><li>Transform: column <code>Address</code> ← <code>value.trim()</code></li><li>Transform: column <code>Address</code> ← <code>grel:value.replace(/,+$/, " ")</code></li><li>Transform: column <code>DockBikes</code> ← <code>value.toNumber()</code></li><li>Transform: column <code>FreeBases</code> ← <code>value.toNumber()</code></li><li>Transform: column <code>PosicionST</code> ← <code>value.toNumber()</code></li><li>Transform: column <code>Address</code> ← <code>grel:value.replace(/^\s*\d+\s*-\s*/, "")</code></li><li>Transform: column <code>Address</code> ← <code>value.trim()</code></li><li>Remove column: <code>PosicionST</code></li><li>Rename column: <code>POINT_X</code> → <code>Longitud</code></li><li>Rename column: <code>POINT_Y</code> → <code>Latitud</code></li><li>Remove column: <code>FID</code></li><li>Transform: column <code>Ligth</code> ← <code>grel:value.replace('0', 'Fuera de servicio')</code></li><li>Transform: column <code>Ligth</code> ← <code>grel:value.replace('1', 'Disponible, normal')</code></li><li>Transform: column <code>Ligth</code> ← <code>grel:value.replace('2', 'Disponible, poca disponibilidad')</code></li><li>Transform: column <code>Ligth</code> ← <code>grel:value.replace('3', 'Estado desconocido/mantenimiento')</code></li><li>Rename column: <code>Ligth</code> → <code>Estado</code></li><li>Transform: column <code>Estado</code> ← <code>grel:value.replace('Disponible, poca disponibilidad', 'Poca disponibilidad')</code></li><li>Transform: column <code>Estado</code> ← <code>grel:value.replace('Disponible, normal', 'Disponible')</code></li><li>Remove column: <code>number</code></li><li>Remove filtered rows (e.g., Name contains 'old').</li><li>Remove duplicate rows.</li><li>Remove column: <code>Activate</code></li><li>Transform: column <code>NoAvailabl</code> ← <code>grel:value.replace('0', 'Disponible')</code></li><li>Transform: column <code>NoAvailabl</code> ← <code>grel:value.replace('1', 'No disponible')</code></li><li>Remove column: <code>Shape</code></li><li>Move column <code>TotalBases</code> to position 6.</li><li>Move column <code>TotalBases</code> to position 5.</li><li>Move column <code>TotalBases</code> to position 4.</li><li>Move column <code>Name</code> to position 0.</li><li>Move column <code>Name</code> to position 1.</li><li>Transform: column <code>TotalBases</code> ← <code>value.toNumber()</code></li></ul>
+
+  
+<h2>Analyse Licensing of the Data Source</h2>
+<p><strong>Publicador y titular de derechos</strong></p>
+<p>El publicador del catálogo y de los datasets es el Ayuntamiento de Madrid a través de su portal Datos Madrid.</p>
+<p>El “titular de los derechos de reutilización” suele ser también la entidad pública que produce o gestiona los datos, es decir el Ayuntamiento de Madrid</p>
+<p>En su sección normativa se menciona que están regidos por la normativa de reutilización de la información del sector público (Datos Madrid) y guías generales de datos abiertos en España (datos.gob.es).</p>
+<p><strong>Licencia vigente</strong></p>
+<p>En el portal no se localiza fácilmente una licencia específica nombrada para cada dataset (o al menos, no aparece en la página consultada).</p>
+<p>Sin embargo, la normativa general indica que los datos “abiertos y reutilizables” quedan sujetos a la normativa de reutilización de la información del sector público. En España, los conjuntos de datos abiertos suelen utilizar licencias tipo como <em>Creative Commons Attribution</em> (CC BY) o la <em>Open Database License</em> (ODbL) cuando se trata de bases de datos.</p>
+<p>Por lo tanto, aunque no aparezca explícita la licencia exacta en ese archivo, es muy probable que se aplique una licencia abierta que permita reutilización (incluido comercial) con atribución.</p>
+<p><strong>Recomendación para el dataset derivado</strong></p>
+<ul>
+  <li><strong>CC BY 4.0</strong> (Attribution 4.0 International): permite todo tipo de uso, exige atribución a Ayuntamiento de Madrid / Datos Madrid como fuente.</li>
+</ul>
+
+
+  
+<h2>Define Resource Naming Strategy</h2>
+<p>Se define la estrategia de nombrado para ontología y datos, incluyendo forma de URI, negociación de contenido, dominio y patrones.</p>
+<h3>Dominio y espacios base</h3>
+<ul>
+  <li><strong>Dominio:</strong> <code>https://datos.grupo08-2025-cdia.org/</code></li>
+  <li><strong>Ontología:</strong> <code>https://datos.grupo08-2025-cdia.org/ontology/bicimad/</code></li>
+  <li><strong>Recursos (IDs):</strong> <code>https://datos.grupo08-2025-cdia.org/id/bicimad</code></li>
+</ul>
+<h3>Patrones de URIs</h3>
+<ul>
+  <li>Estación individual: <code>https://datos.grupo08-2025-cdia.org/id/bicimad/station/{IdStation}</code></li>
+  <li>Colección: <code>https://datos.grupo08-2025-cdia.org/id/bicimad/stations</code></li>
+  <li>Ontología (clases/props): <code>https://datos.grupo08-2025-cdia.org/ontology/bicimad#Station</code>, <code>#hasDockBikes</code>, <code>#hasFreeBases</code>, etc.</li>
+</ul>
+<h3>Negociación de contenido</h3>
+<p>Las URIs de recurso deben servir distintos formatos vía cabecera <code>Accept</code>:</p>
+<ul>
+  <li><code>text/html</code> → HTML humano</li>
+  <li><code>application/json</code> → JSON (API)</li>
+  <li><code>text/csv</code> → CSV</li>
+  <li><code>text/turtle</code> o <code>application/ld+json</code> → RDF</li>
+</ul>
+<h3>Versionado</h3>
+<ul>
+  <li>Metadato <code>dataset_version</code> (YYYY-MM-DD) en dumps.</li>
+  <li>No reciclar URIs: si una estación se retira, marcar como <em>deprecated</em> pero conservar URI.</li>
+</ul>
+<h3>Ejemplos</h3>
+<ul>
+  <li>Estación: <code>https://datos.grupo08-2025-cdia.org/id/bicimad/station/2224</code></li>
+  <li>Ontología (HTML): <code>https://datos.grupo08-2025-cdia.org/ontology/bicimad/</code></li>
+  <li>Ontología (TTL): <code>https://datos.grupo08-2025-cdia.org/ontology/bicimad.ttl</code></li>
+</ul>
+
+<p class="small">Licencia recomendada: 
+<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> 
+</p>
+  <hr>
+  <p class="small">Documento generado automáticamente a partir de los archivos disponibles.</p>
+</body>
+</html>

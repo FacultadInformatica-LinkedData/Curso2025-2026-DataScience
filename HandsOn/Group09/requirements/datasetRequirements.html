@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Requisitos del dataset | Metro CDMX</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">Requisitos del dataset</h1>
+      <p class="subtitle">Validación R1–R6 para los conjuntos de datos seleccionados</p>
+      <nav>
+        <a href="datasetRequirements.html">Datasets</a>
+        <span class="small">·</span>
+        <a href="applicationRequirements.html">Aplicación</a>
+      </nav>
+    </header>
+
+    <section class="section">
+      <span class="badge">Datasets incluidos</span>
+      <ul class="list">
+        <li><a href="../csv/afluencia-diaria-metro.csv" target="_blank" rel="noopener">csv/afluencia-diaria-metro.csv</a></li>
+        <li><a href="../csv/lineas-estaciones-metro.csv" target="_blank" rel="noopener">csv/lineas-estaciones-metro.csv</a></li>
+      </ul>
+      <p class="small">Diccionarios: <a href="../csv/diccionariolineas-estaciones-metro.xlsx" target="_blank" rel="noopener" style="">csv/diccionariolineas-estaciones-metro.xlsx </a> y <a href="../csv/diccionario-afluencia.csv" target="_blank" rel="noopener style=""">csv/diccionario-afluencia.csv</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Requisitos</h2>
+
+      <h3>R1. Dominio de Smart City</h3>
+      <p>Ambos datasets pertenecen pertenecen al dominio de movilidad urbana y transporte público, uno de los principales ejes de las Smart Cities.</p>
+
+      <h3>R2. Disponibilidad en CSV</h3>
+      <p>Ambos datasets están disponibles en formato CSV, descargables directamente desde el <a href="https://datos.cdmx.gob.mx/" target="_blank" rel="noopener">Portal de Datos Abiertos de la CDMX.</a></p>
+
+      <h3>R3. Licencia abierta publicable</h3>
+      <p>El Portal de Datos Abiertos de la Ciudad de México publica sus recursos bajo la Licencia Abierta de Creative Commons Attribution 4.0.</p>
+
+      <h3>R4. Enlazabilidad con entidades del mundo real</h3>
+      <p>Los datos contienen múltiples atributos que pueden enlazarse fácilmente con entidades reales en la Web Semántica:</p>
+      <ul class="list">
+          <li><p>Nombres de estaciones → enlazables con GeoNames o Wikidata.</p></li>
+          <li><p>Alcaldías y Municipios → enlazables con DBpedia y schema.org.</p></li>
+          <li><p>Fechas de inauguración y afluencia → permiten análisis temporales y semánticos</p></li>
+      </ul>
+
+      <h3>R5. Documentación disponible (opcional)</h3>
+      <p>En el <a href="https://datos.cdmx.gob.mx/" target="_blank" rel="noopener">Portal de Datos Abiertos de la CDMX.</a> se proporciona documentación oficial:</p>
+      <ul class="list">
+          <li><p>Descripción del dataset</p></li>
+          <li><p>Diccionario del dataset</p></li>
+          <li><p>Frecuencia de actualización y fuente original</p></li>
+      </ul>
+      <h3>R6. Múltiples fuentes (opcional)</h3>
+      <p>Se han integrado dos fuentes complementarias:</p>
+      <ul class="list">
+          <li><p>Líneas y Estaciones → define la estructura física y proporciona las fechas y alcaldía de la creación de las estaciones.</p></li>
+          <li><p>Afluencia Diaria → aporta datos de uso y comportamiento temporal.</p></li>
+      </ul>
+    </section>
+
+    <footer>
+      <div>Hands-on 1 · Web Semántica, Linked Data y Grafos de Conocimientos</div>
+    </footer>
+  </div>
+</body>
+</html>

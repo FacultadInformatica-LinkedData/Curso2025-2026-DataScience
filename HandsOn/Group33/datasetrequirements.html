@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Evaluación de requisitos del dataset - Aforos de tráfico en Madrid</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; background: #f9f9f9; }
+    h1, h2 { color: #003366; }
+    ul { list-style: none; padding: 0; }
+    li { background: #fff; margin: 10px 0; padding: 15px; border-left: 5px solid #003366; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .ok { color: green; font-weight: bold; }
+    .partial { color: orange; font-weight: bold; }
+    .no { color: red; font-weight: bold; }
+    .footer { margin-top: 30px; font-size: 0.9em; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Evaluación de Requisitos del Dataset</h1>
+  <h2>Dataset: Aforos de tráfico en la ciudad de Madrid (estaciones permanentes)</h2>
+  <p>Este documento evalúa el grado de cumplimiento de los requisitos establecidos para el dataset seleccionado, que corresponde al conjunto de datos de <strong>Aforos de tráfico en la ciudad de Madrid (marzo 2025)</strong>. El archivo CSV utilizado en este proyecto es <strong>DATOS_ESTACIONES_MARZO_2025.csv</strong>.</p>
+  <h2>Requisitos</h2>
+  <ul>
+    <li>
+      <strong>R1. Pertenencia a un dominio Smart City:</strong><br>
+      El dataset pertenece al dominio de <strong>movilidad urbana</strong>, uno de los ejes principales de las Smart Cities. Proporciona datos sobre la intensidad del tráfico en diferentes puntos de Madrid.  
+      <span class="ok">✔ Cumple</span>
+    </li>
+    <li>
+      <strong>R2. Datos disponibles en formato CSV:</strong><br>
+      El conjunto de datos se encuentra en formato <strong>CSV</strong>, lo que facilita su análisis, transformación y conversión a RDF. El archivo subido (<em>DATOS_ESTACIONES_MARZO_2025.csv</em>) cumple este requisito.  
+      <span class="ok">✔ Cumple</span>
+    </li>
+    <li>
+      <strong>R3. Licencia abierta:</strong><br>
+      El dataset procede del portal de datos abiertos del Ayuntamiento de Madrid (<a href="https://datos.madrid.es/portal/site/egob" target="_blank">datos.madrid.es</a>) y está disponible bajo una <strong>licencia abierta</strong> que permite su reutilización, citando la fuente.  
+      <span class="ok">✔ Cumple</span>
+    </li>
+    <li>
+      <strong>R4. Posibilidad de enlazar con entidades del mundo real:</strong><br>
+      Cada registro incluye <strong>coordenadas geográficas</strong> (latitud y longitud) que pueden vincularse con entidades geográficas de <em>Wikidata</em>, <em>Geonames</em> o <em>OpenStreetMap</em>.  
+      <span class="ok">✔ Cumple</span>
+    </li>
+    <li>
+      <strong>R5. Documentación del dataset (opcional):</strong><br>
+      El portal de datos proporciona una descripción básica de los campos (intensidad, ocupación, velocidad, etc.), aunque no existe documentación técnica detallada.  
+      <span class="partial">⚪ Cumple parcialmente</span>
+    </li>
+    <li>
+      <strong>R6. Datos de múltiples fuentes (opcional):</strong><br>
+      Los datos provienen exclusivamente de sensores gestionados por el Ayuntamiento de Madrid. No se integran fuentes externas.  
+      <span class="no">✖ No cumple</span>
+    </li>
+  </ul>
+  <h2>Conclusión</h2>
+  <p>El dataset <strong>Aforos de tráfico en la ciudad de Madrid (estaciones permanentes)</strong> cumple plenamente con los requisitos obligatorios (R1–R4) y parcialmente con los opcionales (R5–R6). Es, por tanto, <strong>adecuado</strong> para su uso en la práctica de publicación de datos enlazados (Linked Data) y para desarrollar aplicaciones relacionadas con la movilidad y el tráfico urbano en Madrid.</p>
+  <div class="footer">
+    <p><em>Elaborado por el grupo GroupXX — Curso Hands-on 1</em></p>
+  </div>
+</body>
+</html>

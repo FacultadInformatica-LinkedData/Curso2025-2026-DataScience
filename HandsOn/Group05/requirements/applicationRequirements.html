@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Requisitos de la aplicación - Calidad del aire en Madrid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 940px; margin: 2rem auto; line-height: 1.6; }
+    h1, h2, h3 { margin-top: 1.2rem; }
+    section { margin-bottom: 2rem; }
+    .mock { border: 1px dashed #bbb; padding: 1rem; background: #f9f9f9; margin: .8rem 0; }
+    ul { padding-left: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Aplicación: Monitor interactivo de calidad del aire en Madrid</h1>
+
+  <section id="objetivo">
+    <h2>Propósito de la aplicación</h2>
+    <p>
+      Esta aplicación permitirá visualizar, analizar y comparar los niveles de contaminación atmosférica registrados en la ciudad de Madrid
+      durante un periodo de un mes. Su objetivo es ofrecer a la ciudadanía y a los investigadores una herramienta sencilla para entender
+      la evolución de parámetros como PM<sub>2.5</sub>, PM<sub>10</sub>, NO<sub>2</sub>, y O<sub>3</sub>, así como su relación con las zonas geográficas
+      y condiciones ambientales.
+    </p>
+  </section>
+
+  <section id="usuarios">
+    <h2>Usuarios y principales casos de uso</h2>
+    <ul>
+      <li><strong>Ciudadanos:</strong> Consultar la calidad del aire en su distrito o zona de residencia.</li>
+      <li><strong>Investigadores y estudiantes:</strong> Analizar tendencias de contaminación por tipo de contaminante y localización.</li>
+      <li><strong>Administraciones locales:</strong> Evaluar zonas con valores críticos y apoyar políticas medioambientales.</li>
+    </ul>
+  </section>
+
+  <section id="funcionalidades">
+    <h2>Requisitos funcionales</h2>
+    <ul>
+      <li><strong>1. Visualización en mapa:</strong> Mapa interactivo con marcadores por estación de medición, mostrando concentraciones por color.</li>
+      <li><strong>2. Filtros dinámicos:</strong> Por fecha, tipo de contaminante y distrito.</li>
+      <li><strong>3. Gráficos de evolución temporal:</strong> Curvas de tendencia para cada contaminante y estación.</li>
+      <li><strong>4. Comparativa:</strong> Vista paralela de dos distritos o dos contaminantes distintos.</li>
+      <li><strong>5. Exportación:</strong> Permitir descarga de los datos filtrados en CSV o JSON.</li>
+      <li><strong>6. Usabilidad y accesibilidad:</strong> Interfaz clara, adaptable y compatible con móviles.</li>
+      <li><strong>7. Transparencia:</strong> Mostrar fuente y licencia de los datos (ODC-BY de OpenAQ o portal municipal).</li>
+    </ul>
+  </section>
+
+  <section id="mockups">
+    <h2>Mock-ups y diseño de la interfaz</h2>
+
+    <h3>Pantalla principal: mapa y panel lateral</h3>
+    <div class="mock">
+      [Encabezado] Monitor de calidad del aire - Madrid<br>
+      [Selector de fecha] [Selector de contaminante]<br>
+      [Mapa] Marcadores coloreados (verde → buena, rojo → mala calidad del aire).<br>
+      [Panel lateral] Detalle de estaciones: nombre, valor actual, media diaria, enlace a gráfico histórico.
+    </div>
+
+    <h3>Gráfico histórico</h3>
+    <div class="mock">
+      [Título: Estación de Plaza Elíptica]<br>
+      [Gráfico de líneas: evolución diaria de NO<sub>2</sub>]<br>
+      [Botones] Cambiar contaminante · Comparar con otra estación · Descargar datos
+    </div>
+
+    <h3>Panel de análisis</h3>
+    <div class="mock">
+      [Gráfico de barras] Promedio mensual por distrito<br>
+      [Mapa de calor] Concentración media del mes<br>
+      [Tabla resumen] Día, contaminante, valor medio, desviación estándar
+    </div>
+  </section>
+
+  <section id="datos">
+    <h2>Fuentes de datos y posible integración</h2>
+    <ul>
+      <li><strong>Datos principales:</strong> Calidad del aire en Madrid (OpenAQ o portal municipal), con coordenadas y valores horarios.</li>
+      <li><strong>Datos complementarios (opcional):</strong> Meteorología (temperatura, viento, humedad) para correlaciones.</li>
+      <li><strong>Enlazado geográfico:</strong> Distritos y barrios mediante códigos INE o coordenadas GPS.</li>
+    </ul>
+  </section>
+
+  <section id="no-funcionales">
+    <h2>Requisitos no funcionales</h2>
+    <ul>
+      <li><strong>Rendimiento:</strong> La aplicación debe cargar los datos filtrados en menos de 2 segundos para vistas estándar.</li>
+      <li><strong>Escalabilidad:</strong> Soporte para ampliar a datos de varios meses o años.</li>
+      <li><strong>Compatibilidad:</strong> Navegadores modernos (Chrome, Firefox, Edge) y dispositivos móviles.</li>
+    </ul>
+  </section>
+</body>
+</html>

@@ -118,7 +118,6 @@ for r in g.query(query):
   print(r.name)
 
 
-
 ## Validation: Do not remove
 report.validate_07_04(g,query)
 report.save_report("_Task_07")

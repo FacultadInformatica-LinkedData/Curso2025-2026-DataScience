@@ -1,0 +1,83 @@
+@prefix : <http://groupXX.linkeddata.es/ontology/traffic#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://groupXX.linkeddata.es/ontology/traffic> rdf:type owl:Ontology ;
+    rdfs:label "Ontología de Aforos de Tráfico en Madrid"@es ;
+    rdfs:comment "Ontología ligera desarrollada para describir estaciones de medición y sus valores de intensidad, velocidad y ocupación en la ciudad de Madrid."@es ;
+    owl:versionInfo "1.0" .
+
+### --- CLASES ---
+
+:Estacion rdf:type owl:Class ;
+    rdfs:label "Estación de Tráfico"@es ;
+    rdfs:comment "Punto de medición de tráfico gestionado por el Ayuntamiento de Madrid."@es .
+
+:Medicion rdf:type owl:Class ;
+    rdfs:label "Medición de Tráfico"@es ;
+    rdfs:comment "Registro de datos de tráfico (intensidad, velocidad, ocupación) en una estación en un momento determinado."@es .
+
+:Ubicacion rdf:type owl:Class ;
+    rdfs:label "Ubicación"@es ;
+    rdfs:comment "Localización geográfica de la estación, incluyendo latitud, longitud y sentido de circulación."@es .
+
+### --- PROPIEDADES DE OBJETO ---
+
+:tieneUbicacion rdf:type owl:ObjectProperty ;
+    rdfs:label "tiene ubicación"@es ;
+    rdfs:domain :Estacion ;
+    rdfs:range :Ubicacion .
+
+:tieneMedicion rdf:type owl:ObjectProperty ;
+    rdfs:label "tiene medición"@es ;
+    rdfs:domain :Estacion ;
+    rdfs:range :Medicion .
+
+### --- PROPIEDADES DE DATOS ---
+
+:codigoEstacion rdf:type owl:DatatypeProperty ;
+    rdfs:label "código de estación"@es ;
+    rdfs:domain :Estacion ;
+    rdfs:range xsd:string .
+
+:nombreEstacion rdf:type owl:DatatypeProperty ;
+    rdfs:label "nombre de estación"@es ;
+    rdfs:domain :Estacion ;
+    rdfs:range xsd:string .
+
+:latitud rdf:type owl:DatatypeProperty ;
+    rdfs:label "latitud"@es ;
+    rdfs:domain :Ubicacion ;
+    rdfs:range xsd:decimal .
+
+:longitud rdf:type owl:DatatypeProperty ;
+    rdfs:label "longitud"@es ;
+    rdfs:domain :Ubicacion ;
+    rdfs:range xsd:decimal .
+
+:sentido rdf:type owl:DatatypeProperty ;
+    rdfs:label "sentido"@es ;
+    rdfs:domain :Ubicacion ;
+    rdfs:range xsd:string .
+
+:intensidad rdf:type owl:DatatypeProperty ;
+    rdfs:label "intensidad"@es ;
+    rdfs:domain :Medicion ;
+    rdfs:range xsd:integer .
+
+:ocupacion rdf:type owl:DatatypeProperty ;
+    rdfs:label "ocupación"@es ;
+    rdfs:domain :Medicion ;
+    rdfs:range xsd:decimal .
+
+:velocidad rdf:type owl:DatatypeProperty ;
+    rdfs:label "velocidad"@es ;
+    rdfs:domain :Medicion ;
+    rdfs:range xsd:decimal .
+
+:fechaHora rdf:type owl:DatatypeProperty ;
+    rdfs:label "fecha y hora"@es ;
+    rdfs:domain :Medicion ;
+    rdfs:range xsd:dateTime .

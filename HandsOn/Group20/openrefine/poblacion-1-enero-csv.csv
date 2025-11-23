@@ -1,0 +1,154 @@
+fecha,cod_municipio,municipio,cod_distrito,distrito,cod_barrio,barrio,num_personas,num_personas_hombres,num_personas_mujeres
+1 de enero de 2024,28079,Madrid,1,Centro,1,Centro,145.411,73.734,71.677
+1 de enero de 2024,28079,Madrid,2,Arganzuela,2,Arganzuela,156.559,73.311,83.248
+1 de enero de 2024,28079,Madrid,3,Retiro,3,Retiro,119.757,54.339,65.418
+1 de enero de 2024,28079,Madrid,4,Salamanca,4,Salamanca,149.778,66.374,83.404
+1 de enero de 2024,28079,Madrid,5,Chamartín,5,Chamartín,148.111,66.860,81.251
+1 de enero de 2024,28079,Madrid,6,Tetuán,6,Tetuán,166.211,76.072,90.139
+1 de enero de 2024,28079,Madrid,7,Chamberí,7,Chamberí,141.984,62.918,79.066
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,8,Fuencarral-El Pardo,253.898,119.721,134.177
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,9,Moncloa-Aravaca,125.223,58.121,67.102
+1 de enero de 2024,28079,Madrid,10,Latina,10,Latina,250.396,116.437,133.959
+1 de enero de 2024,28079,Madrid,11,Carabanchel,11,Carabanchel,274.406,128.997,145.409
+1 de enero de 2024,28079,Madrid,12,Usera,12,Usera,149.113,70.801,78.312
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,13,Puente de Vallecas,253.048,120.530,132.518
+1 de enero de 2024,28079,Madrid,14,Moratalaz,14,Moratalaz,95.123,43.412,51.711
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,15,Ciudad Lineal,230.035,105.836,124.199
+1 de enero de 2024,28079,Madrid,16,Hortaleza,16,Hortaleza,205.182,97.439,107.743
+1 de enero de 2024,28079,Madrid,17,Villaverde,17,Villaverde,167.952,80.563,87.389
+1 de enero de 2024,28079,Madrid,18,Villa de Vallecas,18,Villa de Vallecas,122.337,59.153,63.184
+1 de enero de 2024,28079,Madrid,19,Vicálvaro,19,Vicálvaro,89.772,43.490,46.282
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,20,San Blas-Canillejas,166.583,78.823,87.760
+1 de enero de 2024,28079,Madrid,21,Barajas,21,Barajas,49.612,23.837,25.775
+1 de enero de 2024,28079,Madrid,1,Centro,11,Palacio,24.332,12.008,12.324
+1 de enero de 2024,28079,Madrid,1,Centro,12,Embajadores,48.590,25.475,23.115
+1 de enero de 2024,28079,Madrid,1,Centro,13,Cortes,11.171,5.523,5.648
+1 de enero de 2024,28079,Madrid,1,Centro,14,Justicia,18.739,9.497,9.242
+1 de enero de 2024,28079,Madrid,1,Centro,15,Universidad,34.073,16.850,17.223
+1 de enero de 2024,28079,Madrid,1,Centro,16,Sol,8.506,4.381,4.125
+1 de enero de 2024,28079,Madrid,2,Arganzuela,21,Imperial,22.668,10.538,12.130
+1 de enero de 2024,28079,Madrid,2,Arganzuela,22,Acacias,36.475,16.823,19.652
+1 de enero de 2024,28079,Madrid,2,Arganzuela,23,Chopera,20.256,9.242,11.014
+1 de enero de 2024,28079,Madrid,2,Arganzuela,24,Legazpi,19.858,9.712,10.146
+1 de enero de 2024,28079,Madrid,2,Arganzuela,25,Delicias,29.465,13.888,15.577
+1 de enero de 2024,28079,Madrid,2,Arganzuela,26,Palos de la Frontera,25.790,12.112,13.678
+1 de enero de 2024,28079,Madrid,2,Arganzuela,27,Atocha,2.047,996,1.051
+1 de enero de 2024,28079,Madrid,3,Retiro,31,Pacífico,33.743,15.154,18.589
+1 de enero de 2024,28079,Madrid,3,Retiro,32,Adelfas,19.025,8.854,10.171
+1 de enero de 2024,28079,Madrid,3,Retiro,33,Estrella,22.774,10.454,12.320
+1 de enero de 2024,28079,Madrid,3,Retiro,34,Ibiza,22.010,9.723,12.287
+1 de enero de 2024,28079,Madrid,3,Retiro,35,Los Jerónimos,6.934,3.245,3.689
+1 de enero de 2024,28079,Madrid,3,Retiro,36,Niño Jesús,15.271,6.909,8.362
+1 de enero de 2024,28079,Madrid,4,Salamanca,41,Recoletos,15.845,7.136,8.709
+1 de enero de 2024,28079,Madrid,4,Salamanca,42,Goya,30.381,13.219,17.162
+1 de enero de 2024,28079,Madrid,4,Salamanca,43,Fuente del Berro,21.449,9.433,12.016
+1 de enero de 2024,28079,Madrid,4,Salamanca,44,Guindalera,42.905,19.531,23.374
+1 de enero de 2024,28079,Madrid,4,Salamanca,45,Lista,21.506,9.315,12.191
+1 de enero de 2024,28079,Madrid,4,Salamanca,46,Castellana,17.692,7.740,9.952
+1 de enero de 2024,28079,Madrid,5,Chamartín,51,El Viso,17.545,7.917,9.628
+1 de enero de 2024,28079,Madrid,5,Chamartín,52,Prosperidad,36.961,16.530,20.431
+1 de enero de 2024,28079,Madrid,5,Chamartín,53,Ciudad Jardín,18.928,8.402,10.526
+1 de enero de 2024,28079,Madrid,5,Chamartín,54,Hispanoamérica,32.014,14.453,17.561
+1 de enero de 2024,28079,Madrid,5,Chamartín,55,Nueva España,25.043,11.312,13.731
+1 de enero de 2024,28079,Madrid,5,Chamartín,56,Castilla,17.620,8.246,9.374
+1 de enero de 2024,28079,Madrid,6,Tetuán,61,Bellas Vistas,30.531,14.018,16.513
+1 de enero de 2024,28079,Madrid,6,Tetuán,62,Cuatro Caminos,35.723,16.020,19.703
+1 de enero de 2024,28079,Madrid,6,Tetuán,63,Castillejos,21.256,9.619,11.637
+1 de enero de 2024,28079,Madrid,6,Tetuán,64,Almenara,24.090,11.272,12.818
+1 de enero de 2024,28079,Madrid,6,Tetuán,65,Valdeacederas,27.798,13.024,14.774
+1 de enero de 2024,28079,Madrid,6,Tetuán,66,Berruguete,26.813,12.119,14.694
+1 de enero de 2024,28079,Madrid,7,Chamberí,71,Gaztambide,23.533,10.421,13.112
+1 de enero de 2024,28079,Madrid,7,Chamberí,72,Arapiles,24.931,11.111,13.820
+1 de enero de 2024,28079,Madrid,7,Chamberí,73,Trafalgar,25.328,11.491,13.837
+1 de enero de 2024,28079,Madrid,7,Chamberí,74,Almagro,19.992,8.841,11.151
+1 de enero de 2024,28079,Madrid,7,Chamberí,75,Ríos Rosas,27.962,12.261,15.701
+1 de enero de 2024,28079,Madrid,7,Chamberí,76,Vallehermoso,20.238,8.793,11.445
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,81,El Pardo,3.460,1.729,1.731
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,82,Fuentelarreina,3.498,1.591,1.907
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,83,Peñagrande,44.844,20.857,23.987
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,84,Pilar,46.543,21.173,25.370
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,85,La Paz,32.343,15.008,17.335
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,86,Valverde,66.870,31.990,34.880
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,87,Mirasierra,36.744,17.679,19.065
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,88,El Goloso,19.596,9.694,9.902
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,91,Casa de Campo,12.946,6.047,6.899
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,92,Argüelles,24.987,11.492,13.495
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,93,Ciudad Universitaria,16.876,7.835,9.041
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,94,Valdezarza,31.614,14.578,17.036
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,95,Valdemarín,7.451,3.491,3.960
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,96,El Plantío,3.156,1.467,1.689
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,97,Aravaca,28.193,13.211,14.982
+1 de enero de 2024,28079,Madrid,10,Latina,101,Los Cármenes,18.423,8.757,9.666
+1 de enero de 2024,28079,Madrid,10,Latina,102,Puerta del Angel,45.513,21.325,24.188
+1 de enero de 2024,28079,Madrid,10,Latina,103,Lucero,38.072,17.835,20.237
+1 de enero de 2024,28079,Madrid,10,Latina,104,Aluche,68.973,31.619,37.354
+1 de enero de 2024,28079,Madrid,10,Latina,105,Campamento,20.657,9.511,11.146
+1 de enero de 2024,28079,Madrid,10,Latina,106,Cuatro Vientos,6.417,3.192,3.225
+1 de enero de 2024,28079,Madrid,10,Latina,107,Águilas,52.341,24.198,28.143
+1 de enero de 2024,28079,Madrid,11,Carabanchel,111,Comillas,23.466,10.873,12.593
+1 de enero de 2024,28079,Madrid,11,Carabanchel,112,Opañel,35.513,16.394,19.119
+1 de enero de 2024,28079,Madrid,11,Carabanchel,113,San Isidro,42.184,19.962,22.222
+1 de enero de 2024,28079,Madrid,11,Carabanchel,114,Vista Alegre,50.153,23.083,27.070
+1 de enero de 2024,28079,Madrid,11,Carabanchel,115,Puerta Bonita,38.781,18.360,20.421
+1 de enero de 2024,28079,Madrid,11,Carabanchel,116,Buenavista,51.040,24.740,26.300
+1 de enero de 2024,28079,Madrid,11,Carabanchel,117,Abrantes,33.269,15.585,17.684
+1 de enero de 2024,28079,Madrid,12,Usera,121,Orcasitas,23.482,11.010,12.472
+1 de enero de 2024,28079,Madrid,12,Usera,122,Orcasur,14.851,7.207,7.644
+1 de enero de 2024,28079,Madrid,12,Usera,123,San Fermín,24.510,11.716,12.794
+1 de enero de 2024,28079,Madrid,12,Usera,124,Almendrales,23.927,11.389,12.538
+1 de enero de 2024,28079,Madrid,12,Usera,125,Moscardó,27.873,13.169,14.704
+1 de enero de 2024,28079,Madrid,12,Usera,126,Zofío,15.298,7.166,8.132
+1 de enero de 2024,28079,Madrid,12,Usera,127,Pradolongo,19.172,9.144,10.028
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,131,Entrevías,36.851,17.711,19.140
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,132,San Diego,49.339,23.856,25.483
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,133,Palomeras Bajas,41.755,19.533,22.222
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,134,Palomeras Sureste,44.396,21.125,23.271
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,135,Portazgo,29.746,13.960,15.786
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,136,Numancia,50.961,24.345,26.616
+1 de enero de 2024,28079,Madrid,14,Moratalaz,141,Pavones,9.208,4.240,4.968
+1 de enero de 2024,28079,Madrid,14,Moratalaz,142,Horcajo,6.421,3.069,3.352
+1 de enero de 2024,28079,Madrid,14,Moratalaz,143,Marroquina,26.378,12.105,14.273
+1 de enero de 2024,28079,Madrid,14,Moratalaz,144,Media Legua,17.787,8.073,9.714
+1 de enero de 2024,28079,Madrid,14,Moratalaz,145,Fontarrón,18.000,8.189,9.811
+1 de enero de 2024,28079,Madrid,14,Moratalaz,146,Vinateros,17.329,7.736,9.593
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,151,Ventas,52.223,23.931,28.292
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,152,Pueblo Nuevo,65.874,30.575,35.299
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,153,Quintana,26.762,12.145,14.617
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,154,La Concepción,22.256,10.138,12.118
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,155,San Pascual,19.019,8.670,10.349
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,156,San Juan Bautista,13.120,6.159,6.961
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,157,Colina,6.810,3.063,3.747
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,158,Atalaya,1.672,717,955
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,159,Costillares,22.299,10.438,11.861
+1 de enero de 2024,28079,Madrid,16,Hortaleza,161,Palomas,7.018,3.442,3.576
+1 de enero de 2024,28079,Madrid,16,Hortaleza,162,Piovera,15.455,7.422,8.033
+1 de enero de 2024,28079,Madrid,16,Hortaleza,163,Canillas,40.440,18.793,21.647
+1 de enero de 2024,28079,Madrid,16,Hortaleza,164,Pinar del Rey,53.313,24.503,28.810
+1 de enero de 2024,28079,Madrid,16,Hortaleza,165,Apóstol Santiago,15.842,7.541,8.301
+1 de enero de 2024,28079,Madrid,16,Hortaleza,166,Valdefuentes,73.114,35.738,37.376
+1 de enero de 2024,28079,Madrid,17,Villaverde,171,"Villaverde Alto, C.H. Villaverde",50.266,24.101,26.165
+1 de enero de 2024,28079,Madrid,17,Villaverde,172,San Cristóbal,18.870,9.411,9.459
+1 de enero de 2024,28079,Madrid,17,Villaverde,173,Butarque,22.375,10.810,11.565
+1 de enero de 2024,28079,Madrid,17,Villaverde,174,Los Rosales,39.648,19.005,20.643
+1 de enero de 2024,28079,Madrid,17,Villaverde,175,Ángeles,36.793,17.236,19.557
+1 de enero de 2024,28079,Madrid,18,Villa de Vallecas,181,Casco Histórico de Vallecas,41.984,20.266,21.718
+1 de enero de 2024,28079,Madrid,18,Villa de Vallecas,182,Santa Eugenia,24.168,11.570,12.598
+1 de enero de 2024,28079,Madrid,18,Villa de Vallecas,183,Ensanche de Vallecas,56.185,27.317,28.868
+1 de enero de 2024,28079,Madrid,19,Vicálvaro,191,Casco Histórico de Vicálvaro,37.018,17.760,19.258
+1 de enero de 2024,28079,Madrid,19,Vicálvaro,192,Valdebernardo,17.693,8.425,9.268
+1 de enero de 2024,28079,Madrid,19,Vicálvaro,193,Valderrivas,17.868,8.650,9.218
+1 de enero de 2024,28079,Madrid,19,Vicálvaro,194,El Cañaveral,17.193,8.655,8.538
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,201,Simancas,30.158,14.293,15.865
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,202,Hellín,9.965,4.590,5.375
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,203,Amposta,9.749,4.564,5.185
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,204,Arcos,26.280,12.416,13.864
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,205,Rosas,30.838,14.734,16.104
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,206,Rejas,18.196,8.867,9.329
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,207,Canillejas,29.943,13.922,16.021
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,208,El Salvador,11.454,5.437,6.017
+1 de enero de 2024,28079,Madrid,21,Barajas,211,Alameda de Osuna,19.875,9.484,10.391
+1 de enero de 2024,28079,Madrid,21,Barajas,212,Aeropuerto,1.949,990,959
+1 de enero de 2024,28079,Madrid,21,Barajas,213,Casco Histórico de Barajas,7.625,3.658,3.967
+1 de enero de 2024,28079,Madrid,21,Barajas,214,Timón,12.400,5.878,6.522
+1 de enero de 2024,28079,Madrid,21,Barajas,215,Corralejos,7.763,3.827,3.936
+1 de enero de 2024,28079,Madrid,Todos,Todos,Todos,Todos,3.460.491,1.620.768,1.839.723
