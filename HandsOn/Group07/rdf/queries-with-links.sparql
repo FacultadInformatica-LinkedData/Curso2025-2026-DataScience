@@ -1,0 +1,70 @@
+PREFIX aq: <https://carloscumbrado.github.io/HandsOn/group07/ontology/airquality#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# QUERY 1: List all pollutants with their Wikidata links
+
+SELECT ?pollutant ?label ?wikidata
+WHERE {
+  ?pollutant a aq:Pollutant ;
+             rdfs:label ?label ;
+             owl:sameAs ?wikidata .
+}
+ORDER BY ?pollutant
+
+
+# QUERY 2: Check how many observations use each pollutant (ensures linking)
+
+SELECT ?pollutant ?wikidata (COUNT(?obs) AS ?numObservations)
+WHERE {
+  ?obs a aq:AirQualityObservation ;
+       aq:measuresPollutant ?pollutant .
+       
+  ?pollutant owl:sameAs ?wikidata .
+}
+GROUP BY ?pollutant ?wikidata
+ORDER BY DESC(?numObservations)
+
+
+# QUERY 3: Retrieve observations + station + pollutant label + wikidata link
+
+SELECT ?observation ?date ?value ?station ?pollutantLabel ?wikidata
+WHERE {
+  ?observation a aq:AirQualityObservation ;
+               aq:hasDate ?date ;
+               aq:hasValue ?value ;
+               aq:hasStation ?station ;
+               aq:measuresPollutant ?pollutant .
+
+  ?pollutant rdfs:label ?pollutantLabel ;
+             owl:sameAs ?wikidata .
+}
+ORDER BY ?observation
+
+
+# QUERY 4: Verify that all pollutants have an owl:sameAs link
+
+
+SELECT ?pollutant
+WHERE {
+  ?pollutant a aq:Pollutant .
+  FILTER NOT EXISTS {
+    ?pollutant owl:sameAs ?wd .
+  }
+}
+
+# Resultado esperado: ***CERO FILAS***
+
+# QUERY 5: Check that all stations appear in at least one observation
+
+SELECT ?station (COUNT(?obs) AS ?observations)
+WHERE {
+  ?station a aq:Station .
+  OPTIONAL {
+    ?obs a aq:AirQualityObservation ;
+         aq:hasStation ?station .
+  }
+}
+GROUP BY ?station
+ORDER BY ?station

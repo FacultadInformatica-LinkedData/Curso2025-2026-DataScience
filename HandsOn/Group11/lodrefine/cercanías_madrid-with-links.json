@@ -1,0 +1,556 @@
+[
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "POBLACIÓN",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q2074737",
+        "name": "municipality of Spain"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column POBLACIÓN to type Q2074737"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q55488",
+        "name": "railway station"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column NOMBRE to type Q55488"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DIRECCIÓN",
+    "expression": "value.toUppercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna DIRECCIÓN usando la expresión value.toUppercase()"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "MADRID-RECOLETOS",
+    "judgment": "matched",
+    "match": {
+      "id": "Q8841582",
+      "name": "Recoletos",
+      "types": [
+        "Q55491",
+        "Q1793804"
+      ],
+      "score": 73
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Recoletos (Q8841582) para las celdas que contienen \"MADRID-RECOLETOS\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "PIRAMIDES",
+    "judgment": "matched",
+    "match": {
+      "id": "Q112040687",
+      "name": "Pirámides railway station",
+      "types": [
+        "Q55488",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Pirámides railway station (Q112040687) para las celdas que contienen \"PIRAMIDES\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "EMBAJADORES",
+    "judgment": "matched",
+    "match": {
+      "id": "Q112042102",
+      "name": "Embajadores",
+      "types": [
+        "Q55488",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Embajadores (Q112042102) para las celdas que contienen \"EMBAJADORES\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "VILLAVERDE ALTO",
+    "judgment": "matched",
+    "match": {
+      "id": "Q112043133",
+      "name": "Villaverde Alto railway station",
+      "types": [
+        "Q55488"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Villaverde Alto railway station (Q112043133) para las celdas que contienen \"VILLAVERDE ALTO\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "CUATRO VIENTOS",
+    "judgment": "matched",
+    "match": {
+      "id": "Q112043421",
+      "name": "Cuatro Vientos",
+      "types": [
+        "Q55488"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Cuatro Vientos (Q112043421) para las celdas que contienen \"CUATRO VIENTOS\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "FUENCARRAL",
+    "judgment": "matched",
+    "match": {
+      "id": "Q8779819",
+      "name": "Fuencarral station",
+      "types": [
+        "Q55488",
+        "Q1793804"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Fuencarral station (Q8779819) para las celdas que contienen \"FUENCARRAL\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "RAMON Y CAJAL",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5847026",
+      "name": "Ramón y Cajal",
+      "types": [
+        "Q55488"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Ramón y Cajal (Q5847026) para las celdas que contienen \"RAMON Y CAJAL\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "PITIS",
+    "judgment": "matched",
+    "match": {
+      "id": "Q112042205",
+      "name": "Pitis",
+      "types": [
+        "Q55488"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Pitis (Q112042205) para las celdas que contienen \"PITIS\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "AEROPUERTO T-4",
+    "judgment": "matched",
+    "match": {
+      "id": "Q2605805",
+      "name": "Aeropuerto T4",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Aeropuerto T4 (Q2605805) para las celdas que contienen \"AEROPUERTO T-4\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "MADRID-ATOCHA CERCANIAS",
+    "judgment": "matched",
+    "match": {
+      "id": "Q2842655",
+      "name": "Atocha-Cercanías",
+      "types": [
+        "Q55490",
+        "Q55488",
+        "Q55491"
+      ],
+      "score": 82
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Atocha-Cercanías (Q2842655) para las celdas que contienen \"MADRID-ATOCHA CERCANIAS\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "MENDEZ ALVARO",
+    "judgment": "matched",
+    "match": {
+      "id": "Q112043069",
+      "name": "Méndez Álvaro railway station",
+      "types": [
+        "Q55488",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Méndez Álvaro railway station (Q112043069) para las celdas que contienen \"MENDEZ ALVARO\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "DELICIAS",
+    "judgment": "matched",
+    "match": {
+      "id": "Q801148",
+      "name": "Delicias Railway Station",
+      "types": [
+        "Q55488",
+        "Q24699794"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Delicias Railway Station (Q801148) para las celdas que contienen \"DELICIAS\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "MADRID-NUEVOS MINISTERIOS",
+    "judgment": "matched",
+    "match": {
+      "id": "Q112041228",
+      "name": "Nuevos Ministerios",
+      "types": [
+        "Q55488",
+        "Q22808403"
+      ],
+      "score": 84
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Nuevos Ministerios (Q112041228) para las celdas que contienen \"MADRID-NUEVOS MINISTERIOS\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "DELICIAS",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5846110",
+      "name": "Delicias railway station",
+      "types": [
+        "Q55488"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Delicias railway station (Q5846110) para las celdas que contienen \"DELICIAS\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "VICALVARO",
+    "judgment": "matched",
+    "match": {
+      "id": "Q116365232",
+      "name": "estación de Vicálvaro",
+      "types": [
+        "Q55488"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento estación de Vicálvaro (Q116365232) para las celdas que contienen \"VICALVARO\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "MAJADAHONDA",
+    "judgment": "matched",
+    "match": {
+      "id": "Q2263478",
+      "name": "Majadahonda",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Majadahonda (Q2263478) para las celdas que contienen \"MAJADAHONDA\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "POZUELO",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5846969",
+      "name": "estación de Pozuelo",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento estación de Pozuelo (Q5846969) para las celdas que contienen \"POZUELO\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "EL BARRIAL-CENTRO COMERCIAL-POZUELO",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5846138",
+      "name": "El Barrial train station",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento El Barrial train station (Q5846138) para las celdas que contienen \"EL BARRIAL-CENTRO COMERCIAL-POZUELO\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "LAS ROZAS",
+    "judgment": "matched",
+    "match": {
+      "id": "Q107976103",
+      "name": "las Rozas de Valdearroyo",
+      "types": [
+        "Q55488"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento las Rozas de Valdearroyo (Q107976103) para las celdas que contienen \"LAS ROZAS\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "SAN FERNANDO DE HENARES",
+    "judgment": "matched",
+    "match": {
+      "id": "Q8841726",
+      "name": "San Fernando",
+      "types": [
+        "Q55488"
+      ],
+      "score": 88
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento San Fernando (Q8841726) para las celdas que contienen \"SAN FERNANDO DE HENARES\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "EL CASAR",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5846151",
+      "name": "estación de El Casar (Cercanías Madrid)",
+      "types": [
+        "Q55488"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento estación de El Casar (Cercanías Madrid) (Q5846151) para las celdas que contienen \"EL CASAR\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "ALCORCON",
+    "judgment": "matched",
+    "match": {
+      "id": "Q112043221",
+      "name": "Alcorcón Railway Station",
+      "types": [
+        "Q55488"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Alcorcón Railway Station (Q112043221) para las celdas que contienen \"ALCORCON\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "MOSTOLES",
+    "judgment": "matched",
+    "match": {
+      "id": "Q112041078",
+      "name": "Móstoles train station",
+      "types": [
+        "Q55488"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Móstoles train station (Q112041078) para las celdas que contienen \"MOSTOLES\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "NOMBRE",
+    "expression": "grel:\"https://wikidata.org/entity/\" + cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "NOMBRE_URI",
+    "columnInsertIndex": 2,
+    "description": "Crear la columna NOMBRE_URI en el índice 2 basada en la columna NOMBRE usando la expresión grel:\"https://wikidata.org/entity/\" + cell.recon.match.id"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "POBLACIÓN",
+    "expression": "grel:\"https://wikidata.org/entity/\" + cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "POBLACIÓN_URI",
+    "columnInsertIndex": 7,
+    "description": "Crear la columna POBLACIÓN_URI en el índice 7 basada en la columna POBLACIÓN usando la expresión grel:\"https://wikidata.org/entity/\" + cell.recon.match.id"
+  }
+]

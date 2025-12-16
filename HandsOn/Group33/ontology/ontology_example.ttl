@@ -1,9 +1,9 @@
-@prefix : <http://groupXX.linkeddata.es/resource/traffic/> .
-@prefix ont: <http://groupXX.linkeddata.es/ontology/traffic#> .
+@prefix : <http://group33.linkeddata.es/resource/traffic/> .
+@prefix ont: <http://group33.linkeddata.es/ontology/traffic#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# Ejemplo de una estación de tráfico y sus mediciones
+
 :estacion_001 rdf:type ont:Estacion ;
     ont:codigoEstacion "001" ;
     ont:nombreEstacion "Avenida de América - Estación 1" ;

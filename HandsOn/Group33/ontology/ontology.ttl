@@ -1,4 +1,4 @@
-@prefix : <http://groupXX.linkeddata.es/ontology/traffic#> .
+@prefix : <http://group33.linkeddata.es/ontology/traffic#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -9,7 +9,6 @@
     rdfs:comment "Ontología ligera desarrollada para describir estaciones de medición y sus valores de intensidad, velocidad y ocupación en la ciudad de Madrid."@es ;
     owl:versionInfo "1.0" .
 
-### --- CLASES ---
 
 :Estacion rdf:type owl:Class ;
     rdfs:label "Estación de Tráfico"@es ;
@@ -23,7 +22,6 @@
     rdfs:label "Ubicación"@es ;
     rdfs:comment "Localización geográfica de la estación, incluyendo latitud, longitud y sentido de circulación."@es .
 
-### --- PROPIEDADES DE OBJETO ---
 
 :tieneUbicacion rdf:type owl:ObjectProperty ;
     rdfs:label "tiene ubicación"@es ;
@@ -35,7 +33,6 @@
     rdfs:domain :Estacion ;
     rdfs:range :Medicion .
 
-### --- PROPIEDADES DE DATOS ---
 
 :codigoEstacion rdf:type owl:DatatypeProperty ;
     rdfs:label "código de estación"@es ;

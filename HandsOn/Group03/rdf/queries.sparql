@@ -1,0 +1,51 @@
+PREFIX on: <http://smartcity.es/group03/ontology#>
+
+### 1. Obtener el nombre de todos los centros ###
+SELECT ?nombre 
+WHERE {
+    ?centro a on:CentroEducativo. 
+    ?centro on:nombreCentro ?nombre
+}
+
+### 2. Obtener el número de centros que hay ###
+SELECT (COUNT(?nombre) AS ?num) 
+WHERE {
+    ?centro a on:CentroEducativo. 
+    ?centro on:nombreCentro ?nombre
+}
+
+### 3. Obtener todos los nombre de los municipios junto a sus códigos de municipio ###
+SELECT ?mun ?cod 
+WHERE {
+    ?munURI a on:Municipio. 
+    ?munURI on:nombreMunicipio ?mun.
+    ?munURI on:codigoMunicipio ?cod.
+}
+
+### 4. Obtener el nombre y código postal de todos los centros que esten en el municipio con código 79(Madrid) ###
+SELECT ?nom ?codp 
+WHERE {
+    ?cn a on:CentroEducativo. 
+    ?cn on:nombreCentro ?nom.
+    ?cn on:ubicadoEnMunicipio ?mun.
+    ?mun on:codigoMunicipio 79.
+    ?cn on:codigoPostal ?codp.
+}
+
+### 5. Obtener el nombre de los centros privados del distrito de la Latina por orden alfabetico ###
+SELECT ?nom 
+WHERE {
+    ?cn a on:CentroEducativo. 
+    ?cn on:nombreCentro ?nom.
+    ?cn on:ubicadoEnDistrito ?dis.
+    ?dis on:nombreDistrito "LATINA".
+    ?cn on:tieneTitularidad "PRIVADO".
+} ORDER BY (?nom)
+
+### 6. Obtener toda la información de la facultad de informática de la upm ###
+SELECT ?cn ?p ?obj 
+WHERE {
+    ?cn a on:CentroEducativo. 
+    ?cn on:nombreCentro "F.DE INFORMATICA".
+    ?cn ?p ?obj.
+}

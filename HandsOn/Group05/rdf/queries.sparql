@@ -1,0 +1,110 @@
+PREFIX aq:   <http://linkeddata.grup05.es/CalidadAireMadrid/ontology/AirQualityOntology#>
+PREFIX res:  <http://linkeddata.grup05.es/CalidadAireMadrid/resource/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+
+############################################################
+# 1) Todas las ubicaciones con latitud, longitud y etiqueta
+############################################################
+SELECT ?u ?label ?lat ?lon
+WHERE {
+  ?u a aq:Ubicacion ;
+     rdfs:label ?label ;
+     schema:latitude ?lat ;
+     schema:longitude ?lon .
+}
+ORDER BY ?label
+
+############################################################
+# 2) Última medición por ubicación y contaminante
+############################################################
+SELECT ?ubicacion ?label ?contaminante ?valor ?fecha
+WHERE {
+  ?m a aq:Medicion ;
+     aq:enUbicacion ?ubicacion ;
+     aq:mideParametro ?contaminante ;
+     aq:fechaHora ?fecha .
+  ?ubicacion rdfs:label ?label .
+  ?contaminante aq:valor ?valor .
+}
+ORDER BY DESC(?fecha)
+LIMIT 200
+
+############################################################
+# 3) Serie temporal (fecha-valor) para una estación y contaminante
+############################################################
+SELECT ?fecha ?valor
+WHERE {
+  ?m a aq:Medicion ;
+     aq:enUbicacion <http://linkeddata.grup05.es/CalidadAireMadrid/resource/Ubicacion/PlazaDelCarmen> ;
+     aq:mideParametro <http://linkeddata.grup05.es/CalidadAireMadrid/resource/Contaminante/no2> ; 
+     aq:fechaHora ?fecha .
+  <http://linkeddata.grup05.es/CalidadAireMadrid/resource/Contaminante/no2> aq:valor ?valor .
+}
+ORDER BY ?fecha
+
+############################################################
+# 4) Media diaria de un contaminante por ubicación
+############################################################
+SELECT ?ubicacion ?dia (AVG(?v) AS ?media)
+WHERE {
+  ?m a aq:Medicion ;
+     aq:enUbicacion ?ubicacion ;
+     aq:mideParametro ?c ;
+     aq:fechaHora ?fecha .
+  ?c aq:valor ?v .
+  BIND(xsd:date(?fecha) AS ?dia)
+}
+GROUP BY ?ubicacion ?dia
+ORDER BY ?ubicacion ?dia
+
+
+############################################################
+# 5) Comparar la media del día entre dos ubicaciones
+############################################################
+SELECT ?dia ?ubicacion (AVG(?valor) AS ?media)
+WHERE {
+  VALUES ?ubicacion { <http://linkeddata.grup05.es/CalidadAireMadrid/resource/Ubicacion/PlazaDelCarmen> <http://linkeddata.grup05.es/CalidadAireMadrid/resource/Ubicacion/CuatroCaminosPabloIglesias> }
+  ?m a aq:Medicion ;
+     aq:enUbicacion ?ubicacion ;
+     aq:mideParametro <http://linkeddata.grup05.es/CalidadAireMadrid/resource/Contaminante/no2> ;
+     aq:fechaHora ?fecha .
+  <http://linkeddata.grup05.es/CalidadAireMadrid/resource/Contaminante/no2> aq:valor ?valor .
+  BIND(xsd:date(?fecha) AS ?dia)
+}
+GROUP BY ?dia ?ubicacion
+ORDER BY ?dia
+
+
+############################################################
+# 6) Valores mínimo y máximo de cada contaminante
+############################################################
+
+SELECT ?contaminante ?label
+       (MIN(?valor) AS ?minValor)
+       (MAX(?valor) AS ?maxValor)
+WHERE {
+  ?contaminante a aq:Contaminante ;
+                aq:valor ?valor .
+  OPTIONAL { ?contaminante rdfs:label ?label }
+}
+GROUP BY ?contaminante ?label
+ORDER BY ?label
+
+############################################################
+# 7) Detectar picos altos (>75 µg/m3, ajusta umbral)
+############################################################
+SELECT ?ubicacion ?label ?fecha ?valor
+WHERE {
+  ?m a aq:Medicion ;
+     aq:enUbicacion ?ubicacion ;
+     aq:mideParametro <http://linkeddata.grup05.es/CalidadAireMadrid/resource/Contaminante/no2> ;
+     aq:fechaHora ?fecha .
+  <http://linkeddata.grup05.es/CalidadAireMadrid/resource/Contaminante/no2> aq:valor ?valor .
+  ?ubicacion rdfs:label ?label .
+  FILTER(?valor > 75)
+}
+ORDER BY DESC(?valor)

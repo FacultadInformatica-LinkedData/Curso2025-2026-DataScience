@@ -1,0 +1,70 @@
+prefixes:
+  rr:     "http://www.w3.org/ns/r2rml#"
+  rml:    "http://semweb.mmlab.be/ns/rml#"
+  ql:     "http://semweb.mmlab.be/ns/ql#"
+  rdf:    "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  rdfs:   "http://www.w3.org/2000/01/rdf-schema#"
+  xsd:    "http://www.w3.org/2001/XMLSchema#"
+  schema1: "http://schema.org/"
+  aq:     "http://linkeddata.grup05.es/CalidadAireMadrid/ontology/AirQualityOntology#"
+  res:    "http://linkeddata.grup05.es/CalidadAireMadrid/resource/"
+
+sources:
+  aircsv:
+    access: "calidad-aire-4318-y-otros-mod-updated.csv"
+    referenceFormulation: csv
+
+mappings:
+
+  ###############################
+  # triplesmap1: Medicion
+  ###############################
+  triplesmap1:
+    sources:
+      - aircsv
+    s: res:Medicion/$(id)
+    po:
+      - [a, aq:Medicion]
+
+      # Atributos de la medición
+      - [aq:tieneId, "$(id)"]
+      - [aq:fechaHora, $(datetimeUtc), xsd:dateTime]
+      - [aq:tieneZonaHoraria, "$(timezone)"]
+
+      # Relación con ubicación (join a triplesmap2)
+      - p: aq:enUbicacion
+        o:
+          mapping: triplesmap2
+
+      # Relación con contaminante (join a triplesmap3)
+      - p: aq:mideParametro
+        o:
+          mapping: triplesmap3
+
+  ###############################
+  # triplesmap2: Ubicación
+  ###############################
+  triplesmap2:
+    sources:
+      - aircsv
+    s: res:Ubicacion/$(location_name_rdf)
+    po:
+      - [a, aq:Ubicacion]
+      - [rdfs:label, "$(location_name_rdf)"]
+      - [schema1:name, "$(location_name_rdf)"]
+      - [schema1:latitude,  $(latitude),  xsd:decimal]
+      - [schema1:longitude, $(longitude), xsd:decimal]
+
+  ###############################
+  # triplesmap3: Contaminante
+  ###############################
+  triplesmap3:
+    sources:
+      - aircsv
+    s: res:Contaminante/$(parameter)
+    po:
+      - [a, aq:Contaminante]
+      - [rdfs:label, "$(parameter)"]
+
+      - [aq:valor, $(value), xsd:decimal]
+      - [aq:unidad, "$(unit)"]

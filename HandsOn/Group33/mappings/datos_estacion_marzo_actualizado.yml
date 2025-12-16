@@ -1,0 +1,35 @@
+prefixes:
+  ex: "http://example.org/traffic/"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+
+sources:
+  datos_estacion_marzo_actualizado:
+    access: datos_estacion_marzo_actualizado.csv
+    referenceFormulation: csv
+
+mappings:
+  mediciones:
+    source: datos_estacion_marzo_actualizado
+
+    s: "http://example.org/traffic/medicion/{codigo_estacion}/{sentido_codigo}/{Hora_Codigo}/{FECHA_HORA_RDF}"
+    class: ex:Medicion
+
+    po:
+      - p: ex:estacion
+        o: codigo_estacion
+
+      - p: ex:sentido
+        o: sentido_codigo
+
+      - p: ex:hora
+        o: Hora_Codigo
+
+      - p: ex:intensidad
+        o:
+          value: Valor_Intensidad
+          datatype: xsd:integer
+
+      - p: ex:fecha
+        o:
+          value: FECHA_HORA_RDF
+          datatype: xsd:dateTime

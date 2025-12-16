@@ -1,0 +1,68 @@
+@prefix rr:   <http://www.w3.org/ns/r2rml#> .
+@prefix rml:  <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql:   <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix ns:   <https://datos.grupo0225-cdia.org/ontology/bicimad#> .
+
+<#MedicionDiariaMapping>
+  a rr:TriplesMap ;
+
+  rml:logicalSource [
+    rml:source "bicimad-with-links.csv" ;
+    rml:referenceFormulation ql:CSV ;
+  ] ;
+
+  rr:subjectMap [
+    rr:template "https://datos.grupo0225-cdia.org/resource/bicimad/medicion-{fecha}" ;
+    rr:class ns:MedicionDiaria ;
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ns:fecha ;
+    rr:objectMap [ rml:reference "fecha" ; rr:datatype xsd:date ] ;
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ns:horasTotalesUsosBicicletas ;
+    rr:objectMap [ rml:reference "totalUsoAlDia" ; rr:datatype xsd:decimal ] ;
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ns:horasTotalesDisponibilidadBicicletasEnAnclajes ;
+    rr:objectMap [ rml:reference "horasTotalesDeDisponibilidad" ; rr:datatype xsd:decimal ] ;
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ns:totalHorasServicioBicicletas ;
+    rr:objectMap [ rml:reference "horasTotalesDeServicio" ; rr:datatype xsd:decimal ] ;
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ns:mediaBicicletasDisponibles ;
+    rr:objectMap [ rml:reference "bicicletasMediasDisponibilidad" ; rr:datatype xsd:decimal ] ;
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ns:usosAbonadoAnual ;
+    rr:objectMap [ rml:reference "usoPorAbonadoAnual" ; rr:datatype xsd:integer ] ;
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ns:usosAbonadoOcasional ;
+    rr:objectMap [ rml:reference "usoPorAbonadoOcasional" ; rr:datatype xsd:integer ] ;
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ns:totalUsos ;
+    rr:objectMap [ rml:reference "totalUsos" ; rr:datatype xsd:integer ] ;
+  ] ;
+
+  # Enlace con Wikidata
+  rr:predicateObjectMap [
+    rr:predicate owl:sameAs ;
+    rr:objectMap [
+      rr:template "https://www.wikidata.org/entity/{wikidata_fecha}" ;
+      rr:termType rr:IRI
+    ]
+  ] .

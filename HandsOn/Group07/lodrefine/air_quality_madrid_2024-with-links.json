@@ -1,0 +1,439 @@
+[
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "pollutantCode",
+    "expression": "grel:if(value==\"1\",\"SO2\",\nif(value==\"6\",\"CO\",\nif(value==\"7\",\"NO\",\nif(value==\"8\",\"NO2\",\nif(value==\"9\",\"PM2.5\",\nif(value==\"10\",\"PM10\",\nif(value==\"12\",\"NOx\",\nif(value==\"14\",\"O3\",\nif(value==\"20\",\"TOL\",\nif(value==\"30\",\"BEN\",\nif(value==\"35\",\"EBE\",\nif(value==\"37\",\"MXY\",\nif(value==\"38\",\"PXY\",\nif(value==\"39\",\"OXY\",\nif(value==\"42\",\"TCH\",\nif(value==\"43\",\"CH4\",\nif(value==\"44\",\"NMHC\",\nif(value==\"431\",\"MPX\",\n\"Unknown\"))))))))))))))))))",
+    "onError": "set-to-blank",
+    "newColumnName": "pollutantName",
+    "columnInsertIndex": 2,
+    "description": "Create column pollutantName at index 2 based on column pollutantCode using expression grel:if(value==\"1\",\"SO2\",\nif(value==\"6\",\"CO\",\nif(value==\"7\",\"NO\",\nif(value==\"8\",\"NO2\",\nif(value==\"9\",\"PM2.5\",\nif(value==\"10\",\"PM10\",\nif(value==\"12\",\"NOx\",\nif(value==\"14\",\"O3\",\nif(value==\"20\",\"TOL\",\nif(value==\"30\",\"BEN\",\nif(value==\"35\",\"EBE\",\nif(value==\"37\",\"MXY\",\nif(value==\"38\",\"PXY\",\nif(value==\"39\",\"OXY\",\nif(value==\"42\",\"TCH\",\nif(value==\"43\",\"CH4\",\nif(value==\"44\",\"NMHC\",\nif(value==\"431\",\"MPX\",\n\"Unknown\"))))))))))))))))))"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "pollutantName",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q113145171",
+        "name": "type of chemical entity"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column pollutantName to type Q113145171"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "pollutantName: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "pollutantName",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "pollutantName",
+    "similarValue": "NO2",
+    "judgment": "matched",
+    "match": {
+      "id": "Q207895",
+      "name": "nitrogen dioxide",
+      "types": [
+        "Q113145171"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item nitrogen dioxide (Q207895) for cells containing \"NO2\" in column pollutantName"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "pollutantName: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "pollutantName",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "pollutantName",
+    "similarValue": "NOx",
+    "judgment": "matched",
+    "match": {
+      "id": "Q20962970",
+      "name": "NOx",
+      "types": [
+        ""
+      ],
+      "score": 50
+    },
+    "shareNewTopics": false,
+    "description": "Match item NOx (Q20962970) for cells containing \"NOx\" in column pollutantName"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "pollutantName: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "pollutantName",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "pollutantName",
+    "similarValue": "SO2",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5282",
+      "name": "sulfur dioxide",
+      "types": [
+        "Q113145171"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item sulfur dioxide (Q5282) for cells containing \"SO2\" in column pollutantName"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "pollutantName: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "pollutantName",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "pollutantName",
+    "similarValue": "PM2.5",
+    "judgment": "matched",
+    "match": {
+      "id": "Q48035814",
+      "name": "PM 2.5",
+      "types": [
+        ""
+      ],
+      "score": 50
+    },
+    "shareNewTopics": false,
+    "description": "Match item PM 2.5 (Q48035814) for cells containing \"PM2.5\" in column pollutantName"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "pollutantName: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "pollutantName",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "pollutantName",
+    "similarValue": "PM10",
+    "judgment": "matched",
+    "match": {
+      "id": "Q1056863",
+      "name": "PM10",
+      "types": [
+        ""
+      ],
+      "score": 50
+    },
+    "shareNewTopics": false,
+    "description": "Match item PM10 (Q1056863) for cells containing \"PM10\" in column pollutantName"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "pollutantName: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "pollutantName",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "pollutantName",
+    "similarValue": "O3",
+    "judgment": "matched",
+    "match": {
+      "id": "Q36933",
+      "name": "ozone",
+      "types": [
+        "Q2512777",
+        "Q428653",
+        "Q113145171"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item ozone (Q36933) for cells containing \"O3\" in column pollutantName"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "pollutantName: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "pollutantName",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "pollutantName",
+    "similarValue": "TOL",
+    "judgment": "matched",
+    "match": {
+      "id": "Q15779",
+      "name": "toluene",
+      "types": [
+        "Q113145171"
+      ],
+      "score": 75
+    },
+    "shareNewTopics": false,
+    "description": "Match item toluene (Q15779) for cells containing \"TOL\" in column pollutantName"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "pollutantName: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "pollutantName",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "pollutantName",
+    "similarValue": "BEN",
+    "judgment": "matched",
+    "match": {
+      "id": "Q2270",
+      "name": "benzene",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item benzene (Q2270) for cells containing \"BEN\" in column pollutantName"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "pollutantName: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "pollutantName",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "pollutantName",
+    "similarValue": "EBE",
+    "judgment": "matched",
+    "match": {
+      "id": "Q409184",
+      "name": "ethylbenzene",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item ethylbenzene (Q409184) for cells containing \"EBE\" in column pollutantName"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "pollutantName",
+    "expression": "grel:cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "pollutantWikidataURI",
+    "columnInsertIndex": 3,
+    "description": "Create column pollutantWikidataURI at index 3 based on column pollutantName using expression grel:cell.recon.match.id"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "pollutantWikidataURI_full",
+          "expression": "value",
+          "columnName": "pollutantWikidataURI_full",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "pollutantWikidataURI",
+    "expression": "grel:\"https://www.wikidata.org/entity/\" + value",
+    "onError": "set-to-blank",
+    "newColumnName": "pollutantWikidataURI_full",
+    "columnInsertIndex": 4,
+    "description": "Create column pollutantWikidataURI_full at index 4 based on column pollutantWikidataURI using expression grel:\"https://www.wikidata.org/entity/\" + value"
+  }
+]

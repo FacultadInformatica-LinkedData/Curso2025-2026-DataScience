@@ -1,0 +1,572 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "expression": "grel:value.replace(/T00:00(:00)?Z/,\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna fecha usando la expresión grel:value.replace(/T00:00(:00)?Z/,\"\")"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q47150325",
+        "name": "calendar day of a given year"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column fecha to type Q47150325"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "fecha",
+    "expression": "grel:if(isBlank(cell.recon.match.id), \"\", cell.recon.match.id)",
+    "onError": "set-to-blank",
+    "newColumnName": "wikidata_fecha",
+    "columnInsertIndex": 1,
+    "description": "Crear la columna wikidata_fecha en el índice 1 basada en la columna fecha usando la expresión grel:if(isBlank(cell.recon.match.id), \"\", cell.recon.match.id)"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-10-08",
+    "judgment": "matched",
+    "match": {
+      "id": "Q21075028",
+      "name": "October 8, 2015",
+      "types": [
+        "Q2924",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento October 8, 2015 (Q21075028) para las celdas que contienen \"2015-10-08\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-11-08",
+    "judgment": "matched",
+    "match": {
+      "id": "Q21411073",
+      "name": "November 8, 2015",
+      "types": [
+        "Q2990",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento November 8, 2015 (Q21411073) para las celdas que contienen \"2015-11-08\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-12-08",
+    "judgment": "matched",
+    "match": {
+      "id": "Q21686557",
+      "name": "December 8, 2015",
+      "types": [
+        "Q2301",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento December 8, 2015 (Q21686557) para las celdas que contienen \"2015-12-08\" en la columna fecha"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "wikidata_fecha",
+    "description": "Eliminar columna wikidata_fecha"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "fecha",
+    "expression": "grel:if(isBlank(cell.recon.match), \"\", cell.recon.match.id)",
+    "onError": "set-to-blank",
+    "newColumnName": "wikidata_fecha",
+    "columnInsertIndex": 1,
+    "description": "Crear la columna wikidata_fecha en el índice 1 basada en la columna fecha usando la expresión grel:if(isBlank(cell.recon.match), \"\", cell.recon.match.id)"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-01-09",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19761462",
+      "name": "January 9, 2015",
+      "types": [
+        "Q2238",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 9, 2015 (Q19761462) para las celdas que contienen \"2015-01-09\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-02-09",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19761567",
+      "name": "February 9, 2015",
+      "types": [
+        "Q2324",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento February 9, 2015 (Q19761567) para las celdas que contienen \"2015-02-09\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-03-09",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19764523",
+      "name": "March 9, 2015",
+      "types": [
+        "Q2401",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento March 9, 2015 (Q19764523) para las celdas que contienen \"2015-03-09\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-04-09",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19765426",
+      "name": "April 9, 2015",
+      "types": [
+        "Q2504",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento April 9, 2015 (Q19765426) para las celdas que contienen \"2015-04-09\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-05-09",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19765434",
+      "name": "May 9, 2015",
+      "types": [
+        "Q2556",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 9, 2015 (Q19765434) para las celdas que contienen \"2015-05-09\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-06-09",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19765432",
+      "name": "June 9, 2015",
+      "types": [
+        "Q2618",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 9, 2015 (Q19765432) para las celdas que contienen \"2015-06-09\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-07-09",
+    "judgment": "matched",
+    "match": {
+      "id": "Q20650860",
+      "name": "July 9, 2015",
+      "types": [
+        "Q2690",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 9, 2015 (Q20650860) para las celdas que contienen \"2015-07-09\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-08-09",
+    "judgment": "matched",
+    "match": {
+      "id": "Q22082684",
+      "name": "August 9, 2015",
+      "types": [
+        "Q2782",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento August 9, 2015 (Q22082684) para las celdas que contienen \"2015-08-09\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-09-09",
+    "judgment": "matched",
+    "match": {
+      "id": "Q20961411",
+      "name": "September 9, 2015",
+      "types": [
+        "Q2856",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento September 9, 2015 (Q20961411) para las celdas que contienen \"2015-09-09\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-10-09",
+    "judgment": "matched",
+    "match": {
+      "id": "Q21077028",
+      "name": "October 9, 2015",
+      "types": [
+        "Q2923",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento October 9, 2015 (Q21077028) para las celdas que contienen \"2015-10-09\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-11-09",
+    "judgment": "matched",
+    "match": {
+      "id": "Q21411075",
+      "name": "November 9, 2015",
+      "types": [
+        "Q2991",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento November 9, 2015 (Q21411075) para las celdas que contienen \"2015-11-09\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-12-09",
+    "judgment": "matched",
+    "match": {
+      "id": "Q21686558",
+      "name": "December 9, 2015",
+      "types": [
+        "Q2304",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento December 9, 2015 (Q21686558) para las celdas que contienen \"2015-12-09\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-09-18",
+    "judgment": "matched",
+    "match": {
+      "id": "Q21034799",
+      "name": "September 18, 2015",
+      "types": [
+        "Q2893",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento September 18, 2015 (Q21034799) para las celdas que contienen \"2015-09-18\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-01-10",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19761482",
+      "name": "January 10, 2015",
+      "types": [
+        "Q2243",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 10, 2015 (Q19761482) para las celdas que contienen \"2015-01-10\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-02-10",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19761578",
+      "name": "February 10, 2015",
+      "types": [
+        "Q2325",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento February 10, 2015 (Q19761578) para las celdas que contienen \"2015-02-10\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-03-10",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19764532",
+      "name": "March 10, 2015",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento March 10, 2015 (Q19764532) para las celdas que contienen \"2015-03-10\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-04-10",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19764578",
+      "name": "April 10, 2015",
+      "types": [
+        "Q2502",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento April 10, 2015 (Q19764578) para las celdas que contienen \"2015-04-10\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-05-10",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19764611",
+      "name": "May 10, 2015",
+      "types": [
+        "Q2557",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 10, 2015 (Q19764611) para las celdas que contienen \"2015-05-10\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-06-10",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19764603",
+      "name": "June 10, 2015",
+      "types": [
+        "Q2615",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 10, 2015 (Q19764603) para las celdas que contienen \"2015-06-10\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-07-10",
+    "judgment": "matched",
+    "match": {
+      "id": "Q20652328",
+      "name": "July 10, 2015",
+      "types": [
+        "Q2689",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 10, 2015 (Q20652328) para las celdas que contienen \"2015-07-10\" en la columna fecha"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha",
+    "similarValue": "2015-08-10",
+    "judgment": "matched",
+    "match": {
+      "id": "Q20902070",
+      "name": "August 10, 2015",
+      "types": [
+        "Q2779",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento August 10, 2015 (Q20902070) para las celdas que contienen \"2015-08-10\" en la columna fecha"
+  }
+]

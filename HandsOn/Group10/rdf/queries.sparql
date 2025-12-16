@@ -1,0 +1,42 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ex: <https://group10.linkeddata.es/ontology/>
+PREFIX res: <https://group10.linkeddata.es/resource/>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+
+#################################################
+# Query 1: List all permanent traffic stations
+#################################################
+
+SELECT ?station
+WHERE {
+  ?station rdf:type ex:PermanentStation .
+}
+
+#################################################
+# Query 2: Get all traffic observations with date
+#################################################
+
+SELECT ?observation ?date
+WHERE {
+  ?observation rdf:type ex:TrafficObservation ;
+               ex:observationDate ?date .
+}
+
+#################################################
+# Query 3: Traffic observations for a given station
+#################################################
+
+SELECT ?observation ?date
+WHERE {
+  ?observation rdf:type ex:TrafficObservation ;
+               ex:observedAtStation res:station/ES01 ;
+               ex:observationDate ?date .
+}
+
+#################################################
+# Query 4: List all EV charging points
+#################################################
+
+SELECT ?chargingPoint
+WHERE {
+  ?chargingPoint rdf:type ex:ChargingPoint .

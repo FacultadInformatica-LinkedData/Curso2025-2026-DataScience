@@ -1,0 +1,34 @@
+PREFIX st: <http://group11.linkeddata.es/ontology/station#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Verificar las estaciones
+SELECT ?estacion ?id ?nombre ?direccion ?cp ?municipio ?coordenadas
+WHERE {
+  ?estacion a st:Station ;
+            st:hasID ?id ;
+            st:hasName ?nombre ;
+            st:hasAddress ?direccion ;
+            st:hasCP ?cp ;
+            st:locatedIn ?municipio ;
+            st:hasGeographicCoordinates ?coordenadas .
+}
+
+# Verificar los municipios
+SELECT ?municipio ?nombreMunicipio
+WHERE {
+  ?municipio a st:Municipality ;
+             st:hasMunicipalityName ?nombreMunicipio .
+}
+
+# Verificar las coordenadas geográficas
+SELECT ?coordenadas ?valorCoordenadas
+WHERE {
+  ?coordenadas a st:GeographicCoordinates ;
+               st:hasCoordinatesLiteral ?valorCoordenadas .
+}
+
+# Contar el número de estaciones para asegurar de que todos los registros se mapearon
+SELECT (COUNT(?estacion) AS ?totalEstaciones)
+WHERE {
+  ?estacion a st:Station .
+}

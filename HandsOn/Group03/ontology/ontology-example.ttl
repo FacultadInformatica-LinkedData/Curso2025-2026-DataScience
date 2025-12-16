@@ -1,0 +1,132 @@
+@prefix ns: <http://smartcity.es/group03/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+############################################################
+# Municipios
+############################################################
+
+ns:Municipio_001 a ns:Municipio ;
+    ns:codigoMunicipio 1 ;
+    ns:nombreMunicipio "Acebeda, La" .
+
+ns:Municipio_002 a ns:Municipio ;
+    ns:codigoMunicipio 2 ;
+    ns:nombreMunicipio "Ajalvir" .
+
+ns:Municipio_003 a ns:Municipio ;
+    ns:codigoMunicipio 3 ;
+    ns:nombreMunicipio "Alameda del Valle" .
+
+ns:Municipio_004 a ns:Municipio ;
+    ns:codigoMunicipio 4 ;
+    ns:nombreMunicipio "Álamo, El" .
+
+ns:Municipio_005 a ns:Municipio ;
+    ns:codigoMunicipio 5 ;
+    ns:nombreMunicipio "Alcalá de Henares" .
+
+############################################################
+# Distritos
+############################################################
+
+ns:Distrito_015 a ns:Distrito ;
+    ns:codigoDistrito 15 ;
+    ns:nombreDistrito "Ciudad Lineal" .
+
+ns:Distrito_021 a ns:Distrito ;
+    ns:codigoDistrito 21 ;
+    ns:nombreDistrito "Barajas" .
+
+############################################################
+# Centros Educativos
+############################################################
+
+### 28000017 – E.M. (Acebeda, La)
+ns:CE_28000017 a ns:CentroEducativo ;
+    ns:codigoCentro 28000017 ;
+    ns:nombreCentro "E.M." ;
+    ns:direccion "LA ACEBEDA" ;
+    ns:codigoPostal 0 ;
+    ns:telefono "0" ;
+    ns:fax "0" ;
+    ns:web "" ;
+    ns:email "" ;
+    ns:latitud 0 ;
+    ns:longitud 0 ;
+    ns:situacion "BAJA" ;
+    ns:fechaConstitucion "" ;
+    ns:tieneTitularidad "PÚBLICO" ;
+    ns:tieneTipoCentro "CENTRO PUBLICO DE EDUCACION GENERAL BASICA" ;
+    ns:ubicadoEnMunicipio ns:Municipio_001 .
+
+### 28000029 – SAN BLAS (Ajalvir)
+ns:CE_28000029 a ns:CentroEducativo ;
+    ns:codigoCentro 28000029 ;
+    ns:nombreCentro "SAN BLAS" ;
+    ns:direccion "CALLE Víctor Hurtado s/n" ;
+    ns:codigoPostal 28864 ;
+    ns:telefono "918844589" ;
+    ns:fax "" ;
+    ns:web <http://www.educa.madrid.org/cp.sanblas.ajalvir> ;
+    ns:email "cp.sanblas.ajalvir@educa.madrid.org" ;
+    ns:latitud 458832 ;
+    ns:longitud 4487797 ;
+    ns:situacion "ALTA" ;
+    ns:fechaConstitucion "1980-09-04"^^xsd:date ;
+    ns:tieneTitularidad "PÚBLICO" ;
+    ns:tieneTipoCentro "COLEGIO DE EDUCACIÓN INFANTIL, PRIMARIA Y SECUNDARIA" ;
+    ns:ubicadoEnMunicipio ns:Municipio_002 .
+
+### 28000030 – JOAQUIN CABALLERO (Alameda del Valle)
+ns:CE_28000030 a ns:CentroEducativo ;
+    ns:codigoCentro 28000030 ;
+    ns:nombreCentro "JOAQUIN CABALLERO" ;
+    ns:direccion "JARDINES 2" ;
+    ns:codigoPostal 28749 ;
+    ns:telefono "918691413" ;
+    ns:fax "0" ;
+    ns:web "" ;
+    ns:email "" ;
+    ns:latitud 0 ;
+    ns:longitud 0 ;
+    ns:situacion "BAJA" ;
+    ns:fechaConstitucion "1968-02-05"^^xsd:date ;
+    ns:tieneTitularidad "PÚBLICO" ;
+    ns:tieneTipoCentro "COLEGIO DE EDUCACIÓN INFANTIL Y PRIMARIA" ;
+    ns:ubicadoEnMunicipio ns:Municipio_003 .
+
+### 28000042 – EL ALAMO (Álamo, El)
+ns:CE_28000042 a ns:CentroEducativo ;
+    ns:codigoCentro 28000042 ;
+    ns:nombreCentro "EL ALAMO" ;
+    ns:direccion "CALLE del Río Alagón 1" ;
+    ns:codigoPostal 28607 ;
+    ns:telefono "918120652" ;
+    ns:fax "918122834" ;
+    ns:web <http://www.educa.madrid.org/cp.elalamo.elalamo> ;
+    ns:email "cp.elalamo.elalamo@educa.madrid.org" ;
+    ns:latitud 415961 ;
+    ns:longitud 4453703 ;
+    ns:situacion "ALTA" ;
+    ns:fechaConstitucion "1900-01-01"^^xsd:date ;
+    ns:tieneTitularidad "PÚBLICO" ;
+    ns:tieneTipoCentro "COLEGIO DE EDUCACIÓN INFANTIL Y PRIMARIA" ;
+    ns:ubicadoEnMunicipio ns:Municipio_004 .
+
+### 28000054 – ANTONIO DE NEBRIJA (Alcalá de Henares)
+ns:CE_28000054 a ns:CentroEducativo ;
+    ns:codigoCentro 28000054 ;
+    ns:nombreCentro "ANTONIO DE NEBRIJA" ;
+    ns:direccion "CALLE San Ignacio de Loyola 13" ;
+    ns:codigoPostal 28806 ;
+    ns:telefono "918882368" ;
+    ns:fax "918882368" ;
+    ns:web <http://www.educa.madrid.org/cp.antoniodenebrija.alcala> ;
+    ns:email "cp.antoniodenebrija.alcala@educa.madrid.org" ;
+    ns:latitud 468386 ;
+    ns:longitud 4482313 ;
+    ns:situacion "ALTA" ;
+    ns:fechaConstitucion "1975-09-03"^^xsd:date ;
+    ns:tieneTitularidad "PÚBLICO" ;
+    ns:tieneTipoCentro "COLEGIO DE EDUCACIÓN INFANTIL Y PRIMARIA" ;
+    ns:ubicadoEnMunicipio ns:Municipio_005 .

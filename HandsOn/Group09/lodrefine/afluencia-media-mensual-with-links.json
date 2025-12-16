@@ -1,0 +1,761 @@
+[
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q928830",
+        "name": "metro station"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column estacion-uri to type Q928830"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "insurgentes",
+    "judgment": "matched",
+    "match": {
+      "id": "Q3301776",
+      "name": "Insurgentes",
+      "types": [
+        "Q928830",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Insurgentes (Q3301776) para las celdas que contienen \"insurgentes\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "observatorio",
+    "judgment": "matched",
+    "match": {
+      "id": "Q388460",
+      "name": "Observatorio",
+      "types": [
+        "Q928830",
+        "Q22808404",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Observatorio (Q388460) para las celdas que contienen \"observatorio\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "san-lazaro",
+    "judgment": "matched",
+    "match": {
+      "id": "Q3356984",
+      "name": "San Lázaro",
+      "types": [
+        "Q928830",
+        "Q11670533",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento San Lázaro (Q3356984) para las celdas que contienen \"san-lazaro\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "sevilla",
+    "judgment": "matched",
+    "match": {
+      "id": "Q3356943",
+      "name": "Sevilla",
+      "types": [
+        "Q928830",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Sevilla (Q3356943) para las celdas que contienen \"sevilla\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "calle-11",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5740298",
+      "name": "Calle 11",
+      "types": [
+        "Q928830",
+        "Q11670533"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Calle 11 (Q5740298) para las celdas que contienen \"calle-11\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "bellas-artes",
+    "judgment": "matched",
+    "match": {
+      "id": "Q2541953",
+      "name": "Bellas Artes",
+      "types": [
+        "Q928830",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Bellas Artes (Q2541953) para las celdas que contienen \"bellas-artes\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "colegio-militar",
+    "judgment": "matched",
+    "match": {
+      "id": "Q3356873",
+      "name": "Colegio Militar",
+      "types": [
+        "Q928830",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Colegio Militar (Q3356873) para las celdas que contienen \"colegio-militar\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "cuatro-caminos",
+    "judgment": "matched",
+    "match": {
+      "id": "Q3356908",
+      "name": "Cuatro Caminos",
+      "types": [
+        "Q928830",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Cuatro Caminos (Q3356908) para las celdas que contienen \"cuatro-caminos\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "centro-medico",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5810513",
+      "name": "Centro Médico",
+      "types": [
+        "Q928830",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Centro Médico (Q5810513) para las celdas que contienen \"centro-medico\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "jamaica",
+    "judgment": "matched",
+    "match": {
+      "id": "Q3377006",
+      "name": "Jamaica",
+      "types": [
+        "Q928830",
+        "Q11670533",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Jamaica (Q3377006) para las celdas que contienen \"jamaica\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "san-joaquin",
+    "judgment": "matched",
+    "match": {
+      "id": "Q6824700",
+      "name": "San Joaquín",
+      "types": [
+        "Q928830",
+        "Q22808403"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento San Joaquín (Q6824700) para las celdas que contienen \"san-joaquin\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "la-paz",
+    "judgment": "matched",
+    "match": {
+      "id": "Q6824608",
+      "name": "La Paz",
+      "types": [
+        "Q928830",
+        "Q22808404"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento La Paz (Q6824608) para las celdas que contienen \"la-paz\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "estacion-uri",
+    "similarValue": "santa-marta",
+    "judgment": "matched",
+    "match": {
+      "id": "Q9074085",
+      "name": "Santa Marta",
+      "types": [
+        "Q928830",
+        "Q22808404"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Santa Marta (Q9074085) para las celdas que contienen \"santa-marta\" en la columna estacion-uri"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "estacion-uri: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "estacion-uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "estacion-uri",
+    "expression": "grel:\"https://wikidata.org/entity/\"+cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "same_as_wikidata_estaciones",
+    "columnInsertIndex": 5,
+    "description": "Crear la columna same_as_wikidata_estaciones en el índice 5 basada en la columna estacion-uri usando la expresión grel:\"https://wikidata.org/entity/\"+cell.recon.match.id"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "linea-uri",
+    "expression": "grel:\"Mexico City Metro Line \" + value.split(\"-\")[1]",
+    "onError": "set-to-blank",
+    "newColumnName": "linea-cdmx",
+    "columnInsertIndex": 4,
+    "description": "Crear la columna linea-cdmx en el índice 4 basada en la columna linea-uri usando la expresión grel:\"Mexico City Metro Line \" + value.split(\"-\")[1]"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea-cdmx",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q15079663",
+        "name": "rapid transit line"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column linea-cdmx to type Q15079663"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea-cdmx",
+    "similarValue": "Mexico City Metro Line 1",
+    "judgment": "matched",
+    "match": {
+      "id": "Q2295084",
+      "name": "Line 1",
+      "types": [
+        "Q15079663"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Line 1 (Q2295084) para las celdas que contienen \"Mexico City Metro Line 1\" en la columna linea-cdmx"
+  },
+  {
+    "op": "core/recon-clear-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "linea-cdmx: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "linea-cdmx",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "linea-cdmx",
+    "similarValue": "Mexico City Metro Line A",
+    "description": "Borrar los datos de cotejo de las celdas que contienen \"Mexico City Metro Line A\" en la columna linea-cdmx"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "linea-cdmx",
+    "expression": "grel:\"https://wikidata.org/entity/\"+cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "same_as_wikidata_linea",
+    "columnInsertIndex": 5,
+    "description": "Crear la columna same_as_wikidata_linea en el índice 5 basada en la columna linea-cdmx usando la expresión grel:\"https://wikidata.org/entity/\"+cell.recon.match.id"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "linea-cdmx: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "linea-cdmx",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "(unreconciled)",
+                "l": "(unreconciled)"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "same_as_wikidata_linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          ""
+        ],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "https://www.wikidata.org/wiki/Q3239049"
+      }
+    ],
+    "description": "Editar celdas en masa en columna same_as_wikidata_linea"
+  },
+    {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "afluencia-media",
+          "expression": "value",
+          "columnName": "afluencia-media",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "0.0",
+                "l": "0.0"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  }
+]

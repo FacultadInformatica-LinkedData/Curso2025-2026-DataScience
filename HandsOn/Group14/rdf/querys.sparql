@@ -1,0 +1,31 @@
+PREFIX ns: <http://movimientosostenible.org/group14#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+#1
+SELECT ?accidente
+WHERE {
+    ?accidente rdf:type <ns:Accidente> .
+}
+
+#2
+SELECT ?accidente ?exp
+WHERE {
+    ?accidente a <ns:Accidente> ;
+               <ns:numeroExpediente> ?exp .
+}
+
+#3
+SELECT ?accidente ?fecha ?hora
+WHERE {
+    ?accidente a <ns:Accidente> ;
+               <ns:hasDate> ?fecha ;
+               <ns:hasTime> ?hora .
+}
+
+#4
+SELECT ?accidente ?vehiculo
+WHERE {
+    ?accidente a <ns:Accidente> ;
+               <ns:hasType> ?vehiculo .
+
+}

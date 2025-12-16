@@ -30,7 +30,7 @@ Durante esta actividad también se verificó la correcta ubicación de los entre
     Se definió una estrategia clara y persistente para la construcción de los URIs, tanto para las clases y propiedades de la ontología, como para las futuras instancias de los datos. Se especificaron el dominio, el *namespace* y los patrones de ruta.
 
 3.  **Desarrollo de la Ontología:**
-    Se diseñó una ontología ligera que modela las entidades de los datasets seleccionados. Se definieron las clases y las propiedades de objeto y de dato, asegurando que cubrieran todos los campos relevantes. La ontología fue codificada en el archivo **`[Rellenar aquí: nombre_archivo].ttl`** usando la sintaxis Turtle.
+    Se diseñó una ontología ligera que modela las entidades de los datasets seleccionados. Se definieron las clases y las propiedades de objeto y de dato, asegurando que cubrieran todos los campos relevantes. La ontología fue codificada en el archivo **`ontology.ttl`** usando la sintaxis Turtle.
 
 4.  **Entrega:**
     Se consolidaron todos los documentos (`analysis.html`, `ontology.ttl`, `selfAssessmentHandsOn2.md`) y se subieron a las ubicaciones correctas en el directorio `Group04` en GitHub.
@@ -49,7 +49,7 @@ Durante el desarrollo de esta práctica aprendimos a:
 
 ## Dificultades encontradas
 
--   **Modelado de la Ontología:** La dificultad principal fue trasladar las estructuras tabulares del CSV a un **grafo RDF**. Costó definir qué columnas debían convertirse en clases, cuáles en propiedades de objeto y cuáles en propiedades de dato, especialmente en el manejo de relaciones complejas. **[Rellenar aquí con un ejemplo concreto si lo hay, ej: "Nos costó distinguir entre una clase y un atributo de dato para la columna X."]**
+-   **Modelado de la Ontología:** La dificultad principal fue trasladar las estructuras tabulares del CSV a un **grafo RDF**. Costó definir qué columnas debían convertirse en clases, cuáles en propiedades de objeto y cuáles en propiedades de dato, especialmente en el manejo de relaciones complejas.
 
 -   **Selección del Vocabulario:** Decidir cuándo **reutilizar términos** de ontologías existentes (como Schema.org o FOAF) y cuándo crear términos propios (en nuestro *namespace*) requirió una investigación y discusión constante para asegurar la interoperabilidad.
 
@@ -63,5 +63,3 @@ Durante el desarrollo de esta práctica aprendimos a:
 Consideramos que el trabajo cumplió satisfactoriamente con los objetivos de la práctica. La fase de análisis fue exhaustiva, lo que facilitó el desarrollo de una ontología clara y bien estructurada. La práctica ha sido fundamental para entender cómo se conceptualiza la estructura de datos tabulares en el paradigma de **Linked Data**.
 
 ---
-
-**Valoración General del Trabajo (1: No cumple, 5: Excelente):** **[Rellenar aquí: 4 o 5]**

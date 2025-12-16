@@ -1,0 +1,29 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX : <http://poblacionmadrid.org/group20#>
+
+# Query 1: Barrios enlazados con Wikidata
+SELECT ?barrio ?wikidata
+WHERE {
+  ?barrio a :Barrio ;
+          owl:sameAs ?wikidata .
+}
+LIMIT 20;
+
+
+# Query 2: Número total de barrios con enlace a Wikidata
+SELECT (COUNT(?barrio) AS ?totalBarriosConLink)
+WHERE {
+  ?barrio a :Barrio ;
+          owl:sameAs ?wikidata .
+}
+
+
+# Query 3: Barrios y su población total enlazados con Wikidata
+SELECT ?barrio ?wikidata ?poblacion
+WHERE {
+  ?registro a :RegistroPoblacion ;
+            :esRegistroDeBarrio ?barrio ;
+            :tienePoblacionTotal ?poblacion .
+  ?barrio owl:sameAs ?wikidata .
+}
+LIMIT 20;

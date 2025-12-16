@@ -1,0 +1,52 @@
+@prefix mod: <https://w3id.org/mod#> .
+@prefix ns: <https://datos.grupo0225-cdia.org/ontology/bicimad#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns: a owl:Ontology ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
+
+ns:fecha a owl:DatatypeProperty ;
+    rdfs:label "fecha" ;
+    rdfs:domain ns:MedicionDiaria ;
+    rdfs:range xsd:date .
+
+ns:horasTotalesDisponibilidadBicicletasEnAnclajes a owl:DatatypeProperty ;
+    rdfs:label "horas totales disponibilidad bicicletas en anclajes" ;
+    rdfs:domain ns:MedicionDiaria ;
+    rdfs:range xsd:decimal .
+
+ns:horasTotalesUsosBicicletas a owl:DatatypeProperty ;
+    rdfs:label "horas totales usos bicicletas" ;
+    rdfs:domain ns:MedicionDiaria ;
+    rdfs:range xsd:decimal .
+
+ns:mediaBicicletasDisponibles a owl:DatatypeProperty ;
+    rdfs:label "media bicicletas disponibles" ;
+    rdfs:domain ns:MedicionDiaria ;
+    rdfs:range xsd:decimal .
+
+ns:totalHorasServicioBicicletas a owl:DatatypeProperty ;
+    rdfs:label "total horas servicio bicicletas" ;
+    rdfs:domain ns:MedicionDiaria ;
+    rdfs:range xsd:decimal .
+
+ns:totalUsos a owl:DatatypeProperty ;
+    rdfs:label "total usos" ;
+    rdfs:domain ns:MedicionDiaria ;
+    rdfs:range xsd:integer .
+
+ns:usosAbonadoAnual a owl:DatatypeProperty ;
+    rdfs:label "usos abonado anual" ;
+    rdfs:domain ns:MedicionDiaria ;
+    rdfs:range xsd:integer .
+
+ns:usosAbonadoOcasional a owl:DatatypeProperty ;
+    rdfs:label "usos abonado ocasional" ;
+    rdfs:domain ns:MedicionDiaria ;
+    rdfs:range xsd:integer .
+
+ns:MedicionDiaria a owl:Class ;
+    rdfs:label "Medicion Diaria" .
+

@@ -1,0 +1,191 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://www.w3.org/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ont: <https://group10.linkeddata.es/ontology/> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+################################################################################
+# PERMANENT STATIONS (trafico)
+################################################################################
+
+<#TriplesMap_PermanentStation>
+  a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "../data/DATOS-ESTACIONES-MARZO-2025-updated.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+  rr:subjectMap [
+    rr:template "https://group10.linkeddata.es/resource/station/{stationId}" ;
+    rr:class ont:PermanentStation
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hasStationId ;
+    rr:objectMap [ rml:reference "stationId" ; rr:datatype xsd:string ]
+  ] .
+
+################################################################################
+# TRAFFIC OBSERVATIONS
+################################################################################
+
+<#TriplesMap_TrafficObservation>
+  a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "../data/DATOS-ESTACIONES-MARZO-2025-updated.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+  rr:subjectMap [
+    rr:template "https://group10.linkeddata.es/resource/observation/{id}" ;
+    rr:class ont:TrafficObservation
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:observationDate ;
+    rr:objectMap [ rml:reference "date" ; rr:datatype xsd:date ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:observedAtStation ;
+    rr:objectMap [ rr:template "https://group10.linkeddata.es/resource/station/{stationId}" ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:direction ;
+    rr:objectMap [ rml:reference "direction" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:nightTime ;
+    rr:objectMap [ rml:reference "nightTime" ; rr:datatype xsd:boolean ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hour1 ;
+    rr:objectMap [ rml:reference "hour1" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hour2 ;
+    rr:objectMap [ rml:reference "hour2" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hour3 ;
+    rr:objectMap [ rml:reference "hour3" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hour4 ;
+    rr:objectMap [ rml:reference "hour4" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hour5 ;
+    rr:objectMap [ rml:reference "hour5" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hour6 ;
+    rr:objectMap [ rml:reference "hour6" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hour7 ;
+    rr:objectMap [ rml:reference "hour7" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hour8 ;
+    rr:objectMap [ rml:reference "hour8" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hour9 ;
+    rr:objectMap [ rml:reference "hour9" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hour10 ;
+    rr:objectMap [ rml:reference "hour10" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hour11 ;
+    rr:objectMap [ rml:reference "hour11" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hour12 ;
+    rr:objectMap [ rml:reference "hour12" ; rr:datatype xsd:integer ]
+  ] .
+
+################################################################################
+# DISTRICTS (para puntos de recarga)
+################################################################################
+
+<#TriplesMap_District>
+  a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "../data/PUNTOS-PUBLICOS-RECARGA-VEHICULOS-ELECTRICOS-updated.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+  rr:subjectMap [
+    rr:template "https://group10.linkeddata.es/resource/district/{districtCode}" ;
+    rr:class ont:District
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:districtCode ;
+    rr:objectMap [ rml:reference "districtCode" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "district" ]
+  ] .
+
+################################################################################
+# CHARGING POINTS
+################################################################################
+
+<#TriplesMap_ChargingPoint>
+  a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "../data/PUNTOS-PUBLICOS-RECARGA-VEHICULOS-ELECTRICOS-updated.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+  rr:subjectMap [
+    rr:template "https://group10.linkeddata.es/resource/charging-point/{id}" ;
+    rr:class ont:ChargingPoint
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:hasPointId ;
+    rr:objectMap [ rml:reference "id" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:address ;
+    rr:objectMap [ rml:reference "address" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:site ;
+    rr:objectMap [ rml:reference "site" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:additionalInfo ;
+    rr:objectMap [ rml:reference "additionalInfo" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:equipmentNumber ;
+    rr:objectMap [ rml:reference "equipmentNumber" ; rr:datatype xsd:integer ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:features ;
+    rr:objectMap [ rml:reference "features" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:operator ;
+    rr:objectMap [ rml:reference "operator" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:openingHours ;
+    rr:objectMap [ rml:reference "openingHours" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:management ;
+    rr:objectMap [ rml:reference "management" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ont:inDistrict ;
+    rr:objectMap [ rr:template "https://group10.linkeddata.es/resource/district/{districtCode}" ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate wgs84_pos:lat ;
+    rr:objectMap [ rml:reference "utmY" ; rr:datatype xsd:decimal ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate wgs84_pos:long ;
+    rr:objectMap [ rml:reference "utmX" ; rr:datatype xsd:decimal ]
+  ] .

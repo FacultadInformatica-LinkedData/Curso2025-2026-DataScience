@@ -1,0 +1,31 @@
+@prefix :     <http://poblacionmadrid.org/group20#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@base         <http://poblacionmadrid.org/group20/> .
+
+<http://poblacionmadrid.org/group20/ciudad/28079>
+    a :Ciudad ;
+    rdfs:label "Madrid" ;
+    :tieneCodigoMunicipio 28079 .
+
+<http://poblacionmadrid.org/group20/distrito/28079-11>
+    a :Distrito ;
+    rdfs:label "Carabanchel" ;
+    :tieneCodigoDistrito 11 ;
+    :perteneceAMunicipio <http://poblacionmadrid.org/group20/ciudad/28079> .
+
+<http://poblacionmadrid.org/group20/barrio/28079-11-117>
+    a :Barrio ;
+    rdfs:label "Abrantes" ;
+    :tieneCodigoBarrio 117 ;
+    :perteneceADistrito <http://poblacionmadrid.org/group20/distrito/28079-11> .
+
+<http://poblacionmadrid.org/group20/registro/28079-11-117>
+    a :RegistroPoblacion ;
+    :tieneFecha "2024-01-01"^^xsd:date ;
+    :tieneAnio "2024"^^xsd:gYear ;
+    :tienePoblacionTotal 33269 ;
+    :tienePoblacionHombres 15585 ;
+    :tienePoblacionMujeres 17684 ;
+    :esRegistroDeBarrio <http://poblacionmadrid.org/group20/barrio/28079-11-117> .

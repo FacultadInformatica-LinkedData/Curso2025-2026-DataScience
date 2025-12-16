@@ -1,0 +1,81 @@
+@prefix mod: <https://w3id.org/mod#> .
+@prefix :   <http://poblacionmadrid.org/group20#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://poblacionmadrid.org/group20> a owl:Ontology ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
+
+# Clases
+
+:Ciudad a owl:Class ;
+    rdfs:label "Ciudad" .
+
+:Distrito a owl:Class ;
+    rdfs:label "Distrito" .
+
+:Barrio a owl:Class ;
+    rdfs:label "Barrio" .
+
+:RegistroPoblacion a owl:Class ;
+    rdfs:label "Registro de población" .
+
+# Propiedades de objeto
+
+:perteneceAMunicipio a owl:ObjectProperty ;
+    rdfs:label "pertenece al municipio" ;
+    rdfs:domain :Distrito ;
+    rdfs:range  :Ciudad .
+
+:perteneceADistrito a owl:ObjectProperty ;
+    rdfs:label "pertenece al distrito" ;
+    rdfs:domain :Barrio ;
+    rdfs:range  :Distrito .
+
+:esRegistroDeBarrio a owl:ObjectProperty ;
+    rdfs:label "es registro de barrio" ;
+    rdfs:domain :RegistroPoblacion ;
+    rdfs:range  :Barrio .
+
+# Propiedades de datos
+
+:tieneFecha a owl:DatatypeProperty ;
+    rdfs:label "tiene fecha (texto)" ;
+    rdfs:domain :RegistroPoblacion ;
+    rdfs:range  xsd:string .
+
+:tieneAnio a owl:DatatypeProperty ;
+    rdfs:label "tiene año" ;
+    rdfs:domain :RegistroPoblacion ;
+    rdfs:range  xsd:gYear .
+
+:tienePoblacionTotal a owl:DatatypeProperty ;
+    rdfs:label "tiene población total" ;
+    rdfs:domain :RegistroPoblacion ;
+    rdfs:range  xsd:integer .
+
+:tienePoblacionHombres a owl:DatatypeProperty ;
+    rdfs:label "tiene población de hombres" ;
+    rdfs:domain :RegistroPoblacion ;
+    rdfs:range  xsd:integer .
+
+:tienePoblacionMujeres a owl:DatatypeProperty ;
+    rdfs:label "tiene población de mujeres" ;
+    rdfs:domain :RegistroPoblacion ;
+    rdfs:range  xsd:integer .
+
+:tieneCodigoMunicipio a owl:DatatypeProperty ;
+    rdfs:label "código de municipio" ;
+    rdfs:domain :Ciudad ;
+    rdfs:range  xsd:integer .
+
+:tieneCodigoDistrito a owl:DatatypeProperty ;
+    rdfs:label "código de distrito" ;
+    rdfs:domain :Distrito ;
+    rdfs:range  xsd:integer .
+
+:tieneCodigoBarrio a owl:DatatypeProperty ;
+    rdfs:label "código de barrio" ;
+    rdfs:domain :Barrio ;
+    rdfs:range  xsd:integer .

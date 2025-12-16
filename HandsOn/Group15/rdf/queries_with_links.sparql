@@ -1,0 +1,206 @@
+
+# CONSULTAS SPARQL – GRUPO 15
+# Dataset: Bibliotecas de Madrid
+# Ontología: https://group15.linkeddata.es/ontology/bibliotecas#
+
+
+PREFIX bib: <https://group15.linkeddata.es/ontology/bibliotecas#>
+PREFIX res: <https://group15.linkeddata.es/resource/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+# 1. QUERY PARA BUSCAR LOS NOMBRES DE TODAS LAS BIBLIOTECAS
+
+SELECT ?biblioteca ?nombre
+WHERE {
+  ?biblioteca rdf:type bib:Biblioteca .
+  ?biblioteca bib:nombre ?nombre .
+}
+ORDER BY ?nombre
+LIMIT 100
+
+
+
+# 2. QUERY PARA SELECCIONAR AQUELLAS BIBLIOTECAS QUE TENGAN WIFI
+
+
+SELECT ?biblioteca ?nombre
+WHERE {
+  ?biblioteca rdf:type bib:Biblioteca .
+  ?biblioteca bib:tieneWifi true .
+  ?biblioteca bib:nombre ?nombre .
+}
+ORDER BY ?nombre
+
+
+
+# 3. QUERY PARA CONTAR LAS BIBLIOTECAS QUE HAY POR DISTRITO
+
+
+SELECT ?distrito (COUNT(?b) AS ?numBibliotecas)
+WHERE {
+  ?b rdf:type bib:Biblioteca .
+  ?b bib:estaEnDistrito ?dist .
+  ?dist bib:nombreDistrito ?distrito .
+}
+GROUP BY ?distrito
+ORDER BY DESC(?numBibliotecas)
+
+
+
+# 4. QUERY PARA VER EL NOMBRE Y DIRECCIÓN COMPLETAS DE LAS BIBLIOTECAS
+
+
+SELECT ?biblioteca ?nombre ?direccion
+WHERE {
+  ?biblioteca rdf:type bib:Biblioteca .
+  ?biblioteca bib:nombre ?nombre .
+  ?biblioteca bib:tieneDireccion ?dir .
+  ?dir bib:direccionCompleta ?direccion .
+}
+ORDER BY ?nombre
+LIMIT 100
+
+
+
+# 5. QUERY PPARA VER LAS BIBLIOTECAS Y SUS ENLACES owl:sameAs
+
+
+SELECT ?biblioteca ?sameAs
+WHERE {
+  ?biblioteca rdf:type bib:Biblioteca .
+  ?biblioteca owl:sameAs ?sameAs .
+}
+ORDER BY ?biblioteca
+
+
+
+# 6. QUERY PARA VER LAS COORDENADAS DE TODAS LAS BIBLIOTECAS
+
+
+SELECT ?b ?nombre ?lat ?long
+WHERE {
+  ?b rdf:type bib:Biblioteca .
+  ?b bib:nombre ?nombre .
+  ?b bib:latitud ?lat .
+  ?b bib:longitud ?long .
+}
+ORDER BY ?nombre
+
+
+
+# 7. QUERY PARA CONTAR LAS BIBLIOTECAS QUE HAY POR DISTRITO
+
+
+SELECT ?barrio (COUNT(?b) AS ?nBibliotecas)
+WHERE {
+  ?b rdf:type bib:Biblioteca .
+  ?b bib:estaEnBarrio ?ba .
+  ?ba bib:nombreBarrio ?barrio .
+}
+GROUP BY ?barrio
+ORDER BY DESC(?nBibliotecas)
+
+
+
+# 8. QUERY PARA OBTENER BIBLIOTECA + BARRIO + DISTRITO
+
+
+SELECT ?nombre ?barrio ?distrito
+WHERE {
+  ?b rdf:type bib:Biblioteca .
+  ?b bib:nombre ?nombre .
+
+  ?b bib:estaEnBarrio ?bar .
+  ?bar bib:nombreBarrio ?barrio .
+
+  ?b bib:estaEnDistrito ?dist .
+  ?dist bib:nombreDistrito ?distrito .
+}
+ORDER BY ?distrito ?barrio ?nombre
+
+
+
+# 9. QUERY BUSCAR BIBLIOTECAS CUYO NOMBRE CONTIENE UNA PALABRA (ej. "pública")
+
+
+SELECT ?b ?nombre
+WHERE {
+  ?b rdf:type bib:Biblioteca .
+  ?b bib:nombre ?nombre .
+  FILTER(CONTAINS(LCASE(?nombre), "pública"))
+}
+ORDER BY ?nombre
+
+
+
+# 10. QUERY BUSCAR BIBLIOTECAS QUE SE ENCUENTREN EN EL DISTRITO DE LA LATINA
+
+
+SELECT ?b ?nombre
+WHERE {
+  ?b rdf:type bib:Biblioteca .
+  ?b bib:nombre ?nombre .
+
+  ?b bib:estaEnDistrito ?dist .
+  ?dist bib:nombreDistrito ?nombreDist .
+
+  FILTER(LCASE(?nombreDist) = "latina")
+}
+ORDER BY ?nombre
+
+
+
+# 11. QUERY PARA BUSCAR BIBLIOTECAS CON URI
+
+
+SELECT ?b ?nombre ?wikidataURI
+WHERE {
+  ?b rdf:type bib:Biblioteca .
+  ?b bib:nombre ?nombre .
+  ?b owl:sameAs ?wikidataURI .
+}
+ORDER BY ?nombre
+
+
+
+# 12. QUERY PARA BUSCAR UNA BIBLIOTECA CON UN IDENTIFICADOR CONCRETO (ej. “Q85697873”)
+
+
+SELECT ?b ?nombre
+WHERE {
+  ?b bib:nombre ?nombre ;
+     owl:sameAs ?uri .
+
+  FILTER(STR(?uri) = "http://www.wikidata.org/entity/Q85697873")
+}
+ORDER BY ?nombre
+
+
+
+# 12. QUERY PARA BUSCAR BIBLIOTECAS SIN URI
+
+
+SELECT ?b ?nombre
+WHERE {
+  ?b rdf:type bib:Biblioteca .
+  ?b bib:nombre ?nombre .
+  FILTER NOT EXISTS { ?b owl:sameAs ?uri }
+}
+ORDER BY ?nombre
+
+
+
+# 13. QUERY PARA VER EL HORARIO DE TODAS LAS BIBLIOTECAS
+
+
+SELECT ?nombre ?horario
+WHERE {
+  ?b rdf:type bib:Biblioteca .
+  ?b bib:nombre ?nombre .
+  ?b bib:horario ?horario .
+}
+ORDER BY ?nombre

@@ -1,0 +1,19 @@
+@prefix ex: <https://group10.linkeddata.es/ontology/> .
+@prefix res: <https://group10.linkeddata.es/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+res:station/ES01
+    a ex:PermanentStation ;
+    ex:hasStationId "ES01" ;
+    ex:inDistrict "Centro" .
+
+res:observation/ES01/2025-03
+    a ex:TrafficObservation ;
+    ex:observedAtStation res:station/ES01 ;
+    ex:observationDate "2025-03-01"^^xsd:date ;
+    ex:vehicleCount 1200 .
+
+res:charging-point/CP01
+    a ex:ChargingPoint ;
+    ex:hasPointId "CP01" ;
+    ex:inDistrict "Centro" .

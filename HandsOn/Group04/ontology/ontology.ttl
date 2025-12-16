@@ -1,106 +1,71 @@
-@prefix mod: <https://w3id.org/mod#> .
-@prefix ns: <http://smartcitydata.es/Alquiler#> .
+@prefix : <http://my.domain/Alquiler#> .
+@prefix ns: <http://my.domain/Alquiler#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ns: a owl:Ontology ;
-    mod:createdWith <https://chowlk.linkeddata.es/> .
+ns: a owl:Ontology .
 
-ns:Trimestre_de_estudio a owl:ObjectProperty ;
-    rdfs:label "trimestre_de_estudio" ;
-    rdfs:domain ns:Año ;
-    rdfs:range ns:Trimestre .
+ns:Viviendas_en_Alquiler a owl:Class .
+ns:Barrio a owl:Class .
 
-ns:Viviendas_estudiadas a owl:ObjectProperty ;
-    rdfs:label "viviendas_estudiadas" ;
+ns:Año a owl:DatatypeProperty ;
+    rdfs:label "Año" ;
     rdfs:domain ns:Viviendas_en_Alquiler ;
-    rdfs:range ns:Nº_Viviendas .
+    rdfs:range xsd:integer .
 
-ns:año_de_estudio a owl:ObjectProperty ;
-    rdfs:label "año_de_estudio" ;
+ns:Trimestre a owl:DatatypeProperty ;
+    rdfs:label "Trimestre" ;
     rdfs:domain ns:Viviendas_en_Alquiler ;
-    rdfs:range ns:Año .
+    rdfs:range xsd:integer .
 
-ns:estudio_renta a owl:ObjectProperty ;
-    rdfs:label "estudio_renta" ;
+ns:barrio a owl:DatatypeProperty ;
+    rdfs:label "Nombre del Barrio" ;
     rdfs:domain ns:Viviendas_en_Alquiler ;
-    rdfs:range ns:Renta .
+    rdfs:range xsd:string .
 
-ns:hasName a owl:DatatypeProperty ;
-    rdfs:label "has name" ;
-    rdfs:domain ns:Año,
-        ns:Baños,
-        ns:Desviacion_tipica,
-        ns:Dormitorios,
-        ns:Eurosxm2,
-        ns:Nº_Viviendas,
-        ns:Renta_max,
-        ns:Renta_med,
-        ns:Renta_min,
-        ns:Trimestre,
-        ns:Viviendas_en_Alquiler,
-        ns:m2 .
-
-ns:valores_medios a owl:ObjectProperty ;
-    rdfs:label "valores_medios" ;
+ns:Nº_Viviendas a owl:DatatypeProperty ;
+    rdfs:label "Número de Viviendas" ;
     rdfs:domain ns:Viviendas_en_Alquiler ;
-    rdfs:range ns:Media .
+    rdfs:range xsd:integer .
 
-rdfs:Class a owl:Class ;
-    rdfs:label "Class" .
+ns:m2 a owl:DatatypeProperty ;
+    rdfs:label "Metros Cuadrados" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:float .
 
-rdfs:SubClassOf a owl:ObjectProperty ;
-    rdfs:label "sub class of" ;
-    rdfs:domain ns:Baños,
-        ns:Desviacion_tipica,
-        ns:Dormitorios,
-        ns:Eurosxm2,
-        ns:Renta_max,
-        ns:Renta_med,
-        ns:Renta_min,
-        ns:m2 ;
-    rdfs:range ns:Media,
-        ns:Renta .
+ns:Dormitorios a owl:DatatypeProperty ;
+    rdfs:label "Dormitorios" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:float .
 
-ns:Baños a owl:Class ;
-    rdfs:label "Baños" .
+ns:Baños a owl:DatatypeProperty ;
+    rdfs:label "Baños" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:float .
 
-ns:Desviacion_tipica a owl:Class ;
-    rdfs:label "Desviacion_tipica" .
+ns:Renta_min a owl:DatatypeProperty ;
+    rdfs:label "Renta Mínima" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:integer .
 
-ns:Dormitorios a owl:Class ;
-    rdfs:label "Dormitorios" .
+ns:Renta_med a owl:DatatypeProperty ;
+    rdfs:label "Renta Media" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:integer .
 
-ns:Eurosxm2 a owl:Class ;
-    rdfs:label "Eurosxm2" .
+ns:Renta_max a owl:DatatypeProperty ;
+    rdfs:label "Renta Máxima" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:integer .
 
-ns:Media a owl:Class ;
-    rdfs:label "Media" .
+ns:Eurosxm2 a owl:DatatypeProperty ;
+    rdfs:label "Euros por m2" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:float .
 
-ns:Nº_Viviendas a owl:Class ;
-    rdfs:label "Nº_ Viviendas" .
-
-ns:Renta a owl:Class ;
-    rdfs:label "Renta" .
-
-ns:Renta_max a owl:Class ;
-    rdfs:label "Renta_max" .
-
-ns:Renta_med a owl:Class ;
-    rdfs:label "Renta_med" .
-
-ns:Renta_min a owl:Class ;
-    rdfs:label "Renta_min" .
-
-ns:Trimestre a owl:Class ;
-    rdfs:label "Trimestre" .
-
-ns:m2 a owl:Class ;
-    rdfs:label "m2" .
-
-ns:Año a owl:Class ;
-    rdfs:label "Año" .
-
-ns:Viviendas_en_Alquiler a owl:Class ;
-    rdfs:label "Viviendas_en_ Alquiler" .
+ns:Desviacion_tipica a owl:DatatypeProperty ;
+    rdfs:label "Desviación Típica" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:float .
 

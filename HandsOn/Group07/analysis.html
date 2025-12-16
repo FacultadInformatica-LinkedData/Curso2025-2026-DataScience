@@ -157,18 +157,58 @@
     </em>
   </p>
 
+<h2>4. Linking strategy and external datasets</h2>
+
+<p>
+  The linking strategy focuses on enriching the dataset by connecting local entities
+  with external Linked Open Data sources where reliable identifiers are available.
+</p>
+
+<h3>Internal linking</h3>
+
+<p>
+  Internal consistency is ensured by linking observations to stations and pollutants
+  using object properties such as:
+</p>
+
+<ul>
+  <li><code>aq:hasStation</code></li>
+  <li><code>aq:measuresPollutant</code></li>
+  <li><code>aq:hasValue</code>, <code>aq:hasUnit</code>, <code>aq:hasDate</code></li>
+</ul>
+
+<h3>External linking</h3>
+
+<p>
+  External linking was performed for pollutant entities. Pollutant codes were reconciled
+  with <strong>Wikidata</strong> using OpenRefine, allowing the creation of
+  <code>owl:sameAs</code> links between local pollutant resources and their corresponding
+  Wikidata entities (e.g., NO₂, O₃, PM₁₀).
+</p>
+
+<p>
+  These links enable interoperability with other datasets and allow enrichment with
+  additional information available in Wikidata.
+</p>
 
   
-  <h2>4. Conclusions</h2>
-  <p>
-    The <strong>Air Quality in Madrid (2024)</strong> dataset meets all requirements for Linked Data generation.
-    It will be transformed into RDF using the defined ontology, modeling air quality observations, pollutants, and stations.
-    The resource naming strategy guarantees URI persistence with other smart city datasets.
-  </p>
+  <h2>5. Conclusions</h2>
+
+<p>
+  The Air Quality in Madrid (2024) dataset satisfies the requirements for Linked Data
+  generation. The data has been analyzed, legally assessed, modeled with a lightweight
+  ontology, transformed into RDF, linked to external datasets, and prepared for
+  publication. The adopted strategies ensure extensibility, interoperability, and
+  compliance with Linked Data best practices.
+</p>
+
 
   <div class="footer">
     <p><em>Prepared by Group 07 — Hands-On 2, Data Science (2025–2026)</em></p>
   </div>
+
+
+
 
 </body>
 </html>

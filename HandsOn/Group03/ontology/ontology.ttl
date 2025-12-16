@@ -18,22 +18,12 @@ ns:ubicadoEnDistrito a owl:ObjectProperty ;
     rdfs:domain ns:CentroEducativo ;
     rdfs:range ns:Distrito .
 
-ns:tieneTitularidad a owl:ObjectProperty ;
-    rdfs:label "tiene titularidad"@es ;
-    rdfs:domain ns:CentroEducativo ;
-    rdfs:range ns:Titularidad .
-
-ns:tieneTipoCentro a owl:ObjectProperty ;
-    rdfs:label "tiene tipo de centro"@es ;
-    rdfs:domain ns:CentroEducativo ;
-    rdfs:range ns:TipoCentro .
-
 ### Datatype Properties
 
 ns:codigoCentro a owl:DatatypeProperty ;
     rdfs:label "código de centro"@es ;
     rdfs:domain ns:CentroEducativo ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:integer .
 
 ns:nombreCentro a owl:DatatypeProperty ;
     rdfs:label "nombre del centro"@es ;
@@ -48,7 +38,7 @@ ns:direccion a owl:DatatypeProperty ;
 ns:codigoPostal a owl:DatatypeProperty ;
     rdfs:label "código postal"@es ;
     rdfs:domain ns:CentroEducativo ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:integer .
 
 ns:telefono a owl:DatatypeProperty ;
     rdfs:label "teléfono"@es ;
@@ -90,6 +80,36 @@ ns:fechaConstitucion a owl:DatatypeProperty ;
     rdfs:domain ns:CentroEducativo ;
     rdfs:range xsd:date .
 
+ns:tieneTitularidad a owl:ObjectProperty ;
+    rdfs:label "tiene titularidad"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:string .
+
+ns:tieneTipoCentro a owl:ObjectProperty ;
+    rdfs:label "tiene tipo de centro"@es ;
+    rdfs:domain ns:CentroEducativo ;
+    rdfs:range xsd:string .
+
+ns:nombreMunicipio a owl:DatatypeProperty ;
+    rdfs:label "nombre del municipio"@es ;
+    rdfs:domain ns:Municipio ;
+    rdfs:range xsd:string .
+
+ns:codigoMunicipio a owl:DatatypeProperty ;
+    rdfs:label "código del municipio"@es ;
+    rdfs:domain ns:Municipio ;
+    rdfs:range xsd:integer .
+
+ns:nombreDistrito a owl:DatatypeProperty ;
+    rdfs:label "nombre del distrito"@es ;
+    rdfs:domain ns:Distrito ;
+    rdfs:range xsd:string .
+
+ns:codigoDistrito a owl:DatatypeProperty ;
+    rdfs:label "código del distrito"@es ;
+    rdfs:domain ns:Distrito ;
+    rdfs:range xsd:integer .
+
 ### Classes
 
 ns:CentroEducativo a owl:Class ;
@@ -100,9 +120,3 @@ ns:Municipio a owl:Class ;
 
 ns:Distrito a owl:Class ;
     rdfs:label "Distrito"@es .
-
-ns:Titularidad a owl:Class ;
-    rdfs:label "Titularidad"@es .
-
-ns:TipoCentro a owl:Class ;
-    rdfs:label "Tipo de centro"@es .

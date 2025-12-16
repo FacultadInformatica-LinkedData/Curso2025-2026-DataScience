@@ -1,0 +1,39 @@
+@prefix : <https://datos.grupo08-2025-cdia.org#> .
+@prefix bm: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#Ejemplo
+
+:Station001 a bm:Station ;
+    bm:name "Puerta del Sol A" ;
+    bm:idStation "001" ;
+    bm:freeBases 5 ;
+    bm:dockBikes 10 ;
+    bm:noAvailable "Disponible" ;
+    bm:totalBases 15 ;
+    bm:estado "Poca disponibilidad";
+    bm:hasLocation :Location001 .
+
+:Location001 a bm:Location ;
+    bm:latitude  40.4167 ;
+    bm:longitude -3.70325  ;
+    bm:address "Puerta del Sol, Madrid" .
+
+#Ejemplo2
+
+:Station002 a bm:Station ;
+    bm:name "Atocha Cercanías" ;
+    bm:idStation "002" ;
+    bm:freeBases 7 ;
+    bm:dockBikes 12 ;
+    bm:noAvailable "Disponible" ;
+    bm:totalBases 19 ;
+    bm:estado "Disponible" ;
+    bm:hasLocation :Location002 .
+
+:Location002 a bm:Location ;
+    bm:latitude 40.4065 ;
+    bm:longitude -3.6903 ;
+    bm:address "Estación de Atocha, Madrid" .

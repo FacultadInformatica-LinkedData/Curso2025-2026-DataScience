@@ -1,0 +1,114 @@
+@prefix rr:   <http://www.w3.org/ns/r2rml#> .
+@prefix rml:  <http://www.w3.org/ns/rml#> .
+@prefix ql:   <http://www.w3.org/ns/ql#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix :     <http://poblacionmadrid.org/group20#> .
+@base         <http://poblacionmadrid.org/group20/> .
+
+:poblacionSource a rml:LogicalSource ;
+    rml:source "poblacion-1-enero-csv.csv" ;
+    rml:referenceFormulation ql:CSV .
+
+:TM_Ciudad a rr:TriplesMap ;
+    rml:logicalSource :poblacionSource ;
+    rr:subjectMap [
+        rr:template "http://poblacionmadrid.org/group20/ciudad/{cod_municipio}" ;
+        rr:class :Ciudad
+    ] ;
+    rr:predicateObjectMap
+        [
+          rr:predicate :tieneCodigoMunicipio ;
+          rr:objectMap [ rml:reference "cod_municipio" ]
+        ],
+        [
+          rr:predicate rdfs:label ;
+          rr:objectMap [ rml:reference "municipio" ]
+        ] .
+
+:TM_Distrito a rr:TriplesMap ;
+    rml:logicalSource :poblacionSource ;
+    rr:subjectMap [
+        rr:template "http://poblacionmadrid.org/group20/distrito/{cod_municipio}-{cod_distrito}" ;
+        rr:class :Distrito
+    ] ;
+    rr:predicateObjectMap
+        [
+          rr:predicate :tieneCodigoDistrito ;
+          rr:objectMap [ rml:reference "cod_distrito" ]
+        ],
+        [
+          rr:predicate rdfs:label ;
+          rr:objectMap [ rml:reference "distrito" ]
+        ],
+        [
+          rr:predicate :perteneceAMunicipio ;
+          rr:objectMap [
+            rr:parentTriplesMap :TM_Ciudad ;
+            rr:joinCondition [
+              rr:child "cod_municipio" ;
+              rr:parent "cod_municipio"
+            ]
+          ]
+        ] .
+
+:TM_Barrio a rr:TriplesMap ;
+    rml:logicalSource :poblacionSource ;
+    rr:subjectMap [
+        rr:template "http://poblacionmadrid.org/group20/barrio/{cod_municipio}-{cod_distrito}-{cod_barrio}" ;
+        rr:class :Barrio
+    ] ;
+    rr:predicateObjectMap
+        [
+          rr:predicate :tieneCodigoBarrio ;
+          rr:objectMap [ rml:reference "cod_barrio" ]
+        ],
+        [
+          rr:predicate rdfs:label ;
+          rr:objectMap [ rml:reference "barrio" ]
+        ],
+        [
+          rr:predicate :perteneceADistrito ;
+          rr:objectMap [
+            rr:parentTriplesMap :TM_Distrito ;
+            rr:joinCondition [
+              rr:child "cod_distrito" ;
+              rr:parent "cod_distrito"
+            ]
+          ]
+        ] .
+
+:TM_Registro a rr:TriplesMap ;
+    rml:logicalSource :poblacionSource ;
+    rr:subjectMap [
+        rr:template "http://poblacionmadrid.org/group20/registro/{cod_municipio}-{cod_distrito}-{cod_barrio}" ;
+        rr:class :RegistroPoblacion
+    ] ;
+    rr:predicateObjectMap
+        [
+          rr:predicate :tieneFecha ;
+          rr:objectMap [ rml:reference "fecha" ]
+        ],
+        [
+          rr:predicate :tienePoblacionTotal ;
+          rr:objectMap [ rml:reference "num_personas" ]
+        ],
+        [
+          rr:predicate :tienePoblacionHombres ;
+          rr:objectMap [ rml:reference "num_personas_hombres" ]
+        ],
+        [
+          rr:predicate :tienePoblacionMujeres ;
+          rr:objectMap [ rml:reference "num_personas_mujeres" ]
+        ],
+        [
+          rr:predicate :esRegistroDeBarrio ;
+          rr:objectMap [
+            rr:parentTriplesMap :TM_Barrio ;
+            rr:joinCondition [
+              rr:child "cod_barrio" ;
+              rr:parent "cod_barrio"
+            ]
+          ]
+        ] .

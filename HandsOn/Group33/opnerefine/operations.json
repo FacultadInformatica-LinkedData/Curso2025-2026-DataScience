@@ -1,0 +1,66 @@
+{
+  "description": "Safe data cleaning for Madrid traffic - Group33 - Basic operations only",
+  "tags": ["traffic", "madrid", "group33", "safe-cleaning"],
+  "operations": [
+    {
+      "op": "core/column-rename",
+      "oldColumnName": "FDIA",
+      "newColumnName": "fecha"
+    },
+    {
+      "op": "core/column-rename",
+      "oldColumnName": "FEST", 
+      "newColumnName": "codigo_estacion"
+    },
+    {
+      "op": "core/column-rename",
+      "oldColumnName": "FSEN",
+      "newColumnName": "sentido_codigo"
+    },
+    {
+      "op": "core/text-transform",
+      "engineConfig": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "fecha",
+      "expression": "value",
+      "onError": "keep-original"
+    },
+    {
+      "op": "core/mass-edit",
+      "engineConfig": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "sentido_codigo",
+      "expression": "value",
+      "edits": [
+        {"from": ["1-"], "to": "Norte"},
+        {"from": ["1="], "to": "Sur"}, 
+        {"from": ["2-"], "to": "Este"},
+        {"from": ["2="], "to": "Oeste"}
+      ]
+    },
+    {
+      "op": "core/text-transform",
+      "engineConfig": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "HOR1",
+      "expression": "if(isNonBlank(value) && toNumber(value) >= 0, value, '0')",
+      "onError": "keep-original"
+    }
+  ],
+  "importOptions": {
+    "separator": ";",
+    "headerLines": 1,
+    "skipDataLines": 0,
+    "limit": -1,
+    "ignoreLines": -1,
+    "processQuotes": true,
+    "storeBlankRows": false,
+    "trimStrings": true
+  }
+}

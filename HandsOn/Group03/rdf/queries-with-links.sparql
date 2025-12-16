@@ -1,0 +1,32 @@
+PREFIX on: <http://smartcity.es/group03/ontology#> .
+PREFIX owl: <http://www.w3.org/2002/07/owl#> .
+
+### 1. Obtener la URI de wikidata del municipio al que pertenece la facultad de informática de la upm ###
+SELECT ?uri
+WHERE {
+    ?cn a on:CentroEducativo. 
+    ?cn on:nombreCentro "F.DE INFORMATICA".
+    ?cn on:ubicadoEnMunicipio ?mun.
+    ?mun owl:sameAs ?uri
+}
+
+### 2. Obtener de todos los centros que pertenezcan al municipio de Madrid sus nombres, nombre de su distrito y la URI de wikidata del distrito ###
+SELECT ?nom ?ndis ?uri
+WHERE {
+    ?cn a on:CentroEducativo. 
+    ?cn on:ubicadoEnMunicipio ?mun.
+    ?mun on:nombreMunicipio "Madrid".
+    ?cn on:nombreCentro ?nom.
+    ?cn on:ubicadoEnDistrito ?dis.
+    ?dis on:nombreDistrito ?ndis.
+    ?dis owl:sameAs ?uri.
+}
+
+### 3. Obetener las URIs de wikidata de todos los municipios junto a su nombre y código ###
+SELECT ?uri ?nom ?cod
+WHERE {
+    ?mun a on:Municipio. 
+    ?mun on:nombreMunicipio ?nom.
+    ?mun owl:sameAs ?uri.
+    ?mun on:codigoMunicipio ?cod
+}

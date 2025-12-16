@@ -1,0 +1,1145 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ma: <http://www.w3.org/ns/ma-ont#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rev: <http://purl.org/stuff/rev#> .
+@prefix v: <http://rdf.data-vocabulary.org/#> .
+@prefix schema: <http://schema.org/> .
+@prefix gtfs: <http://vocab.gtfs.org/terms#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix st: <http://group11.linkeddata.es/ontology/station#> .
+
+<http://group11.linkeddata.es/coordinates/10000> st:hasCoordinatesLiteral "(40.421389; -3.718968)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10001> st:hasCoordinatesLiteral "(40.448345; -3.786191)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10002> st:hasCoordinatesLiteral "(40.447225; -3.800145)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10005> st:hasCoordinatesLiteral "(40.494215; -3.868181)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10007> st:hasCoordinatesLiteral "(40.474347; -3.845334)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10010> st:hasCoordinatesLiteral "(40.465299; -3.807828)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10100> st:hasCoordinatesLiteral "(40.522282; -3.882258)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10101> st:hasCoordinatesLiteral "(40.552415; -3.896791)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10103> st:hasCoordinatesLiteral "(40.574559; -3.956577)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10104> st:hasCoordinatesLiteral "(40.600159; -3.981913)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10200> st:hasCoordinatesLiteral "(40.626522; -4.00812)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10201> st:hasCoordinatesLiteral "(40.617864; -4.031106)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10202> st:hasCoordinatesLiteral "(40.609265; -4.046336)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/10203> st:hasCoordinatesLiteral "(40.585279; -4.132418)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/12001> st:hasCoordinatesLiteral "(40.63856; -4.021915)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/12002> st:hasCoordinatesLiteral "(40.658096; -4.034996)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/12004> st:hasCoordinatesLiteral "(40.692757; -4.035894)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/12005> st:hasCoordinatesLiteral "(40.706598; -4.067179)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/12006> st:hasCoordinatesLiteral "(40.737516; -4.066481)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/12020> st:hasCoordinatesLiteral "(40.784445; -4.004772)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/12023> st:hasCoordinatesLiteral "(40.822239; -3.964546)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/17000> st:hasCoordinatesLiteral "(40.4732797; -3.6818974)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/17001> st:hasCoordinatesLiteral "(40.5024656; -3.6817503)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/17003> st:hasCoordinatesLiteral "(40.558808; -3.713966)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/17004> st:hasCoordinatesLiteral "(40.598596; -3.7156)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/17005> st:hasCoordinatesLiteral "(40.645211; -3.776617)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/17009> st:hasCoordinatesLiteral "(40.543818; -3.700217)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/18000> st:hasCoordinatesLiteral "(40.406556; -3.689508)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/18001> st:hasCoordinatesLiteral "(40.423371; -3.690995)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/18002> st:hasCoordinatesLiteral "(40.446612; -3.692207)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/18003> st:hasCoordinatesLiteral "(40.395419; -3.678137)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/18004> st:hasCoordinatesLiteral "(40.400381; -3.692712)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/18005> st:hasCoordinatesLiteral "(40.402516; -3.711374)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/18101> st:hasCoordinatesLiteral "(40.416856; -3.702904)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/19001> st:hasCoordinatesLiteral "(40.55412; -3.683267)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/19002> st:hasCoordinatesLiteral "(40.547425; -3.654149)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/19003> st:hasCoordinatesLiteral "(40.546744; -3.635149)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35001> st:hasCoordinatesLiteral "(40.328633; -3.771162)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35002> st:hasCoordinatesLiteral "(40.283135; -3.799565)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35009> st:hasCoordinatesLiteral "(40.3409732; -3.7482259)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35010> st:hasCoordinatesLiteral "(40.296725; -3.792477)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35011> st:hasCoordinatesLiteral "(40.312544; -3.783546)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35012> st:hasCoordinatesLiteral "(40.255565; -3.828334)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35600> st:hasCoordinatesLiteral "(40.385738; -3.760807)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35601> st:hasCoordinatesLiteral "(40.38367; -3.768496)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35602> st:hasCoordinatesLiteral "(40.381009; -3.780187)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35603> st:hasCoordinatesLiteral "(40.377714; -3.791574)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35604> st:hasCoordinatesLiteral "(40.356574; -3.815577)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35605> st:hasCoordinatesLiteral "(40.350199; -3.831678)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35606> st:hasCoordinatesLiteral "(40.328724; -3.863478)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35607> st:hasCoordinatesLiteral "(40.330971; -3.882441)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35608> st:hasCoordinatesLiteral "(40.399006; -3.744225)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35609> st:hasCoordinatesLiteral "(40.404609; -3.702592)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35610> st:hasCoordinatesLiteral "(40.341869; -3.842311)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35701> st:hasCoordinatesLiteral "(40.395735; -3.677847)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35702> st:hasCoordinatesLiteral "(40.379224; -3.698976)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35703> st:hasCoordinatesLiteral "(40.367081; -3.704244)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/35704> st:hasCoordinatesLiteral "(40.350418; -3.705122)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/37001> st:hasCoordinatesLiteral "(40.341622; -3.712565)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/37002> st:hasCoordinatesLiteral "(40.309974; -3.733989)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/37010> st:hasCoordinatesLiteral "(40.323041; -3.727278)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/37011> st:hasCoordinatesLiteral "(40.288252; -3.737529)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/37012> st:hasCoordinatesLiteral "(40.241032; -3.769312)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/60100> st:hasCoordinatesLiteral "(40.3555397; -3.6832514)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/60101> st:hasCoordinatesLiteral "(40.3320318; -3.6963666)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/60102> st:hasCoordinatesLiteral "(40.3055338; -3.7073714)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/60103> st:hasCoordinatesLiteral "(40.2429829; -3.7036534)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/60104> st:hasCoordinatesLiteral "(40.1958184; -3.6646737)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/60105> st:hasCoordinatesLiteral "(40.1590641; -3.610221)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/60107> st:hasCoordinatesLiteral "(40.3419854; -3.683232)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/60109> st:hasCoordinatesLiteral "(40.3184029; -3.7092335)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/60200> st:hasCoordinatesLiteral "(40.0347255; -3.6182069)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70001> st:hasCoordinatesLiteral "(40.382264; -3.624931)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70002> st:hasCoordinatesLiteral "(40.3814976; -3.667215)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70003> st:hasCoordinatesLiteral "(40.3765168; -3.6564132)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70100> st:hasCoordinatesLiteral "(40.401043; -3.5952733)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70101> st:hasCoordinatesLiteral "(40.4424319; -3.5342411)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70102> st:hasCoordinatesLiteral "(40.4547456; -3.4797065)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70103> st:hasCoordinatesLiteral "(40.488976; -3.3664702)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70104> st:hasCoordinatesLiteral "(40.534668; -3.2985719)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70105> st:hasCoordinatesLiteral "(40.56104; -3.265446)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70107> st:hasCoordinatesLiteral "(40.5054503; -3.3353684)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70108> st:hasCoordinatesLiteral "(40.4241947; -3.5602359)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70109> st:hasCoordinatesLiteral "(40.3877971; -3.6087501)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70111> st:hasCoordinatesLiteral "(40.4807624; -3.3919677)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70112> st:hasCoordinatesLiteral "(40.464383; -3.440614)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/70200> st:hasCoordinatesLiteral "(40.534668; -3.2985719)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/97100> st:hasCoordinatesLiteral "(40.4956316; -3.7256015)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/97200> st:hasCoordinatesLiteral "(40.499759; -3.709755)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/97201> st:hasCoordinatesLiteral "(40.4880223; -3.6935145)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/98003> st:hasCoordinatesLiteral "(40.484729; -3.662833)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/98304> st:hasCoordinatesLiteral "(40.48207; -3.616414)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/coordinates/98305> st:hasCoordinatesLiteral "(40.491691; -3.593988)" ;
+	rdf:type st:GeographicCoordinates .
+
+<http://group11.linkeddata.es/municipality/ALCAL%C3%81-DE-HENARES> st:hasMunicipalityName "ALCALÁ-DE-HENARES" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/ALCOBENDAS> st:hasMunicipalityName "ALCOBENDAS" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/ALCORC%C3%93N> st:hasMunicipalityName "ALCORCÓN" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/ALPEDRETE> st:hasMunicipalityName "ALPEDRETE" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/ARANJUEZ> st:hasMunicipalityName "ARANJUEZ" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/AZUQUECA-DE-HENARES> st:hasMunicipalityName "AZUQUECA-DE-HENARES" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/CERCEDILLA> st:hasMunicipalityName "CERCEDILLA" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/CIEMPOZUELOS> st:hasMunicipalityName "CIEMPOZUELOS" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/COLLADO-MEDIANO> st:hasMunicipalityName "COLLADO-MEDIANO" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/COLLADO-VILLALBA> st:hasMunicipalityName "COLLADO-VILLALBA" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/COLMENAR-VIEJO> st:hasMunicipalityName "COLMENAR-VIEJO" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/COSLADA> st:hasMunicipalityName "COSLADA" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/EL-ESCORIAL> st:hasMunicipalityName "EL-ESCORIAL" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/FUENLABRADA> st:hasMunicipalityName "FUENLABRADA" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/GALAPAGAR> st:hasMunicipalityName "GALAPAGAR" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/GETAFE> st:hasMunicipalityName "GETAFE" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/GUADALAJARA> st:hasMunicipalityName "GUADALAJARA" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/HUMANES-DE-MADRID> st:hasMunicipalityName "HUMANES-DE-MADRID" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/LAS-ROZAS-DE-MADRID> st:hasMunicipalityName "LAS-ROZAS-DE-MADRID" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/LEGAN%C3%89S> st:hasMunicipalityName "LEGANÉS" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/LOS-MOLINOS> st:hasMunicipalityName "LOS-MOLINOS" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/M%C3%93STOLES> st:hasMunicipalityName "MÓSTOLES" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/MADRID> st:hasMunicipalityName "MADRID" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/MAJADAHONDA> st:hasMunicipalityName "MAJADAHONDA" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/MECO> st:hasMunicipalityName "MECO" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/PARLA> st:hasMunicipalityName "PARLA" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/PINTO> st:hasMunicipalityName "PINTO" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/POZUELO-DE-ALARC%C3%93N> st:hasMunicipalityName "POZUELO-DE-ALARCÓN" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/REAL-SITIO-DE-SAN-ILDEFONSO> st:hasMunicipalityName "REAL-SITIO-DE-SAN-ILDEFONSO" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/SAN-FERNANDO-DE-HENARES> st:hasMunicipalityName "SAN-FERNANDO-DE-HENARES" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/SAN-SEBASTI%C3%81N-DE-LOS-REYES> st:hasMunicipalityName "SAN-SEBASTIÁN-DE-LOS-REYES" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/TORREJ%C3%93N-DE-ARDOZ> st:hasMunicipalityName "TORREJÓN-DE-ARDOZ" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/TORRELODONES> st:hasMunicipalityName "TORRELODONES" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/TRES-CANTOS> st:hasMunicipalityName "TRES-CANTOS" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/municipality/VALDEMORO> st:hasMunicipalityName "VALDEMORO" ;
+	rdf:type st:Municipality .
+
+<http://group11.linkeddata.es/station/10000> st:hasAddress "PASEO DE LA FLORIDA, 2" ;
+	st:hasCP "28008" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10000> ;
+	st:hasID 10000;
+	st:hasName "MADRID PRINCIPE PIO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10001> st:hasAddress "AVENIDA DEL TALGO - CALLE DE LAS ROSAS, S/N" ;
+	st:hasCP "28023" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10001> ;
+	st:hasID 10001;
+	st:hasName "ARAVACA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10002> st:hasAddress "CALLE ANTONIO DIAZ, 1" ;
+	st:hasCP "28224" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10002> ;
+	st:hasID 10002;
+	st:hasName "POZUELO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/POZUELO-DE-ALARC%C3%93N> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10005> st:hasAddress "CALLE SAN SEBASTIAN, S/N" ;
+	st:hasCP "28230" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10005> ;
+	st:hasID 10005 ;
+	st:hasName "LAS ROZAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/LAS-ROZAS-DE-MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10007> st:hasAddress "CARRETERA DEL PLANTIO, S/N" ;
+	st:hasCP "28221" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10007> ;
+	st:hasID 10007;
+	st:hasName "MAJADAHONDA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MAJADAHONDA> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10010> st:hasAddress "CALLE RAFAEL BOTI, 62" ;
+	st:hasCP "28224" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10010> ;
+	st:hasID 10010;
+	st:hasName "EL BARRIAL CENTRO COMERCIAL POZUELO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/POZUELO-DE-ALARC%C3%93N> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10100> st:hasAddress "AVENIDA DE LOS BOMBEROS, S/N" ;
+	st:hasCP "28230" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10100> ;
+	st:hasID 10100;
+	st:hasName "PINAR DE LAS ROZAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/LAS-ROZAS-DE-MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10101> st:hasAddress "PLAZA DEL FERROCARRIL, S/N" ;
+	st:hasCP "28290" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10101> ;
+	st:hasID 10101;
+	st:hasName "LAS MATAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/LAS-ROZAS-DE-MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10103> st:hasAddress "PLAZA SALVADOR SANCHEZ FRASCUELO, 1" ;
+	st:hasCP "28250" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10103> ;
+	st:hasID 10103;
+	st:hasName "TORRELODONES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/TORRELODONES> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10104> st:hasAddress "CARRETERA DE GALAPAGAR A LA NAVATA, S/N" ;
+	st:hasCP "28420" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10104> ;
+	st:hasID 10104;
+	st:hasName "GALAPAGAR LA NAVATA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/GALAPAGAR> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10200> st:hasAddress "PLAZA ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "28400" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10200> ;
+	st:hasID 10200;
+	st:hasName "VILLALBA DE GUADARRAMA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/COLLADO-VILLALBA> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10201> st:hasAddress "AVENIDA SALTOS DEL SIL, 1" ;
+	st:hasCP "28292" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10201> ;
+	st:hasID 10201;
+	st:hasName "SAN YAGO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/GALAPAGAR> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10202> st:hasAddress "CALLE ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "28292" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10202> ;
+	st:hasID 10202 ;
+	st:hasName "LAS ZORRERAS NAVALQUEJIGO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/EL-ESCORIAL> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/10203> st:hasAddress "CALLE SANTA ROSA, 85" ;
+	st:hasCP "28280" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/10203> ;
+	st:hasID 10203;
+	st:hasName "EL ESCORIAL" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/EL-ESCORIAL> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/12001> st:hasAddress "CALLE PARALELA, 11" ;
+	st:hasCP "28409" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/12001> ;
+	st:hasID 12001;
+	st:hasName "LOS NEGRALES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/ALPEDRETE> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/12002> st:hasAddress "CAMINO DE LA ESTACION, 34" ;
+	st:hasCP "28439" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/12002> ;
+	st:hasID 12002;
+	st:hasName "ALPEDRETE" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/ALPEDRETE> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/12004> st:hasAddress "CALLE REAL, 73" ;
+	st:hasCP "28450" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/12004> ;
+	st:hasID 12004;
+	st:hasName "COLLADO MEDIANO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/COLLADO-MEDIANO> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/12005> st:hasAddress "PASEO PEDRO GUTIERREZ, S/N" ;
+	st:hasCP "28460" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/12005> ;
+	st:hasID 12005;
+	st:hasName "LOS MOLINOS GUADARRAMA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/LOS-MOLINOS> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/12006> st:hasAddress "CALLE EMILIO SERRANO, 30" ;
+	st:hasCP "28470" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/12006> ;
+	st:hasID 12006;
+	st:hasName "CERCEDILLA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/CERCEDILLA> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/12020> st:hasAddress "CALLE VITORIA, 1" ;
+	st:hasCP "28470" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/12020> ;
+	st:hasID 12020;
+	st:hasName "PUERTO DE NAVACERRADA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/CERCEDILLA> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/12023> st:hasAddress "CARRETERA C-604 - ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "40100" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/12023> ;
+	st:hasID 12023;
+	st:hasName "LOS COTOS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/REAL-SITIO-DE-SAN-ILDEFONSO> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/17000> st:hasAddress "CALLE AGUSTIN DE FOXA, S/N" ;
+	st:hasCP "28036" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/17000> ;
+	st:hasID 17000;
+	st:hasName "MADRID CHAMARTIN" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/17001> st:hasAddress "CALLE ANTONIO CABEZON, S/N" ;
+	st:hasCP "28034" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/17001> ;
+	st:hasID 17001;
+	st:hasName "FUENCARRAL" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/17003> st:hasAddress "CARRETERA COLMENAR VIEJO, KM 18" ;
+	st:hasCP "28049" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/17003> ;
+	st:hasID 17003;
+	st:hasName "EL GOLOSO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/17004> st:hasAddress "PLAZA ESTACION FERROCARRIL, 1" ;
+	st:hasCP "28760" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/17004> ;
+	st:hasID 17004;
+	st:hasName "TRES CANTOS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/TRES-CANTOS> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/17005> st:hasAddress "AVENIDA DE LA LIBERTAD, S/N" ;
+	st:hasCP "28770" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/17005> ;
+	st:hasID 17005;
+	st:hasName "COLMENAR VIEJO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/COLMENAR-VIEJO> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/17009> st:hasAddress "CARRETERA M-607 DE COLMENAR VIEJO KM 15.600 - ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "28049" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/17009> ;
+	st:hasID 17009;
+	st:hasName "UNIVERSIDAD CANTOBLANCO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/18000> st:hasAddress "PLAZA DEL EMPERADOR CARLOS V, S/N" ;
+	st:hasCP "28045" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/18000> ;
+	st:hasID 18000;
+	st:hasName "MADRID ATOCHA CERCANIAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/18001> st:hasAddress "PASEO DE RECOLETOS, S/N" ;
+	st:hasCP "28001" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/18001> ;
+	st:hasID 18001;
+	st:hasName "MADRID RECOLETOS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/18002> st:hasAddress "CALLE RAIMUNDO FERNANDEZ VILLAVERDE, 69" ;
+	st:hasCP "28046" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/18002> ;
+	st:hasID 18002;
+	st:hasName "MADRID NUEVOS MINISTERIOS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/18003> st:hasAddress "CALLE DEL OMBU, S/N" ;
+	st:hasCP "28045" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/18003> ;
+	st:hasID 18003;
+	st:hasName "MENDEZ ALVARO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/18004> st:hasAddress "PASEO DE LAS DELICIAS, 61" ;
+	st:hasCP "28045" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/18004> ;
+	st:hasID 18004;
+	st:hasName "DELICIAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/18005> st:hasAddress "PASEO DE LAS ACACIAS - DOCTOR VALLEJO NAJERA, S/N" ;
+	st:hasCP "28005" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/18005> ;
+	st:hasID 18005;
+	st:hasName "PIRAMIDES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/18101> st:hasAddress "PUERTA DEL SOL, S/N" ;
+	st:hasCP "28013" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/18101> ;
+	st:hasID 18101;
+	st:hasName "SOL" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/19001> st:hasAddress "CARRETERA M-616 - ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "28049" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/19001> ;
+	st:hasID 19001;
+	st:hasName "UNIVERSIDAD PONTIFICIA DE COMILLAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/ALCOBENDAS> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/19002> st:hasAddress "CALLE MARQUES DE LA VALDAVIA, S/N" ;
+	st:hasCP "28100" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/19002> ;
+	st:hasID 19002;
+	st:hasName "VALDELASFUENTES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/ALCOBENDAS> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/19003> st:hasAddress "AVENIDA DE ESPAÑA, 52" ;
+	st:hasCP "28100" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/19003> ;
+	st:hasID 19003;
+	st:hasName "ALCOBENDAS SAN SEBASTIAN DE LOS REYES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/SAN-SEBASTI%C3%81N-DE-LOS-REYES> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35001> st:hasAddress "CALLE VIRGEN DEL CAMINO, 2" ;
+	st:hasCP "28911" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35001> ;
+	st:hasID 35001;
+	st:hasName "LEGANES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/LEGAN%C3%89S> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35002> st:hasAddress "PASEO DE ROMA, 1" ;
+	st:hasCP "28944" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35002> ;
+	st:hasID 35002;
+	st:hasName "FUENLABRADA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/FUENLABRADA> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35009> st:hasAddress "CALLE DEL RONCAL, 7" ;
+	st:hasCP "28915" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35009> ;
+	st:hasID 35009;
+	st:hasName "ZARZAQUEMADA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/LEGAN%C3%89S> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35010> st:hasAddress "CALLE DE BARCELONA, 28" ;
+	st:hasCP "28945" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35010> ;
+	st:hasID 35010;
+	st:hasName "LA SERNA FUENLABRADA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/FUENLABRADA> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35011> st:hasAddress "CALLE ARGANDA DEL REY, 6" ;
+	st:hasCP "28914" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35011> ;
+	st:hasID 35011;
+	st:hasName "PARQUE POLVORANCA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/LEGAN%C3%89S> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35012> st:hasAddress "CALLE ESTACION FERROCARRIL, 5" ;
+	st:hasCP "28970" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35012> ;
+	st:hasID 35012;
+	st:hasName "HUMANES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/HUMANES-DE-MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35600> st:hasAddress "AVENIDA DE LOS POBLADOS, S/N" ;
+	st:hasCP "28047" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35600> ;
+	st:hasID 35600;
+	st:hasName "ALUCHE" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35601> st:hasAddress "AVENIDA DE LAS AGUILAS, 25" ;
+	st:hasCP "28044" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35601> ;
+	st:hasID 35601;
+	st:hasName "FANJUL" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35602> st:hasAddress "AVENIDA DE LAS AGUILAS, 144" ;
+	st:hasCP "28044" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35602> ;
+	st:hasID 35602 ;
+	st:hasName "LAS AGUILAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35603> st:hasAddress "CALLE ROBERT DE CAPA, 26" ;
+	st:hasCP "28024" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35603> ;
+	st:hasID 35603;
+	st:hasName "CUATRO VIENTOS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35604> st:hasAddress "AVENIDA DE LISBOA, S/N" ;
+	st:hasCP "28924" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35604> ;
+	st:hasID 35604;
+	st:hasName "SAN JOSE DE VALDERAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/ALCORC%C3%93N> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35605> st:hasAddress "AVENIDA DE MOSTOLES, 4" ;
+	st:hasCP "28922" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35605> ;
+	st:hasID 35605;
+	st:hasName "ALCORCON" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/ALCORC%C3%93N> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35606> st:hasAddress "PASEO DE GOYA, S/N" ;
+	st:hasCP "28932" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35606> ;
+	st:hasID 35606;
+	st:hasName "MOSTOLES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/M%C3%93STOLES> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35607> st:hasAddress "CALLE GRANADA, 10" ;
+	st:hasCP "28935" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35607> ;
+	st:hasID 35607;
+	st:hasName "MOSTOLES EL SOTO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/M%C3%93STOLES> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35608> st:hasAddress "CALLE ALHAMBRA, S/N" ;
+	st:hasCP "28047" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35608> ;
+	st:hasID 35608;
+	st:hasName "LAGUNA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35609> st:hasAddress "GLORIETA EMBAJADORES, 6" ;
+	st:hasCP "28012" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35609> ;
+	st:hasID 35609;
+	st:hasName "EMBAJADORES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35610> st:hasAddress "AVENIDA DE MOSTOLES, S/N" ;
+	st:hasCP "28922" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35610> ;
+	st:hasID 35610;
+	st:hasName "LAS RETAMAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/ALCORC%C3%93N> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35701> st:hasAddress "CALLE PEDRO BOSCH, S/N" ;
+	st:hasCP "28045" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35701> ;
+	st:hasID 35701;
+	st:hasName "MENDEZ ALVARO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35702> st:hasAddress "CALLE TOMELLOSO, 59" ;
+	st:hasCP "28026" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35702> ;
+	st:hasID 35702;
+	st:hasName "DOCE DE OCTUBRE" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35703> st:hasAddress "CALLE CAMPOTEJAR, 25" ;
+	st:hasCP "28041" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35703> ;
+	st:hasID 35703;
+	st:hasName "ORCASITAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/35704> st:hasAddress "CALLE ALCOCER, 54" ;
+	st:hasCP "28041" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/35704> ;
+	st:hasID 35704;
+	st:hasName "PUENTE ALCOCER" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/37001> st:hasAddress "CALLE DOMINGO PARRAGA, 42" ;
+	st:hasCP "28021" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/37001> ;
+	st:hasID 37001;
+	st:hasName "VILLAVERDE ALTO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/37002> st:hasAddress "PASEO ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "28902" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/37002> ;
+	st:hasID 37002;
+	st:hasName "GETAFE CENTRO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/GETAFE> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/37010> st:hasAddress "CALLE MADRID, 155" ;
+	st:hasCP "28903" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/37010> ;
+	st:hasID 37010;
+	st:hasName "LAS MARGARITAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/GETAFE> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/37011> st:hasAddress "CAMINO VIEJO DE TOLEDO, S/N" ;
+	st:hasCP "28901" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/37011> ;
+	st:hasID 37011;
+	st:hasName "GETAFE SECTOR 3" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/GETAFE> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/37012> st:hasAddress "CALLE REAL, S/N" ;
+	st:hasCP "28981" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/37012> ;
+	st:hasID 37012;
+	st:hasName "PARLA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/PARLA> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/60100> st:hasAddress "CALLE ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "28021" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/60100> ;
+	st:hasID 60100;
+	st:hasName "VILLAVERDE BAJO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/60101> st:hasAddress "CALLE TRANSVERSAL SEXTA, S/N (POLIGONO INDUSTRIAL DE VILLAVERDE)" ;
+	st:hasCP "28021" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/60101> ;
+	st:hasID 60101;
+	st:hasName "SAN CRISTOBAL INDUSTRIAL" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/60102> st:hasAddress "AVENIDA DE LOS ANGELES, S/N" ;
+	st:hasCP "28903" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/60102> ;
+	st:hasID 60102;
+	st:hasName "GETAFE INDUSTRIAL" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/GETAFE> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/60103> st:hasAddress "CALLE CRISTO, S/N" ;
+	st:hasCP "28320" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/60103> ;
+	st:hasID 60103;
+	st:hasName "PINTO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/PINTO> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/60104> st:hasAddress "PLAZA ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "28340" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/60104> ;
+	st:hasID 60104;
+	st:hasName "VALDEMORO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/VALDEMORO> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/60105> st:hasAddress "AVENIDA DE SAN JUAN DE DIOS, S/N" ;
+	st:hasCP "28350" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/60105> ;
+	st:hasID 60105;
+	st:hasName "CIEMPOZUELOS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/CIEMPOZUELOS> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/60107> st:hasAddress "CARRETERA DE ANDALUCIA, KM 10.700" ;
+	st:hasCP "28021" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/60107> ;
+	st:hasID 60107;
+	st:hasName "SAN CRISTOBAL DE LOS ANGELES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/60109> st:hasAddress "AVENIDA DEL CASAR, S/N" ;
+	st:hasCP "28903" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/60109> ;
+	st:hasID 60109;
+	st:hasName "EL CASAR" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/GETAFE> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/60200> st:hasAddress "PASEO ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "28300" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/60200> ;
+	st:hasID 60200;
+	st:hasName "ARANJUEZ" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/ARANJUEZ> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70001> st:hasAddress "Avenida de la Democracia, 1" ;
+	st:hasCP "28031" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70001> ;
+	st:hasID 70001;
+	st:hasName "VALLECAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70002> st:hasAddress "AVENIDA DE ENTREVIAS, S/N" ;
+	st:hasCP "28018" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70002> ;
+	st:hasID 70002;
+	st:hasName "ASAMBLEA DE MADRID ENTREVIAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70003> st:hasAddress "CAMINO DE HORMIGUERAS, S/N" ;
+	st:hasCP "28031" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70003> ;
+	st:hasID 70003;
+	st:hasName "EL POZO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70100> st:hasAddress "CALLE SAN CIPRIANO, 85" ;
+	st:hasCP "28052" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70100> ;
+	st:hasID 70100;
+	st:hasName "VICALVARO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70101> st:hasAddress "AVENIDA DE SAN PABLO, S/N" ;
+	st:hasCP "28830" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70101> ;
+	st:hasID 70101;
+	st:hasName "SAN FERNANDO DE HENARES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/SAN-FERNANDO-DE-HENARES> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70102> st:hasAddress "PLAZA ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "28850" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70102> ;
+	st:hasID 70102;
+	st:hasName "TORREJON DE ARDOZ" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/TORREJ%C3%93N-DE-ARDOZ> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70103> st:hasAddress "PASEO ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "28807" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70103> ;
+	st:hasID 70103;
+	st:hasName "ALCALA DE HENARES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/ALCAL%C3%81-DE-HENARES> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70104> st:hasAddress "CARRETERA ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "28880" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70104> ;
+	st:hasID 70104;
+	st:hasName "MECO" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MECO> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70105> st:hasAddress "PASEO ESTACION FERROCARRIL, S/N" ;
+	st:hasCP "19200" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70105> ;
+	st:hasID 70105;
+	st:hasName "AZUQUECA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/AZUQUECA-DE-HENARES> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70107> st:hasAddress "CARRETERA CAMPUS UNIVERSITARIO DE ALCALA, S/N" ;
+	st:hasCP "28807" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70107> ;
+	st:hasID 70107;
+	st:hasName "ALCALA DE HENARES UNIVERSIDAD" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/ALCAL%C3%81-DE-HENARES> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70108> st:hasAddress "CALLE DOCTOR FLEMING, S/N" ;
+	st:hasCP "21820" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70108> ;
+	st:hasID 70108;
+	st:hasName "COSLADA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/COSLADA> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70109> st:hasAddress "AVENIDA SANTA EUGENIA, 9" ;
+	st:hasCP "28031" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70109> ;
+	st:hasID 70109;
+	st:hasName "SANTA EUGENIA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70111> st:hasAddress "CALLE FAUSTO ELHUYAR, S/N" ;
+	st:hasCP "28806" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70111> ;
+	st:hasID 70111;
+	st:hasName "LA GARENA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/ALCAL%C3%81-DE-HENARES> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70112> st:hasAddress "AVENIDA JORGE OTEIZA, S/N" ;
+	st:hasCP "28850" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70112> ;
+	st:hasID 70112;
+	st:hasName "SOTO DEL HENARES" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/TORREJ%C3%93N-DE-ARDOZ> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/70200> st:hasAddress "CALLE FRANCISCO ARITIO, S/N" ;
+	st:hasCP "19004" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/70200> ;
+	st:hasID 70200;
+	st:hasName "GUADALAJARA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/GUADALAJARA> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/97100> st:hasAddress "CALLE GLORIA FUERTES, S/N" ;
+	st:hasCP "28035" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/97100> ;
+	st:hasID 97100;
+	st:hasName "PITIS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/97200> st:hasAddress "CALLE DEL MONASTERIO DE LA HUELGAS, S/N" ;
+	st:hasCP "28034" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/97200> ;
+	st:hasID 97200;
+	st:hasName "MIRASIERRA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/97201> st:hasAddress "CARRETERA M-607 A COLMENAR, KM. 6.100" ;
+	st:hasCP "28034" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/97201> ;
+	st:hasID 97201 ;
+	st:hasName "RAMON Y CAJAL" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/98003> st:hasAddress "CALLE DULCE CHACON, S/N" ;
+	st:hasCP "28050" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/98003> ;
+	st:hasID 98003;
+	st:hasName "FUENTE DE LA MORA" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/98304> st:hasAddress "AVENIDA DE LAS FUERZAS ARMADAS, S/N" ;
+	st:hasCP "28055" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/98304> ;
+	st:hasID 98304;
+	st:hasName "VALDEBEBAS" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .
+
+<http://group11.linkeddata.es/station/98305> st:hasAddress "CARRETERA M-12 - TERMINAL AEROPUERTO T4 - BARAJAS" ;
+	st:hasCP "28042" ;
+	st:hasGeographicCoordinates <http://group11.linkeddata.es/coordinates/98305> ;
+	st:hasID 98305;
+	st:hasName "AEROPUERTO T 4" ;
+	st:locatedIn <http://group11.linkeddata.es/municipality/MADRID> ;
+	rdf:type st:Station .

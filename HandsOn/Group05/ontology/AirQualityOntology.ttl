@@ -1,0 +1,80 @@
+@prefix aq: <http://linkeddata.grup05.es/CalidadAireMadrid/ontology/AirQualityOntology#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+aq: a owl:Ontology ;
+    dc:creator "Edy Yang",
+        "Pablo Martín Padrón",
+        "Vasyl Hryhoriev",
+        "Yi Chen Chen" ;
+    dc:title "Calidad del aire" ;
+    owl:versionInfo "1.0" ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
+
+aq:enUbicacion a owl:ObjectProperty ;
+    rdfs:label "en ubicacion" ;
+    rdfs:domain aq:Medicion ;
+    rdfs:range aq:Ubicacion .
+
+aq:fechaHora a owl:DatatypeProperty ;
+    rdfs:label "fecha hora" ;
+    rdfs:domain aq:Medicion ;
+    rdfs:range xsd:dateTime .
+
+aq:mideParametro a owl:ObjectProperty ;
+    rdfs:label "mide parametro" ;
+    rdfs:domain aq:Medicion ;
+    rdfs:range aq:Contaminante .
+
+aq:tieneId a owl:DatatypeProperty ;
+    rdfs:label "tiene id" ;
+    rdfs:domain aq:Medicion ;
+    rdfs:range xsd:string .
+
+aq:tieneZonaHoraria a owl:DatatypeProperty ;
+    rdfs:label "tiene zona horaria" ;
+    rdfs:domain aq:Medicion ;
+    rdfs:range xsd:string .
+
+aq:unidad a owl:DatatypeProperty ;
+    rdfs:label "unidad" ;
+    rdfs:domain aq:Contaminante ;
+    rdfs:range xsd:string .
+
+aq:valor a owl:DatatypeProperty ;
+    rdfs:label "valor" ;
+    rdfs:domain aq:Contaminante ;
+    rdfs:range xsd:decimal .
+
+dc:creator a owl:AnnotationProperty .
+
+dc:title a owl:AnnotationProperty .
+
+owl:versionInfo a owl:AnnotationProperty .
+
+aq:Ubicacion a owl:Class ;
+    rdfs:label "Ubicacion" ;
+    rdfs:subClassOf schema1:Place .
+
+schema1:Place a owl:Class ;
+    rdfs:label "Place" .
+
+sosa:ObservableProperty a owl:Class ;
+    rdfs:label "Observable Property" .
+
+sosa:Observation a owl:Class ;
+    rdfs:label "Observation" .
+
+aq:Contaminante a owl:Class ;
+    rdfs:label "Contaminante" ;
+    rdfs:subClassOf sosa:ObservableProperty .
+
+aq:Medicion a owl:Class ;
+    rdfs:label "Medicion" ;
+    owl:equivalentClass sosa:Observation .
+

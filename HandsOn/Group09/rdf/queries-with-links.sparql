@@ -1,0 +1,44 @@
+PREFIX metro: <https://grupo09.github.io/HandsOn/ontology#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+
+# --- CONSULTAS PARA VERIFICAR INFORMACIÓN RDF ---
+
+# Query 1: número total de enlaces owl:sameAs
+SELECT (COUNT(*) AS ?numSameAs)
+WHERE {
+  ?s owl:sameAs ?o .
+}
+
+
+# Query 2: muestra de estaciones y su enlace a Wikidata
+SELECT ?station ?label ?wikidata
+WHERE {
+  ?station a metro:Estacion ;
+           rdfs:label ?label ;
+           owl:sameAs ?wikidata .
+}
+ORDER BY ?label
+LIMIT 20
+
+
+# Query 3: muestra de alcaldias y su enlace a Wikidata
+SELECT ?alcaldia ?label ?wikidata
+WHERE {
+  ?alcaldia a metro:Alcaldia ;
+             rdfs:label ?label ;
+             owl:sameAs ?wikidata .
+}
+ORDER BY ?label
+LIMIT 20
+
+
+# Query 4: muestra de líneas y su enlace a Wikidata
+SELECT ?line ?label ?wikidata
+WHERE {
+  ?line a metro:Linea ;
+        rdfs:label ?label ;
+        owl:sameAs ?wikidata .
+}
+ORDER BY ?label
+LIMIT 20

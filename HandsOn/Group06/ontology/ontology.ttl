@@ -1,43 +1,29 @@
-@prefix mod: <https://w3id.org/mod#> .
-@prefix ns: <http://www.owl-ontologies.com/ns#> .
+@prefix ns: <http://knowledge.graphs/Group06/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-ns: a owl:Ontology ;
-    mod:createdWith <https://chowlk.linkeddata.es/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 ns:estaEnbarrio a owl:ObjectProperty ;
     rdfs:label "esta enbarrio" ;
     rdfs:domain ns:Hospital ;
     rdfs:range ns:Barrio .
 
-ns:geo_point_2D a owl:NamedIndividual .
-
-ns:hasBeds a owl:ObjectProperty ;
+ns:hasBeds a owl:DatatypeProperty ;
     rdfs:label "has beds" ;
     rdfs:domain ns:Hospital ;
     rdfs:range ns:Camas .
-
-ns:hasShape a owl:ObjectProperty ;
-    rdfs:label "has shape" ;
-    rdfs:domain ns:Hospital ;
-    rdfs:range ns:GeoShape .
 
 ns:isFinancedby a owl:ObjectProperty ;
     rdfs:label "is financedby" ;
     rdfs:domain ns:Hospital ;
     rdfs:range ns:Financiaci .
 
-ns:isIn a owl:ObjectProperty ;
-    rdfs:label "is in" ;
-    rdfs:domain ns:Hospital .
-
-ns:isLocatedin a owl:ObjectProperty ;
+ns:isLocatedin a owl:DatatypeProperty ;
     rdfs:label "is locatedin" ;
     rdfs:domain ns:Hospital ;
     rdfs:range ns:Direccion .
 
-ns:isNamed a owl:ObjectProperty ;
+ns:isNamed a owl:DatatypeProperty ;
     rdfs:label "is named" ;
     rdfs:domain ns:Hospital ;
     rdfs:range ns:Nombre .
@@ -67,6 +53,9 @@ ns:wasCreatedin a owl:ObjectProperty ;
     rdfs:domain ns:Hospital ;
     rdfs:range ns:Fecha .
 
+: a owl:Ontology ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
+
 ns:Barrio a owl:Class ;
     rdfs:label "Barrio" .
 
@@ -81,9 +70,6 @@ ns:Fecha a owl:Class ;
 
 ns:Financiaci a owl:Class ;
     rdfs:label "Financiaci" .
-
-ns:GeoShape a owl:Class ;
-    rdfs:label "Geo Shape" .
 
 ns:Nombre a owl:Class ;
     rdfs:label "Nombre" .

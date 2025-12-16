@@ -1,0 +1,20 @@
+[
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "fecha",
+          "columnName": "fecha",
+          "query": "2024",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": true
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  }
+]

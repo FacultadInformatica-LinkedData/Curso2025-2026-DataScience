@@ -1,0 +1,18 @@
+PREFIX ns: <https://datos.grupo0225-cdia.org/ontology/bicimad#>
+
+# Obtener las fechas y el total de usos por día
+SELECT ?medicion ?fecha ?totalUsos
+WHERE {
+  ?medicion a ns:MedicionDiaria ;
+            ns:fecha ?fecha ;
+            ns:totalUsos ?totalUsos .
+}
+LIMIT 20
+
+PREFIX ns: <https://datos.grupo0225-cdia.org/ontology/bicimad#>
+
+# Contar cuántas mediciones diarias hay en el dataset
+SELECT (COUNT(?medicion) AS ?numMediciones)
+WHERE {
+  ?medicion a ns:MedicionDiaria .
+}

@@ -1,0 +1,54 @@
+PREFIX aq:   <https://carloscumbrado.github.io/HandsOn/group07/ontology/airquality#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+# 1. List some observations with station & pollutant
+
+SELECT ?obs ?label ?date ?station ?pollutant
+WHERE {
+  ?obs a aq:AirQualityObservation ;
+       rdfs:label ?label ;
+       aq:hasDate ?date ;
+       aq:hasStation ?station ;
+       aq:measuresPollutant ?pollutant .
+}
+LIMIT 20
+
+# 2. Check that every observation has at least one value
+
+SELECT ?obs (COUNT(?value) AS ?numValues)
+WHERE {
+  ?obs a aq:AirQualityObservation ;
+       aq:hasValue ?value .
+}
+GROUP BY ?obs
+ORDER BY DESC(?numValues)
+LIMIT 20
+
+# 3. List all stations
+
+SELECT ?station ?label
+WHERE {
+  ?station a aq:Station ;
+           rdfs:label ?label .
+}
+ORDER BY ?station
+
+# 4. List all pollutants
+
+SELECT ?pollutant ?label
+WHERE {
+  ?pollutant a aq:Pollutant ;
+             rdfs:label ?label .
+}
+ORDER BY ?pollutant
+
+# 5. Example: monthly average value per observation
+
+SELECT ?obs (AVG(xsd:float(?value)) AS ?avgValue)
+WHERE {
+  ?obs a aq:AirQualityObservation ;
+       aq:hasValue ?value .
+}
+GROUP BY ?obs
+ORDER BY ?obs

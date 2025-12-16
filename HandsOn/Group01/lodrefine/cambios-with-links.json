@@ -1,0 +1,111 @@
+[
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "localizacion",
+    "expression": "grel:value.split(\"/\")[0].trim()",
+    "onError": "set-to-blank",
+    "newColumnName": "calle_1",
+    "columnInsertIndex": 5,
+    "description": "Crear la columna calle_1 en el índice 5 basada en la columna localizacion usando la expresión grel:value.split(\"/\")[0].trim()"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "distrito",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q3032114",
+        "name": "district of Madrid"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column distrito to type Q3032114"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "distrito",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column distrito to type null"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "distrito",
+    "expression": "if(cell.recon.match!=null,\"https://www.wikidata.org/wiki/{{id}}\".replace(\"{{id}}\",escape(cell.recon.match.id,\"url\")),null)",
+    "onError": "set-to-blank",
+    "newColumnName": "same_as_wikidata_distrito",
+    "columnInsertIndex": 9,
+    "description": "Crear la columna same_as_wikidata_distrito en el índice 9 basada en la columna distrito usando la expresión if(cell.recon.match!=null,\"https://www.wikidata.org/wiki/{{id}}\".replace(\"{{id}}\",escape(cell.recon.match.id,\"url\")),null)"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "same_as_wikidata_distrito",
+    "description": "Eliminar columna same_as_wikidata_distrito"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "distrito",
+    "expression": "if(cell.recon.match!=null,\"https://www.wikidata.org/wiki/{{id}}\".replace(\"{{id}}\",escape(cell.recon.match.id,\"url\")),null)",
+    "onError": "set-to-blank",
+    "newColumnName": "same_as_wikidata_distrito",
+    "columnInsertIndex": 9,
+    "description": "Crear la columna same_as_wikidata_distrito en el índice 9 basada en la columna distrito usando la expresión if(cell.recon.match!=null,\"https://www.wikidata.org/wiki/{{id}}\".replace(\"{{id}}\",escape(cell.recon.match.id,\"url\")),null)"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "calle_1",
+    "expression": "grel:value.replace(/^CALL\\. |^CALLE |^AVDA\\. |^GTA\\. /, \"\").trim()",
+    "onError": "set-to-blank",
+    "newColumnName": "calle_limpio_1",
+    "columnInsertIndex": 6,
+    "description": "Crear la columna calle_limpio_1 en el índice 6 basada en la columna calle_1 usando la expresión grel:value.replace(/^CALL\\. |^CALLE |^AVDA\\. |^GTA\\. /, \"\").trim()"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "calle_1",
+    "description": "Eliminar columna calle_1"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "calle_limpio_1",
+    "description": "Eliminar columna calle_limpio_1"
+  }
+]

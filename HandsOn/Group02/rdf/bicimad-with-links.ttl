@@ -1,0 +1,14 @@
+@prefix ns: <https://datos.grupo0225-cdia.org/ontology/bicimad#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://datos.grupo0225-cdia.org/resource/bicimad/medicion-2015-08-10>
+  a ns:MedicionDiaria ;
+  ns:fecha "2015-08-10"^^xsd:date ;
+  ns:totalUsos 8175 ;
+  owl:sameAs <https://www.wikidata.org/entity/Q20902070> .
+
+<https://datos.grupo0225-cdia.org/resource/bicimad/medicion-2015-08-11>
+  a ns:MedicionDiaria ;
+  ns:fecha "2015-08-11"^^xsd:date ;
+  ns:totalUsos 8941 .

@@ -1,0 +1,266 @@
+[
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "positiva_alcohol",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "False"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": false
+      }
+    ],
+    "description": "Editar celdas en masa en columna positiva_alcohol"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "positiva_alcohol",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "True"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": true
+      }
+    ],
+    "description": "Editar celdas en masa en columna positiva_alcohol"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "positiva_droga",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "1"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": true
+      }
+    ],
+    "description": "Editar celdas en masa en columna positiva_droga"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "positiva_droga",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          ""
+        ],
+        "fromBlank": true,
+        "fromError": false,
+        "to": false
+      }
+    ],
+    "description": "Editar celdas en masa en columna positiva_droga"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "estado_meteorológico",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          ""
+        ],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "Desconocido"
+      }
+    ],
+    "description": "Editar celdas en masa en columna estado_meteorológico"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "cod_lesividad",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          ""
+        ],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "Desconocido"
+      }
+    ],
+    "description": "Editar celdas en masa en columna cod_lesividad"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "lesividad",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          ""
+        ],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "Desconocido"
+      }
+    ],
+    "description": "Editar celdas en masa en columna lesividad"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Starred rows",
+          "expression": "row.starred",
+          "columnName": "",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "cod_lesividad",
+          "expression": "value.split(/(?U)[\\W]+/)",
+          "columnName": "cod_lesividad",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Desconocido",
+                "l": "Desconocido"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "lesividad",
+          "expression": "value.split(/(?U)[\\W]+/)",
+          "columnName": "lesividad",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Desconocido",
+                "l": "Desconocido"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "coordenada_x_utm",
+    "expression": "jython:import math\n\n# Coordenadas UTM de la fila actual\nx = float(cells[\"coordenada_x_utm\"].value)\ny = float(cells[\"coordenada_y_utm\"].value)\n\n# Parámetros de la zona 30N (ETRS89 / EPSG:25830)\na = 6378137.0\nf = 1 / 298.257222101\nk0 = 0.9996\ne2 = f * (2 - f)\ne = math.sqrt(e2)\nlon0 = math.radians(-3)  # Meridiano central de la zona 30N\n\n# Cálculos UTM -> Geográficas\nx_ = (x - 500000.0) / k0\ny_ = y / k0\nm = y_\nmu = m / (a * (1 - e2 / 4 - 3 * e2**2 / 64 - 5 * e2**3 / 256))\n\n# Series\ne1 = (1 - math.sqrt(1 - e2)) / (1 + math.sqrt(1 - e2))\nj1 = 3*e1/2 - 27*e1**3/32\nj2 = 21*e1**2/16 - 55*e1**4/32\nj3 = 151*e1**3/96\nj4 = 1097*e1**4/512\nfp = mu + j1*math.sin(2*mu) + j2*math.sin(4*mu) + j3*math.sin(6*mu) + j4*math.sin(8*mu)\n\n# Calcular coordenadas\nC1 = e2 / (1 - e2) * math.cos(fp)**2\nT1 = math.tan(fp)**2\nN1 = a / math.sqrt(1 - e2 * math.sin(fp)**2)\nR1 = a * (1 - e2) / (1 - e2 * math.sin(fp)**2)**1.5\nD = x_ / N1\n\n# Latitud\nlat = fp - (N1 * math.tan(fp) / R1) * (D**2 / 2 -\n       (5 + 3*T1 + 10*C1 - 4*C1**2 - 9*e2/(1-e2)) * D**4 / 24 +\n       (61 + 90*T1 + 298*C1 + 45*T1**2 - 252*e2/(1-e2) - 3*C1**2) * D**6 / 720)\n\n# Longitud\nlon = lon0 + (D - (1 + 2*T1 + C1) * D**3 / 6 +\n             (5 - 2*C1 + 28*T1 - 3*C1**2 + 8*e2/(1-e2) + 24*T1**2) * D**5 / 120) / math.cos(fp)\n\n# Retornar en grados decimales\nreturn str(math.degrees(lon))",
+    "onError": "set-to-blank",
+    "newColumnName": "longitud",
+    "columnInsertIndex": 16,
+    "description": "Crear la columna longitud en el índice 16 basada en la columna coordenada_x_utm usando la expresión jython:import math\n\n# Coordenadas UTM de la fila actual\nx = float(cells[\"coordenada_x_utm\"].value)\ny = float(cells[\"coordenada_y_utm\"].value)\n\n# Parámetros de la zona 30N (ETRS89 / EPSG:25830)\na = 6378137.0\nf = 1 / 298.257222101\nk0 = 0.9996\ne2 = f * (2 - f)\ne = math.sqrt(e2)\nlon0 = math.radians(-3)  # Meridiano central de la zona 30N\n\n# Cálculos UTM -> Geográficas\nx_ = (x - 500000.0) / k0\ny_ = y / k0\nm = y_\nmu = m / (a * (1 - e2 / 4 - 3 * e2**2 / 64 - 5 * e2**3 / 256))\n\n# Series\ne1 = (1 - math.sqrt(1 - e2)) / (1 + math.sqrt(1 - e2))\nj1 = 3*e1/2 - 27*e1**3/32\nj2 = 21*e1**2/16 - 55*e1**4/32\nj3 = 151*e1**3/96\nj4 = 1097*e1**4/512\nfp = mu + j1*math.sin(2*mu) + j2*math.sin(4*mu) + j3*math.sin(6*mu) + j4*math.sin(8*mu)\n\n# Calcular coordenadas\nC1 = e2 / (1 - e2) * math.cos(fp)**2\nT1 = math.tan(fp)**2\nN1 = a / math.sqrt(1 - e2 * math.sin(fp)**2)\nR1 = a * (1 - e2) / (1 - e2 * math.sin(fp)**2)**1.5\nD = x_ / N1\n\n# Latitud\nlat = fp - (N1 * math.tan(fp) / R1) * (D**2 / 2 -\n       (5 + 3*T1 + 10*C1 - 4*C1**2 - 9*e2/(1-e2)) * D**4 / 24 +\n       (61 + 90*T1 + 298*C1 + 45*T1**2 - 252*e2/(1-e2) - 3*C1**2) * D**6 / 720)\n\n# Longitud\nlon = lon0 + (D - (1 + 2*T1 + C1) * D**3 / 6 +\n             (5 - 2*C1 + 28*T1 - 3*C1**2 + 8*e2/(1-e2) + 24*T1**2) * D**5 / 120) / math.cos(fp)\n\n# Retornar en grados decimales\nreturn str(math.degrees(lon))"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "coordenada_y_utm",
+    "expression": "jython:import math\n\n# Coordenadas UTM de la fila actual\nx = float(cells[\"coordenada_x_utm\"].value)\ny = float(cells[\"coordenada_y_utm\"].value)\n\n# Parámetros de la zona 30N (ETRS89 / EPSG:25830)\na = 6378137.0\nf = 1 / 298.257222101\nk0 = 0.9996\ne2 = f * (2 - f)\ne = math.sqrt(e2)\nlon0 = math.radians(-3)  # Meridiano central de la zona 30N\n\n# Cálculos UTM -> Geográficas\nx_ = (x - 500000.0) / k0\ny_ = y / k0\nm = y_\nmu = m / (a * (1 - e2 / 4 - 3 * e2**2 / 64 - 5 * e2**3 / 256))\n\n# Series\ne1 = (1 - math.sqrt(1 - e2)) / (1 + math.sqrt(1 - e2))\nj1 = 3*e1/2 - 27*e1**3/32\nj2 = 21*e1**2/16 - 55*e1**4/32\nj3 = 151*e1**3/96\nj4 = 1097*e1**4/512\nfp = mu + j1*math.sin(2*mu) + j2*math.sin(4*mu) + j3*math.sin(6*mu) + j4*math.sin(8*mu)\n\n# Calcular coordenadas\nC1 = e2 / (1 - e2) * math.cos(fp)**2\nT1 = math.tan(fp)**2\nN1 = a / math.sqrt(1 - e2 * math.sin(fp)**2)\nR1 = a * (1 - e2) / (1 - e2 * math.sin(fp)**2)**1.5\nD = x_ / N1\n\n# Latitud\nlat = fp - (N1 * math.tan(fp) / R1) * (D**2 / 2 -\n       (5 + 3*T1 + 10*C1 - 4*C1**2 - 9*e2/(1-e2)) * D**4 / 24 +\n       (61 + 90*T1 + 298*C1 + 45*T1**2 - 252*e2/(1-e2) - 3*C1**2) * D**6 / 720)\n\n# Longitud\nlon = lon0 + (D - (1 + 2*T1 + C1) * D**3 / 6 +\n             (5 - 2*C1 + 28*T1 - 3*C1**2 + 8*e2/(1-e2) + 24*T1**2) * D**5 / 120) / math.cos(fp)\n\n# Retornar en grados decimales\nreturn math.degrees(lat)",
+    "onError": "set-to-blank",
+    "newColumnName": "latitud",
+    "columnInsertIndex": 18,
+    "description": "Crear la columna latitud en el índice 18 basada en la columna coordenada_y_utm usando la expresión jython:import math\n\n# Coordenadas UTM de la fila actual\nx = float(cells[\"coordenada_x_utm\"].value)\ny = float(cells[\"coordenada_y_utm\"].value)\n\n# Parámetros de la zona 30N (ETRS89 / EPSG:25830)\na = 6378137.0\nf = 1 / 298.257222101\nk0 = 0.9996\ne2 = f * (2 - f)\ne = math.sqrt(e2)\nlon0 = math.radians(-3)  # Meridiano central de la zona 30N\n\n# Cálculos UTM -> Geográficas\nx_ = (x - 500000.0) / k0\ny_ = y / k0\nm = y_\nmu = m / (a * (1 - e2 / 4 - 3 * e2**2 / 64 - 5 * e2**3 / 256))\n\n# Series\ne1 = (1 - math.sqrt(1 - e2)) / (1 + math.sqrt(1 - e2))\nj1 = 3*e1/2 - 27*e1**3/32\nj2 = 21*e1**2/16 - 55*e1**4/32\nj3 = 151*e1**3/96\nj4 = 1097*e1**4/512\nfp = mu + j1*math.sin(2*mu) + j2*math.sin(4*mu) + j3*math.sin(6*mu) + j4*math.sin(8*mu)\n\n# Calcular coordenadas\nC1 = e2 / (1 - e2) * math.cos(fp)**2\nT1 = math.tan(fp)**2\nN1 = a / math.sqrt(1 - e2 * math.sin(fp)**2)\nR1 = a * (1 - e2) / (1 - e2 * math.sin(fp)**2)**1.5\nD = x_ / N1\n\n# Latitud\nlat = fp - (N1 * math.tan(fp) / R1) * (D**2 / 2 -\n       (5 + 3*T1 + 10*C1 - 4*C1**2 - 9*e2/(1-e2)) * D**4 / 24 +\n       (61 + 90*T1 + 298*C1 + 45*T1**2 - 252*e2/(1-e2) - 3*C1**2) * D**6 / 720)\n\n# Longitud\nlon = lon0 + (D - (1 + 2*T1 + C1) * D**3 / 6 +\n             (5 - 2*C1 + 28*T1 - 3*C1**2 + 8*e2/(1-e2) + 24*T1**2) * D**5 / 120) / math.cos(fp)\n\n# Retornar en grados decimales\nreturn math.degrees(lat)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "latitud",
+    "expression": "value.toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna latitud usando la expresión value.toString()"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "coordenada_y_utm",
+    "description": "Eliminar columna coordenada_y_utm"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "coordenada_x_utm",
+    "description": "Eliminar columna coordenada_x_utm"
+  }
+]

@@ -1,0 +1,75 @@
+prefixes:
+  rr: "http://www.w3.org/ns/r2rml#"
+  rml: "http://w3id.org/rml/"
+  ql: "http://semweb.mmlab.be/ns/ql#"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  bib: "https://group15.linkeddata.es/ontology/bibliotecas#"
+  res: "https://group15.linkeddata.es/resource/"
+
+mappings:
+
+  # PRIMER TRIPLESMAP PARA BIBLIOTECA (CON TODAS SUS PROPIEDADES: NOMBRE, DESCRIPCIÓJ, HORARIO, EQUIPAMIENTO...) #
+  
+  biblioteca:
+    sources:
+      - ["csv/bibliotecas_update.csv~csv"]
+    s: "https://group15.linkeddata.es/resource/biblioteca/$(PK)"
+    po:
+      - [a, bib:Biblioteca]
+      - [bib:nombre, $(NOMBRE), es]
+      - [bib:descripcion, $(DESCRIPCION-ENTIDAD), es]
+      - [bib:horario, $(HORARIO), es]
+      - [bib:equipamiento, $(EQUIPAMIENTO), es]
+      - [bib:internetPublico, $(tieneInternetPublico), xsd:boolean]
+      - [bib:wifi, $(tieneWifi), xsd:boolean]
+      - [bib:accesibilidad1, $(ACCESIBILIDAD 1)]
+      - [bib:accesibilidad2, $(ACCESIBILIDAD 2)]
+      - [bib:accesibilidad3, $(ACCESIBILIDAD 3)]
+      - [bib:transporte, $(TRANSPORTE), es]
+      - [bib:latitud, $(latitud), xsd:decimal]
+      - [bib:longitud, $(longitud), xsd:decimal]
+      - [bib:telefono, $(telefono)]
+      - [bib:email, $(email)]
+      - [bib:urlContenido, $(CONTENT-URL)]
+      - p: bib:tieneDireccion
+        o: "https://group15.linkeddata.es/resource/direccion/$(PK)"
+      - p: bib:estaEnBarrio
+        o: "https://group15.linkeddata.es/resource/barrio/$(barrio_slug)"
+      - p: bib:estaEnDistrito
+        o: "https://group15.linkeddata.es/resource/distrito/$(distrito_slug)"
+
+
+  # TRIPLESMAP PARA DIRECCION #
+  direccion:
+    sources:
+      - ["csv/bibliotecas_update.csv~csv"]
+    s: "https://group15.linkeddata.es/resource/direccion/$(PK)"
+    po:
+      - [a, bib:Direccion]
+      - [bib:via, $(NOMBRE-VIA), es]
+      - [bib:claseVial, $(CLASE-VIAL)]
+      - [bib:numero, $(numero)]
+      - [bib:direccionCompleta, $(direccion_completa), es]
+      - [bib:localidad, $(LOCALIDAD), es]
+      - [bib:provincia, $(PROVINCIA), es]
+      - [bib:codigoPostal, $(CP)]
+
+  
+  # TRIPLESMAP PARA BARRIO #
+  barrio:
+    sources:
+      - ["csv/bibliotecas_update.csv~csv"]
+    s: "https://group15.linkeddata.es/resource/barrio/$(barrio_slug)"
+    po:
+      - [a, bib:Barrio]
+      - [bib:nombreBarrio, $(BARRIO), es]
+
+  
+  # TRIPLESMAP PARA DISTRITO #
+  distrito:
+    sources:
+      - ["csv/bibliotecas_update.csv~csv"]
+    s: "https://group15.linkeddata.es/resource/distrito/$(distrito_slug)"
+    po:
+      - [a, bib:Distrito]
+      - [bib:nombreDistrito, $(DISTRITO), es]

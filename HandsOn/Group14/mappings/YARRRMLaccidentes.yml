@@ -1,0 +1,58 @@
+prefix: 
+    mod: https://w3id.org/mod#
+    ns: http://movimientosostenible.org/group14
+    owl: http://www.w3.org/2002/07/owl#
+    rdfs: http://www.w3.org/2000/01/rdf-schema#
+    xsd: http://www.w3.org/2001/XMLSchema#
+  
+mappings:
+  accidentesBici:
+    sources:
+      - [AccidentesBicicletas-2024-limpio-updated.csv~csv]
+    s: http://movimientosostenible.org/group14/accidentesBici/$(num_expediente)
+    po:
+      - [a, ns:Accidente]
+      - [ns:numeroExpediente, $(num_expediente), xsd:String]
+      - [ns:tipoAccidente, $(tipo_accidente), xsd:String]
+      - [ns:hasTime, $(hora) ,xsd:String]
+      - [ns:distrito, $(distrito) ,xsd:String]
+      - [ns:meteo, $(estado_meteorologico), xsd:String]
+      - [ns:hasDistritoid, $(cod_distrito), ns:Id]
+      - [ns:hasDate, $(fecha), ns:Fecha]
+      - [ns:hasType, $(tipo_vehiculo), ns:tipoVehiculo]
+      - [ns:hasType, $(lesividad), ns:Lesividad] 
+      - [ns:hasCode, $(cod_lesividad), xsd:Integer]
+      - [ns:hasType, $(lesividad), xsd:String]      
+      - [ns:implicada,  $(tipo_persona), xsd:PersonaImplicadaAccidente]
+      - [ns:edad, $(rango_edad), xsd:String]
+      - [ns:gender, $(sexo), xsd:String]
+      - [ns:requiereTest, ns:TestSustancias]
+      - [ns:droga, $(positiva_droga), xsd:Boolean]
+      - [ns:alcohol, $(positiva_alcohol), xsd:Boolean]     
+      - [ns:ocurreEn, ns:Localización]
+      - [ns:Localización, ns:hasNumber]
+      - [ns:hasNumber, $(numero), xsd:Integer]
+      - [ns:Coordenadas, ns:longitud]
+      - [ns:Coordenadas, ns:latitud]
+      - [ns:longitud, $(longitud), xsd:Float]      
+      - [ns:latitud, $(latitud), xsd:Float] 
+
+  semaforosBici:
+    sources:
+      - [cabezas-semaforo-bici-updated.csv~csv]
+    s: http://movimientosostenible.org/group14/semaforosBici/$(id_cruce)
+    po:
+      - [a, ns:CruceSemáforosBici]
+      - [ns:tieneCruceId, $(id_cruce), xsd:Integer]
+      - [ns:tieneSemaforoId, $(id), xsd:Integer]
+      - [ns:tieneTipoSemaforo, ns:TipoSemaforo]
+      - [ns:TipoSemaforo, $(tipo_elem)]
+      - [ns:tieneCoordenadas, ns:Coordenadas]
+      - [ns:Coordenadas, ns:longitud]
+      - [ns:Coordenadas, ns:latitud]
+      - [ns:longitud, $(longitud), xsd:Float]      
+      - [ns:latitud, $(latitud), xsd:Float] 
+      - [ns:tieneFechaInstalación, $(fecha_inst), ns:Fecha]
+      - [ns:estaEn, $(distrito), ns:Id]
+      
+      

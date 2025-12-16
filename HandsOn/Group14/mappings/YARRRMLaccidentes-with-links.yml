@@ -1,0 +1,70 @@
+prefix: 
+    mod: https://w3id.org/mod#
+    ns: http://movimientosostenible.org/group14
+    owl: http://www.w3.org/2002/07/owl#
+    rdfs: http://www.w3.org/2000/01/rdf-schema#
+    xsd: http://www.w3.org/2001/XMLSchema#
+  
+mappings:
+  accidentesBici:
+    sources:
+      - [accidentes_bici-with-links.csv~csv]
+    s: http://movimientosostenible.org/group14/accidentesBici/$(num_expediente)
+    po:
+      - [a, ns:Accidente]
+      - [ns:numeroExpediente, $(num_expediente), xsd:string]
+      - [ns:tipoAccidente, $(tipo_accidente), xsd:string]
+      - [ns:hasTime, $(hora) ,xsd:string]
+      - [ns:distrito, $(distrito) ,xsd:string]
+      - [owl:sameAs, $(wikidata_distrito)~iri]
+      - [ns:meteo, $(estado_meteorologico), xsd:string]
+      - [ns:hasDistritoid, $(cod_distrito), ns:Id]
+      - [ns:hasDate, $(fecha), ns:Fecha]
+      - [owl:sameAs, $(wikidata_fecha)~iri]
+      - [ns:hasType, $(tipo_vehiculo), ns:tipoVehiculo]
+      - [owl:sameAs, $(wikidata_tipo_vehiculo)~iri]
+      - [ns:hasType, $(lesividad), ns:Lesividad] 
+      - [ns:hasCode, $(cod_lesividad), xsd:integer]
+      - [ns:hasType, $(lesividad), xsd:string]      
+      - [ns:implicada,  $(tipo_persona), xsd:PersonaImplicadaAccidente]
+      - [owl:sameAs, $(wikidata_tipo_persona)~iri]
+      - [ns:edad, $(rango_edad), xsd:string]
+      - [ns:gender, $(sexo), xsd:string]
+      - [owl:sameAs, $(wikidata_sexo)~iri]
+      - [ns:requiereTest, ns:TestSustancias]
+      - [ns:droga, $(positiva_droga), xsd:boolena]
+      - [ns:alcohol, $(positiva_alcohol), xsd:boolena]     
+      - [ns:ocurreEn, ns:Localizacion]
+      - [ns:Localización, ns:hasNumber]
+      - [ns:hasNumber, $(numero), xsd:string]
+      - [ns:Coordenadas, ns:longitud]
+      - [ns:Coordenadas, ns:latitud]
+      - [ns:longitud, $(longitud), xsd:float]      
+      - [ns:latitud, $(latitud), xsd:float] 
+      
+      
+      
+      
+      
+
+  semaforosBici:
+    sources:
+      - [semaforos_bici-with-links.csv~csv]
+    s: http://movimientosostenible.org/group14/semaforosBici/$(id_cruce)
+    po:
+      - [a, ns:CruceSemáforosBici]
+      - [ns:tieneCruceId, $(id_cruce), xsd:integer]
+      - [ns:tieneSemaforoId, $(id), xsd:integer]
+      - [ns:tieneTipoSemaforo, ns:TipoSemaforo]
+      - [ns:TipoSemaforo, $(tipo_elem)]
+      - [ns:tieneCoordenadas, ns:Coordenadas]
+      - [ns:Coordenadas, ns:longitud]
+      - [ns:Coordenadas, ns:latitud]
+      - [ns:longitud, $(longitud), xsd:float]      
+      - [ns:latitud, $(latitud), xsd:float] 
+      - [ns:tieneFechaInstalacion, $(fecha_inst), ns:Fecha]
+      - [owl:sameAs, $(same_as_wikidata_fecha)~iri]
+      - [ns:estaEn, $(distrito), ns:Id]
+      
+      
+      

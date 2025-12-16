@@ -1,0 +1,77 @@
+prefixes:
+  metro: "https://grupo09.github.io/HandsOn/ontology#"
+  data: "https://grupo09.github.io/HandsOn/data/"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+  rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  owl: "http://www.w3.org/2002/07/owl#"
+
+mappings:
+  sistema:
+    sources:
+      - ['lineas-estaciones-with-links.csv~csv']
+    s: data:SistemaTransporte/$(sistema)
+    po:
+      - [a, metro:SistemaTransporte]
+      - [rdfs:label, $(sistema)]
+      - [metro:nombreSistema, $(sistema)]
+
+  estaciones:
+    sources:
+      - ['lineas-estaciones-with-links.csv~csv']
+    s: data:Estacion/$(nombre-uri)
+    po:
+      - [a, metro:Estacion]
+      - [rdfs:label, $(nombre)]
+      - [metro:nombreEstacion, $(nombre)]
+      - [metro:anioInauguracion, $(anio), xsd:gYear]
+      - [metro:estaEnAlcaldia, data:Alcaldia/$(alcaldias-uri)~iri]
+      - [metro:tieneTipo, data:TipoEstacion/$(tipo-uri)~iri]
+      - [metro:deLinea, data:Linea/$(linea-uri)~iri]
+      - [owl:sameAs, $(same_as_wikidata_nombre)~iri]
+
+  lineas:
+    sources:
+      - ['lineas-estaciones-with-links.csv~csv']
+    s: data:Linea/$(linea-uri)
+    po:
+      - [a, metro:Linea]
+      - [rdfs:label, $(linea)]
+      - [metro:codigoLinea, $(linea)]
+      - [metro:perteneceASistema, data:SistemaTransporte/$(sistema)~iri]
+      - [metro:tieneEstacion, data:Estacion/$(nombre-uri)~iri]
+      - [owl:sameAs, $(same_as_wikidata_linea)~iri]
+
+  alcaldias:
+    sources:
+      - ['lineas-estaciones-with-links.csv~csv']
+    s: data:Alcaldia/$(alcaldias-uri)
+    po:
+      - [a, metro:Alcaldia]
+      - [rdfs:label, "$(alcaldia-1) - $(alcaldia-2)"]
+      - [metro:nombreAlcaldia, "$(alcaldia-1) - $(alcaldia-2)"]
+      - [owl:sameAs, $(same_as_wikidata_alcaldia-1)~iri]
+      - [owl:sameAs, $(same_as_wikidata_alcaldia-2)~iri]
+
+  tipo_estacion:
+    sources:
+      - ['lineas-estaciones-with-links.csv~csv']
+    s: data:TipoEstacion/$(tipo-uri)
+    po:
+      - [a, metro:TipoEstacion]
+      - [rdfs:label, $(tipo)]
+
+  afluencia:
+    sources:
+      - ['afluencia-media-mensual-with-links.csv~csv']
+    s: data:MedicionAfluencia/$(anio)-$(mes)-$(linea-uri)-$(estacion-uri)
+    po:
+      - [a, metro:MedicionAfluencia]
+      - [rdfs:label, "Medición $(anio)-$(mes) de $(estacion-uri) en $(linea-uri)"]
+      - [metro:anioMedicion, $(anio), xsd:gYear]
+      - [metro:mesMedicion, $(mes), xsd:gMonth]
+      - [metro:afluenciaMedicion, $(afluencia-media), xsd:decimal]
+      - [metro:deEstacion, data:Estacion/$(estacion-uri)~iri]
+      - [metro:deLinea, data:Linea/$(linea-uri)~iri]
+      - [owl:sameAs, $(same_as_wikidata_linea)~iri]
+      - [owl:sameAs, $(same_as_wikidata_estaciones)~iri]

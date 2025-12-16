@@ -1,4 +1,4 @@
-# Self-Assessment – HandsOn 1
+# Autoevaluación – Hands-On 1: Selección de Data Set
 
 ## Información del grupo
 **Grupo:** Group04
@@ -55,6 +55,7 @@ Durante el desarrollo de esta práctica aprendimos a:
 
 ---
 
-
 ## Comentarios finales
 Consideramos que el trabajo cumplió plenamente los objetivos de la práctica. La búsqueda de datasets fue una etapa enriquecedora, que nos permitió conocer distintas fuentes de datos abiertos y comprender mejor la importancia de la interoperabilidad.  
+
+---

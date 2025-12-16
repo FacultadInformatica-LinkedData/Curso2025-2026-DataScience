@@ -1,0 +1,4272 @@
+[
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q47150325",
+        "name": "calendar day of a given year"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column fecha_inst to type Q47150325"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "08/06/1998",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69302217",
+      "name": "June 8, 1998",
+      "types": [
+        "Q2621",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 8, 1998 (Q69302217) para las celdas que contienen \"08/06/1998\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "02/12/1974",
+    "judgment": "matched",
+    "match": {
+      "id": "Q28133433",
+      "name": "December 2, 1974",
+      "types": [
+        "Q47150325",
+        "Q2296"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento December 2, 1974 (Q28133433) para las celdas que contienen \"02/12/1974\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "07/02/1997",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69301465",
+      "name": "February 7, 1997",
+      "types": [
+        "Q2322",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento February 7, 1997 (Q69301465) para las celdas que contienen \"07/02/1997\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "04/02/2019",
+    "judgment": "matched",
+    "match": {
+      "id": "Q57349790",
+      "name": "February 4, 2019",
+      "types": [
+        "Q47150325",
+        "Q2318",
+        "Q23034741"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento February 4, 2019 (Q57349790) para las celdas que contienen \"04/02/2019\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "01/01/1978",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69293377",
+      "name": "January 1, 1978",
+      "types": [
+        "Q2150",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 1, 1978 (Q69293377) para las celdas que contienen \"01/01/1978\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "03/06/2019",
+    "judgment": "matched",
+    "match": {
+      "id": "Q57350180",
+      "name": "June 3, 2019",
+      "types": [
+        "Q47150325",
+        "Q2623",
+        "Q14916562"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 3, 2019 (Q57350180) para las celdas que contienen \"03/06/2019\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "11/11/2005",
+    "judgment": "matched",
+    "match": {
+      "id": "Q22663263",
+      "name": "11 November 2005",
+      "types": [
+        "Q47150325",
+        "Q2987"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento 11 November 2005 (Q22663263) para las celdas que contienen \"11/11/2005\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "06/11/2014",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19762209",
+      "name": "November 6, 2014",
+      "types": [
+        "Q2992",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento November 6, 2014 (Q19762209) para las celdas que contienen \"06/11/2014\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "02/03/2021",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69305974",
+      "name": "March 2, 2021",
+      "types": [
+        "Q2390",
+        "Q47150325",
+        "Q51155562"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento March 2, 2021 (Q69305974) para las celdas que contienen \"02/03/2021\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "03/07/2024",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69307218",
+      "name": "July 3, 2024",
+      "types": [
+        "Q2699",
+        "Q47150325",
+        "Q51156116"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 3, 2024 (Q69307218) para las celdas que contienen \"03/07/2024\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "04/05/2020",
+    "judgment": "matched",
+    "match": {
+      "id": "Q57396728",
+      "name": "May 4, 2020",
+      "types": [
+        "Q47150325",
+        "Q2549",
+        "Q14916525",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 4, 2020 (Q57396728) para las celdas que contienen \"04/05/2020\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "07/08/2003",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69305103",
+      "name": "August 7, 2003",
+      "types": [
+        "Q2781",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento August 7, 2003 (Q69305103) para las celdas que contienen \"07/08/2003\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "07/04/2017",
+    "judgment": "matched",
+    "match": {
+      "id": "Q33122551",
+      "name": "April 7, 2017",
+      "types": [
+        "Q47150325",
+        "Q2505"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento April 7, 2017 (Q33122551) para las celdas que contienen \"07/04/2017\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "01/01/1960",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69284368",
+      "name": "January 1, 1960",
+      "types": [
+        "Q2150",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 1, 1960 (Q69284368) para las celdas que contienen \"01/01/1960\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "12/07/1967",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69288296",
+      "name": "July 12, 1967",
+      "types": [
+        "Q2688",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 12, 1967 (Q69288296) para las celdas que contienen \"12/07/1967\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "05/04/2017",
+    "judgment": "matched",
+    "match": {
+      "id": "Q33122553",
+      "name": "April 5, 2017",
+      "types": [
+        "Q47150325",
+        "Q2507"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento April 5, 2017 (Q33122553) para las celdas que contienen \"05/04/2017\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "07/06/2017",
+    "judgment": "matched",
+    "match": {
+      "id": "Q33122481",
+      "name": "June 7, 2017",
+      "types": [
+        "Q47150325",
+        "Q2616"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 7, 2017 (Q33122481) para las celdas que contienen \"07/06/2017\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "06/09/1966",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69287856",
+      "name": "September 6, 1966",
+      "types": [
+        "Q2858",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento September 6, 1966 (Q69287856) para las celdas que contienen \"06/09/1966\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "10/06/2017",
+    "judgment": "matched",
+    "match": {
+      "id": "Q33122478",
+      "name": "June 10, 2017",
+      "types": [
+        "Q47150325",
+        "Q2615"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 10, 2017 (Q33122478) para las celdas que contienen \"10/06/2017\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "09/01/1968",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69288545",
+      "name": "January 9, 1968",
+      "types": [
+        "Q2238",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 9, 1968 (Q69288545) para las celdas que contienen \"09/01/1968\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "11/10/1979",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69294109",
+      "name": "October 11, 1979",
+      "types": [
+        "Q2927",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento October 11, 1979 (Q69294109) para las celdas que contienen \"11/10/1979\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "12/04/1969",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69289176",
+      "name": "April 12, 1969",
+      "types": [
+        "Q2499",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento April 12, 1969 (Q69289176) para las celdas que contienen \"12/04/1969\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "03/01/2015",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19761972",
+      "name": "January 3, 2015",
+      "types": [
+        "Q2156",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 3, 2015 (Q19761972) para las celdas que contienen \"03/01/2015\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "09/08/2017",
+    "judgment": "matched",
+    "match": {
+      "id": "Q37787870",
+      "name": "August 9, 2017",
+      "types": [
+        "Q47150325",
+        "Q2782"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento August 9, 2017 (Q37787870) para las celdas que contienen \"09/08/2017\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "04/12/2014",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19761754",
+      "name": "December 4, 2014",
+      "types": [
+        "Q2310",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento December 4, 2014 (Q19761754) para las celdas que contienen \"04/12/2014\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "11/05/2020",
+    "judgment": "matched",
+    "match": {
+      "id": "Q57396737",
+      "name": "May 11, 2020",
+      "types": [
+        "Q47150325",
+        "Q2558",
+        "Q51155769"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 11, 2020 (Q57396737) para las celdas que contienen \"11/05/2020\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "03/06/2017",
+    "judgment": "matched",
+    "match": {
+      "id": "Q33122485",
+      "name": "June 3, 2017",
+      "types": [
+        "Q47150325",
+        "Q2623"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 3, 2017 (Q33122485) para las celdas que contienen \"03/06/2017\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "10/12/1997",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69301941",
+      "name": "December 10, 1997",
+      "types": [
+        "Q2302",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento December 10, 1997 (Q69301941) para las celdas que contienen \"10/12/1997\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "06/10/1981",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69294797",
+      "name": "June 10, 1981",
+      "types": [
+        "Q2615",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 10, 1981 (Q69294797) para las celdas que contienen \"06/10/1981\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "09/02/1966",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69287562",
+      "name": "February 9, 1966",
+      "types": [
+        "Q2324",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento February 9, 1966 (Q69287562) para las celdas que contienen \"09/02/1966\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "04/05/2007",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19617717",
+      "name": "May 4, 2007",
+      "types": [
+        "Q2549",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 4, 2007 (Q19617717) para las celdas que contienen \"04/05/2007\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "09/09/2004",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69305712",
+      "name": "September 9, 2004",
+      "types": [
+        "Q2856",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento September 9, 2004 (Q69305712) para las celdas que contienen \"09/09/2004\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "11/10/1972",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69291187",
+      "name": "October 11, 1972",
+      "types": [
+        "Q2927",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento October 11, 1972 (Q69291187) para las celdas que contienen \"11/10/1972\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "05/08/1970",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69289760",
+      "name": "May 8, 1970",
+      "types": [
+        "Q2555",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 8, 1970 (Q69289760) para las celdas que contienen \"05/08/1970\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "07/07/2021",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69306105",
+      "name": "July 7, 2021",
+      "types": [
+        "Q2694",
+        "Q47150325",
+        "Q51156116"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 7, 2021 (Q69306105) para las celdas que contienen \"07/07/2021\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "01/08/2000",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69303399",
+      "name": "August 1, 2000",
+      "types": [
+        "Q2788",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento August 1, 2000 (Q69303399) para las celdas que contienen \"01/08/2000\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "04/12/1972",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69291250",
+      "name": "December 4, 1972",
+      "types": [
+        "Q2310",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento December 4, 1972 (Q69291250) para las celdas que contienen \"04/12/1972\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "04/05/1989",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69298073",
+      "name": "May 4, 1989",
+      "types": [
+        "Q2549",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 4, 1989 (Q69298073) para las celdas que contienen \"04/05/1989\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "11/07/1968",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69288801",
+      "name": "July 11, 1968",
+      "types": [
+        "Q2701",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 11, 1968 (Q69288801) para las celdas que contienen \"11/07/1968\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "07/06/2018",
+    "judgment": "matched",
+    "match": {
+      "id": "Q45920520",
+      "name": "June 7, 2018",
+      "types": [
+        "Q47150325",
+        "Q2616",
+        "Q6796388",
+        "Q38857825"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 7, 2018 (Q45920520) para las celdas que contienen \"07/06/2018\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "05/03/2018",
+    "judgment": "matched",
+    "match": {
+      "id": "Q45919912",
+      "name": "March 5, 2018",
+      "types": [
+        "Q47150325",
+        "Q2392",
+        "Q5439834",
+        "Q23034743"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento March 5, 2018 (Q45919912) para las celdas que contienen \"05/03/2018\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "05/09/2019",
+    "judgment": "matched",
+    "match": {
+      "id": "Q57350503",
+      "name": "September 5, 2019",
+      "types": [
+        "Q47150325",
+        "Q2854",
+        "Q51156336"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento September 5, 2019 (Q57350503) para las celdas que contienen \"05/09/2019\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "06/04/2021",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69306012",
+      "name": "April 6, 2021",
+      "types": [
+        "Q2506",
+        "Q47150325",
+        "Q51155653"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento April 6, 2021 (Q69306012) para las celdas que contienen \"06/04/2021\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "11/11/2019",
+    "judgment": "matched",
+    "match": {
+      "id": "Q57350788",
+      "name": "November 11, 2019",
+      "types": [
+        "Q47150325",
+        "Q2987",
+        "Q51156548"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento November 11, 2019 (Q57350788) para las celdas que contienen \"11/11/2019\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "06/07/2021",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69306104",
+      "name": "July 6, 2021",
+      "types": [
+        "Q2695",
+        "Q47150325",
+        "Q51156114"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 6, 2021 (Q69306104) para las celdas que contienen \"06/07/2021\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "09/01/2020",
+    "judgment": "matched",
+    "match": {
+      "id": "Q57396586",
+      "name": "January 9, 2020",
+      "types": [
+        "Q47150325",
+        "Q51155390",
+        "Q2238"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 9, 2020 (Q57396586) para las celdas que contienen \"09/01/2020\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "01/10/1966",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69287890",
+      "name": "October 1, 1966",
+      "types": [
+        "Q2913",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento October 1, 1966 (Q69287890) para las celdas que contienen \"01/10/1966\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "01/03/2006",
+    "judgment": "matched",
+    "match": {
+      "id": "Q22663369",
+      "name": "March 1, 2006",
+      "types": [
+        "Q47150325",
+        "Q2393"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento March 1, 2006 (Q22663369) para las celdas que contienen \"01/03/2006\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "08/03/2006",
+    "judgment": "matched",
+    "match": {
+      "id": "Q22663377",
+      "name": "March 8, 2006",
+      "types": [
+        "Q47150325",
+        "Q2395"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento March 8, 2006 (Q22663377) para las celdas que contienen \"08/03/2006\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "08/05/2017",
+    "judgment": "matched",
+    "match": {
+      "id": "Q33122516",
+      "name": "May 8, 2017",
+      "types": [
+        "Q47150325",
+        "Q2555"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 8, 2017 (Q33122516) para las celdas que contienen \"08/05/2017\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "07/05/2014",
+    "judgment": "matched",
+    "match": {
+      "id": "Q17924152",
+      "name": "May 7, 2014",
+      "types": [
+        "Q2553",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 7, 2014 (Q17924152) para las celdas que contienen \"07/05/2014\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "11/06/1966",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69287735",
+      "name": "June 11, 1966",
+      "types": [
+        "Q2617",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 11, 1966 (Q69287735) para las celdas que contienen \"11/06/1966\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "01/07/2015",
+    "judgment": "matched",
+    "match": {
+      "id": "Q20631452",
+      "name": "July 1, 2015",
+      "types": [
+        "Q2700",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 1, 2015 (Q20631452) para las celdas que contienen \"01/07/2015\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "07/09/1981",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69294896",
+      "name": "September 7, 1981",
+      "types": [
+        "Q2852",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento September 7, 1981 (Q69294896) para las celdas que contienen \"07/09/1981\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "10/03/1977",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69293030",
+      "name": "March 10, 1977",
+      "types": [
+        "Q2397",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento March 10, 1977 (Q69293030) para las celdas que contienen \"10/03/1977\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "07/05/1999",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69302711",
+      "name": "May 7, 1999",
+      "types": [
+        "Q2553",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 7, 1999 (Q69302711) para las celdas que contienen \"07/05/1999\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "09/02/1983",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69295510",
+      "name": "February 9, 1983",
+      "types": [
+        "Q2324",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento February 9, 1983 (Q69295510) para las celdas que contienen \"09/02/1983\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "06/06/2019",
+    "judgment": "matched",
+    "match": {
+      "id": "Q57350189",
+      "name": "June 6, 2019",
+      "types": [
+        "Q47150325",
+        "Q2620",
+        "Q38857825"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 6, 2019 (Q57350189) para las celdas que contienen \"06/06/2019\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "09/12/1983",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69295860",
+      "name": "December 9, 1983",
+      "types": [
+        "Q2304",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento December 9, 1983 (Q69295860) para las celdas que contienen \"09/12/1983\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "01/10/2018",
+    "judgment": "matched",
+    "match": {
+      "id": "Q45921383",
+      "name": "October 1, 2018",
+      "types": [
+        "Q47150325",
+        "Q2913",
+        "Q7452094",
+        "Q14916517"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento October 1, 2018 (Q45921383) para las celdas que contienen \"01/10/2018\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "06/04/2006",
+    "judgment": "matched",
+    "match": {
+      "id": "Q7479790",
+      "name": "April 6, 2006",
+      "types": [
+        "Q47150325",
+        "Q2506"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento April 6, 2006 (Q7479790) para las celdas que contienen \"06/04/2006\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "01/12/2021",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69306260",
+      "name": "December 1, 2021",
+      "types": [
+        "Q2297",
+        "Q47150325",
+        "Q51156634"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento December 1, 2021 (Q69306260) para las celdas que contienen \"01/12/2021\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "08/01/1966",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69287518",
+      "name": "January 8, 1966",
+      "types": [
+        "Q2234",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 8, 1966 (Q69287518) para las celdas que contienen \"08/01/1966\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "05/01/1966",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69287514",
+      "name": "January 5, 1966",
+      "types": [
+        "Q2202",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 5, 1966 (Q69287514) para las celdas que contienen \"05/01/1966\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "11/07/2006",
+    "judgment": "matched",
+    "match": {
+      "id": "Q15223250",
+      "name": "July 11, 2006",
+      "types": [
+        "Q2701",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 11, 2006 (Q15223250) para las celdas que contienen \"11/07/2006\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "09/05/1987",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69297259",
+      "name": "May 9, 1987",
+      "types": [
+        "Q2556",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 9, 1987 (Q69297259) para las celdas que contienen \"09/05/1987\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "04/01/1966",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69287513",
+      "name": "January 4, 1966",
+      "types": [
+        "Q2168",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 4, 1966 (Q69287513) para las celdas que contienen \"04/01/1966\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "05/12/2007",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19617598",
+      "name": "December 5, 2007",
+      "types": [
+        "Q2300",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento December 5, 2007 (Q19617598) para las celdas que contienen \"05/12/2007\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "07/05/2025",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69307529",
+      "name": "May 7, 2025",
+      "types": [
+        "Q2553",
+        "Q47150325",
+        "Q51155763"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 7, 2025 (Q69307529) para las celdas que contienen \"07/05/2025\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "08/11/2010",
+    "judgment": "matched",
+    "match": {
+      "id": "Q22664146",
+      "name": "November 8, 2010",
+      "types": [
+        "Q47150325",
+        "Q2990"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento November 8, 2010 (Q22664146) para las celdas que contienen \"08/11/2010\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "01/06/2007",
+    "judgment": "matched",
+    "match": {
+      "id": "Q22663587",
+      "name": "June 1, 2007",
+      "types": [
+        "Q47150325",
+        "Q2625"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 1, 2007 (Q22663587) para las celdas que contienen \"01/06/2007\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "03/01/1966",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69287512",
+      "name": "January 3, 1966",
+      "types": [
+        "Q2156",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 3, 1966 (Q69287512) para las celdas que contienen \"03/01/1966\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "05/10/2024",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69307312",
+      "name": "October 5, 2024",
+      "types": [
+        "Q2930",
+        "Q47150325",
+        "Q51156444"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento October 5, 2024 (Q69307312) para las celdas que contienen \"05/10/2024\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "02/07/1976",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69292747",
+      "name": "July 2, 1976",
+      "types": [
+        "Q2697",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 2, 1976 (Q69292747) para las celdas que contienen \"02/07/1976\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "10/09/1992",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69299469",
+      "name": "September 10, 1992",
+      "types": [
+        "Q2853",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento September 10, 1992 (Q69299469) para las celdas que contienen \"10/09/1992\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "09/06/1975",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69292305",
+      "name": "June 9, 1975",
+      "types": [
+        "Q2618",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 9, 1975 (Q69292305) para las celdas que contienen \"09/06/1975\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "02/08/2004",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69305656",
+      "name": "August 2, 2004",
+      "types": [
+        "Q2785",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento August 2, 2004 (Q69305656) para las celdas que contienen \"02/08/2004\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "02/07/1981",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69294824",
+      "name": "July 2, 1981",
+      "types": [
+        "Q2697",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 2, 1981 (Q69294824) para las celdas que contienen \"02/07/1981\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "09/07/2008",
+    "judgment": "matched",
+    "match": {
+      "id": "Q12965912",
+      "name": "July 9, 2008",
+      "types": [
+        "Q2690",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 9, 2008 (Q12965912) para las celdas que contienen \"09/07/2008\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "11/02/2003",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69304832",
+      "name": "February 11, 2003",
+      "types": [
+        "Q2335",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento February 11, 2003 (Q69304832) para las celdas que contienen \"11/02/2003\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "12/11/1971",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69290794",
+      "name": "November 12, 1971",
+      "types": [
+        "Q2986",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento November 12, 1971 (Q69290794) para las celdas que contienen \"12/11/1971\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "02/01/1980",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69294208",
+      "name": "January 2, 1980",
+      "types": [
+        "Q2151",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 2, 1980 (Q69294208) para las celdas que contienen \"02/01/1980\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "09/02/2015",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19761567",
+      "name": "February 9, 2015",
+      "types": [
+        "Q2324",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento February 9, 2015 (Q19761567) para las celdas que contienen \"09/02/2015\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "10/09/2014",
+    "judgment": "matched",
+    "match": {
+      "id": "Q17981367",
+      "name": "September 10, 2014",
+      "types": [
+        "Q2853",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento September 10, 2014 (Q17981367) para las celdas que contienen \"10/09/2014\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "18/09/2015",
+    "judgment": "matched",
+    "match": {
+      "id": "Q21034799",
+      "name": "September 18, 2015",
+      "types": [
+        "Q2893",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento September 18, 2015 (Q21034799) para las celdas que contienen \"18/09/2015\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "12/09/2009",
+    "judgment": "matched",
+    "match": {
+      "id": "Q22663865",
+      "name": "September 12, 2009",
+      "types": [
+        "Q47150325",
+        "Q2849"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento September 12, 2009 (Q22663865) para las celdas que contienen \"12/09/2009\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "03/06/1986",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69296875",
+      "name": "June 3, 1986",
+      "types": [
+        "Q2623",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 3, 1986 (Q69296875) para las celdas que contienen \"03/06/1986\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "10/05/2017",
+    "judgment": "matched",
+    "match": {
+      "id": "Q33122513",
+      "name": "May 10, 2017",
+      "types": [
+        "Q47150325",
+        "Q2557"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento May 10, 2017 (Q33122513) para las celdas que contienen \"10/05/2017\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "02/06/2017",
+    "judgment": "matched",
+    "match": {
+      "id": "Q33122486",
+      "name": "June 2, 2017",
+      "types": [
+        "Q47150325",
+        "Q2624"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 2, 2017 (Q33122486) para las celdas que contienen \"02/06/2017\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "12/07/2018",
+    "judgment": "matched",
+    "match": {
+      "id": "Q45920771",
+      "name": "July 12, 2018",
+      "types": [
+        "Q47150325",
+        "Q2688",
+        "Q6312171",
+        "Q51156145"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento July 12, 2018 (Q45920771) para las celdas que contienen \"12/07/2018\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "03/09/2004",
+    "judgment": "matched",
+    "match": {
+      "id": "Q30055316",
+      "name": "September 3, 2004",
+      "types": [
+        "Q47150325",
+        "Q2860"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento September 3, 2004 (Q30055316) para las celdas que contienen \"03/09/2004\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "04/06/1970",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69289799",
+      "name": "June 4, 1970",
+      "types": [
+        "Q2627",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 4, 1970 (Q69289799) para las celdas que contienen \"04/06/1970\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "12/09/2023",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69306920",
+      "name": "September 12, 2023",
+      "types": [
+        "Q2849",
+        "Q47150325",
+        "Q51156355"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento September 12, 2023 (Q69306920) para las celdas que contienen \"12/09/2023\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "02/01/2025",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69307403",
+      "name": "January 2, 2025",
+      "types": [
+        "Q2151",
+        "Q47150325",
+        "Q51155368"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento January 2, 2025 (Q69307403) para las celdas que contienen \"02/01/2025\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "10/04/2025",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69307502",
+      "name": "April 10, 2025",
+      "types": [
+        "Q2502",
+        "Q47150325",
+        "Q51155681"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento April 10, 2025 (Q69307502) para las celdas que contienen \"10/04/2025\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "08/06/1973",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69291466",
+      "name": "June 8, 1973",
+      "types": [
+        "Q2621",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 8, 1973 (Q69291466) para las celdas que contienen \"08/06/1973\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "new",
+                "l": "new"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q47150325",
+        "name": "calendar day of a given year"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column fecha_inst to type Q47150325"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "errors",
+                "l": "errors"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q47150325",
+        "name": "calendar day of a given year"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column fecha_inst to type Q47150325"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "05/12/1975",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69292506",
+      "name": "December 5, 1975",
+      "types": [
+        "Q2300",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento December 5, 1975 (Q69292506) para las celdas que contienen \"05/12/1975\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "12/06/2002",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69304454",
+      "name": "June 12, 2002",
+      "types": [
+        "Q2619",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento June 12, 2002 (Q69304454) para las celdas que contienen \"12/06/2002\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "05/12/2000",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69303608",
+      "name": "December 5, 2000",
+      "types": [
+        "Q2300",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento December 5, 2000 (Q69303608) para las celdas que contienen \"05/12/2000\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "fecha_inst",
+    "similarValue": "05/02/1981",
+    "judgment": "matched",
+    "match": {
+      "id": "Q69294660",
+      "name": "February 5, 1981",
+      "types": [
+        "Q2319",
+        "Q47150325"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento February 5, 1981 (Q69294660) para las celdas que contienen \"05/02/1981\" en la columna fecha_inst"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "fecha_inst: juicio",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "fecha_inst",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "fecha_inst",
+    "expression": "grel:\"https://wikidata.org/entity/\"+cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "same_as_wikidata_fecha",
+    "columnInsertIndex": 5,
+    "description": "Crear la columna same_as_wikidata_fecha en el índice 5 basada en la columna fecha_inst usando la expresión grel:\"https://wikidata.org/entity/\"+cell.recon.match.id"
+  }
+]

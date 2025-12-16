@@ -1,0 +1,513 @@
+[
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "BARRIO",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q10267336",
+        "name": "neighborhood of Madrid"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column BARRIO to type Q10267336"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "BARRIO",
+    "similarValue": "Villaverde Alto C.H.",
+    "judgment": "new",
+    "shareNewTopics": true,
+    "description": "Marcar para crear un único elemento nuevo para todas las celdas que contienen \"Villaverde Alto C.H.\" en la columna BARRIO"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "BARRIO",
+    "similarValue": "Villaverde Alto C.H.",
+    "judgment": "matched",
+    "match": {
+      "id": "Q390435",
+      "name": "Villaverde Alto, Casco Histórico de Villaverde",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Villaverde Alto, Casco Histórico de Villaverde (Q390435) para las celdas que contienen \"Villaverde Alto C.H.\" en la columna BARRIO"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "BARRIO",
+    "expression": "grel:cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "barrios_URI",
+    "columnInsertIndex": 27,
+    "description": "Crear la columna barrios_URI en el índice 27 basada en la columna BARRIO usando la expresión grel:cell.recon.match.id"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "barrios_URI",
+    "expression": "grel:\"http://www.wikidata.org/entity/\" + value",
+    "onError": "set-to-blank",
+    "newColumnName": "Barrios_with_links",
+    "columnInsertIndex": 28,
+    "description": "Crear la columna Barrios_with_links en el índice 28 basada en la columna barrios_URI usando la expresión grel:\"http://www.wikidata.org/entity/\" + value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DISTRITO",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q3032114",
+        "name": "district of Madrid"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column DISTRITO to type Q3032114"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DISTRITO",
+    "expression": "grel:cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "Distrito_URI",
+    "columnInsertIndex": 32,
+    "description": "Crear la columna Distrito_URI en el índice 32 basada en la columna DISTRITO usando la expresión grel:cell.recon.match.id"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "Distrito_URI",
+    "expression": "grel:\"http://www.wikidata.org/entity/\" + value",
+    "onError": "set-to-blank",
+    "newColumnName": "Distritos_with_links",
+    "columnInsertIndex": 33,
+    "description": "Crear la columna Distritos_with_links en el índice 33 basada en la columna Distrito_URI usando la expresión grel:\"http://www.wikidata.org/entity/\" + value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q7075",
+        "name": "library"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column NOMBRE to type Q7075"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Municipal San Fermín (usera)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q111257503",
+      "name": "Biblioteca Pública Municipal de San Fermín",
+      "types": [
+        "Q28564",
+        "Q11396180",
+        "Q2326815"
+      ],
+      "score": 90
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública Municipal de San Fermín (Q111257503) para las celdas que contienen \"Biblioteca Pública Municipal San Fermín (usera)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública José Luis Sampedro (chamberí)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q85697863",
+      "name": "Biblioteca Pública Chamberí - José Luis Sampedro",
+      "types": [
+        "Q28564",
+        "Q11396180"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública Chamberí - José Luis Sampedro (Q85697863) para las celdas que contienen \"Biblioteca Pública José Luis Sampedro (chamberí)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Miguel Hernández (puente De Vallecas)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q18818698",
+      "name": "Biblioteca Pública de Vallecas",
+      "types": [
+        "Q28564",
+        "Q11396180"
+      ],
+      "score": 92
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública de Vallecas (Q18818698) para las celdas que contienen \"Biblioteca Pública Miguel Hernández (puente De Vallecas)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Municipal Aluche (latina)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q85697879",
+      "name": "Biblioteca Pública Municipal - Aluche",
+      "types": [
+        "Q28564",
+        "Q11396180"
+      ],
+      "score": 91
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública Municipal - Aluche (Q85697879) para las celdas que contienen \"Biblioteca Pública Municipal Aluche (latina)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Municipal Ana María Matute (carabanchel)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q70135254",
+      "name": "Ana María Matute Municipal Public Library",
+      "types": [
+        "Q28564",
+        "Q11396180"
+      ],
+      "score": 88
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Ana María Matute Municipal Public Library (Q70135254) para las celdas que contienen \"Biblioteca Pública Municipal Ana María Matute (carabanchel)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Municipal Benito Pérez Galdós (centro)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q85697887",
+      "name": "Biblioteca Pública Municipal - Benito Pérez Galdós",
+      "types": [
+        "Q28564",
+        "Q11396180"
+      ],
+      "score": 93
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública Municipal - Benito Pérez Galdós (Q85697887) para las celdas que contienen \"Biblioteca Pública Municipal Benito Pérez Galdós (centro)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Municipal Canillejas (san Blas-canillejas)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q85697960",
+      "name": "Biblioteca Pública Municipal - San Blas",
+      "types": [
+        "Q28564",
+        "Q11396180"
+      ],
+      "score": 77
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública Municipal - San Blas (Q85697960) para las celdas que contienen \"Biblioteca Pública Municipal Canillejas (san Blas-canillejas)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Municipal Ciudad Lineal (ciudad Lineal)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q85697893",
+      "name": "Biblioteca Pública Municipal - Ciudad Lineal",
+      "types": [
+        "Q28564",
+        "Q11396180"
+      ],
+      "score": 86
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública Municipal - Ciudad Lineal (Q85697893) para las celdas que contienen \"Biblioteca Pública Municipal Ciudad Lineal (ciudad Lineal)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Municipal Eugenio Trías. Casa De Fieras De El Retiro (retiro)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q85697904",
+      "name": "Biblioteca Pública Municipal - Eugenio Trías. Casa de Fieras de El Retiro",
+      "types": [
+        "Q28564",
+        "Q11396180"
+      ],
+      "score": 95
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública Municipal - Eugenio Trías. Casa de Fieras de El Retiro (Q85697904) para las celdas que contienen \"Biblioteca Pública Municipal Eugenio Trías. Casa De Fieras De El Retiro (retiro)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Municipal Francisco Ayala (vicálvaro)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q85697910",
+      "name": "Biblioteca Pública Municipal - Francisco Ayala",
+      "types": [
+        "Q28564",
+        "Q11396180"
+      ],
+      "score": 90
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública Municipal - Francisco Ayala (Q85697910) para las celdas que contienen \"Biblioteca Pública Municipal Francisco Ayala (vicálvaro)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Municipal Francisco Ibáñez (chamartín)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q85697912",
+      "name": "Biblioteca Pública Municipal - Francisco Ibañez",
+      "types": [
+        "Q28564",
+        "Q11396180"
+      ],
+      "score": 90
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública Municipal - Francisco Ibañez (Q85697912) para las celdas que contienen \"Biblioteca Pública Municipal Francisco Ibáñez (chamartín)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Municipal Gabriel García Márquez (usera)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q42268564",
+      "name": "Biblioteca Pública Municipal Gabriel García Márquez",
+      "types": [
+        "Q7075",
+        "Q11396180"
+      ],
+      "score": 94
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública Municipal Gabriel García Márquez (Q42268564) para las celdas que contienen \"Biblioteca Pública Municipal Gabriel García Márquez (usera)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Municipal José Saramago (fuencarral-el Pardo)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q85697927",
+      "name": "Biblioteca Pública Municipal - José Saramago",
+      "types": [
+        "Q28564",
+        "Q11396180"
+      ],
+      "score": 81
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública Municipal - José Saramago (Q85697927) para las celdas que contienen \"Biblioteca Pública Municipal José Saramago (fuencarral-el Pardo)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Javier Marías (moratalaz)",
+    "judgment": "new",
+    "shareNewTopics": true,
+    "description": "Marcar para crear un único elemento nuevo para todas las celdas que contienen \"Biblioteca Pública Javier Marías (moratalaz)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Centro Cultural Paco Rabal. Biblioteca Pública (puente De Vallecas)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q18818698",
+      "name": "Biblioteca Pública de Vallecas",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública de Vallecas (Q18818698) para las celdas que contienen \"Centro Cultural Paco Rabal. Biblioteca Pública (puente De Vallecas)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "similarValue": "Biblioteca Pública Rafael Alberti (fuencarral - El Pardo)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5728080",
+      "name": "Biblioteca Pública Rafael Alberti",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Biblioteca Pública Rafael Alberti (Q5728080) para las celdas que contienen \"Biblioteca Pública Rafael Alberti (fuencarral - El Pardo)\" en la columna NOMBRE"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "NOMBRE",
+    "expression": "grel:cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "Bibliotecas_URIS",
+    "columnInsertIndex": 2,
+    "description": "Crear la columna Bibliotecas_URIS en el índice 2 basada en la columna NOMBRE usando la expresión grel:cell.recon.match.id"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "Bibliotecas_URIS",
+    "expression": "grel:\"http://www.wikidata.org/entity/\" + value",
+    "onError": "set-to-blank",
+    "newColumnName": "Nombres_with_links",
+    "columnInsertIndex": 3,
+    "description": "Crear la columna Nombres_with_links en el índice 3 basada en la columna Bibliotecas_URIS usando la expresión grel:\"http://www.wikidata.org/entity/\" + value"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Bibliotecas_URIS",
+    "newColumnName": "Nombre_URIS",
+    "description": "Renombra la columna Bibliotecas_URIS a Nombre_URIS"
+  }
+]

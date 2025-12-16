@@ -1,0 +1,112 @@
+@prefix bib: <https://group15.linkeddata.es/ontology/bibliotecas#> .
+@prefix res: <https://group15.linkeddata.es/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+# INSTANCIAS de los 5 primeros distritos de nuestro CSV
+
+
+res:Distrito_Latina a bib:Distrito ;
+    bib:nombreDistrito "Latina" .
+
+res:Distrito_Retiro a bib:Distrito ;
+    bib:nombreDistrito "Retiro" .
+
+res:Distrito_Hortaleza a bib:Distrito ;
+    bib:nombreDistrito "Hortaleza" .
+
+res:Distrito_Moratalaz a bib:Distrito ;
+    bib:nombreDistrito "Moratalaz" .
+
+res:Distrito_Moncloa_Aravaca a bib:Distrito ;
+    bib:nombreDistrito "Moncloa - Aravaca" .
+
+
+# INSTANCIAS de las 5 primeras bibliotecas de nuestro CSV
+
+
+### Biblioteca Pública Antonio Mingote (Latina)
+res:Biblioteca_25526 a bib:Biblioteca ;
+    bib:nombre "Biblioteca Pública Antonio Mingote" ;
+    bib:descripcion "" ;
+    bib:horario "Apertura de lunes a sábado. De lunes a viernes: 9:00-21:00. Sábados: 9:00-14:00." ;
+    bib:equipamiento "Wifi gratuito." ;
+    bib:telefono "915093625" ;
+    bib:email "bib.latina@madrid.org" ;
+    bib:latitud 40.379442 ;
+    bib:longitud -3.769439 ;
+    bib:codigoPostal "No disponible" ;
+    bib:tipoVia "No disponible" ;
+    bib:via "No disponible" ;
+    bib:numero "No disponible" ;
+    bib:wifi true ;
+    bib:tieneDistrito res:Distrito_Latina .
+
+### Biblioteca Pública Elena Fortún (Retiro)
+res:Biblioteca_1774 a bib:Biblioteca ;
+    bib:nombre "Biblioteca Pública Elena Fortún" ;
+    bib:descripcion "" ;
+    bib:horario "Apertura de lunes a sábado. De lunes a viernes: 9:00-21:00. Sábados: 9:00-14:00." ;
+    bib:equipamiento "" ;
+    bib:telefono "915019146" ;
+    bib:email "bib.retiro@madrid.org" ;
+    bib:latitud 40.403578 ;
+    bib:longitud -3.672409 ;
+    bib:codigoPostal "No disponible" ;
+    bib:tipoVia "No disponible" ;
+    bib:via "No disponible" ;
+    bib:numero "No disponible" ;
+    bib:wifi true ;
+    bib:tieneDistrito res:Distrito_Retiro .
+
+### Biblioteca Pública Hortaleza
+res:Biblioteca_1770 a bib:Biblioteca ;
+    bib:nombre "Biblioteca Pública Hortaleza" ;
+    bib:descripcion "" ;
+    bib:horario "Apertura de lunes a viernes. De lunes a jueves: 9:00-21:00. Viernes: 9:00-14:00." ;
+    bib:equipamiento "" ;
+    bib:telefono "917633284" ;
+    bib:email "bib.hortaleza@madrid.org" ;
+    bib:latitud 40.477193 ;
+    bib:longitud -3.649620 ;
+    bib:codigoPostal "No disponible" ;
+    bib:tipoVia "No disponible" ;
+    bib:via "No disponible" ;
+    bib:numero "No disponible" ;
+    bib:wifi true ;
+    bib:tieneDistrito res:Distrito_Hortaleza .
+
+### Biblioteca Pública Javier Marías (Moratalaz)
+res:Biblioteca_1773 a bib:Biblioteca ;
+    bib:nombre "Biblioteca Pública Javier Marías" ;
+    bib:descripcion "" ;
+    bib:horario "Apertura de lunes a viernes. De lunes a viernes: 9:00-21:00." ;
+    bib:equipamiento "" ;
+    bib:telefono "914394688" ;
+    bib:email "bib.moratalaz@madrid.org" ;
+    bib:latitud 40.403992 ;
+    bib:longitud -3.649438 ;
+    bib:codigoPostal "No disponible" ;
+    bib:tipoVia "No disponible" ;
+    bib:via "No disponible" ;
+    bib:numero "No disponible" ;
+    bib:wifi true ;
+    bib:tieneDistrito res:Distrito_Moratalaz .
+
+### Biblioteca Pública José Acuña (Moncloa - Aravaca)
+res:Biblioteca_1771 a bib:Biblioteca ;
+    bib:nombre "Biblioteca Pública José Acuña" ;
+    bib:descripcion "" ;
+    bib:horario "Apertura de lunes a sábado. De lunes a viernes: 9:00-21:00. Sábados: 9:00-14:00." ;
+    bib:equipamiento "" ;
+    bib:telefono "915413619" ;
+    bib:email "bib.acuna@madrid.org" ;
+    bib:latitud 40.427947 ;
+    bib:longitud -3.716951 ;
+    bib:codigoPostal "No disponible" ;
+    bib:tipoVia "No disponible" ;
+    bib:via "No disponible" ;
+    bib:numero "No disponible" ;
+    bib:wifi true ;
+    bib:tieneDistrito res:Distrito_Moncloa_Aravaca .

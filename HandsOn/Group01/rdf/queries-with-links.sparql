@@ -1,0 +1,26 @@
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <https://schema.org/>
+PREFIX vocab: <http://example.org#>
+#1
+SELECT ?accidente ?distrito
+WHERE {
+  ?accidente owl:sameAs ?distrito .
+}
+LIMIT 20
+
+#2
+SELECT ?distrito (COUNT(?accidente) AS ?numAccidentes)
+WHERE {
+  ?accidente owl:sameAs ?distrito .
+}
+GROUP BY ?distrito
+ORDER BY DESC(?numAccidentes)
+
+#3
+SELECT ?accidente ?nombreDistrito ?wikidataDistrito
+WHERE {
+  ?accidente vocab:distrito ?nombreDistrito ;
+             owl:sameAs ?wikidataDistrito .
+}
+LIMIT 20

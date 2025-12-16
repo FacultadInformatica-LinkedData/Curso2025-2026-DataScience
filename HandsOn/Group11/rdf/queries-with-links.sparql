@@ -1,0 +1,67 @@
+PREFIX st: <http://group11.linkeddata.es/ontology/station#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Verificar las estaciones
+SELECT ?estacion ?id ?nombre ?direccion ?cp ?municipio ?coordenadas
+WHERE {
+  ?estacion a st:Station ;
+            st:hasID ?id ;
+            st:hasName ?nombre ;
+            st:hasAddress ?direccion ;
+            st:hasCP ?cp ;
+            st:locatedIn ?municipio ;
+            st:hasGeographicCoordinates ?coordenadas .
+            owl:sameAs ?nombreURI .
+}
+
+# Verificar los municipios
+SELECT ?municipio ?nombreMunicipio
+WHERE {
+  ?municipio a st:Municipality ;
+             st:hasMunicipalityName ?nombreMunicipio .
+             owl:sameAs ?municipioURI .
+}
+
+# Verificar las coordenadas geográficas
+SELECT ?coordenadas ?valorCoordenadas
+WHERE {
+  ?coordenadas a st:GeographicCoordinates ;
+               st:hasCoordinatesLiteral ?valorCoordenadas .
+}
+
+# Contar el número de estaciones para asegurar de que todos los registros se mapearon
+SELECT (COUNT(?estacion) AS ?totalEstaciones)
+WHERE {
+  ?estacion a st:Station .
+}
+
+# Verificar si los enlaces de estaciones existen en Wikidata
+SELECT ?recurso ?tipo ?nombre ?uri ?existeEnWikidata
+WHERE {
+  {
+    # Verificar estaciones
+    ?recurso a st:Station ;
+             st:hasName ?nombre ;
+             owl:sameAs ?uri .
+    BIND("Estación" AS ?tipo)
+  }
+  UNION
+  {
+    # Verificar municipios
+    ?recurso a st:Municipality ;
+             st:hasMunicipalityName ?nombre ;
+             owl:sameAs ?uri .
+    BIND("Municipio" AS ?tipo)
+  }
+
+  # Consultar en Wikidata si el URI existe
+  OPTIONAL {
+    SERVICE <https://query.wikidata.org/sparql> {
+      VALUES ?wikidataEntity { ?uri }
+      ?wikidataEntity ?p ?o .
+    }
+  }
+
+  # true si se encontró algún triple, false si no
+  BIND(BOUND(?o) AS ?existeEnWikidata)
+}

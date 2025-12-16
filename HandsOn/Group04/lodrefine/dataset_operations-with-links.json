@@ -1,0 +1,827 @@
+[
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q64913082",
+        "name": "neighborhood of Alicante"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column barrio to type Q64913082"
+  },
+  {
+    "op": "core/recon-match-best-candidates",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "description": "Emparejar cada celda con su mejor candidato de cotejo en la columna barrio"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "expression": "grel:value.replace('á', 'a').replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ú', 'u').replace('Á', 'A').replace('É', 'E').replace('Í', 'I').replace('Ó', 'O').replace('Ú', 'U')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna barrio usando la expresión grel:value.replace('á', 'a').replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ú', 'u').replace('Á', 'A').replace('É', 'E').replace('Í', 'I').replace('Ó', 'O').replace('Ú', 'U')"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "barrio",
+    "expression": "grel:cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "barrio_uri",
+    "columnInsertIndex": 3,
+    "description": "Crear la columna barrio_uri en el índice 3 basada en la columna barrio usando la expresión grel:cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "banyos",
+    "expression": "grel:value.replace(',', '.')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna banyos usando la expresión grel:value.replace(',', '.')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "dormitorios",
+    "expression": "grel:value.replace(\",\", \".\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna dormitorios usando la expresión grel:value.replace(\",\", \".\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "banyos",
+    "expression": "grel:value.replace(\".\", \".\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna banyos usando la expresión grel:value.replace(\".\", \".\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "euros_m2",
+    "expression": "grel:value.replace(\",\", \".\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna euros_m2 usando la expresión grel:value.replace(\",\", \".\")"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Casco Antiguo - Sta. Cruz",
+    "judgment": "matched",
+    "match": {
+      "id": "Q8341907",
+      "name": "Old town-Santa Cruz",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Old town-Santa Cruz (Q8341907) para las celdas que contienen \"Casco Antiguo - Sta. Cruz\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Benisaudet",
+    "judgment": "matched",
+    "match": {
+      "id": "Q1649406",
+      "name": "Benissa",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Benissa (Q1649406) para las celdas que contienen \"Benisaudet\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Juan XXIII 1er sector",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5952905",
+      "name": "Joan XXIII",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Joan XXIII (Q5952905) para las celdas que contienen \"Juan XXIII 1er sector\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_uri",
+          "expression": "value",
+          "columnName": "barrio_uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Los Angeles",
+    "judgment": "matched",
+    "match": {
+      "id": "Q9024383",
+      "name": "Els Àngels",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Els Àngels (Q9024383) para las celdas que contienen \"Los Angeles\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_uri",
+          "expression": "value",
+          "columnName": "barrio_uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Poligono de Babel",
+    "judgment": "matched",
+    "match": {
+      "id": "Q18005830",
+      "name": "Polígono Babel",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Polígono Babel (Q18005830) para las celdas que contienen \"Poligono de Babel\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_uri",
+          "expression": "value",
+          "columnName": "barrio_uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "San Agustin",
+    "judgment": "matched",
+    "match": {
+      "id": "Q9073289",
+      "name": "San Agustín (Alicante)",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento San Agustín (Alicante) (Q9073289) para las celdas que contienen \"San Agustin\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_uri",
+          "expression": "value",
+          "columnName": "barrio_uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Urbanova",
+    "judgment": "matched",
+    "match": {
+      "id": "Q125359431",
+      "name": "Urbanova",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Urbanova (Q125359431) para las celdas que contienen \"Urbanova\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_uri",
+          "expression": "value",
+          "columnName": "barrio_uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Santa Faz",
+    "judgment": "matched",
+    "match": {
+      "id": "Q10879280",
+      "name": "Santa Faz",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Santa Faz (Q10879280) para las celdas que contienen \"Santa Faz\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_uri",
+          "expression": "value",
+          "columnName": "barrio_uri",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Juan XXIII 2do Sector",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5952905",
+      "name": "Joan XXIII",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Joan XXIII (Q5952905) para las celdas que contienen \"Juan XXIII 2do Sector\" en la columna barrio"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "barrio",
+    "expression": "grel:cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "barrio_URI",
+    "columnInsertIndex": 3,
+    "description": "Crear la columna barrio_URI en el índice 3 basada en la columna barrio usando la expresión grel:cell.recon.match.id"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "barrio_uri",
+    "description": "Eliminar columna barrio_uri"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Centro",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5760971",
+      "name": "Center",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Center (Q5760971) para las celdas que contienen \"Centro\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Centro Historico - Tradicional",
+    "judgment": "matched",
+    "match": {
+      "id": "Q8341907",
+      "name": "Old town-Santa Cruz",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Old town-Santa Cruz (Q8341907) para las celdas que contienen \"Centro Historico - Tradicional\" en la columna barrio"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "barrio_URI",
+    "description": "Eliminar columna barrio_URI"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "barrio",
+    "expression": "grel:cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "barrio_URI",
+    "columnInsertIndex": 3,
+    "description": "Crear la columna barrio_URI en el índice 3 basada en la columna barrio usando la expresión grel:cell.recon.match.id"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_URI",
+          "expression": "value",
+          "columnName": "barrio_URI",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "La Sangueta",
+    "judgment": "matched",
+    "match": {
+      "id": "Q48781453",
+      "name": "Sangueta",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Sangueta (Q48781453) para las celdas que contienen \"La Sangueta\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_URI",
+          "expression": "value",
+          "columnName": "barrio_URI",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "San Nicolas de Bari",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5852070",
+      "name": "Lo Morant-San Nicolás de Bari",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Lo Morant-San Nicolás de Bari (Q5852070) para las celdas que contienen \"San Nicolas de Bari\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_URI",
+          "expression": "value",
+          "columnName": "barrio_URI",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Moralet",
+    "judgment": "matched",
+    "match": {
+      "id": "Q19859732",
+      "name": "Moralet",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Moralet (Q19859732) para las celdas que contienen \"Moralet\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_URI",
+          "expression": "value",
+          "columnName": "barrio_URI",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Las Cuatrocientas Viviendas",
+    "judgment": "matched",
+    "match": {
+      "id": "Q11237186",
+      "name": "Cuatrocientas Viviendas",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Cuatrocientas Viviendas (Q11237186) para las celdas que contienen \"Las Cuatrocientas Viviendas\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_URI",
+          "expression": "value",
+          "columnName": "barrio_URI",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Bacarot",
+    "judgment": "matched",
+    "match": {
+      "id": "Q25714484",
+      "name": "El Bacarot",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento El Bacarot (Q25714484) para las celdas que contienen \"Bacarot\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_URI",
+          "expression": "value",
+          "columnName": "barrio_URI",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Gran Via - Parque Avenidas",
+    "judgment": "matched",
+    "match": {
+      "id": "Q8963455",
+      "name": "Q8963455",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Q8963455 (Q8963455) para las celdas que contienen \"Gran Via - Parque Avenidas\" en la columna barrio"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_URI",
+          "expression": "value",
+          "columnName": "barrio_URI",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Gran Via - Parque Avenidas"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gran Via - Parque Avenidas"
+      }
+    ],
+    "description": "Editar celdas en masa en columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_URI",
+          "expression": "value",
+          "columnName": "barrio_URI",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Gran Via - Parque Avenidas",
+    "judgment": "matched",
+    "match": {
+      "id": "Q8963455",
+      "name": "Garbinet",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Garbinet (Q8963455) para las celdas que contienen \"Gran Via - Parque Avenidas\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_URI",
+          "expression": "value",
+          "columnName": "barrio_URI",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Aguamarga",
+    "judgment": "matched",
+    "match": {
+      "id": "Q28121278",
+      "name": "Agua Amarga",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Agua Amarga (Q28121278) para las celdas que contienen \"Aguamarga\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_URI",
+          "expression": "value",
+          "columnName": "barrio_URI",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "San Evaristo - La Paz",
+    "judgment": "matched",
+    "match": {
+      "id": "Q9073289",
+      "name": "San Agustín (Alicante)",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento San Agustín (Alicante) (Q9073289) para las celdas que contienen \"San Evaristo - La Paz\" en la columna barrio"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "barrio_URI",
+          "expression": "value",
+          "columnName": "barrio_URI",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "barrio",
+    "similarValue": "Montoto",
+    "judgment": "matched",
+    "match": {
+      "id": "Q28712031",
+      "name": "Tombola",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Emparejar el elemento Tombola (Q28712031) para las celdas que contienen \"Montoto\" en la columna barrio"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "barrio_URI",
+    "description": "Eliminar columna barrio_URI"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "barrio",
+    "expression": "grel:cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "barrio_URI",
+    "columnInsertIndex": 3,
+    "description": "Crear la columna barrio_URI en el índice 3 basada en la columna barrio usando la expresión grel:cell.recon.match.id"
+  }
+]

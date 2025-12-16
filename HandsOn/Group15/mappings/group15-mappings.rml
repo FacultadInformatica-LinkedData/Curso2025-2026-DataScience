@@ -1,0 +1,269 @@
+@prefix rr:  <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix ql:  <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bib: <https://group15.linkeddata.es/ontology/bibliotecas#> .
+@prefix res: <https://group15.linkeddata.es/resource/> .
+
+
+# PRIMER TRIPLESMAP PARA BIBLIOTECA (CON TODAS SUS PROPIEDADES: NOMBRE, DESCRIPCIÓJ, HORARIO, EQUIPAMIENTO...) #
+
+bib:TM_Biblioteca a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "csv/bibliotecas_update.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+
+  rr:subjectMap [
+    rr:template "https://group15.linkeddata.es/resource/biblioteca/{PK}" ;
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate a ;
+    rr:objectMap [ rr:constant bib:Biblioteca ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:nombre ;
+    rr:objectMap [
+      rml:reference "NOMBRE" ;
+      rr:language "es"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:descripcion ;
+    rr:objectMap [
+      rml:reference "DESCRIPCION-ENTIDAD" ;
+      rr:language "es"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:horario ;
+    rr:objectMap [
+      rml:reference "HORARIO" ;
+      rr:language "es"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:equipamiento ;
+    rr:objectMap [
+      rml:reference "EQUIPAMIENTO" ;
+      rr:language "es"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:internetPublico ;
+    rr:objectMap [
+      rml:reference "tieneInternetPublico" ;
+      rr:datatype xsd:boolean
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:wifi ;
+    rr:objectMap [
+      rml:reference "tieneWifi" ;
+      rr:datatype xsd:boolean
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:accesibilidad1 ;
+    rr:objectMap [ rml:reference "ACCESIBILIDAD 1" ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:accesibilidad2 ;
+    rr:objectMap [ rml:reference "ACCESIBILIDAD 2" ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:accesibilidad3 ;
+    rr:objectMap [ rml:reference "ACCESIBILIDAD 3" ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:transporte ;
+    rr:objectMap [
+      rml:reference "TRANSPORTE" ;
+      rr:language "es"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:latitud ;
+    rr:objectMap [
+      rml:reference "latitud" ;
+      rr:datatype xsd:decimal
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:longitud ;
+    rr:objectMap [
+      rml:reference "longitud" ;
+      rr:datatype xsd:decimal
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:telefono ;
+    rr:objectMap [ rml:reference "telefono" ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:email ;
+    rr:objectMap [ rml:reference "email" ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:urlContenido ;
+    rr:objectMap [ rml:reference "CONTENT-URL" ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:tieneDireccion ;
+    rr:objectMap [
+      rr:template "https://group15.linkeddata.es/resource/direccion/{PK}"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:estaEnBarrio ;
+    rr:objectMap [
+      rr:template "https://group15.linkeddata.es/resource/barrio/{barrio_slug}"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:estaEnDistrito ;
+    rr:objectMap [
+      rr:template "https://group15.linkeddata.es/resource/distrito/{distrito_slug}"
+    ]
+  ] 
+.
+
+
+# TRIPLESMAP PARA DIRECCION #
+
+bib:TM_Direccion a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "csv/bibliotecas_update.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+
+  rr:subjectMap [
+    rr:template "https://group15.linkeddata.es/resource/direccion/{PK}" ;
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate a ;
+    rr:objectMap [ rr:constant bib:Direccion ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:via ;
+    rr:objectMap [
+      rml:reference "NOMBRE-VIA" ;
+      rr:language "es"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:claseVial ;
+    rr:objectMap [ rml:reference "CLASE-VIAL" ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:numero ;
+    rr:objectMap [ rml:reference "numero" ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:direccionCompleta ;
+    rr:objectMap [
+      rml:reference "direccion_completa" ;
+      rr:language "es"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:localidad ;
+    rr:objectMap [
+      rml:reference "LOCALIDAD" ;
+      rr:language "es"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:provincia ;
+    rr:objectMap [
+      rml:reference "PROVINCIA" ;
+      rr:language "es"
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:codigoPostal ;
+    rr:objectMap [ rml:reference "CP" ]
+  ]
+.
+
+
+
+# TRIPLESMAP PARA BARRIO #
+
+bib:TM_Barrio a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "csv/bibliotecas_update.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+
+  rr:subjectMap [
+    rr:template "https://group15.linkeddata.es/resource/barrio/{barrio_slug}" ;
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate a ;
+    rr:objectMap [ rr:constant bib:Barrio ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:nombreBarrio ;
+    rr:objectMap [
+      rml:reference "BARRIO" ;
+      rr:language "es"
+    ]
+  ]
+.
+
+
+# TRIPLESMAP PARA DISTRITO #
+
+bib:TM_Distrito a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "csv/bibliotecas_update.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+
+  rr:subjectMap [
+    rr:template "https://group15.linkeddata.es/resource/distrito/{distrito_slug}" ;
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate a ;
+    rr:objectMap [ rr:constant bib:Distrito ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate bib:nombreDistrito ;
+    rr:objectMap [
+      rml:reference "DISTRITO" ;
+      rr:language "es"
+    ]
+  ]
+.

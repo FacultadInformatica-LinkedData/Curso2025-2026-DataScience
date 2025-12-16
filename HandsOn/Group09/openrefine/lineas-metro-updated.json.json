@@ -1,0 +1,196 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE_URI",
+    "expression": "grel:value.replace('_','-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna NOMBRE_URI usando la expresión grel:value.replace('_','-')"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "SISTEMA",
+    "newColumnName": "sistema",
+    "description": "Renombra la columna SISTEMA a sistema"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "NOMBRE",
+    "newColumnName": "nombre",
+    "description": "Renombra la columna NOMBRE a nombre"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "NOMBRE_URI",
+    "newColumnName": "nombre-uri",
+    "description": "Renombra la columna NOMBRE_URI a nombre-uri"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "LINEA",
+    "newColumnName": "linea",
+    "description": "Renombra la columna LINEA a linea"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "EST",
+    "newColumnName": "est",
+    "description": "Renombra la columna EST a est"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "CVE_EST",
+    "newColumnName": "cve_est",
+    "description": "Renombra la columna CVE_EST a cve_est"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "cve_est",
+    "newColumnName": "cve-est",
+    "description": "Renombra la columna cve_est a cve-est"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "TIPO",
+    "newColumnName": "tipo",
+    "description": "Renombra la columna TIPO a tipo"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "TIPO_URI",
+    "newColumnName": "tipo-uri",
+    "description": "Renombra la columna TIPO_URI a tipo-uri"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "ALCALDIAS",
+    "newColumnName": "alcaldias",
+    "description": "Renombra la columna ALCALDIAS a alcaldias"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "ALCALDIAS_URI",
+    "newColumnName": "alcaldias-uri",
+    "description": "Renombra la columna ALCALDIAS_URI a alcaldias-uri"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "AÑO",
+    "newColumnName": "año",
+    "description": "Renombra la columna AÑO a año"
+  },
+  {
+    "op": "core/column-addition-by-fetching-urls",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "linea",
+    "urlExpression": "grel:'linea' + '-' + value.split('0')[0]",
+    "onError": "set-to-blank",
+    "newColumnName": "linea-uri",
+    "columnInsertIndex": 4,
+    "delay": 500,
+    "cacheResponses": true,
+    "httpHeadersJson": [
+      {
+        "name": "authorization",
+        "value": ""
+      },
+      {
+        "name": "if-modified-since",
+        "value": ""
+      },
+      {
+        "name": "accept-language",
+        "value": ""
+      },
+      {
+        "name": "accept-encoding",
+        "value": ""
+      },
+      {
+        "name": "user-agent",
+        "value": "OpenRefine 3.9.5 [TRUNK]"
+      },
+      {
+        "name": "accept",
+        "value": "*/*"
+      },
+      {
+        "name": "accept-charset",
+        "value": ""
+      }
+    ],
+    "description": "Crear la columna linea-uri en el índice 4 mediante la obtención de URLs basadas en la columna linea utilizando la expresión grel:'linea' + '-' + value.split('0')[0]"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "linea-uri",
+    "description": "Eliminar columna linea-uri"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "tipo-uri",
+    "expression": "grel:value.replace('_','-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna tipo-uri usando la expresión grel:value.replace('_','-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "alcaldias-uri",
+    "expression": "grel:value.replace('_','-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna alcaldias-uri usando la expresión grel:value.replace('_','-')"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "linea",
+    "expression": "grel:value.replace('0','')",
+    "onError": "set-to-blank",
+    "newColumnName": "linea-uri",
+    "columnInsertIndex": 4,
+    "description": "Crear la columna linea-uri en el índice 4 basada en la columna linea usando la expresión grel:value.replace('0','')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea-uri",
+    "expression": "grel:'linea'+'-'+\nvalue",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna linea-uri usando la expresión grel:'linea'+'-'+\nvalue"
+  },
+    {
+    "op": "core/column-rename",
+    "oldColumnName": "año",
+    "newColumnName": "anio",
+    "description": "Renombra la columna año a anio"
+  }
+
+]

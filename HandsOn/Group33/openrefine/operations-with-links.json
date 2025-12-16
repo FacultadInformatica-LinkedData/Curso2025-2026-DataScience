@@ -1,0 +1,70 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "FDIA",
+    "newColumnName": "fecha_dia",
+    "description": "Renombra la columna FDIA a fecha_dia"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "FEST",
+    "newColumnName": "codigo_estacion",
+    "description": "Renombra la columna FEST a codigo_estacion"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "FSEN",
+    "newColumnName": "sentido_codigo",
+    "description": "Renombra la columna FSEN a sentido_codigo"
+  },
+  {
+    "op": "core/transpose-columns-into-rows",
+    "startColumnName": "HOR1",
+    "columnCount": -1,
+    "ignoreBlankCells": true,
+    "fillDown": false,
+    "separator": null,
+    "keyColumnName": "Hora_Codigo",
+    "valueColumnName": "Valor_Intensidad",
+    "description": "Transponer las celdas de las columnas que empiezan por HOR1 en filas de dos nuevas columnas llamadas Hora_Codigo y Valor_Intensidad"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Valor_Intensidad",
+    "expression": "grel:value.replace(',', '.')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna Valor_Intensidad usando la expresión grel:value.replace(',', '.')"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "fecha_dia",
+    "expression": "grel:value.split('/')[2] + '-' + value.split('/')[1] + '-' + value.split('/')[0] + 'T' + if(row.cells['Hora_Codigo'].value.replace('HOR','').length() == 1, '0' + row.cells['Hora_Codigo'].value.replace('HOR',''), row.cells['Hora_Codigo'].value.replace('HOR','')) + ':00:00'",
+    "onError": "set-to-blank",
+    "newColumnName": "FECHA_HORA_RDF",
+    "columnInsertIndex": 1,
+    "description": "Crear la columna FECHA_HORA_RDF en el índice 1 basada en la columna fecha_dia usando la expresión grel:value.split('/')[2] + '-' + value.split('/')[1] + '-' + value.split('/')[0] + 'T' + if(row.cells['Hora_Codigo'].value.replace('HOR','').length() == 1, '0' + row.cells['Hora_Codigo'].value.replace('HOR',''), row.cells['Hora_Codigo'].value.replace('HOR','')) + ':00:00'"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "sentido_codigo",
+    "expression": "grel:if(value == \"1-\", \"Norte\", if(value == \"1=\", \"Sur\", if(value == \"2-\", \"Este\", if(value == \"2=\", \"Oeste\", value))))",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna sentido_codigo usando la expresión grel:if(value == \"1-\", \"Norte\", if(value == \"1=\", \"Sur\", if(value == \"2-\", \"Este\", if(value == \"2=\", \"Oeste\", value))))"
+  }
+]

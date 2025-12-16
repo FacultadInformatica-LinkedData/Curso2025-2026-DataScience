@@ -1,0 +1,24 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX traffic: <http://example.org/traffic/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+#1
+SELECT ?medicion
+WHERE {
+  ?medicion rdf:type traffic:Medicion .
+}
+LIMIT 50
+
+#2
+SELECT (COUNT(?medicion) AS ?totalMediciones)
+WHERE {
+  ?medicion rdf:type traffic:Medicion .
+}
+
+#4
+SELECT DISTINCT ?estacion
+WHERE {
+  ?medicion rdf:type traffic:Medicion .
+  ?medicion traffic:estacion ?estacion .
+}

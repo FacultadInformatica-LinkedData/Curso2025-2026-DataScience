@@ -1,0 +1,62 @@
+PREFIX ns: <http://my.domain/Alquiler#>
+
+# Query 1: Barrios con renta media > 600
+
+SELECT ?barrio
+WHERE {
+    ?reg ns:locatedIn ?barrio .
+    ?reg ns:avgRent ?renta .
+    FILTER(?renta > 600)
+}
+
+# Query 2: Barrios con media de 2 baños y más de 80 m2
+
+SELECT ?barrio
+WHERE {
+    ?reg ns:locatedIn ?barrio .
+    ?reg ns:bathrooms ?banyos.
+    ?reg ns:sizeInMeters ?m2 .
+    FILTER(?m2 > 80 && ?banyos = 2)
+}
+
+# Query 3: Precio €/m² de viviendas del trimestre 3
+SELECT ?precio
+WHERE {
+    ?reg ns:quarter 3 .
+    ?reg ns:pricePerM2 ?precio .
+}
+
+# Query 4: Barrios con renta mínima < 500
+SELECT DISTINCT ?barrio
+WHERE {
+    ?reg ns:locatedIn ?barrio .
+    ?reg ns:minRent ?rmin .
+    FILTER(?rmin < 500)
+}
+
+# Query 5: Zonas más caras (Top 5 Renta Máxima)
+SELECT ?barrio ?renta_max
+WHERE {
+    ?reg ns:locatedIn ?barrio .
+    ?reg ns:maxRent ?renta_max .
+}
+ORDER BY DESC(?renta_max)
+LIMIT 5
+
+# Query 6: Obtener la renta media de todos los barrios en el año 2019
+SELECT ?barrio ?renta
+WHERE {
+    ?reg ns:year 2019 .
+    ?reg ns:locatedIn ?barrio .
+    ?reg ns:avgRent ?renta .
+}
+ORDER BY DESC(?renta)
+
+#Query 7: Barrios con viviendas grandes (>120 m²) pero con pocos dormitorios (<3)
+SELECT ?barrio ?m2 ?dormitorios
+WHERE {
+    ?reg ns:locatedIn ?barrio .
+    ?reg ns:sizeInMeters ?m2 .
+    ?reg ns:bedrooms ?dormitorios .
+    FILTER(?m2 > 120 && ?dormitorios < 3)
+}

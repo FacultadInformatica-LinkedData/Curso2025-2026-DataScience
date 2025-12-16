@@ -1,0 +1,69 @@
+@prefix ns: <http://movimientosostenible.org/group14#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+# Ejemplo 1 – Accidente con bicicleta
+
+ns:Accidente001 a ns:Accidente ;
+    ns:numeroExpediente "2023S040309" ;
+    ns:tipoAccidente "Colisión fronto-lateral" ;
+    ns:hasDate ns:Fecha001 ;
+    ns:hasTime "14:05:00" ;
+    ns:distrito "CENTRO" ;
+    ns:meteo "Lluvia débil" ;
+    ns:ocurreEn ns:Localizacion001 ;
+    ns:implicada ns:Persona001 ;
+    ns:requiredTest ns:Test001 ;
+    ns:hasType ns:TipoBici01 ;
+    ns:hasLesi ns:LesividadLeve001 .
+
+ns:Fecha001 a ns:Fecha ;
+    rdfs:label "15/02/2024" .
+
+ns:Localizacion001 a ns:Localizacion ;
+    ns:hasNumber 18 ;
+    ns:tieneCoordenadas ns:Coordenadas001 .
+
+ns:Coordenadas001 a ns:Coordenadas ;
+    ns:latitud 40.425009251980356 ;
+    ns:longitud -3.70585962201 .
+
+ns:Persona001 a ns:PersonaImplicadaAccidente ;
+    ns:edad "25 a 29 años" ;
+    ns:gender "Hombre" .
+
+ns:Test001 a ns:TestSustancias ;
+    ns:alcohol true ;
+    ns:droga false .
+
+ns:LesividadLeve001 a ns:Lesividad ;
+    ns:hasCode 7 ;
+    ns:hasType "Asistencia leve en el lugar del accidente" .
+
+ns:TipoBici01 a ns:Bicicleta;
+    rdfs:label "Bicicleta" .
+
+
+# Ejemplo 2 – Cruce Semáforo para Bicicletas
+
+ns:CruceSemaforoBici001 a ns:CruceSemaforoBici ;
+    ns:tieneCruceId 1445 ;
+    ns:tieneSemaforoId 52384 ;
+    ns:tieneTipoSemaforo ns:TipoSemaforo3100Bici ;
+    ns:tieneFechaInstalacion ns:Fecha002 ;
+    ns:tieneCoordenadas ns:CoordSemaforo001 ;
+    ns:estaEn ns:IdDistrito .
+
+ns:CoordSemaforo001 a ns:Coordenadas ;
+    ns:latitud 40.4233 ;
+    ns:longitud -3.6550 .
+
+ns:TipoSemaforo3100Bici a ns:3100Bici ;
+    rdfs:label "3100 Bici" .
+
+ns:Fecha002 a ns:Fecha ;
+    rdfs:label "26/01/1996" .
+
+ns:IdDistrito a ns:Id ;
+    rdfs:label "15" .

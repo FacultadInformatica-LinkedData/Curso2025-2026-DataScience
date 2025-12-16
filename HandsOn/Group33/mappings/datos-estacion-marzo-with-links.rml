@@ -1,0 +1,74 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://group33.linkeddata.es/ontology/traffic#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<#TriplesMap_Estaciones>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "datos-estacion-marzo-with-links.csv" ; 
+        rml:referenceFormulation ql:CSV ;
+    ] ;
+
+    rr:subjectMap [
+        rml:reference "codigo_estacion_uri" ; 
+        rr:termType rr:IRI ;
+        rr:class :Estacion ; 
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs ; 
+        rr:objectMap [
+            rml:reference "wikidata_id" ;
+            rr:termType rr:IRI 
+        ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate :codigoEstacion ;
+        rml:objectMap [ rml:reference "codigo_estacion" ] ;
+    ] .
+    
+<#TriplesMap_Mediciones>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "datos-estacion-marzo-with-links.csv" ;
+        rml:referenceFormulation ql:CSV ;
+    ] ;
+
+    rr:subjectMap [
+        rr:template "http://example.org/traffic/medicion/{codigo_estacion}/{sentido_codigo}/{Hora_Codigo}/{FECHA_HORA_RDF}" ;
+        rr:class :Medicion ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate :estacion ;
+        rr:objectMap [ 
+             rml:reference "codigo_estacion_uri" ; 
+             rr:termType rr:IRI 
+        ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate :sentido ;
+        rml:objectMap [ rml:reference "sentido_codigo" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate :hora ;
+        rml:objectMap [ rml:reference "Hora_Codigo" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate :intensidad ;
+        rml:objectMap [ rml:reference "Valor_Intensidad" ; rr:datatype xsd:integer ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate :fechaHora ;
+        rml:objectMap [ rml:reference "FECHA_HORA_RDF" ; rr:datatype xsd:dateTime ] ;
+    ] .

@@ -1,0 +1,75 @@
+[
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "estacion",
+    "expression": "grel:value",
+    "onError": "set-to-blank",
+    "newColumnName": "ESTACION_URI",
+    "columnInsertIndex": 5,
+    "description": "Crear la columna ESTACION_URI en el índice 5 basada en la columna estacion usando la expresión grel:value"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ESTACION_URI",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna ESTACION_URI usando la expresión value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ESTACION_URI",
+    "expression": "value.toLowercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna ESTACION_URI usando la expresión value.toLowercase()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ESTACION_URI",
+    "expression": "grel:value.trim()\n     .replace(\"ã¡\",\"a\")\n     .replace(\"ã©\",\"e\")\n     .replace(\"ã­\",\"i\")\n     .replace(\"ã³\",\"o\")\n     .replace(\"ãº\",\"u\")\n     .replace(\"ã±\",\"n\")\n     .replace(\"á\",\"a\")\n     .replace(\"é\",\"e\")\n     .replace(\"í\",\"i\")\n     .replace(\"ó\",\"o\")\n     .replace(\"ú\",\"u\")\n     .replace(\"ñ\",\"n\")\n     .replace(\"/\",\"-\")\n     .replace(\" \",\"_\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna ESTACION_URI usando la expresión grel:value.trim()\n     .replace(\"ã¡\",\"a\")\n     .replace(\"ã©\",\"e\")\n     .replace(\"ã­\",\"i\")\n     .replace(\"ã³\",\"o\")\n     .replace(\"ãº\",\"u\")\n     .replace(\"ã±\",\"n\")\n     .replace(\"á\",\"a\")\n     .replace(\"é\",\"e\")\n     .replace(\"í\",\"i\")\n     .replace(\"ó\",\"o\")\n     .replace(\"ú\",\"u\")\n     .replace(\"ñ\",\"n\")\n     .replace(\"/\",\"-\")\n     .replace(\" \",\"_\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ESTACION_URI",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "miguel_angel_de_quevedo",
+          "miguel_ãngel_de_quevedo"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "miguel_angel_de_quevedo"
+      }
+    ],
+    "description": "Editar celdas en masa en columna ESTACION_URI"
+  }
+]

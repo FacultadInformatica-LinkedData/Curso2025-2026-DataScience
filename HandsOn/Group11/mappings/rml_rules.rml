@@ -1,0 +1,90 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix st: <http://group11.linkeddata.es/ontology/station#>.
+
+<#TriplesMap_Station> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "cercanias-madrid-updated.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "http://group11.linkeddata.es/station/{ID}";
+    rr:class st:Station
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate st:hasID;
+    rr:objectMap [
+      rml:reference "ID";
+      rr:datatype xsd:integer
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate st:hasName;
+    rr:objectMap [
+      rml:reference "NOMBRE"
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate st:hasAddress;
+    rr:objectMap [
+      rml:reference "DIRECCIÓN"
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate st:hasCP;
+    rr:objectMap [
+      rml:reference "C.P."
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate st:locatedIn;
+    rr:objectMap [
+      rr:parentTriplesMap <#TriplesMap_Municipality>
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate st:hasGeographicCoordinates;
+    rr:objectMap [
+      rr:parentTriplesMap <#TriplesMap_Coordinates>
+    ]
+  ].
+
+<#TriplesMap_Municipality> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "cercanias-madrid-updated.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "http://group11.linkeddata.es/municipality/{POBLACIÓN}";
+    rr:class st:Municipality
+  ];
+  rr:predicateObjectMap [
+    rr:predicate st:hasMunicipalityName;
+    rr:objectMap [
+      rml:reference "POBLACIÓN"
+    ]
+  ].
+
+<#TriplesMap_Coordinates> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "cercanias-madrid-updated.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [
+    rr:template "http://group11.linkeddata.es/coordinates/{ID}";
+    rr:class st:GeographicCoordinates
+  ];
+  rr:predicateObjectMap [
+    rr:predicate st:hasCoordinatesLiteral;
+    rr:objectMap [
+      rml:reference "COORDENADAS"
+    ]
+  ].

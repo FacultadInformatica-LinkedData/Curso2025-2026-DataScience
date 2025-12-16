@@ -1,0 +1,43 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/traffic/> .
+
+<#TriplesMap_Mediciones>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "datos_estacion_marzo_actualizado.csv" ;
+        rml:referenceFormulation ql:CSV ;
+    ] ;
+
+    rr:subjectMap [
+        rr:template "http://example.org/traffic/medicion/{codigo_estacion}/{sentido_codigo}/{Hora_Codigo}/{FECHA_HORA_RDF}" ;
+        rr:class ex:Medicion ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ex:estacion ;
+        rml:objectMap [ rml:reference "codigo_estacion" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ex:sentido ;
+        rml:objectMap [ rml:reference "sentido_codigo" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ex:hora ;
+        rml:objectMap [ rml:reference "Hora_Codigo" ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ex:intensidad ;
+        rml:objectMap [ rml:reference "Valor_Intensidad" ; rr:datatype xsd:integer ] ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ex:fecha ;
+        rml:objectMap [ rml:reference "FECHA_HORA_RDF" ; rr:datatype xsd:dateTime ] ;
+    ] .

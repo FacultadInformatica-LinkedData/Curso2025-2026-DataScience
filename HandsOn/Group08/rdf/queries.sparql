@@ -1,0 +1,36 @@
+PREFIX ns: <https://datos.grupo08-2025-cdia.org#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT (COUNT(?s) AS ?count)
+WHERE {
+  ?s a ns:Station .
+}
+
+SELECT ?name ?bikes
+WHERE {
+  ?s a ns:Station ;
+     ns:hasName ?name ;
+     ns:hasDockBikes ?bikes .
+  FILTER(?bikes > 10)
+}
+
+SELECT ?name ?lat ?long
+WHERE {
+  ?s a ns:Station ;
+     ns:hasName ?name ;
+     ns:hasLocation ?loc .
+  ?loc ns:hasLatitude ?lat ;
+       ns:hasLongitude ?long .
+  FILTER (REGEX(?name, "Callao"))
+}
+
+SELECT ?loc
+WHERE {
+  ?loc a ns:Location .
+}
+LIMIT 50
+
+SELECT (COUNT(?loc) AS ?numLocations)
+WHERE {
+  ?loc a ns:Location .
+}

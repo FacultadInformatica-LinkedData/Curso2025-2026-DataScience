@@ -1,0 +1,81 @@
+prefixes:
+  rr: http://www.w3.org/ns/r2rml#
+  foaf: http://xmlns.com/foaf/0.1/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  rev: http://purl.org/stuff/rev#
+  schema: http://schema.org/
+  dct: http://purl.org/dc/terms/
+  rml: http://semweb.mmlab.be/ns/rml#
+  ql: http://semweb.mmlab.be/ns/ql#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  vocab: https://group10.linkeddata.es/ontology/
+  res: https://group10.linkeddata.es/resource/
+  wgs84_pos: http://www.w3.org/2003/01/geo/wgs84_pos#
+
+mappings:
+
+  PermanentStation:
+    sources:
+      - [../data/DATOS-ESTACIONES-MARZO-2025-updated.csv~csv]
+    s: res:station/$(stationId)
+    po:
+      - [a, vocab:PermanentStation]
+      - [vocab:hasStationId, $(stationId), xsd:string]
+
+  TrafficObservation:
+    sources:
+      - [../data/DATOS-ESTACIONES-MARZO-2025-updated.csv~csv]
+    s: res:observation/$(id)
+    po:
+      - [a, vocab:TrafficObservation]
+      - [vocab:observationDate, $(date), xsd:date]
+      - p: vocab:observedAtStation
+        o:
+          value: res:station/$(stationId)
+          type: iri
+      - [vocab:direction, $(direction), xsd:integer]
+      - [vocab:nightTime, $(nightTime), xsd:boolean]
+      - [vocab:hour1,  $(hour1),  xsd:integer]
+      - [vocab:hour2,  $(hour2),  xsd:integer]
+      - [vocab:hour3,  $(hour3),  xsd:integer]
+      - [vocab:hour4,  $(hour4),  xsd:integer]
+      - [vocab:hour5,  $(hour5),  xsd:integer]
+      - [vocab:hour6,  $(hour6),  xsd:integer]
+      - [vocab:hour7,  $(hour7),  xsd:integer]
+      - [vocab:hour8,  $(hour8),  xsd:integer]
+      - [vocab:hour9,  $(hour9),  xsd:integer]
+      - [vocab:hour10, $(hour10), xsd:integer]
+      - [vocab:hour11, $(hour11), xsd:integer]
+      - [vocab:hour12, $(hour12), xsd:integer]
+
+  District:
+    sources:
+      - [../data/PUNTOS-PUBLICOS-RECARGA-VEHICULOS-ELECTRICOS-updated.csv~csv]
+    s: res:district/$(districtCode)
+    po:
+      - [a, vocab:District]
+      - [vocab:districtCode, $(districtCode), xsd:integer]
+      - [rdfs:label, $(district)]
+
+  ChargingPoint:
+    sources:
+      - [../data/PUNTOS-PUBLICOS-RECARGA-VEHICULOS-ELECTRICOS-updated.csv~csv]
+    s: res:charging-point/$(id)
+    po:
+      - [a, vocab:ChargingPoint]
+      - [vocab:hasPointId, $(id), xsd:string]
+      - [vocab:address, $(address), xsd:string]
+      - [vocab:site, $(site), xsd:string]
+      - [vocab:additionalInfo, $(additionalInfo), xsd:string]
+      - [vocab:equipmentNumber, $(equipmentNumber), xsd:integer]
+      - [vocab:features, $(features), xsd:string]
+      - [vocab:operator, $(operator), xsd:string]
+      - [vocab:openingHours, $(openingHours), xsd:string]
+      - [vocab:management, $(management), xsd:string]
+      - p: vocab:inDistrict
+        o:
+          value: res:district/$(districtCode)
+          type: iri
+      - [wgs84_pos:lat, $(utmY), xsd:decimal]
+      - [wgs84_pos:long, $(utmX), xsd:decimal]

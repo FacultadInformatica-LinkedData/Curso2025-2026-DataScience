@@ -1,0 +1,217 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix on: <http://smartcity.es/group03/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@base <http://smartcity.es/group03/mappings/> .
+
+<#centrosEducativos> a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "centros-educativos-updated-with-links.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://smartcity.es/group03/centros/{centro_codigo}" ;
+    rr:class on:CentroEducativo ;
+    rr:termType rr:IRI
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:codigoCentro ;
+    rr:objectMap [
+      rml:reference "centro_codigo" ;
+      rr:datatype xsd:integer
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:nombreCentro ;
+    rr:objectMap [
+      rml:reference "centro_nombre" ;
+      rr:datatype xsd:string
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:direccion ;
+    rr:objectMap [
+      rml:reference "direccion" ;
+      rr:datatype xsd:string
+    ]
+  ] ;
+  
+  rr:predicateObjectMap [
+    rr:predicate on:codigoPostal ;
+    rr:objectMap [
+      rml:reference "direccion_codigo_postal" ;
+      rr:datatype xsd:integer
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:telefono ;
+    rr:objectMap [
+      rml:reference "contacto_telefono1" ;
+      rr:datatype xsd:string
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:fax ;
+    rr:objectMap [
+      rml:reference "contacto_fax" ;
+      rr:datatype xsd:string
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:email ;
+    rr:objectMap [
+      rml:reference "contacto_email" ;
+      rr:datatype xsd:string
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:web ;
+    rr:objectMap [
+      rml:reference "contacto_web" ;
+      rr:datatype xsd:anyURI
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:latitud ;
+    rr:objectMap [
+      rml:reference "direccion_coor_x" ;
+      rr:datatype xsd:decimal
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:longitud ;
+    rr:objectMap [
+      rml:reference "direccion_coor_y" ;
+      rr:datatype xsd:decimal
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:situacion ;
+    rr:objectMap [
+      rml:reference "situación" ;
+      rr:datatype xsd:string
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:fechaConstitucion ;
+    rr:objectMap [
+      rml:reference "fecha_constitución" ;
+      rr:datatype xsd:date
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:tieneTitularidad ;
+    rr:objectMap [
+      rml:reference "centro_titularidad" ;
+      rr:datatype xsd:string
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:tieneTipoCentro ;
+    rr:objectMap [
+      rml:reference "centro_tipo_descripcion" ;
+      rr:datatype xsd:string
+    ]
+  ] ;
+  
+  rr:predicateObjectMap [
+    rr:predicate on:ubicadoEnMunicipio ;
+    rr:objectMap [
+      rr:parentTriplesMap <#municipios> ;
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:ubicadoEnDistrito ;
+    rr:objectMap [
+      rr:parentTriplesMap <#distritos> ;
+    ]
+  ] .
+
+<#municipios> a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "centros-educativos-updated-with-links.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://smartcity.es/group03/municipios/{municipio_codigo}" ;
+    rr:class on:Municipio ;
+    rr:termType rr:IRI
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:codigoMunicipio ;
+    rr:objectMap [
+      rml:reference "municipio_codigo" ;
+      rr:datatype xsd:integer
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:nombreMunicipio ;
+    rr:objectMap [
+      rml:reference "municipio_nombre" ;
+      rr:datatype xsd:string
+    ]
+  ] ;
+  
+  rr:predicateObjectMap [
+    rr:predicate owl:sameAs ;
+    rr:objectMap [
+      rml:reference "municipio_same_as" ;
+      rr:termType rr:IRI
+    ]
+  ] .
+
+<#distritos> a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "centros-educativos-updated-with-links.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+
+  rr:subjectMap [
+    rr:template "http://smartcity.es/group03/distritos/{distrito_codigo}" ;
+    rr:class on:Distrito ;
+    rr:termType rr:IRI
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:codigoDistrito ;
+    rr:objectMap [
+      rml:reference "distrito_codigo" ;
+      rr:datatype xsd:integer
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate on:nombreDistrito ;
+    rr:objectMap [
+      rml:reference "distrito_nombre" ;
+      rr:datatype xsd:string
+    ]
+  ] ;
+
+  rr:predicateObjectMap [
+    rr:predicate owl:sameAs ;
+    rr:objectMap [
+      rml:reference "distrito_same_as" ;
+      rr:termType rr:IRI
+    ]
+  ] .

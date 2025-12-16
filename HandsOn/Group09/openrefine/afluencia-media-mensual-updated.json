@@ -1,0 +1,67 @@
+[
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "mes",
+    "expression": "grel:value\n  .replace(\"Enero\",\"01\")\n  .replace(\"Febrero\",\"02\")\n  .replace(\"Marzo\",\"03\")\n  .replace(\"Abril\",\"04\")\n  .replace(\"Mayo\",\"05\")\n  .replace(\"Junio\",\"06\")\n  .replace(\"Julio\",\"07\")\n  .replace(\"Agosto\",\"08\")\n  .replace(\"Septiembre\",\"09\")\n  .replace(\"Octubre\",\"10\")\n  .replace(\"Noviembre\",\"11\")\n  .replace(\"Diciembre\",\"12\")",
+    "onError": "set-to-blank",
+    "newColumnName": "Mes",
+    "columnInsertIndex": 2,
+    "description": "Crear la columna Mes en el índice 2 basada en la columna mes usando la expresión grel:value\n  .replace(\"Enero\",\"01\")\n  .replace(\"Febrero\",\"02\")\n  .replace(\"Marzo\",\"03\")\n  .replace(\"Abril\",\"04\")\n  .replace(\"Mayo\",\"05\")\n  .replace(\"Junio\",\"06\")\n  .replace(\"Julio\",\"07\")\n  .replace(\"Agosto\",\"08\")\n  .replace(\"Septiembre\",\"09\")\n  .replace(\"Octubre\",\"10\")\n  .replace(\"Noviembre\",\"11\")\n  .replace(\"Diciembre\",\"12\")"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "mes",
+    "description": "Eliminar columna mes"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Mes",
+    "newColumnName": "mes",
+    "description": "Renombra la columna Mes a mes"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "mes",
+    "expression": "grel:\"--\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna mes usando la expresión grel:\"--\"+value"
+  },
+    {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "afluencia-media",
+          "expression": "value",
+          "columnName": "afluencia-media",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "0.0",
+                "l": "0.0"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  }
+]

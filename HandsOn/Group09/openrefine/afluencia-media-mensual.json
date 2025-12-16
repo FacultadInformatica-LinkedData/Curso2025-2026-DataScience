@@ -1,0 +1,473 @@
+[
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LÃ­nea 1"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Li­nea 1"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LÃ­nea 12"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Li­nea 12"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LÃ­nea 2"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea 2"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LÃ­nea 3"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Li­nea 3"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LÃ­nea 4"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Li­nea 4"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LÃ­nea 5"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Li­nea 5"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LÃ­nea 6"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea 6"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LÃ­nea 7"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea 7"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LÃ­nea 8"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Li­nea 8"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LÃ­nea 9"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea 9"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LÃ­nea A"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea A"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LÃ­nea B"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Li­nea B"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "linea",
+          "expression": "value",
+          "columnName": "linea",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Linea 2",
+                "l": "Linea 2"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna linea usando la expresión value.trim()"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Linea 1"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea 1"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Li­nea 1"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea 1"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Li­nea 12"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea 12"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Li­nea 3"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea 3"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Li­nea 4"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea 4"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Li­nea 5"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea 5"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Li­nea 8"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea 8"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "linea",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Li­nea B"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Linea B"
+      }
+    ],
+    "description": "Editar celdas en masa en columna linea"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "linea",
+    "expression": "grel:value.replace(\" \", \"-\").substring(0,1).toLowercase() + value.replace(\" \", \"-\").substring(1)",
+    "onError": "set-to-blank",
+    "newColumnName": "linea-uri",
+    "columnInsertIndex": 3,
+    "description": "Crear la columna linea-uri en el índice 3 basada en la columna linea usando la expresión grel:value.replace(\" \", \"-\").substring(0,1).toLowercase() + value.replace(\" \", \"-\").substring(1)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ESTACION_URI",
+    "expression": "grel:value.replace(\"_\", \"-\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna ESTACION_URI usando la expresión grel:value.replace(\"_\", \"-\")"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "ESTACION_URI",
+    "newColumnName": "estacion-uri",
+    "description": "Renombra la columna ESTACION_URI a estacion-uri"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "afluencia_media",
+    "newColumnName": "afluencia-media",
+    "description": "Renombra la columna afluencia_media a afluencia-media"
+  }
+]

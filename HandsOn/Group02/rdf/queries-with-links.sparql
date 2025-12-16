@@ -1,0 +1,12 @@
+PREFIX ns: <https://datos.grupo0225-cdia.org/ontology/bicimad#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+# Fechas y su entidad de Wikidata enlazada
+SELECT ?fecha ?wikidata
+WHERE {
+  ?m a ns:MedicionDiaria ;
+     ns:fecha ?fecha ;
+     owl:sameAs ?wikidata .
+}
+ORDER BY ?fecha
+LIMIT 50

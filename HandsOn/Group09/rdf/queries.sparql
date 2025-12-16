@@ -1,0 +1,91 @@
+PREFIX metro: <https://grupo09.github.io/HandsOn/ontology#>
+PREFIX data:  <https://grupo09.github.io/HandsOn/data/>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+
+# --- CONSULTAS PARA VERIFICAR INFORMACIÓN RDF ---
+
+# Número tripletas
+SELECT (COUNT(*) AS ?totalTripletas)
+WHERE {
+  ?s ?p ?o .
+}
+
+# Número de elementos en clases
+SELECT ?tipo (COUNT(?instancia) AS ?num)
+WHERE {
+  ?instancia a ?tipo .
+}
+GROUP BY ?tipo
+ORDER BY DESC(?num)
+
+# Verificar relaciones
+SELECT ?linea ?estacion
+WHERE {
+  ?linea a metro:Linea ;
+         metro:tieneEstacion ?estacion .
+}
+
+LIMIT 10
+
+SELECT ?estacion ?alcaldia ?tipo ?linea
+WHERE {
+  ?estacion a metro:Estacion ;
+             metro:estaEnAlcaldia ?alcaldia ;
+             metro:tieneTipo ?tipo ;
+             metro:deLinea ?linea .
+}
+LIMIT 10
+
+SELECT ?medicion ?anio ?mes ?afluencia ?estacion ?linea
+WHERE {
+  ?medicion a metro:MedicionAfluencia ;
+            metro:anioMedicion ?anio ;
+            metro:mesMedicion ?mes ;
+            metro:afluenciaMedicion ?afluencia ;
+            metro:deEstacion ?estacion ;
+            metro:deLinea ?linea .
+}
+LIMIT 10
+
+# Verificar estaciones con mediciones
+SELECT (COUNT(DISTINCT ?estacion) AS ?numEstacionesConAfluencia)
+WHERE {
+  ?m a metro:MedicionAfluencia ;
+     metro:deEstacion ?estacion .
+}
+
+# Verificar URIS
+SELECT ?s ?p ?o
+WHERE {
+  ?s ?p ?o .
+  FILTER(isLiteral(?o))
+  FILTER(STRSTARTS(STR(?p), STR(metro:)))  # propiedades de tu ontología
+}
+LIMIT 10
+
+
+# --- CONSULTAS ADICIONALES ---
+
+
+# Estaciones con línea y alcaldía
+SELECT ?station ?label ?line ?alcaldia
+WHERE {
+  ?station a metro:Station ;
+           rdfs:label ?label ;
+           metro:belongsToLine ?line ;
+           metro:locatedIn ?alcaldia .
+}
+ORDER BY ?line ?label
+LIMIT 50
+
+# Estaciones por línea (número de estaciones por línea)
+SELECT ?line (COUNT(DISTINCT ?station) AS ?numStations)
+WHERE {
+  ?station a metro:Station ;
+           metro:belongsToLine ?line .
+}
+GROUP BY ?line
+ORDER BY ?line

@@ -3,81 +3,73 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 
-@prefix metro: <https://grupoXX.github.io/HandsOn/ontology#> .
-@prefix data:  <https://grupoXX.github.io/HandsOn/data/> .
+@prefix metro: <https://grupo09.github.io/HandsOn/ontology#> .
+@prefix data:  <https://grupo09.github.io/HandsOn/data/> .
 
 
 
+# Sistema de transporte
 data:sistema/STC_Metro a metro:SistemaTransporte ;
   metro:nombreSistema "STC Metro" .
 
-data:tipo/Terminal_Transbordo a metro:TipoEstacion ;
+
+# Tipos de estación 
+data:tipo/terminal-transbordo a metro:TipoEstacion ;
   rdfs:label "Terminal / Transbordo"@es .
-data:tipo/Transbordo a metro:TipoEstacion ;
-  rdfs:label "Transbordo"@es .
-data:tipo/Intermedia a metro:TipoEstacion ;
+
+data:tipo/intermedia a metro:TipoEstacion ;
   rdfs:label "Intermedia"@es .
 
-data:alcaldia/Venustiano_Carranza a metro:Alcaldia ;
+
+# Alcaldía 
+data:alcaldia/venustiano-carranza a metro:Alcaldia ;
   metro:nombreAlcaldia "Venustiano Carranza" .
-data:alcaldia/Cuauhtemoc a metro:Alcaldia ;
-  metro:nombreAlcaldia "Cuauhtémoc" .
 
 
 
-data:linea/01 a metro:Linea ;
+# Línea 1 
+data:linea/linea-1 a metro:Linea ;
   metro:codigoLinea "01" ;
-  metro:perteneceASistema data:sistema/STC_Metro .
+  metro:perteneceASistema data:sistema/STC_Metro ;
+  metro:tieneEstacion
+      data:estacion/STC0101 ,
+      data:estacion/STC0102 .
 
 
-
+# Estaciones de ejemplo
 data:estacion/STC0101 a metro:Estacion ;
   metro:nombreEstacion "Pantitlán" ;
   metro:numeroEnLinea 1 ;
   metro:claveEstacion "STC0101" ;
-  metro:codigoEOD 5014 ;
   metro:anioInauguracion "1984"^^xsd:gYear ;
-  metro:estaEnAlcaldia data:alcaldia/Venustiano_Carranza ;
-  metro:tieneTipo data:tipo/Terminal_Transbordo .
+  metro:estaEnAlcaldia data:alcaldia/venustiano-carranza ;
+  metro:tieneTipo data:tipo/terminal-transbordo .
 
 data:estacion/STC0102 a metro:Estacion ;
   metro:nombreEstacion "Zaragoza" ;
   metro:numeroEnLinea 2 ;
   metro:claveEstacion "STC0102" ;
-  metro:codigoEOD 5020 ;
   metro:anioInauguracion "1969"^^xsd:gYear ;
-  metro:estaEnAlcaldia data:alcaldia/Venustiano_Carranza ;
-  metro:tieneTipo data:tipo/Intermedia .
-
-data:estacion/STC0110 a metro:Estacion ;
-  metro:nombreEstacion "Pino Suárez" ;
-  metro:numeroEnLinea 10 ;
-  metro:claveEstacion "STC0110" ;
-  metro:codigoEOD 5015 ;
-  metro:anioInauguracion "1969"^^xsd:gYear ;
-  metro:estaEnAlcaldia data:alcaldia/Cuauhtemoc ;
-  metro:tieneTipo data:tipo/Transbordo .
-
-data:linea/01
-  metro:tieneEstacion data:estacion/STC0101 , data:estacion/STC0102 , data:estacion/STC0110 .
+  metro:estaEnAlcaldia data:alcaldia/venustiano-carranza ;
+  metro:tieneTipo data:tipo/intermedia .
 
 
-data:afluencia/2010-01-01-L01-Zaragoza a metro:MedicionAfluencia ;
-  metro:fechaMedicion "2010-01-01"^^xsd:date ;
+
+# Mediciones de afluencia 
+data:afluencia/2010-Abril-linea-1-pantitlan a metro:MedicionAfluencia ;
   metro:anio "2010"^^xsd:gYear ;
-  metro:mesNombre "Enero" ;
-  metro:afluencia 20227 ;
-  metro:lineaTexto "Linea 1" ;
-  metro:estacionTexto "Zaragoza" ;
-  metro:deLinea data:linea/01 ;
-  metro:deEstacion data:estacion/STC0102 .
-
-data:afluencia/2010-01-01-L01-Pantitlan a metro:MedicionAfluencia ;
-  metro:fechaMedicion "2010-01-01"^^xsd:date ;
-  metro:anio "2010"^^xsd:gYear ;
-  metro:mesNombre "Enero" ;
-  metro:afluencia 17042 ;
+  metro:mesNombre "Abril" ;
+  metro:afluencia 51040 ;
   metro:lineaTexto "Linea 1" ;
   metro:estacionTexto "Pantitlán" ;
-  metro:deLinea data:linea/01 ;
+  metro:deLinea data:linea/linea-1 ;
   metro:deEstacion data:estacion/STC0101 .
+
+data:afluencia/2010-Abril-linea-1-zaragoza a metro:MedicionAfluencia ;
+  metro:anio "2010"^^xsd:gYear ;
+  metro:mesNombre "Abril" ;
+  metro:afluencia 52683 ;
+  metro:lineaTexto "Linea 1" ;
+  metro:estacionTexto "Zaragoza" ;
+  metro:deLinea data:linea/linea-1 ;
+  metro:deEstacion data:estacion/STC0102 .

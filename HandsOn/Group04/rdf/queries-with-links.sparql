@@ -1,0 +1,82 @@
+PREFIX ns: <http://my.domain/Alquiler#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+#Query 1: Renta Media entre 500€ y 700€
+SELECT DISTINCT ?uri ?nombre ?media
+WHERE {
+  ?obs ns:barrioUri ?uri ;
+       ns:avgRent ?media ;
+       ns:locatedIn ?barrioEnt .
+  ?barrioEnt ns:name ?nombre .
+  FILTER (?media >= 500 && ?media <= 700)
+}
+ORDER BY ?media
+
+
+#Query 2: Pisos de menos de 80m² con alquileres máximos de más de 800€.
+SELECT DISTINCT ?uri ?nombre ?metros ?maxima
+WHERE {
+  ?obs ns:barrioUri ?uri ;
+       ns:sizeInMeters ?metros ;
+       ns:maxRent ?maxima ;
+       ns:locatedIn ?barrioEnt .
+       
+  ?barrioEnt ns:name ?nombre .
+
+  FILTER (?metros < 80 && ?maxima > 800)
+}
+
+
+#Query 3: Barrios más caros por metro cuadrado en 2020
+SELECT ?uri ?nombre ?precioM2
+WHERE {
+  ?obs ns:barrioUri ?uri ;
+       ns:year 2020 ;             # Cambio: anyo -> year
+       ns:pricePerM2 ?precioM2 ;  # Cambio: euros_m2 -> pricePerM2
+       ns:locatedIn ?barrioEnt .
+       
+  ?barrioEnt ns:name ?nombre .
+}
+ORDER BY DESC(?precioM2)
+
+
+#Query 4: Barrios con media de más de 110 m² y más de 3 dormitorios.
+SELECT ?uri ?nombre ?m2 ?dormitorios
+WHERE {
+  ?obs ns:barrioUri ?uri ;
+       ns:sizeInMeters ?m2 ;
+       ns:bedrooms ?dormitorios ;
+       ns:locatedIn ?barrioEnt .
+       
+  ?barrioEnt ns:name ?nombre .
+  FILTER (?m2 > 110 && xsd:float(?dormitorios) >= 3.0)
+}
+
+
+#Query 5 Barrios con más de dos baños de media
+SELECT DISTINCT ?uri ?nombre ?banyos
+WHERE {
+  ?obs ns:barrioUri ?uri ;
+       ns:bathrooms ?banyos ;
+       ns:locatedIn ?barrioEnt .
+       
+  ?barrioEnt ns:name ?nombre .
+
+  FILTER (xsd:float(?banyos) >= 2)
+}
+ORDER BY DESC(?banyos)
+
+#Query 6: Barrios con más de 50 viviendas disponibles en un trimestre
+SELECT ?uri ?nombre ?num ?anyo ?trimestre
+WHERE {
+  ?obs ns:barrioUri ?uri ;
+       ns:numberOfDwellings ?num ; # Cambio: num_viviendas -> numberOfDwellings
+       ns:year ?anyo ;             # Cambio: anyo -> year
+       ns:quarter ?trimestre ;     # Cambio: trimestre -> quarter
+       ns:locatedIn ?barrioEnt .
+       
+  ?barrioEnt ns:name ?nombre .
+
+  FILTER (?num > 50)
+}
+ORDER BY DESC(?num)

@@ -1,0 +1,132 @@
+fecha,cod_municipio,municipio,cod_distrito,distrito,cod_barrio,barrio,wikidata_uri,num_personas,num_personas_hombres,num_personas_mujeres
+1 de enero de 2024,28079,Madrid,1,Centro,11,Palacio,https://www.wikidata.org/wiki/Q2136510,24.332,12.008,12.324
+1 de enero de 2024,28079,Madrid,1,Centro,12,Embajadores,https://www.wikidata.org/wiki/Q2449844,48.590,25.475,23.115
+1 de enero de 2024,28079,Madrid,1,Centro,13,Cortes,https://www.wikidata.org/wiki/Q2535637,11.171,5.523,5.648
+1 de enero de 2024,28079,Madrid,1,Centro,14,Justicia,https://www.wikidata.org/wiki/Q1992319,18.739,9.497,9.242
+1 de enero de 2024,28079,Madrid,1,Centro,15,Universidad,https://www.wikidata.org/wiki/Q10387767,34.073,16.850,17.223
+1 de enero de 2024,28079,Madrid,1,Centro,16,Sol,https://www.wikidata.org/wiki/Q2465181,8.506,4.381,4.125
+1 de enero de 2024,28079,Madrid,2,Arganzuela,21,Imperial,https://www.wikidata.org/wiki/Q3773740,22.668,10.538,12.130
+1 de enero de 2024,28079,Madrid,2,Arganzuela,22,Las Acacias,https://www.wikidata.org/wiki/Q3319190,36.475,16.823,19.652
+1 de enero de 2024,28079,Madrid,2,Arganzuela,23,La Chopera,https://www.wikidata.org/wiki/Q3773750,20.256,9.242,11.014
+1 de enero de 2024,28079,Madrid,2,Arganzuela,24,Legazpi,https://www.wikidata.org/wiki/Q3773990,19.858,9.712,10.146
+1 de enero de 2024,28079,Madrid,2,Arganzuela,25,Las Delicias,https://www.wikidata.org/wiki/Q3773736,29.465,13.888,15.577
+1 de enero de 2024,28079,Madrid,2,Arganzuela,26,Palos de la Frontera,https://www.wikidata.org/wiki/Q521009,25.790,12.112,13.678
+1 de enero de 2024,28079,Madrid,2,Arganzuela,27,Atocha,https://www.wikidata.org/wiki/Q3814594,2.047,996,1.051
+1 de enero de 2024,28079,Madrid,3,Retiro,31,Pacífico,https://www.wikidata.org/wiki/Q3773753,33.743,15.154,18.589
+1 de enero de 2024,28079,Madrid,3,Retiro,32,Adelfas,https://www.wikidata.org/wiki/Q3774001,19.025,8.854,10.171
+1 de enero de 2024,28079,Madrid,3,Retiro,33,Estrella,https://www.wikidata.org/wiki/Q3773738,22.774,10.454,12.320
+1 de enero de 2024,28079,Madrid,3,Retiro,34,Ibiza,https://www.wikidata.org/wiki/Q15249910,22.010,9.723,12.287
+1 de enero de 2024,28079,Madrid,3,Retiro,35,Jerónimos,https://www.wikidata.org/wiki/Q10306766,6.934,3.245,3.689
+1 de enero de 2024,28079,Madrid,3,Retiro,36,Niño Jesús,https://www.wikidata.org/wiki/Q3773746,15.271,6.909,8.362
+1 de enero de 2024,28079,Madrid,4,Salamanca,41,Recoletos,https://www.wikidata.org/wiki/Q3814551,15.845,7.136,8.709
+1 de enero de 2024,28079,Madrid,4,Salamanca,42,Goya,https://www.wikidata.org/wiki/Q3814578,30.381,13.219,17.162
+1 de enero de 2024,28079,Madrid,4,Salamanca,43,Fuente del Berro,https://www.wikidata.org/wiki/Q3814564,21.449,9.433,12.016
+1 de enero de 2024,28079,Madrid,4,Salamanca,44,La Guindalera,https://www.wikidata.org/wiki/Q3814559,42.905,19.531,23.374
+1 de enero de 2024,28079,Madrid,4,Salamanca,45,Lista,https://www.wikidata.org/wiki/Q4779,21.506,9.315,12.191
+1 de enero de 2024,28079,Madrid,4,Salamanca,46,Castellana,https://www.wikidata.org/wiki/Q4781,17.692,7.740,9.952
+1 de enero de 2024,28079,Madrid,5,Chamartín,51,El Viso,https://www.wikidata.org/wiki/Q4778,17.545,7.917,9.628
+1 de enero de 2024,28079,Madrid,5,Chamartín,52,Prosperidad,https://www.wikidata.org/wiki/Q4776,36.961,16.530,20.431
+1 de enero de 2024,28079,Madrid,5,Chamartín,53,Ciudad Jardín,https://www.wikidata.org/wiki/Q3773744,18.928,8.402,10.526
+1 de enero de 2024,28079,Madrid,5,Chamartín,54,Hispanoamérica,https://www.wikidata.org/wiki/Q3814573,32.014,14.453,17.561
+1 de enero de 2024,28079,Madrid,5,Chamartín,55,Nueva España,https://www.wikidata.org/wiki/Q10338128,25.043,11.312,13.731
+1 de enero de 2024,28079,Madrid,5,Chamartín,56,Castilla,https://www.wikidata.org/wiki/Q3813735,17.620,8.246,9.374
+1 de enero de 2024,28079,Madrid,6,Tetuán,61,Bellas Vistas,https://www.wikidata.org/wiki/Q11908929,30.531,14.018,16.513
+1 de enero de 2024,28079,Madrid,6,Tetuán,62,Cuatro Caminos,https://www.wikidata.org/wiki/Q5824684,35.723,16.020,19.703
+1 de enero de 2024,28079,Madrid,6,Tetuán,63,Castillejos,https://www.wikidata.org/wiki/Q11913212,21.256,9.619,11.637
+1 de enero de 2024,28079,Madrid,6,Tetuán,64,Almenara,https://www.wikidata.org/wiki/Q2265427,24.090,11.272,12.818
+1 de enero de 2024,28079,Madrid,6,Tetuán,65,Valdeacederas,https://www.wikidata.org/wiki/Q10388711,27.798,13.024,14.774
+1 de enero de 2024,28079,Madrid,6,Tetuán,66,Berruguete,https://www.wikidata.org/wiki/Q11909208,26.813,12.119,14.694
+1 de enero de 2024,28079,Madrid,7,Chamberí,71,Gaztambide,https://www.wikidata.org/wiki/Q10288587,23.533,10.421,13.112
+1 de enero de 2024,28079,Madrid,7,Chamberí,72,Arapiles,https://www.wikidata.org/wiki/Q10856744,24.931,11.111,13.820
+1 de enero de 2024,28079,Madrid,7,Chamberí,73,Trafalgar,https://www.wikidata.org/wiki/Q10384027,25.328,11.491,13.837
+1 de enero de 2024,28079,Madrid,7,Chamberí,74,Almagro,https://www.wikidata.org/wiki/Q10954432,19.992,8.841,11.151
+1 de enero de 2024,28079,Madrid,7,Chamberí,75,Ríos Rosas,https://www.wikidata.org/wiki/Q10366270,27.962,12.261,15.701
+1 de enero de 2024,28079,Madrid,7,Chamberí,76,Vallehermoso,https://www.wikidata.org/wiki/Q6122685,20.238,8.793,11.445
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,81,El Pardo,https://www.wikidata.org/wiki/Q3314337,3.460,1.729,1.731
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,82,Fuentelarreina,https://www.wikidata.org/wiki/Q10286156,3.498,1.591,1.907
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,83,Peñagrande,https://www.wikidata.org/wiki/Q3319582,44.844,20.857,23.987
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,84,El Pilar,https://www.wikidata.org/wiki/Q3773964,46.543,21.173,25.370
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,85,La Paz,https://www.wikidata.org/wiki/Q5869740,32.343,15.008,17.335
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,86,Valverde,https://www.wikidata.org/wiki/Q31132,66.870,31.990,34.880
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,87,Mirasierra,https://www.wikidata.org/wiki/Q31134,36.744,17.679,19.065
+1 de enero de 2024,28079,Madrid,8,Fuencarral-El Pardo,88,El Goloso,https://www.wikidata.org/wiki/Q10271137,19.596,9.694,9.902
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,91,Casa de Campo,https://www.wikidata.org/wiki/Q16302441,12.946,6.047,6.899
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,92,Argüelles,https://www.wikidata.org/wiki/Q64874,24.987,11.492,13.495
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,93,Ciudad Universitaria,https://www.wikidata.org/wiki/Q3319235,16.876,7.835,9.041
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,94,Valdezarza,https://www.wikidata.org/wiki/Q10388728,31.614,14.578,17.036
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,95,Valdemarín,https://www.wikidata.org/wiki/Q10388725,7.451,3.491,3.960
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,96,El Plantío,https://www.wikidata.org/wiki/Q3773742,3.156,1.467,1.689
+1 de enero de 2024,28079,Madrid,9,Moncloa-Aravaca,97,Aravaca,https://www.wikidata.org/wiki/Q3314682,28.193,13.211,14.982
+1 de enero de 2024,28079,Madrid,10,Latina,101,Los Cármenes,https://www.wikidata.org/wiki/Q10319792,18.423,8.757,9.666
+1 de enero de 2024,28079,Madrid,10,Latina,102,Puerta del Ángel,https://www.wikidata.org/wiki/Q31142,45.513,21.325,24.188
+1 de enero de 2024,28079,Madrid,10,Latina,103,Lucero,https://www.wikidata.org/wiki/Q31162,38.072,17.835,20.237
+1 de enero de 2024,28079,Madrid,10,Latina,104,Aluĉo,https://www.wikidata.org/wiki/Q31140,68.973,31.619,37.354
+1 de enero de 2024,28079,Madrid,10,Latina,105,Campamento,https://www.wikidata.org/wiki/Q31169,20.657,9.511,11.146
+1 de enero de 2024,28079,Madrid,10,Latina,106,Cuatro Vientos,https://www.wikidata.org/wiki/Q5191881,6.417,3.192,3.225
+1 de enero de 2024,28079,Madrid,10,Latina,107,Las Águilas,https://www.wikidata.org/wiki/Q5971372,52.341,24.198,28.143
+1 de enero de 2024,28079,Madrid,11,Carabanchel,111,Comillas,https://www.wikidata.org/wiki/Q955844,23.466,10.873,12.593
+1 de enero de 2024,28079,Madrid,11,Carabanchel,112,Opañel,https://www.wikidata.org/wiki/Q3813756,35.513,16.394,19.119
+1 de enero de 2024,28079,Madrid,11,Carabanchel,113,San Isidro,https://www.wikidata.org/wiki/Q3813733,42.184,19.962,22.222
+1 de enero de 2024,28079,Madrid,11,Carabanchel,114,Vista Alegre,https://www.wikidata.org/wiki/Q3813741,50.153,23.083,27.070
+1 de enero de 2024,28079,Madrid,11,Carabanchel,115,Puerta Bonita,https://www.wikidata.org/wiki/Q3813762,38.781,18.360,20.421
+1 de enero de 2024,28079,Madrid,11,Carabanchel,116,Buenavista,https://www.wikidata.org/wiki/Q953929,51.040,24.740,26.300
+1 de enero de 2024,28079,Madrid,11,Carabanchel,117,Abrantes,https://www.wikidata.org/wiki/Q3773949,33.269,15.585,17.684
+1 de enero de 2024,28079,Madrid,12,Usera,121,Orcasitas,https://www.wikidata.org/wiki/Q3773941,23.482,11.010,12.472
+1 de enero de 2024,28079,Madrid,12,Usera,122,Orcasur,https://www.wikidata.org/wiki/Q10341270,14.851,7.207,7.644
+1 de enero de 2024,28079,Madrid,12,Usera,123,San Fermín,https://www.wikidata.org/wiki/Q71758,24.510,11.716,12.794
+1 de enero de 2024,28079,Madrid,12,Usera,124,Almendrales,https://www.wikidata.org/wiki/Q9604761,23.927,11.389,12.538
+1 de enero de 2024,28079,Madrid,12,Usera,125,Moscardó,https://www.wikidata.org/wiki/Q11937679,27.873,13.169,14.704
+1 de enero de 2024,28079,Madrid,12,Usera,126,Zofío,https://www.wikidata.org/wiki/Q71751,15.298,7.166,8.132
+1 de enero de 2024,28079,Madrid,12,Usera,127,Pradolongo,https://www.wikidata.org/wiki/Q10352360,19.172,9.144,10.028
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,131,Entrevías,https://www.wikidata.org/wiki/Q71756,36.851,17.711,19.140
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,132,San Diego,https://www.wikidata.org/wiki/Q11946851,49.339,23.856,25.483
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,133,Palomeras Bajas,https://www.wikidata.org/wiki/Q10343902,41.755,19.533,22.222
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,134,Palomeras Sureste,https://www.wikidata.org/wiki/Q10343901,44.396,21.125,23.271
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,135,Portazgo,https://www.wikidata.org/wiki/Q18005921,29.746,13.960,15.786
+1 de enero de 2024,28079,Madrid,13,Puente de Vallecas,136,Numancia,https://www.wikidata.org/wiki/Q10338144,50.961,24.345,26.616
+1 de enero de 2024,28079,Madrid,14,Moratalaz,141,Pavones,https://www.wikidata.org/wiki/Q71760,9.208,4.240,4.968
+1 de enero de 2024,28079,Madrid,14,Moratalaz,142,Horcajo,https://www.wikidata.org/wiki/Q10293641,6.421,3.069,3.352
+1 de enero de 2024,28079,Madrid,14,Moratalaz,143,Marroquina,https://www.wikidata.org/wiki/Q11935636,26.378,12.105,14.273
+1 de enero de 2024,28079,Madrid,14,Moratalaz,144,Media Legua,https://www.wikidata.org/wiki/Q9031035,17.787,8.073,9.714
+1 de enero de 2024,28079,Madrid,14,Moratalaz,145,Fontarrón,https://www.wikidata.org/wiki/Q10283284,18.000,8.189,9.811
+1 de enero de 2024,28079,Madrid,14,Moratalaz,146,Vinateros,https://www.wikidata.org/wiki/Q10391533,17.329,7.736,9.593
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,151,Ventas,https://www.wikidata.org/wiki/Q71762,52.223,23.931,28.292
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,152,Pueblo Nuevo,https://www.wikidata.org/wiki/Q71753,65.874,30.575,35.299
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,153,Quintana,https://www.wikidata.org/wiki/Q71810,26.762,12.145,14.617
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,154,Concepción,https://www.wikidata.org/wiki/Q11915156,22.256,10.138,12.118
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,155,San Pascual,https://www.wikidata.org/wiki/Q165612,19.019,8.670,10.349
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,156,San Juan Bautista,https://www.wikidata.org/wiki/Q165609,13.120,6.159,6.961
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,157,Colina,https://www.wikidata.org/wiki/Q18475981,6.810,3.063,3.747
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,158,Atalaya,https://www.wikidata.org/wiki/Q14193114,1.672,717,955
+1 de enero de 2024,28079,Madrid,15,Ciudad Lineal,159,Costillares,https://www.wikidata.org/wiki/Q331385,22.299,10.438,11.861
+1 de enero de 2024,28079,Madrid,16,Hortaleza,161,Palomas,https://www.wikidata.org/wiki/Q390460,7.018,3.442,3.576
+1 de enero de 2024,28079,Madrid,16,Hortaleza,162,La Piovera,https://www.wikidata.org/wiki/Q5964851,15.455,7.422,8.033
+1 de enero de 2024,28079,Madrid,16,Hortaleza,163,Canillas,https://www.wikidata.org/wiki/Q9694341,40.440,18.793,21.647
+1 de enero de 2024,28079,Madrid,16,Hortaleza,164,Pinar del Rey,https://www.wikidata.org/wiki/Q10349788,53.313,24.503,28.810
+1 de enero de 2024,28079,Madrid,16,Hortaleza,165,Apóstol Santiago,https://www.wikidata.org/wiki/Q11906303,15.842,7.541,8.301
+1 de enero de 2024,28079,Madrid,16,Hortaleza,166,Valdefuentes,https://www.wikidata.org/wiki/Q10388714,73.114,35.738,37.376
+1 de enero de 2024,28079,Madrid,17,Villaverde,171,"Villaverde Alto, Casco Histórico de Villaverde",https://www.wikidata.org/wiki/Q390435,50.266,24.101,26.165
+1 de enero de 2024,28079,Madrid,17,Villaverde,172,San Cristóbal,https://www.wikidata.org/wiki/Q390457,18.870,9.411,9.459
+1 de enero de 2024,28079,Madrid,17,Villaverde,173,Butarque,https://www.wikidata.org/wiki/Q390453,22.375,10.810,11.565
+1 de enero de 2024,28079,Madrid,17,Villaverde,174,Los Rosales,https://www.wikidata.org/wiki/Q10319807,39.648,19.005,20.643
+1 de enero de 2024,28079,Madrid,17,Villaverde,175,Los Ángeles,https://www.wikidata.org/wiki/Q390462,36.793,17.236,19.557
+1 de enero de 2024,28079,Madrid,18,Villa de Vallecas,181,Casco Histórico de Vallecas,https://www.wikidata.org/wiki/Q16544370,41.984,20.266,21.718
+1 de enero de 2024,28079,Madrid,18,Villa de Vallecas,182,Santa Eugenia,https://www.wikidata.org/wiki/Q390463,24.168,11.570,12.598
+1 de enero de 2024,28079,Madrid,18,Villa de Vallecas,183,Ensanche de Vallecas,https://www.wikidata.org/wiki/Q3847485,56.185,27.317,28.868
+1 de enero de 2024,28079,Madrid,19,Vicálvaro,191,Casco Histórico de Vicálvaro,https://www.wikidata.org/wiki/Q16544374,37.018,17.760,19.258
+1 de enero de 2024,28079,Madrid,19,Vicálvaro,192,Valdebernardo,https://www.wikidata.org/wiki/Q43025212,17.693,8.425,9.268
+1 de enero de 2024,28079,Madrid,19,Vicálvaro,193,Valderrivas,https://www.wikidata.org/wiki/Q43025770,17.868,8.650,9.218
+1 de enero de 2024,28079,Madrid,19,Vicálvaro,194,El Cañaveral,https://www.wikidata.org/wiki/Q5821309,17.193,8.655,8.538
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,201,Simancas,https://www.wikidata.org/wiki/Q10371626,30.158,14.293,15.865
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,202,Hellín,https://www.wikidata.org/wiki/Q10294546,9.965,4.590,5.375
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,203,Amposta,https://www.wikidata.org/wiki/Q11905392,9.749,4.564,5.185
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,204,Arcos,https://www.wikidata.org/wiki/Q9627876,26.280,12.416,13.864
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,205,Rosas,https://www.wikidata.org/wiki/Q18880469,30.838,14.734,16.104
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,206,Rejas,https://www.wikidata.org/wiki/Q10359029,18.196,8.867,9.329
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,207,Canillejas,https://www.wikidata.org/wiki/Q663013,29.943,13.922,16.021
+1 de enero de 2024,28079,Madrid,20,San Blas-Canillejas,208,Salvador,https://www.wikidata.org/wiki/Q10367095,11.454,5.437,6.017
+1 de enero de 2024,28079,Madrid,21,Barajas,211,Alameda de Osuna,https://www.wikidata.org/wiki/Q760737,19.875,9.484,10.391
+1 de enero de 2024,28079,Madrid,21,Barajas,212,Aeropuerto,https://www.wikidata.org/wiki/Q9586697,1.949,990,959
+1 de enero de 2024,28079,Madrid,21,Barajas,213,Casco Histórico de Barajas,https://www.wikidata.org/wiki/Q9701730,7.625,3.658,3.967
+1 de enero de 2024,28079,Madrid,21,Barajas,214,Timón,https://www.wikidata.org/wiki/Q10382570,12.400,5.878,6.522
+1 de enero de 2024,28079,Madrid,21,Barajas,215,Corralejos,https://www.wikidata.org/wiki/Q10260772,7.763,3.827,3.936

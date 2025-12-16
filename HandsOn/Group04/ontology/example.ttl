@@ -1,0 +1,23 @@
+@prefix ns: <http://my.domain/Alquiler#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Ejemplo de instanciación: Datos del Barrio Alipark en el Trimestre 2 de 2012
+
+<http://smartcitydata.es/Alquiler/resource/Alipark/2012/2> 
+    a ns:Viviendas_en_Alquiler ;
+    
+    ns:barrio "Alipark"^^xsd:string ;
+    ns:Año "2012"^^xsd:integer ;
+    ns:Trimestre "2"^^xsd:integer ;
+
+    ns:Nº_Viviendas "4"^^xsd:integer ;
+    ns:m2 "103.0"^^xsd:float ;
+    ns:Dormitorios "3.0"^^xsd:float ;
+    ns:Baños "1.8"^^xsd:float ;
+    
+    ns:Renta_min "375"^^xsd:integer ;
+    ns:Renta_med "465"^^xsd:integer ;
+    ns:Renta_max "520"^^xsd:integer ;
+    ns:Eurosxm2 "4.6"^^xsd:float ;
+    ns:Desviacion_tipica "63.0"^^xsd:float .

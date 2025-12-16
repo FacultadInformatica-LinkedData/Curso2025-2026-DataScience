@@ -1,0 +1,20 @@
+prefixes:
+  ns:  "https://datos.grupo0225-cdia.org/ontology/bicimad#"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+
+mappings:
+  MedicionDiariaMapping:
+    sources:
+      - access: bicimad.csv
+        referenceFormulation: csv
+    s: "https://datos.grupo0225-cdia.org/resource/bicimad/medicion/$(fecha)"
+    po:
+      - [a, ns:MedicionDiaria]
+      - [ns:fecha, $(fecha), xsd:date]
+      - [ns:horasTotalesDisponibilidadBicicletasEnAnclajes, $(horasTotalesDeDisponibilidad), xsd:decimal]
+      - [ns:horasTotalesUsosBicicletas, $(horasTotalesDeUso), xsd:decimal]
+      - [ns:mediaBicicletasDisponibles, $(bicicletasMediasDisponibilidad), xsd:decimal]
+      - [ns:totalHorasServicioBicicletas, $(horasTtotalesDeServicio), xsd:decimal]
+      - [ns:totalUsos, $(totalUsoAlDia), xsd:integer]
+      - [ns:usosAbonadoAnual, $(usoPorAbandonadosAnuales), xsd:integer]
+      - [ns:usosAbonadoOcasional, $(usoPorAbandonadosOcasionales), xsd:integer]

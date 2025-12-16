@@ -1,0 +1,619 @@
+prefixes:
+  rr:   http://www.w3.org/ns/r2rml#
+  rml:  http://semweb.mmlab.be/ns/rml#
+  ql:   http://semweb.mmlab.be/ns/ql#
+  aq:   https://carloscumbrado.github.io/HandsOn/group07/ontology/airquality#
+  xsd:  http://www.w3.org/2001/XMLSchema#
+  rdf:  http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+
+mappings:
+
+  Stations:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)
+    po:
+      - [a, aq:Station]
+      - [rdfs:label, $(stationCode), xsd:string]
+
+  Pollutants:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)
+    po:
+      - [a, aq:Pollutant]
+      - [rdfs:label, $(pollutantCode), xsd:string]
+      - [owl:sameAs, $(pollutantWikidataURI_full)~iri]
+
+  Observations_D01:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-01
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-01", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-01", xsd:date]
+      - [aq:hasValue, $(D01), xsd:float]
+
+  Observations_D02:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-02
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-02", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-02", xsd:date]
+      - [aq:hasValue, $(D02), xsd:float]
+
+  Observations_D03:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-03
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-03", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-03", xsd:date]
+      - [aq:hasValue, $(D03), xsd:float]
+
+  Observations_D04:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-04
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-04", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-04", xsd:date]
+      - [aq:hasValue, $(D04), xsd:float]
+
+  Observations_D05:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-05
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-05", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-05", xsd:date]
+      - [aq:hasValue, $(D05), xsd:float]
+
+  Observations_D06:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-06
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-06", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-06", xsd:date]
+      - [aq:hasValue, $(D06), xsd:float]
+
+  Observations_D07:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-07
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-07", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-07", xsd:date]
+      - [aq:hasValue, $(D07), xsd:float]
+
+  Observations_D08:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-08
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-08", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-08", xsd:date]
+      - [aq:hasValue, $(D08), xsd:float]
+
+  Observations_D09:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-09
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-09", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-09", xsd:date]
+      - [aq:hasValue, $(D09), xsd:float]
+
+  Observations_D10:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-10
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-10", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-10", xsd:date]
+      - [aq:hasValue, $(D10), xsd:float]
+
+  Observations_D11:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-11
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-11", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-11", xsd:date]
+      - [aq:hasValue, $(D11), xsd:float]
+
+  Observations_D12:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-12
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-12", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-12", xsd:date]
+      - [aq:hasValue, $(D12), xsd:float]
+
+  Observations_D13:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-13
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-13", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-13", xsd:date]
+      - [aq:hasValue, $(D13), xsd:float]
+
+  Observations_D14:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-14
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-14", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-14", xsd:date]
+      - [aq:hasValue, $(D14), xsd:float]
+
+  Observations_D15:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-15
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-15", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-15", xsd:date]
+      - [aq:hasValue, $(D15), xsd:float]
+
+  Observations_D16:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-16
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-16", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-16", xsd:date]
+      - [aq:hasValue, $(D16), xsd:float]
+
+  Observations_D17:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-17
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-17", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-17", xsd:date]
+      - [aq:hasValue, $(D17), xsd:float]
+
+  Observations_D18:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-18
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-18", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-18", xsd:date]
+      - [aq:hasValue, $(D18), xsd:float]
+
+  Observations_D19:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-19
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-19", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-19", xsd:date]
+      - [aq:hasValue, $(D19), xsd:float]
+
+  Observations_D20:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-20
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-20", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-20", xsd:date]
+      - [aq:hasValue, $(D20), xsd:float]
+
+  Observations_D21:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-21
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-21", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-21", xsd:date]
+      - [aq:hasValue, $(D21), xsd:float]
+
+  Observations_D22:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-22
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-22", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-22", xsd:date]
+      - [aq:hasValue, $(D22), xsd:float]
+
+  Observations_D23:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-23
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-23", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-23", xsd:date]
+      - [aq:hasValue, $(D23), xsd:float]
+
+  Observations_D24:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-24
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-24", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-24", xsd:date]
+      - [aq:hasValue, $(D24), xsd:float]
+
+  Observations_D25:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-25
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-25", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-25", xsd:date]
+      - [aq:hasValue, $(D25), xsd:float]
+
+  Observations_D26:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-26
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-26", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-26", xsd:date]
+      - [aq:hasValue, $(D26), xsd:float]
+
+  Observations_D27:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-27
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-27", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-27", xsd:date]
+      - [aq:hasValue, $(D27), xsd:float]
+
+  Observations_D28:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-28
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-28", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-28", xsd:date]
+      - [aq:hasValue, $(D28), xsd:float]
+
+  Observations_D29:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-29
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-29", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-29", xsd:date]
+      - [aq:hasValue, $(D29), xsd:float]
+
+  Observations_D30:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-30
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-30", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-30", xsd:date]
+      - [aq:hasValue, $(D30), xsd:float]
+
+  Observations_D31:
+    sources:
+      - [csv/air_quality_madrid_2024_updated_with-links.csv~csv]
+    s: https://carloscumbrado.github.io/HandsOn/group07/resource/Observation/$(stationCode)_$(pollutantCode)_$(year)-$(month)-31
+    po:
+      - [a, aq:AirQualityObservation]
+      - [rdfs:label, "$(stationCode)-$(pollutantCode)-$(year)-$(month)-31", xsd:string]
+      - p: aq:hasStation
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Station/$(stationCode)"
+            type: iri
+      - p: aq:measuresPollutant
+        o:
+          - value: "https://carloscumbrado.github.io/HandsOn/group07/resource/Pollutant/$(pollutantCode)"
+            type: iri
+      - [aq:hasUnit, "ug/m3", xsd:string]
+      - [aq:hasDate, "$(year)-$(month)-31", xsd:date]
+      - [aq:hasValue, $(D31), xsd:float]
+
+
+
