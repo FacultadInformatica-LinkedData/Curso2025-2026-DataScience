@@ -13,6 +13,7 @@ WHERE {
   ?s ?p ?o .
 }
 
+
 # Número de elementos en clases
 SELECT ?tipo (COUNT(?instancia) AS ?num)
 WHERE {
@@ -20,6 +21,7 @@ WHERE {
 }
 GROUP BY ?tipo
 ORDER BY DESC(?num)
+
 
 # Verificar relaciones
 SELECT ?linea ?estacion
@@ -30,6 +32,8 @@ WHERE {
 
 LIMIT 10
 
+
+# Información estaciones
 SELECT ?estacion ?alcaldia ?tipo ?linea
 WHERE {
   ?estacion a metro:Estacion ;
@@ -39,16 +43,18 @@ WHERE {
 }
 LIMIT 10
 
-SELECT ?medicion ?anio ?mes ?afluencia ?estacion ?linea
+
+# Información afluencias
+SELECT ?medicion ?anio?afluencia ?estacion ?linea
 WHERE {
   ?medicion a metro:MedicionAfluencia ;
             metro:anioMedicion ?anio ;
-            metro:mesMedicion ?mes ;
             metro:afluenciaMedicion ?afluencia ;
             metro:deEstacion ?estacion ;
             metro:deLinea ?linea .
 }
 LIMIT 10
+
 
 # Verificar estaciones con mediciones
 SELECT (COUNT(DISTINCT ?estacion) AS ?numEstacionesConAfluencia)
@@ -56,36 +62,3 @@ WHERE {
   ?m a metro:MedicionAfluencia ;
      metro:deEstacion ?estacion .
 }
-
-# Verificar URIS
-SELECT ?s ?p ?o
-WHERE {
-  ?s ?p ?o .
-  FILTER(isLiteral(?o))
-  FILTER(STRSTARTS(STR(?p), STR(metro:)))  # propiedades de tu ontología
-}
-LIMIT 10
-
-
-# --- CONSULTAS ADICIONALES ---
-
-
-# Estaciones con línea y alcaldía
-SELECT ?station ?label ?line ?alcaldia
-WHERE {
-  ?station a metro:Station ;
-           rdfs:label ?label ;
-           metro:belongsToLine ?line ;
-           metro:locatedIn ?alcaldia .
-}
-ORDER BY ?line ?label
-LIMIT 50
-
-# Estaciones por línea (número de estaciones por línea)
-SELECT ?line (COUNT(DISTINCT ?station) AS ?numStations)
-WHERE {
-  ?station a metro:Station ;
-           metro:belongsToLine ?line .
-}
-GROUP BY ?line
-ORDER BY ?line
